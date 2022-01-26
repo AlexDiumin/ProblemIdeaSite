@@ -15,13 +15,21 @@
   src: url('fonts/Roboto-Bold.ttf')  format('truetype')
 }
 
-$dist1: 60px;
-$dist2: 40px;
-$dist3: 30px;
-$dist4: 20px;
-$dist5: 15px;
-$dist6: 10px;
-$dist7: 5px;
+// $dist1: 60px;
+// $dist2: 40px;
+// $dist3: 30px;
+// $dist4: 20px;
+// $dist5: 15px;
+// $dist6: 10px;
+// $dist7: 5px;
+
+$dist1: 54px;
+$dist2: 36px;
+$dist3: 26px;
+$dist4: 18px;
+$dist5: 14px;
+$dist6: 8px;
+$dist7: 4px;
 
 $darkColor: #112233;
 $redColor: #FC575E;
@@ -55,6 +63,78 @@ $basicFontSize: 14px;
 	height: 100%;
 }
 
+%header-footer {
+	height: $dist1;
+	width: 100%;
+	background: $darkColor;
+	padding: 0 $dist1;
+	box-sizing: border-box;
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+%footer-socials {
+	display: inline-flex;
+	height: $dist2;
+	width: $dist2;
+	margin-left: $dist6;
+	text-decoration: none;
+	border-radius: 2px;
+}
+
+.input-field {
+	@extend %font-regular;
+	font-size: 1rem;
+	line-height: 1rem;
+	color: $darkColor;
+	height: $dist2;
+	background: #DADCE2;
+	box-sizing: border-box;
+	border: 1px solid #A8AEB6;
+	border-radius: 2px;
+	padding: ($dist2 - $basicFontSize) / 2 - 1px;
+	margin: 0;
+
+	&::placeholder {
+		@extend %font-regular;
+		color: #757F8A;
+	}
+
+	&:focus {
+		@extend %outline;
+	}
+}
+
+.btn {
+	@extend %font-medium;
+	font-size: 1rem;
+	line-height: 1rem;
+	height: $dist2;
+	display: inline-flex;
+	align-items: center;
+	padding: 0 $dist4;
+	border-radius: 2px;
+	margin: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+
+	&:focus {
+		@extend %outline;
+	}
+}
+
+.idea-btn {
+	border: 0;
+	background: #863C48;
+	color: $lightColor;
+}
+
+.problem-btn {
+	border: 2px solid #808993;
+	color: $lightColor;
+}
+
 html {
 	@extend %body-html;
 	font-size: $basicFontSize;
@@ -68,30 +148,80 @@ body {
 	flex-direction: column;
 }
 
-%header-footer {
-	height: $dist1;
-	width: 100%;
-	background: $darkColor;
-	padding: $dist6 $dist1;
-	box-sizing: border-box;
-	display: inline-flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
 .header {
 	@extend %header-footer;
 	position: fixed;
 	top: 0;
 	left: 0;
 
+	div:not(:last-child) {
+		margin-right: $dist3;
+	}
+
+	&__wrapper {
+		display: inline-flex;
+		flex: 0 0 auto;
+	
+		&_resizable {		
+			display: inline-flex;
+			align-items: center;
+			flex: 1 1 auto;
+
+			form {
+				display: inline-flex;
+				align-items: center;
+				flex: 1 1 auto;
+
+				.input-field {
+					flex: 1 1 auto;
+
+					&::-webkit-search-decoration,
+					&::-webkit-search-cancel-button,
+					&::-webkit-search-results-button,
+					&::-webkit-search-results-decoration {
+					  -webkit-appearance: none;
+					  -moz-appearance: none;
+					  appearance: none;
+					  height: $dist4;
+					  width: $dist4;
+					  background: url(../icons/cross.svg) center no-repeat;
+					  background-size: contain;
+					  cursor: pointer;
+					  margin-left: $dist6; 
+					  padding: 0;
+					  border: 0;
+					  transition: .1s;
+					}
+				}
+
+				.search-btn {
+					width: $dist2;
+					height: $dist2;
+					background: url(../icons/search.svg) center no-repeat;
+					background-size: contain;
+					cursor: pointer;
+					margin: 0;
+					border: 0;
+					border-radius: 2px;
+					padding: 0;
+					margin-left: 2px;
+
+					&:focus {
+						@extend %outline;
+					}
+				}
+			}
+		}
+	}
+
 	&__burger {
 		width: $dist2;
 		height: $dist2;
 		border-radius: 2px;
-		display: inline-flex;
+		display: flex;
 		justify-content: center;
 		align-items: center;
+		text-decoration: none;
 
 		&:focus {
 			@extend %outline;
@@ -122,29 +252,29 @@ body {
 		color: $lightColor;
 		text-decoration: none;
 		border-radius: 2px;
+		padding: 0 $dist6;
 	
 		&:focus {
 			@extend %outline;
 		}
 	}
 
-	&__search-wrapper {
-		display: inline-flex;
-		flex-direction: row;
-		align-items: center;
+	&__wrapper {
+		height: $dist2;
 
-		.search-btn {
-			width: $dist4;
-			height: $dist4;
-			background: url(../icons/search.svg) center no-repeat;
-			background-size: contain;
-			cursor: pointer;
-			margin: 0;
-			border: 0;
-			padding: 0;
-			position: relative;
-			right: $dist4 + ($dist2 - $basicFontSize) / 2;
+		.btn:first-child {
+			margin-right: $dist6;
 		}
+
+		.signIn-btn {
+			color: $lightColor;
+			padding: 0 $dist6;
+		}
+
+		.signUp-btn {
+			color: $greenColor;
+			padding: 0 $dist6;
+		}		
 	}
 }
 
@@ -155,49 +285,46 @@ body {
 
 .footer {
 	@extend %header-footer;
+	justify-content: space-between;
 	flex-shrink: 0;
-}
 
-.input-field {
-	@extend %font-regular;
-	font-size: 1rem;
-	line-height: 1rem;
-	color: $darkColor;
-	height: $dist2;
-	width: 500px;
-	background: #DADCE2;
-	box-sizing: border-box;
-	border: 1px solid #A8AEB6;
-	border-radius: 2px;
-	padding: ($dist2 - $basicFontSize) / 2 - 1px;
-	margin: 0;
+	&__wrapper {
+		display: inline-flex;
+		align-items: center;
+		flex: 0 0 auto;
+	}
 
-	&::placeholder {
+	&__rules {
 		@extend %font-regular;
-		color: #757F8A;
+		font-size: 1rem;
+		line-height: 1rem;
+		color: $blueColor;
+		text-decoration: none;
+		margin-right: $dist3;
 	}
 
-	&:focus {
-		@extend %outline;
+	&__copyright {
+		@extend %font-regular;
+		font-size: 1rem;
+		line-height: 1rem;
+		color: #808993;
 	}
 
-	.header & {
-		&::-webkit-search-decoration,
-		&::-webkit-search-cancel-button,
-		&::-webkit-search-results-button,
-		&::-webkit-search-results-decoration {
-		  -webkit-appearance: none;
-		  -moz-appearance: none;
-		  appearance: none;
-		  height: $dist4;
-		  width: $dist4;
-		  background: url(../icons/cross.svg) center no-repeat;
-		  background-size: contain;
-		  cursor: pointer;
-		  margin: 0 $dist4 + $dist5 0 $dist6;
-		  padding: 0;
-		  border: 0;
-		  transition: .1s;
-		}
+	&__facebook {
+		@extend %footer-socials;
+		background: #273746 url(../icons/facebook.svg);
+		background-size: contain;
+	}
+
+	&__instagram {
+		@extend %footer-socials;
+		background: #273746 url(../icons/instagram.svg);
+		background-size: contain;
+	}
+
+	&__telegram {
+		@extend %footer-socials;
+		background: #273746 url(../icons/telegram.svg);
+		background-size: contain;
 	}
 }

@@ -9,25 +9,48 @@
 <body>
 	
 	<header class="header">
-		<a href="#" class="header__burger">
-			<div class="header__burger_wrapper">
-				<hr class="header__burger_line">
-				<hr class="header__burger_line">
-				<hr class="header__burger_line">
-			</div>
-		</a>
-		<a href="#" class="header__logo">Logo</a>
-		<form action="#" method="get">
-			<div class="header__search-wrapper">
+		<div class="header__wrapper">
+			<a href="#" class="header__burger">
+				<div class="header__burger_wrapper">
+					<hr class="header__burger_line">
+					<hr class="header__burger_line">
+					<hr class="header__burger_line">
+				</div>
+			</a>
+		</div>
+		<div class="header__wrapper">
+			<a href="#" class="header__logo">Logo</a>
+		</div>
+		<div class="header__wrapper_resizable">
+			<form action="#" method="get">
 				<input type="search" class="input-field" placeholder="Введите запрос">
 				<input type="submit" class="search-btn" value="">
-			</div>
-		</form>
+			</form>
+		</div>
+		<div class="header__wrapper">
+			<a href="#" class="btn idea-btn">ОПУБЛИКОВАТЬ ИДЕЮ</a>
+			<a href="#" class="btn problem-btn">ОПУБЛИКОВАТЬ ПРОБЛЕМУ</a>
+		</div>
+		<div class="header__wrapper">
+			<a href="#" class="btn signIn-btn">ВОЙТИ</a>
+			<a href="#" class="btn signUp-btn">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+		</div>
 	</header>
 
 	<main class="content"></main>
 
-	<footer class="footer"></footer>
+	<footer class="footer">
+		<div class="footer__wrapper">
+			<a href="#" class="footer__rules">Правила конфиденциальности</a>
+			<a href="#" class="footer__rules">Правила сервиса</a>
+			<span class="footer__copyright">© 2022</span>
+		</div>
+		<div class="footer__wrapper">
+			<a href="#" class="footer__facebook"></a>
+			<a href="#" class="footer__instagram"></a>
+			<a href="#" class="footer__telegram"></a>
+		</div>
+	</footer>
 
 </body>
 </html>
