@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'Roboto-Regular';
-  src: url('fonts/Roboto-Regular.ttf')  format('truetype')
+  font-family: 'Montserrat-Regular';
+  src: url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Roboto-Italic';
-  src: url('fonts/Roboto-Italic.ttf')  format('truetype')
+  font-family: 'Montserrat-Italic';
+  src: url('../fonts/Montserrat/Montserrat-Italic.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Roboto-Medium';
-  src: url('fonts/Roboto-Medium.ttf')  format('truetype')
+  font-family: 'Montserrat-Medium';
+  src: url('../fonts/Montserrat/Montserrat-Medium.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Roboto-Bold';
-  src: url('fonts/Roboto-Bold.ttf')  format('truetype')
+  font-family: 'Montserrat-Bold';
+  src: url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
 }
 
 // $dist1: 60px;
@@ -40,17 +40,17 @@ $lightColor: #F0F1F5;
 $basicFontSize: 14px;
 
 %font-regular {
-	font-family: "Roboto-Regular", sans-serif;
+	font-family: "Montserrat-Regular", sans-serif;
 	font-weight: 400;
 }
 
 %font-italic {
-	font-family: "Roboto-Italic", sans-serif;
+	font-family: "Montserrat-Italic", sans-serif;
 	font-weight: 400;
 }
 
 %font-medium {
-	font-family: "Roboto-Medium", sans-serif;
+	font-family: "Montserrat-Medium", sans-serif;
 	font-weight: 500;
 }
 
@@ -84,7 +84,7 @@ $basicFontSize: 14px;
 }
 
 .input-field {
-	@extend %font-regular;
+	@extend %font-medium;
 	font-size: 1rem;
 	line-height: 1rem;
 	color: $darkColor;
@@ -93,11 +93,12 @@ $basicFontSize: 14px;
 	box-sizing: border-box;
 	border: 1px solid #A8AEB6;
 	border-radius: 2px;
-	padding: ($dist2 - $basicFontSize) / 2 - 1px;
+	// padding: ($dist2 - $basicFontSize) / 2 - 1px;
+	padding: calc(($dist2 - $basicFontSize) / 2) - 1px;
 	margin: 0;
 
 	&::placeholder {
-		@extend %font-regular;
+		@extend %font-medium;
 		color: #757F8A;
 	}
 
@@ -114,10 +115,10 @@ $basicFontSize: 14px;
 	display: inline-flex;
 	align-items: center;
 	padding: 0 $dist4;
-	border-radius: 2px;
 	margin: 0;
 	text-decoration: none;
 	box-sizing: border-box;
+	transition: .25s;
 
 	&:focus {
 		@extend %outline;
@@ -128,11 +129,21 @@ $basicFontSize: 14px;
 	border: 0;
 	background: #863C48;
 	color: $lightColor;
+	border-radius: 2px;
+
+	&:hover {
+		background: rgba($redColor, .75);
+	}
 }
 
 .problem-btn {
 	border: 2px solid #808993;
 	color: $lightColor;
+	border-radius: 2px;
+
+	&:hover {
+			border: 2px solid rgba($lightColor, .75);
+	}
 }
 
 html {
@@ -269,13 +280,37 @@ body {
 		.signIn-btn {
 			color: $lightColor;
 			padding: 0 $dist6;
+			border-top: 2px solid $darkColor;
+			border-bottom: 2px solid $darkColor;
+
+			&:hover {
+				border-bottom: 2px solid rgba($lightColor, .5);
+			}
 		}
 
 		.signUp-btn {
 			color: $greenColor;
 			padding: 0 $dist6;
+		
+			border-top: 2px solid $darkColor;
+			border-bottom: 2px solid $darkColor;
+
+			&:hover {
+				border-bottom: 2px solid rgba($greenColor, .5);
+			}
 		}		
 	}
+}
+
+.burger-menu {
+	width: 343px;
+	height: calc(100vh - $dist1*2);
+	background: $darkColor;
+	// overflow: hidden;
+	position: absolute;
+	top: $dist1;
+	border-top: 1px solid rgba($lightColor, .1);
+	border-bottom: 1px solid rgba($lightColor, .1);
 }
 
 .content {
@@ -292,39 +327,53 @@ body {
 		display: inline-flex;
 		align-items: center;
 		flex: 0 0 auto;
+
+		& a:hover {
+			transition: .25s;				
+		}
+
+		&:nth-child(2) {
+			& a:hover {
+				background-color: rgba($lightColor, .25);
+			}
+		}
 	}
 
 	&__rules {
-		@extend %font-regular;
-		font-size: 1rem;
-		line-height: 1rem;
 		color: $blueColor;
-		text-decoration: none;
-		margin-right: $dist3;
+		padding: 0 $dist6;
+		border-top: 2px solid $darkColor;
+		border-bottom: 2px solid $darkColor;
+		margin-right: $dist6;
+
+		&:hover {
+			border-bottom: 2px solid rgba($blueColor, .5);
+		}
 	}
 
 	&__copyright {
 		@extend %font-regular;
 		font-size: 1rem;
 		line-height: 1rem;
-		color: #808993;
+		color: rgba($lightColor, .5);
+		padding: 0 $dist6;
 	}
 
 	&__facebook {
 		@extend %footer-socials;
-		background: #273746 url(../icons/facebook.svg);
+		background: rgba($lightColor, .1) url(../icons/facebook.svg);
 		background-size: contain;
 	}
 
 	&__instagram {
 		@extend %footer-socials;
-		background: #273746 url(../icons/instagram.svg);
+		background: rgba($lightColor, .1) url(../icons/instagram.svg);
 		background-size: contain;
 	}
 
 	&__telegram {
 		@extend %footer-socials;
-		background: #273746 url(../icons/telegram.svg);
+		background: rgba($lightColor, .1) url(../icons/telegram.svg);
 		background-size: contain;
 	}
 }

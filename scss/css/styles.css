@@ -1,26 +1,26 @@
 @font-face {
-  font-family: "Montserrat-Regular";
-  src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+  font-family: "Roboto-Regular";
+  src: url("fonts/Roboto-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Montserrat-Italic";
-  src: url("../fonts/Montserrat/Montserrat-Italic.ttf") format("truetype");
+  font-family: "Roboto-Italic";
+  src: url("fonts/Roboto-Italic.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Montserrat-Medium";
-  src: url("../fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+  font-family: "Roboto-Medium";
+  src: url("fonts/Roboto-Medium.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Montserrat-Bold";
-  src: url("../fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+  font-family: "Roboto-Bold";
+  src: url("fonts/Roboto-Bold.ttf") format("truetype");
 }
-.footer__copyright {
-  font-family: "Montserrat-Regular", sans-serif;
+.footer__copyright, .footer__rules, .input-field::placeholder, .input-field {
+  font-family: "Roboto-Regular", sans-serif;
   font-weight: 400;
 }
 
-.header__logo, .btn, .input-field::placeholder, .input-field {
-  font-family: "Montserrat-Medium", sans-serif;
+.header__logo, .btn {
+  font-family: "Roboto-Medium", sans-serif;
   font-weight: 500;
 }
 
@@ -75,28 +75,21 @@ body, html {
   display: inline-flex;
   align-items: center;
   padding: 0 18px;
+  border-radius: 2px;
   margin: 0;
   text-decoration: none;
   box-sizing: border-box;
-  transition: 0.25s;
 }
 .idea-btn {
   border: 0;
   background: #863C48;
   color: #F0F1F5;
-  border-radius: 2px;
-}
-.idea-btn:hover {
-  background: rgba(252, 87, 94, 0.75);
 }
 
 .problem-btn {
-  border: 2px solid #808993;
+  border: 0;
+  background: #2A6E99;
   color: #F0F1F5;
-  border-radius: 2px;
-}
-.problem-btn:hover {
-  border: 2px solid rgba(240, 241, 245, 0.75);
 }
 
 html {
@@ -202,30 +195,10 @@ body {
 .header__wrapper .signIn-btn {
   color: #F0F1F5;
   padding: 0 8px;
-  border-top: 2px solid #112233;
-  border-bottom: 2px solid #112233;
-}
-.header__wrapper .signIn-btn:hover {
-  border-bottom: 2px solid rgba(240, 241, 245, 0.5);
 }
 .header__wrapper .signUp-btn {
   color: #66CC99;
   padding: 0 8px;
-  border-top: 2px solid #112233;
-  border-bottom: 2px solid #112233;
-}
-.header__wrapper .signUp-btn:hover {
-  border-bottom: 2px solid rgba(102, 204, 153, 0.5);
-}
-
-.burger-menu {
-  width: 343px;
-  height: calc(100vh - 108px);
-  background: #112233;
-  position: absolute;
-  top: 54px;
-  border-top: 1px solid rgba(240, 241, 245, 0.1);
-  border-bottom: 1px solid rgba(240, 241, 245, 0.1);
 }
 
 .content {
@@ -242,38 +215,28 @@ body {
   align-items: center;
   flex: 0 0 auto;
 }
-.footer__wrapper a:hover {
-  transition: 0.25s;
-}
-.footer__wrapper:nth-child(2) a:hover {
-  background-color: rgba(240, 241, 245, 0.25);
-}
 .footer__rules {
+  font-size: 1rem;
+  line-height: 1rem;
   color: #44BBFF;
-  padding: 0 8px;
-  border-top: 2px solid #112233;
-  border-bottom: 2px solid #112233;
-  margin-right: 8px;
-}
-.footer__rules:hover {
-  border-bottom: 2px solid rgba(68, 187, 255, 0.5);
+  text-decoration: none;
+  margin-right: 26px;
 }
 .footer__copyright {
   font-size: 1rem;
   line-height: 1rem;
-  color: rgba(240, 241, 245, 0.5);
-  padding: 0 8px;
+  color: #808993;
 }
 .footer__facebook {
-  background: rgba(240, 241, 245, 0.1) url(../icons/facebook.svg);
+  background: #273746 url(../icons/facebook.svg);
   background-size: contain;
 }
 .footer__instagram {
-  background: rgba(240, 241, 245, 0.1) url(../icons/instagram.svg);
+  background: #273746 url(../icons/instagram.svg);
   background-size: contain;
 }
 .footer__telegram {
-  background: rgba(240, 241, 245, 0.1) url(../icons/telegram.svg);
+  background: #273746 url(../icons/telegram.svg);
   background-size: contain;
 }
 
