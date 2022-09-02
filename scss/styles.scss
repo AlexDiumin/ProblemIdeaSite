@@ -1,0 +1,870 @@
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+
+%font-regular {
+	font-family: "Montserrat-Regular", sans-serif;
+	font-weight: 400;
+}
+
+$dark-color: #112233;
+$semi-dark-color: #808993;
+$semi-light-color: #DADCE2;
+$light-color: #F0F1F5;
+$accent-color-r: #FC575E;
+$accent-color-g: #66CC99;
+$accent-color-b: #44BBFF;
+
+$base-size: 24px;
+// $base-border: 2px;
+// $base-border-radius: 2px;
+// $base-transition: .1s;
+$base-font-size: 14px;
+
+
+.display-none {
+	display: none !important;
+}
+
+
+.scroll-up-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: $base-size;
+	height: 100vh;
+
+	background-color: pink;
+}
+
+
+.pub-card-wrapper {
+	display: flex;
+	flex-direction: column;
+	row-gap: ($base-size*.5);
+	
+	.pub-card-img-wrapper {
+		height: 150px;
+
+		background-color: aqua;
+	}
+
+	.pub-card-not-img-wrapper {
+		display: flex;
+		column-gap: ($base-size*.5);
+
+		.pub-card-line-wrapper {
+			width: ($base-size / 12);
+			height: 156px;
+
+			background-color: aqua;
+		}
+
+		.pub-card-not-line-wrapper {
+			display: flex;
+			flex-direction: column;
+			row-gap: ($base-size*.5);
+			flex: 1 1 0;
+
+			.pub-card-title-wrapper {
+				height: 40px;
+
+				background-color: aqua;
+			}
+
+			.pub-card-description-wrapper {
+				height: 40px;
+
+				background-color: aqua;
+			}
+
+			.pub-card-statistics-wrapper {
+				display: flex;
+				column-gap: ($base-size*.5);
+			
+				.pub-card-statistic-item-wrapper {
+					width: 24px;
+					height: 24px;
+
+					background-color: aqua;
+				}
+			}
+
+			.pub-card-pubdate-wrapper {
+				width: 70px;
+				height: 16px;
+
+				background-color: aqua;
+			}
+		}
+	}	
+}
+
+
+.user-card-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: ($base-size*.5);
+
+	.user-card-img-wrapper,
+	.user-card-name-wrapper,
+	.user-card-description-wrapper {
+		background-color: aqua;
+	}
+
+	.user-card-img-wrapper {
+		width: 150px;
+		height: 150px;
+	}
+
+	.user-card-name-wrapper {
+		width: 200px;
+		height: 20px;
+	}
+
+	.user-card-description-wrapper {
+		width: 100%;
+		height: 40px;
+	}
+}
+
+
+.comments-block-wrapper {
+	display: flex;
+	flex-direction: column;
+	row-gap: $base-size;
+
+	.comment-img-wrapper {
+		width: ($base-size*1.5);
+		height: ($base-size*1.5);
+	
+		background-color: aqua;
+	}
+
+	.add-comment-wrapper {
+		display: flex;
+		column-gap: ($base-size*.5);
+
+		.add-comment-form-wrapper {
+			width: ($base-size*30);
+			height: 48px;
+
+			background-color: aqua;
+		}
+	}
+
+	.comments-wrapper {
+		display: flex;
+		flex-direction: column;
+		row-gap: $base-size;
+
+		.comment-wrapper {
+			display: flex;
+			column-gap: ($base-size*.5);
+
+			.comment-not-img-wrapper {
+				display: flex;
+				flex-direction: column;
+				row-gap: $base-size;
+
+				.only-comment-not-img-wrapper {
+					display: flex;
+					flex-direction: column;
+					row-gap: ($base-size*.5);
+
+					.comment-name-pubdate-wrapper,
+					.comment-text-wrapper,
+					.comment-reaction-btns-wrapper,
+					.comment-answers-btn-wrapper {
+						width: ($base-size*30);
+					}				
+
+					.comment-name-pubdate-wrapper {
+						display: flex;
+						column-gap: ($base-size*.5);
+
+						.comment-name-wrapper,
+						.comment-pubdate-wrapper {
+							height: 20px;
+
+							background-color: aqua;
+						}
+
+						.comment-name-wrapper {
+							width: 100px;
+						}
+
+						.comment-pubdate-wrapper {
+							width: 50px;
+						}
+					}
+
+					.comment-text-wrapper {
+						height: 48px;
+
+						background-color: aqua;
+					}
+
+					.comment-reaction-btns-wrapper {
+						display: flex;
+						column-gap: ($base-size*.5);
+
+						.comment-reply-btn-wrapper,
+						.comment-like-btns-wrapper {
+							height: ($base-size*1.5);
+
+							background-color: aqua;
+						}
+
+						.comment-reply-btn-wrapper {
+							width: 100px;
+						}
+
+						.comment-like-btns-wrapper {
+							width: 70px;
+						}
+					}
+				}
+
+				.comment-answers-wrapper {
+
+				}
+
+				.comment-answers-btn-wrapper {
+					height: ($base-size*1.5);
+
+					background-color: aqua;
+				}
+
+			}
+		}
+	}
+}
+
+
+html {
+	font-size: $base-font-size;
+}
+
+
+body {
+	background-color: $light-color;
+}
+
+
+header, 
+footer {
+	display: flex;
+	align-items: center;
+	z-index: 1;
+
+	width: 100%;
+	height: ($base-size*2);
+	padding: 0 ($base-size*2);
+
+	background-color: $dark-color;
+}
+
+
+header {
+	position: fixed;
+	column-gap: ($base-size*2);
+
+	.burger-btn-wrapper,
+	.logo-wrapper,
+	.search-wrapper,
+	.public-btns-wrapper,
+	.sign-btns-wrapper,
+	.user-btns-wrapper {
+		height: ($base-size*1.5);
+	}
+
+	.burger-btn-wrapper {
+		width: ($base-size*1.5);
+
+		background-color: aqua;
+
+		.menu-wrapper {
+			position: fixed;
+			top: ($base-size*2);
+			left: 0;
+			display: flex;
+			flex-direction: column;
+			row-gap: ($base-size*2);
+			transform: translateX(-100%);
+
+			height: calc(100vh - $base-size*2);
+			border-top: ($base-size*.25) solid $dark-color;
+			border-bottom: ($base-size*2.25) solid $dark-color;
+
+			background-color: $dark-color;
+			// transition: $transition-val;
+			overflow: auto;
+
+			.menu-items-wrapper {
+				height: 300px;
+
+				background-color: pink;
+			}
+
+			.menu-selects-wrapper {
+				display: flex;
+				column-gap: ($base-size*.5);
+
+				padding: 0 ($base-size*2);
+
+				.custom-select-wrapper {
+					width: 100px;
+					height: ($base-size*1.5);
+
+					background-color: pink;
+
+					.custom-select-options-wrapper {
+						position: relative;
+						top: ($base-size*1.5);
+
+						height: 100px;
+
+						background-color: gray;
+					}
+				}				
+			}
+		}
+		.menu-active {
+			transform: translateX(0%);
+		}
+	}
+
+	.logo-wrapper {
+		width: 100px;
+
+		background-color: aqua;
+	}
+
+	.search-wrapper {
+		flex: 1 1 200px;
+
+		background-color: aqua;
+
+		.search-autocomplete-wrapper {
+			position: relative;
+			top: ($base-size*1.75);
+
+			height: 100px;
+
+			background-color: $dark-color;
+		}
+	}
+
+	.public-btns-wrapper {
+		display: flex;
+		column-gap: ($base-size*.5);
+
+		.public-btn-wrapper {
+			width: 200px;
+			height: ($base-size*1.5);
+
+			background-color: aqua;
+		}				
+	}
+
+	.sign-btns-wrapper {
+		display: flex;
+		column-gap: ($base-size*.5);
+
+		.sign-btn-wrapper {
+			width: 200px;
+			height: ($base-size*1.5);
+
+			background-color: aqua;
+		}
+	}
+
+	.user-btns-wrapper {
+		display: flex;
+		column-gap: $base-size;
+
+		.user-btn-wrapper {
+			width: ($base-size*1.5);
+			height: ($base-size*1.5);
+
+			background-color: aqua;
+		
+			.notifications-wrapper {
+				position: relative;
+				top: ($base-size*1.5);
+				right: ($base-size*20 - $base-size*1.5);
+				display: flex;
+				flex-direction: column;
+				row-gap: ($base-size*.5);
+
+				width: ($base-size*20);
+				padding: ($base-size*.5);
+
+				background-color: $dark-color;
+
+				.notification-wrapper {
+					display: flex;
+					column-gap: ($base-size*.25);
+
+					.notification-img-wrapper {
+						width: ($base-size*1.5);
+						height: ($base-size*1.5);
+
+						background-color: aqua;
+					}
+
+					.notification-not-img-wrapper {
+						display: flex;
+						flex-direction: column;
+						row-gap: ($base-size*.25);
+						flex: 1 1 0;
+
+						.notification-text-wrapper {
+							height: 48px;
+
+							background-color: aqua;
+						}
+
+						.notification-not-text-wrapper {
+							display: flex;
+							justify-content: space-between;
+
+							.notification-btns-wrapper {
+								display: flex;
+								column-gap: ($base-size*.25);
+
+								.notification-btn-wrapper {
+									width: 100px;
+									height: ($base-size*1.5);
+								
+									background-color: aqua;
+								}
+							}
+
+							.notification-pubdate-wrapper {
+								width: 100px;
+								height: ($base-size*1.5);
+								
+								background-color: aqua;
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+
+
+footer {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+
+	.documents-btns-wrapper,
+	.copyright-wrapper,
+	.social-media-btns-wrapper {
+
+	}
+
+	.documents-btns-wrapper {
+		display: flex;
+		margin-right: (-$base-size*.5);
+
+		.document-btn-wrapper {
+			width: 150px;
+			height: ($base-size*1.5);
+			margin-right: ($base-size*.5);
+		
+			background-color: aqua;
+		}
+	}
+
+	.copyright-wrapper {
+		width: 100px;
+		height: ($base-size*1.5);
+
+		background-color: aqua;
+	}
+
+	.social-media-btns-wrapper {
+		display: flex;
+		margin-right: -$base-size;
+
+		.social-media-btn-wrapper {
+			width: ($base-size*1.5);
+			height: ($base-size*1.5);
+			margin-right: $base-size;
+
+			background-color: aqua;
+		}
+	}
+}
+
+
+main {
+	min-height: calc(100vh - $base-size*2);
+}
+
+
+/* ---------- signup.html ---------- */
+.signup-main {
+	padding: $base-size*4 35% $base-size*2;	
+
+	.signup-wrapper {
+		width: 100%;
+		height: 600px;
+
+		background-color: aqua;
+	}
+}
+/* ---------- /signup.html ---------- */
+
+
+/* ---------- signin.html ---------- */
+.signin-main {
+	padding: $base-size*4 35% $base-size*2;	
+
+	.signin-wrapper {
+		width: 100%;
+		height: 600px;
+
+		background-color: aqua;
+	}
+}
+/* ---------- /signin.html ---------- */
+
+
+/* ---------- passrecovery.html ---------- */
+.passrecovery-main {
+	padding: $base-size*4 35% $base-size*2;	
+
+	.passrecovery-wrapper {
+		width: 100%;
+		height: 600px;
+
+		background-color: aqua;
+	}
+}
+/* ---------- /passrecovery.html ---------- */
+
+
+/* ---------- main.html ---------- */
+.main-main {
+	padding: $base-size*4 $base-size*2 $base-size*2;
+
+	.main-first-wrapper {
+		width: 100%;
+		height: 100px;
+		margin-bottom: $base-size*2;
+
+		background-color: aqua;
+	}
+
+	.main-second-wrapper {
+		width: 100%;
+		height: 1000px;
+
+		background-color: aqua;
+	}
+}
+/* ---------- /main.html ---------- */
+
+
+/* ---------- user.html ---------- */
+.user-main {
+	display: flex;
+	column-gap: ($base-size*2);
+
+	padding: $base-size*4 $base-size*2 $base-size*2;
+
+	.profile-h-wrapper {
+		width: 250px;
+		height: 24px;
+
+		background-color: aqua;
+	}
+
+	.user-wrapper-1,
+	.user-wrapper-2 {
+		display: flex;
+		flex-direction: column;
+		row-gap: ($base-size*2);
+	}
+
+	.user-wrapper-1 {
+		min-width: ($base-size*10);
+
+		.profile-img-wrapper,
+		.profile-btns-wrapper,
+		.profile-info-wrapper {
+
+		}
+
+		.profile-img-wrapper {
+			height: 300px;
+
+			background-color: aqua;
+		}
+
+		.profile-btns-wrapper {
+			display: flex;
+			column-gap: ($base-size*.5);
+
+			.profile-btn-wrapper {
+				width: 150px;
+				height: ($base-size*1.5);
+
+				background-color: aqua;
+
+				.profile-btn-submenu-wrapper {
+					position: relative;
+					top: ($base-size*1.5);
+					right: (200px - $base-size*1.5);
+
+					width: 200px;
+					height: 300px;
+
+					background-color: grey;
+				}
+			}
+			.profile-btn-wrapper:last-of-type {
+				width: ($base-size*1.5) !important;
+			}
+		}
+
+		.profile-info-wrapper {
+			display: flex;
+			flex-direction: column;
+			row-gap: $base-size;
+
+			.profile-info-list-wrapper {
+				height: 250px;
+
+				background-color: aqua;
+			}
+		}
+	}
+
+	.user-wrapper-2 {
+		flex: 1 1 0;
+
+		.profile-name-description-wrapper,
+		.profile-content-block-wrapper,
+		.profile-comments-block-wrapper {
+			display: flex;
+			flex-direction: column;
+			row-gap: $base-size;
+		}
+
+		.profile-name-description-wrapper {
+
+			.profile-name-wrapper,
+			.profile-description-wrapper {
+				background-color: aqua;
+			}
+
+			.profile-name-wrapper {
+				width: 400px;
+				height: 28px;
+			}
+
+			.profile-description-wrapper {
+				max-width: ($base-size*30);
+				height: 48px;
+			}
+		}
+
+		.profile-content-block-wrapper {
+
+			.profile-content-wrapper {
+				display: grid;
+				grid-gap: $base-size;
+				grid-template: auto / repeat(3, 1fr);
+
+				max-height: 624px;
+
+				overflow: auto;
+
+				.profile-content-item-wrapper {
+
+				}
+			}
+		}
+
+		.profile-comments-block-wrapper {
+
+		}
+	}
+}
+/* ---------- /user.html ---------- */
+
+
+/* ---------- settings.html ---------- */
+.settings-main {
+	padding: $base-size*4 35% $base-size*2;	
+
+	.settings-wrapper {
+		width: 100%;
+		height: 600px;
+
+		background-color: aqua;
+	}
+}
+/* ---------- /settings.html ---------- */
+
+
+/* ---------- passchange.html ---------- */
+.passchange-main {
+	padding: $base-size*4 35% $base-size*2;	
+
+	.passchange-wrapper {
+		width: 100%;
+		height: 500px;
+
+		background-color: aqua;
+	}
+}
+/* ---------- /passchange.html ---------- */
+
+
+/* ---------- about.html ---------- */
+.about-main {
+	padding: $base-size*4 $base-size*2 $base-size*2;	
+
+	.about-wrapper {
+		width: 100%;
+		height: 1000px;
+
+		background-color: aqua;
+	}	
+}
+/* ---------- /about.html ---------- */
+
+
+/* ---------- support.html ---------- */
+.support-main {
+	padding: $base-size*4 25% $base-size*2;	
+
+	.support-wrapper {
+		width: 100%;
+		height: 500px;
+
+		background-color: aqua;
+	}
+}
+/* ---------- /support.html ---------- */
+
+
+/* ---------- search.html ---------- */
+.search-main {
+	padding: $base-size*4 25% $base-size*2;
+
+	.search-results-wrapper {
+		width: 100%;
+		height: 1000px;
+
+		background-color: aqua;
+	}
+}
+/* ---------- /search.html ---------- */
+
+
+/* ---------- chat.html ---------- */
+.chat-main {
+	display: flex;
+
+	padding: $base-size*2 $base-size*2 0;
+
+	.chat-first-wrapper {
+		width: 30%;
+		height: calc(100vh - $base-size*4);
+
+		background-color: pink;
+	}
+
+	.chat-second-wrapper {
+		width: 70%;
+		height: calc(100vh - $base-size*4);
+
+		background-color: aqua;
+	}
+}
+/* ---------- /chat.html ---------- */
+
+
+/* ---------- problem.html ---------- */
+.problem-main {
+	padding: $base-size*4 $base-size*2 $base-size*2;
+
+	.problem-first-wrapper {
+		width: 100%;
+		height: 500px;
+		margin-bottom: $base-size*2;
+
+		background-color: aqua;
+	}
+
+	.problem-second-wrapper {
+		width: 100%;
+		height: 500px;
+
+		background-color: aqua;
+	}
+}
+/* ---------- /problem.html ---------- */
+
+
+/* ---------- idea.html ---------- */
+.idea-main {
+	padding: $base-size*4 $base-size*2 $base-size*2;
+
+	.idea-first-wrapper {
+		width: 100%;
+		height: 500px;
+		margin-bottom: $base-size*2;
+
+		background-color: aqua;
+	}
+
+	.idea-second-wrapper {
+		width: 100%;
+		height: 500px;
+
+		background-color: aqua;
+	}
+}
+/* ---------- /idea.html ---------- */
+
+
+/* ---------- pubproblem.html ---------- */
+.pubproblem-main {
+	padding: $base-size*4 25% $base-size*2;	
+
+	.pubproblem-wrapper {
+		width: 100%;
+		height: 1000px;
+
+		background-color: aqua;
+	}
+}
+/* ---------- /pubproblem.html ---------- */
+
+
+/* ---------- pubidea.html ---------- */
+.pubidea-main {
+	padding: $base-size*4 25% $base-size*2;	
+
+	.pubidea-wrapper {
+		width: 100%;
+		height: 1000px;
+
+		background-color: aqua;
+	}
+}
+/* ---------- /pubidea.html ---------- */
