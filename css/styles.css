@@ -180,11 +180,9 @@ body {
 header,
 footer {
   display: flex;
-  align-items: center;
   z-index: 1;
   width: 100%;
-  height: 48px;
-  padding: 0 48px;
+  padding: 6px 48px;
   background-color: #112233;
 }
 
@@ -455,7 +453,7 @@ main {
   right: 164px;
   width: 200px;
   height: 300px;
-  background-color: grey;
+  background-color: gray;
 }
 .user-main .user-wrapper-1 .profile-btns-wrapper .profile-btn-wrapper:last-of-type {
   width: 36px !important;
@@ -559,14 +557,134 @@ main {
   display: flex;
   padding: 48px 48px 0;
 }
-.chat-main .chat-first-wrapper {
-  width: 30%;
+.chat-main .chat-wrapper-1,
+.chat-main .chat-wrapper-2 {
+  display: flex;
+  flex-direction: column;
   height: calc(100vh - 96px);
-  background-color: pink;
 }
-.chat-main .chat-second-wrapper {
+.chat-main .chat-wrapper-1 {
+  width: 30%;
+}
+.chat-main .chat-wrapper-1 .chat-global-search-block-wrapper {
+  padding: 6px 12px;
+  background-color: gray;
+}
+.chat-main .chat-wrapper-1 .chat-global-search-block-wrapper .chat-global-search-wrapper {
+  width: 100%;
+  height: 36px;
+  background-color: aqua;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper {
+  flex: 1 1 0;
+  overflow: auto;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper {
+  display: flex;
+  column-gap: 6px;
+  padding: 12px;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-img-wrapper {
+  width: 36px;
+  height: 36px;
+  background-color: aqua;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+  flex: 1 1 0;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1,
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 {
+  display: flex;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1 {
+  justify-content: space-between;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1 .chat-conversation-name-wrapper,
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1 .chat-conversation-pubdate-wrapper {
+  height: 15px;
+  background-color: aqua;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1 .chat-conversation-name-wrapper {
+  width: 150px;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1 .chat-conversation-pubdate-wrapper {
+  width: 75px;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 {
+  column-gap: 6px;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 .chat-conversation-last-message-wrapper,
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 .chat-conversation-last-message-status-wrapper {
+  height: 15px;
+  background-color: aqua;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 .chat-conversation-last-message-wrapper {
+  flex: 1 1 0;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 .chat-conversation-last-message-status-wrapper {
+  width: 15px;
+}
+.chat-main .chat-wrapper-2 {
   width: 70%;
-  height: calc(100vh - 96px);
+}
+.chat-main .chat-wrapper-2 .chat-wrapper-2-header,
+.chat-main .chat-wrapper-2 .chat-wrapper-2-footer {
+  padding: 6px 12px;
+  background-color: blue;
+}
+.chat-main .chat-wrapper-2 .chat-wrapper-2-header {
+  display: flex;
+  justify-content: space-between;
+}
+.chat-main .chat-wrapper-2 .chat-wrapper-2-header .chat-wrapper-2-header-name-wrapper {
+  width: 200px;
+  height: 36px;
+  background-color: aqua;
+}
+.chat-main .chat-wrapper-2 .chat-wrapper-2-header .chat-wrapper-2-header-btns-wrapper {
+  display: flex;
+  column-gap: 12px;
+}
+.chat-main .chat-wrapper-2 .chat-wrapper-2-header .chat-wrapper-2-header-btns-wrapper .chat-wrapper-2-header-btn {
+  width: 36px;
+  height: 36px;
+  background-color: aqua;
+}
+.chat-main .chat-wrapper-2 .chat-wrapper-2-main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  flex: 1 1 0;
+  padding: 12px;
+  overflow: auto;
+  background-color: aqua;
+}
+.chat-main .chat-wrapper-2 .chat-wrapper-2-main .chat-message-item-wrapper .chat-my-message-wrapper,
+.chat-main .chat-wrapper-2 .chat-wrapper-2-main .chat-message-item-wrapper .chat-anothers-message-wrapper {
+  width: 80%;
+  height: 100px;
+}
+.chat-main .chat-wrapper-2 .chat-wrapper-2-main .chat-message-item-wrapper .chat-my-message-wrapper {
+  float: right;
+  background-color: lime;
+}
+.chat-main .chat-wrapper-2 .chat-wrapper-2-main .chat-message-item-wrapper .chat-anothers-message-wrapper {
+  background-color: white;
+}
+.chat-main .chat-wrapper-2 .chat-wrapper-2-main .chat-pubdate-block-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.chat-main .chat-wrapper-2 .chat-wrapper-2-main .chat-pubdate-block-wrapper .chat-pubdate-wrapper {
+  width: 100px;
+  height: 20px;
+  background-color: gray;
+}
+.chat-main .chat-wrapper-2 .chat-wrapper-2-footer .chat-send-message-wrapper {
+  height: 36px;
   background-color: aqua;
 }
 

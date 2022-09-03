@@ -56,7 +56,7 @@ $base-font-size: 14px;
 		column-gap: ($base-size*.5);
 
 		.pub-card-line-wrapper {
-			width: ($base-size / 12);
+			width: calc($base-size/12);
 			height: 156px;
 
 			background-color: aqua;
@@ -258,12 +258,10 @@ body {
 header, 
 footer {
 	display: flex;
-	align-items: center;
 	z-index: 1;
 
 	width: 100%;
-	height: ($base-size*2);
-	padding: 0 ($base-size*2);
+	padding: ($base-size*.25) ($base-size*2);
 
 	background-color: $dark-color;
 }
@@ -630,7 +628,7 @@ main {
 					width: 200px;
 					height: 300px;
 
-					background-color: grey;
+					background-color: gray;
 				}
 			}
 			.profile-btn-wrapper:last-of-type {
@@ -781,18 +779,190 @@ main {
 
 	padding: $base-size*2 $base-size*2 0;
 
-	.chat-first-wrapper {
-		width: 30%;
-		height: calc(100vh - $base-size*4);
+	.chat-wrapper-1,
+	.chat-wrapper-2 {
+		display: flex;
+		flex-direction: column;
 
-		background-color: pink;
+		height: calc(100vh - $base-size*4);					
 	}
 
-	.chat-second-wrapper {
-		width: 70%;
-		height: calc(100vh - $base-size*4);
+	.chat-wrapper-1 {
+		width: 30%;
 
-		background-color: aqua;
+		// background-color: pink;
+
+		.chat-global-search-block-wrapper {
+			padding: ($base-size*.25) ($base-size*.5);
+
+			background-color: gray;
+		
+			.chat-global-search-wrapper {
+				width: 100%;
+				height: ($base-size*1.5);
+
+				background-color: aqua;
+			}
+		}
+
+		.chat-conversations-wrapper {
+			flex: 1 1 0;
+
+			overflow: auto; 
+
+			.chat-conversation-item-wrapper {
+				display: flex;
+				column-gap: ($base-size*.25);
+
+				padding: ($base-size*.5);
+
+				.chat-conversation-img-wrapper {
+					width: ($base-size*1.5);
+					height: ($base-size*1.5);
+
+					background-color: aqua;
+				}
+
+				.chat-conversation-not-img-wrapper {
+					display: flex;
+					flex-direction: column;
+					row-gap: ($base-size*.25);
+					flex: 1 1 0;
+
+					.chat-conversation-not-img-wrapper-1,
+					.chat-conversation-not-img-wrapper-2 {
+						display: flex;
+					}
+
+					.chat-conversation-not-img-wrapper-1 {
+						justify-content: space-between;
+
+						.chat-conversation-name-wrapper,
+						.chat-conversation-pubdate-wrapper {
+							height: 15px;
+
+							background-color: aqua;
+						}
+
+						.chat-conversation-name-wrapper {
+							width: 150px;
+						}
+
+						.chat-conversation-pubdate-wrapper {
+							width: 75px;
+						}
+					}
+
+					.chat-conversation-not-img-wrapper-2 {
+						column-gap: ($base-size*.25);
+
+						.chat-conversation-last-message-wrapper,
+						.chat-conversation-last-message-status-wrapper {
+							height: 15px;
+
+							background-color: aqua;
+						}
+
+						.chat-conversation-last-message-wrapper {
+							flex: 1 1 0;
+						}
+
+						.chat-conversation-last-message-status-wrapper {
+							width: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.chat-wrapper-2 {
+		width: 70%;
+
+		// background-color: aqua;
+
+		.chat-wrapper-2-header,
+		.chat-wrapper-2-footer {
+			padding: ($base-size*.25) ($base-size*.5);
+
+			background-color: blue;
+		}
+
+		.chat-wrapper-2-header {
+			display: flex;
+			justify-content: space-between;
+
+			.chat-wrapper-2-header-name-wrapper {
+				width: 200px;
+				height: ($base-size*1.5);
+
+				background-color: aqua;
+			}
+
+			.chat-wrapper-2-header-btns-wrapper {
+				display: flex;
+				column-gap: ($base-size*.5);
+
+				.chat-wrapper-2-header-btn {
+					width: ($base-size*1.5);
+					height: ($base-size*1.5);
+
+					background-color: aqua;
+				}
+			}
+		}
+
+		.chat-wrapper-2-main {
+			display: flex;
+			flex-direction: column;
+			row-gap: ($base-size*.5);
+			flex: 1 1 0;
+
+			padding: ($base-size*.5);
+
+			overflow: auto;
+			background-color: aqua;
+
+			.chat-message-item-wrapper {
+
+				.chat-my-message-wrapper,
+				.chat-anothers-message-wrapper {
+					width: 80%;
+					height: 100px;
+				}				
+
+				.chat-my-message-wrapper {
+					float: right;
+
+					background-color: lime;
+				}
+
+				.chat-anothers-message-wrapper {
+					background-color: white;
+				}
+			}
+
+			.chat-pubdate-block-wrapper {
+				display: flex;
+				justify-content: center;
+
+				.chat-pubdate-wrapper {
+					width: 100px;
+					height: 20px;
+
+					background-color: gray;
+				}
+			}
+		}
+
+		.chat-wrapper-2-footer {
+
+			.chat-send-message-wrapper {
+				height: ($base-size*1.5);
+
+				background-color: aqua;
+			}
+		}
 	}
 }
 /* ---------- /chat.html ---------- */
