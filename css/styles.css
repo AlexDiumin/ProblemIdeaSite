@@ -43,11 +43,11 @@
   flex: 1 1 0;
 }
 .pub-card-wrapper .pub-card-not-img-wrapper .pub-card-title-wrapper {
-  height: 40px;
+  height: 34px;
   background-color: aqua;
 }
 .pub-card-wrapper .pub-card-not-img-wrapper .pub-card-description-wrapper {
-  height: 40px;
+  height: 34px;
   background-color: aqua;
 }
 .pub-card-wrapper .pub-card-not-img-wrapper .pub-card-statistics-wrapper {
@@ -56,8 +56,8 @@
   flex-wrap: wrap;
 }
 .pub-card-wrapper .pub-card-not-img-wrapper .pub-card-statistics-wrapper .pub-card-statistic-item-wrapper {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   background-color: aqua;
 }
 .pub-card-wrapper .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper {
@@ -67,7 +67,7 @@
 }
 .pub-card-wrapper .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-pubdate-wrapper {
   width: 100px;
-  height: 24px;
+  height: 18px;
   background-color: aqua;
 }
 .pub-card-wrapper .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-author-wrapper {
@@ -75,13 +75,13 @@
   column-gap: 6px;
 }
 .pub-card-wrapper .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-author-wrapper .pub-card-author-img-wrapper {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   background-color: aqua;
 }
 .pub-card-wrapper .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-author-wrapper .pub-card-author-name-wrapper {
   width: 100px;
-  height: 24px;
+  height: 18px;
   background-color: aqua;
 }
 
@@ -433,8 +433,7 @@ main {
 .signup-main {
   padding: 96px 35% 48px;
 }
-.signup-main .signup-wrapper {
-  width: 100%;
+.signup-main .form-wrapper .signup-wrapper {
   height: 600px;
   background-color: aqua;
 }
@@ -444,8 +443,7 @@ main {
 .signin-main {
   padding: 96px 35% 48px;
 }
-.signin-main .signin-wrapper {
-  width: 100%;
+.signin-main .form-wrapper .signin-wrapper {
   height: 600px;
   background-color: aqua;
 }
@@ -595,7 +593,9 @@ main {
   display: grid;
   grid-gap: 24px;
   grid-template: auto/repeat(3, 1fr);
-  max-height: 660px;
+  max-height: 689px;
+  padding-top: 5px;
+  margin-top: -5px;
   overflow: auto;
 }
 .user-main .user-wrapper-2 .profile-content-block-wrapper .profile-content-wrapper .profile-content-item-wrapper .pub-card-wrapper {
@@ -610,9 +610,29 @@ main {
 .settings-main {
   padding: 96px 35% 48px;
 }
-.settings-main .settings-wrapper {
-  width: 100%;
-  height: 600px;
+.settings-main .form-wrapper .settings-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 48px;
+}
+.settings-main .form-wrapper .settings-wrapper .settings-group-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+.settings-main .form-wrapper .settings-wrapper .settings-group-wrapper .settings-group-title-wrapper {
+  width: 200px;
+  height: 17px;
+  background-color: aqua;
+}
+.settings-main .form-wrapper .settings-wrapper .settings-group-wrapper .settings-group-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+.settings-main .form-wrapper .settings-wrapper .settings-group-wrapper .settings-group-content-wrapper .settings-group-btn-wrapper {
+  width: 150px;
+  height: 36px;
   background-color: aqua;
 }
 
@@ -632,7 +652,6 @@ main {
   padding: 96px 48px 48px;
 }
 .about-main .about-wrapper {
-  width: 100%;
   height: 1000px;
   background-color: aqua;
 }
@@ -642,8 +661,7 @@ main {
 .support-main {
   padding: 96px 25% 48px;
 }
-.support-main .support-wrapper {
-  width: 100%;
+.support-main .form-wrapper .support-wrapper {
   height: 500px;
   background-color: aqua;
 }

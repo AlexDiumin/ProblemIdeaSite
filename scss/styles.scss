@@ -75,13 +75,13 @@ $base-font-size: 14px;
 		flex: 1 1 0;
 
 		.pub-card-title-wrapper {
-			height: 40px;
+			height: 34px;
 
 			background-color: aqua;
 		}
 
 		.pub-card-description-wrapper {
-			height: 40px;
+			height: 34px;
 
 			background-color: aqua;
 		}
@@ -92,8 +92,8 @@ $base-font-size: 14px;
 			flex-wrap: wrap;
 
 			.pub-card-statistic-item-wrapper {
-				width: 24px;
-				height: 24px;
+				width: 18px;
+				height: 18px;
 
 				background-color: aqua;
 			}
@@ -106,7 +106,7 @@ $base-font-size: 14px;
 
 			.pub-card-pubdate-wrapper {
 				width: 100px;
-				height: $base-size;
+				height: 18px;
 
 				background-color: aqua;
 			}
@@ -116,15 +116,15 @@ $base-font-size: 14px;
 				column-gap: ($base-size*.25);
 
 				.pub-card-author-img-wrapper {
-					width: $base-size;
-					height: $base-size;
+					width: 18px;
+					height: 18px;
 
 					background-color: aqua;
 				}
 
 				.pub-card-author-name-wrapper {
 					width: 100px;
-					height: $base-size;
+					height: 18px;
 
 					background-color: aqua;
 				}
@@ -601,13 +601,15 @@ main {
 
 /* ---------- signup.html ---------- */
 .signup-main {
-	padding: $base-size*4 35% $base-size*2;	
+	padding: ($base-size*4) 35% ($base-size*2);	
 
-	.signup-wrapper {
-		width: 100%;
-		height: 600px;
+	.form-wrapper {
 
-		background-color: aqua;
+		.signup-wrapper {
+			height: 600px;
+
+			background-color: aqua;
+		}
 	}
 }
 /* ---------- /signup.html ---------- */
@@ -617,12 +619,14 @@ main {
 .signin-main {
 	padding: ($base-size*4) 35% ($base-size*2);	
 
-	.signin-wrapper {
-		width: 100%;
-		height: 600px;
+	.form-wrapper {
 
-		background-color: aqua;
-	}
+		.signin-wrapper {
+			height: 600px;
+
+			background-color: aqua;
+		}
+	}	
 }
 /* ---------- /signin.html ---------- */
 
@@ -833,7 +837,10 @@ main {
 				grid-gap: $base-size;
 				grid-template: auto / repeat(3, 1fr);
 
-				max-height: 660px;
+				max-height: (684px + $base-size*.25 - 1px);
+				// место для типа публикации: Идея / Проблема
+				padding-top: ($base-size*.25 - 1px);
+				margin-top: -($base-size*.25 - 1px);
 
 				overflow: auto;
 
@@ -863,11 +870,39 @@ main {
 .settings-main {
 	padding: $base-size*4 35% $base-size*2;	
 
-	.settings-wrapper {
-		width: 100%;
-		height: 600px;
+	.form-wrapper {
 
-		background-color: aqua;
+		.settings-wrapper {
+			display: flex;
+			flex-direction: column;
+			row-gap: ($base-size*2);
+
+			.settings-group-wrapper {
+				display: flex;
+				flex-direction: column;
+				row-gap: $base-size;
+
+				.settings-group-title-wrapper {
+					width: 200px;
+					height: 17px;
+
+					background-color: aqua;
+				}
+
+				.settings-group-content-wrapper {
+					display: flex;
+					flex-direction: column;
+					row-gap: ($base-size*.5);
+
+					.settings-group-btn-wrapper {
+						width: 150px;
+						height: ($base-size*1.5);
+
+						background-color: aqua;
+					}
+				}
+			}
+		}
 	}
 }
 /* ---------- /settings.html ---------- */
@@ -891,10 +926,9 @@ main {
 
 /* ---------- about.html ---------- */
 .about-main {
-	padding: $base-size*4 $base-size*2 $base-size*2;	
+	padding: ($base-size*4) ($base-size*2) ($base-size*2);	
 
 	.about-wrapper {
-		width: 100%;
 		height: 1000px;
 
 		background-color: aqua;
@@ -905,13 +939,15 @@ main {
 
 /* ---------- support.html ---------- */
 .support-main {
-	padding: $base-size*4 25% $base-size*2;	
+	padding: ($base-size*4) 25% ($base-size*2);	
 
-	.support-wrapper {
-		width: 100%;
-		height: 500px;
+	.form-wrapper {
 
-		background-color: aqua;
+		.support-wrapper {
+			height: 500px;
+
+			background-color: aqua;
+		}
 	}
 }
 /* ---------- /support.html ---------- */
