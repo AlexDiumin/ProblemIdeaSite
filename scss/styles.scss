@@ -3,14 +3,13 @@
   src: url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
 }
 
-%font-regular {
-	font-family: "Montserrat-Regular", sans-serif;
-	font-weight: 400;
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
 }
 
+
 $dark-color: #112233;
-$semi-dark-color: #808993;
-$semi-light-color: #DADCE2;
 $light-color: #F0F1F5;
 $accent-color-r: #FC575E;
 $accent-color-g: #66CC99;
@@ -18,8 +17,8 @@ $accent-color-b: #44BBFF;
 
 $base-size: 24px;
 // $base-border: 2px;
-// $base-border-radius: 2px;
-// $base-transition: .1s;
+$base-border-radius: 2px;
+$base-transition: .1s;
 $base-font-size: 14px;
 
 
@@ -693,23 +692,145 @@ main {
 			display: flex;
 			flex-direction: column;
 			row-gap: $base-size;
-			flex: 1 1 0;
 
-			.main-categories-wrapper {
-				height: 200px;
+			max-width: 25%;
 
-				background-color: aqua;
-			}
+			.main-selection-block-wrapper {
+				display: flex;
+				flex-direction: column;
+				row-gap: ($base-size*.5);
 
-			.main-tags-wrapper {
-				height: 800px;
+				padding: $base-size;
+				border-radius: $base-border-radius;
 
-				background-color: aqua;
+				background-color: darken($light-color, 5%);
+
+				.main-selection-block-title-wrapper {
+
+					.main-selection-block-title {
+						font: 1rem/1rem 'Montserrat-Bold';
+						color: $dark-color;
+						text-align: center;
+					}
+				}
+
+				.main-selection-form-wrapper {
+
+					.main-categories-form {
+
+						.main-category-item {
+							position: relative;
+							display: block;
+
+							padding-left: calc(1.2rem + $base-size*.25);
+
+							font: 1rem/calc($base-size*1.5) 'Montserrat-Regular';
+							cursor: pointer;
+							-webkit-user-select: none;
+							-moz-user-select: none;
+							-ms-user-select: none;
+							user-select: none;
+
+							&:hover .category-radio ~ .custom-category-radio {
+								background-color: darken($light-color, 20%);
+							}
+
+							.category-radio {
+								position: absolute;
+
+								opacity: 0;
+								cursor: pointer;
+
+								&:checked ~ .custom-category-radio {
+									background-color: $dark-color;
+								}
+
+								&:checked ~ .custom-category-radio:after {
+									display: block;
+								}
+							}
+
+							.custom-category-radio {
+								position: absolute;
+								top: calc($base-size*.75 - .6rem);
+								left: 0;
+
+								width: 1.2rem;
+								height: 1.2rem;
+								border-radius: 50%;
+								
+								background-color: $light-color;
+								transition: $base-transition;
+
+								&:after {
+									position: absolute;
+									display: none;
+									top: .3rem;
+									left: .3rem;
+
+									width: .6rem;
+									height: .6rem;
+									border-radius: 50%;
+									
+									content: "";
+									background: $light-color;
+								}
+							}
+						}
+					}
+
+					.main-tags-form {
+						display: flex;
+						flex-direction: column;
+
+						.main-tag-btn {
+							padding: calc($base-size*.75 - .6rem) 0;
+							border: 0;
+							margin: 0;
+
+							font: 1rem/1.2rem 'Montserrat-Regular';
+							text-align: left;
+							word-wrap: break-word;
+							color: darken($accent-color-b, 25%);
+							background-color: transparent;
+							cursor: pointer;
+
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+					}					
+				}
+
+				.main-selection-btn-wrapper {
+					align-self: center;
+
+					.ghost-btn {
+						height: ($base-size*1.5);
+						padding: 0 $base-size;
+						border: 0;
+						border-radius: $base-border-radius;
+						margin: 0;
+
+						font: 1rem/calc($base-size*1.5) 'Montserrat-Bold';
+						background-color: transparent;
+						transition: $base-transition;
+						cursor: pointer;
+					}
+
+					.main-tag-settings-btn {
+						color: darken($light-color, 50%);
+
+						&:hover {
+							background-color: darken($light-color, 10%);
+						}
+					}
+				}
 			}
 		}
 
 		.main-wrapper-2-2 {
-			flex: 5 5 0;
+			flex: 1 1 auto;
 			display: grid;
 			grid-gap: $base-size;
 			grid-template: auto / repeat(3, 1fr);

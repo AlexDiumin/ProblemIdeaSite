@@ -2,6 +2,10 @@
   font-family: "Montserrat-Regular";
   src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+}
 .display-none {
   display: none !important;
 }
@@ -493,18 +497,107 @@ main {
   display: flex;
   flex-direction: column;
   row-gap: 24px;
-  flex: 1 1 0;
+  max-width: 25%;
 }
-.main-main .main-wrapper-2 .main-wrapper-2-1 .main-categories-wrapper {
-  height: 200px;
-  background-color: aqua;
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  padding: 24px;
+  border-radius: 2px;
+  background-color: #e1e3eb;
 }
-.main-main .main-wrapper-2 .main-wrapper-2-1 .main-tags-wrapper {
-  height: 800px;
-  background-color: aqua;
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-block-title-wrapper .main-selection-block-title {
+  font: 1rem/1rem "Montserrat-Bold";
+  color: #112233;
+  text-align: center;
+}
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-form-wrapper .main-categories-form .main-category-item {
+  position: relative;
+  display: block;
+  padding-left: calc(1.2rem + 6px);
+  font: 1rem/36px "Montserrat-Regular";
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-form-wrapper .main-categories-form .main-category-item:hover .category-radio ~ .custom-category-radio {
+  background-color: #b3b8cc;
+}
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-form-wrapper .main-categories-form .main-category-item .category-radio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-form-wrapper .main-categories-form .main-category-item .category-radio:checked ~ .custom-category-radio {
+  background-color: #112233;
+}
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-form-wrapper .main-categories-form .main-category-item .category-radio:checked ~ .custom-category-radio:after {
+  display: block;
+}
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-form-wrapper .main-categories-form .main-category-item .custom-category-radio {
+  position: absolute;
+  top: calc(18px - 0.6rem);
+  left: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: #F0F1F5;
+  transition: 0.1s;
+}
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-form-wrapper .main-categories-form .main-category-item .custom-category-radio:after {
+  position: absolute;
+  display: none;
+  top: 0.3rem;
+  left: 0.3rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  content: "";
+  background: #F0F1F5;
+}
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-form-wrapper .main-tags-form {
+  display: flex;
+  flex-direction: column;
+}
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-form-wrapper .main-tags-form .main-tag-btn {
+  padding: calc(18px - 0.6rem) 0;
+  border: 0;
+  margin: 0;
+  font: 1rem/1.2rem "Montserrat-Regular";
+  text-align: left;
+  word-wrap: break-word;
+  color: #007cc4;
+  background-color: transparent;
+  cursor: pointer;
+}
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-form-wrapper .main-tags-form .main-tag-btn:hover {
+  text-decoration: underline;
+}
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-btn-wrapper {
+  align-self: center;
+}
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-btn-wrapper .ghost-btn {
+  height: 36px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 2px;
+  margin: 0;
+  font: 1rem/36px "Montserrat-Bold";
+  background-color: transparent;
+  transition: 0.1s;
+  cursor: pointer;
+}
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-btn-wrapper .main-tag-settings-btn {
+  color: #5c658a;
+}
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-btn-wrapper .main-tag-settings-btn:hover {
+  background-color: #d1d4e1;
 }
 .main-main .main-wrapper-2 .main-wrapper-2-2 {
-  flex: 5 5 0;
+  flex: 1 1 auto;
   display: grid;
   grid-gap: 24px;
   grid-template: auto/repeat(3, 1fr);
