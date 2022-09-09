@@ -16,10 +16,19 @@ $accent-color-g: #66CC99;
 $accent-color-b: #44BBFF;
 
 $base-size: 24px;
-// $base-border: 2px;
+$base-border-width: 2px;
 $base-border-radius: 2px;
 $base-transition: .1s;
 $base-font-size: 14px;
+
+
+@mixin ellipsis($number-lines) {
+	display: -webkit-box;
+	-webkit-line-clamp: $number-lines;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 
 
 .display-none {
@@ -39,50 +48,130 @@ $base-font-size: 14px;
 }
 
 
-.pub-card-wrapper {
+.ghost-btn {
+	height: ($base-size*1.5);
+	padding: 0 $base-size;
+	border: 0;
+	border-radius: $base-border-radius;
+	margin: 0;
+
+	font: 1rem/calc($base-size*1.5) 'Montserrat-Bold';
+	background-color: transparent;
+	transition: $base-transition;
+	cursor: pointer;
+}
+
+
+.ico-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: ($base-size*1.5);
+	height: ($base-size*1.5);
+	padding: 0;
+	border: 0;
+	border-radius: $base-border-radius;
+	margin: 0;
+	font-size: ($base-size*.75);
+	
+	cursor: pointer;
+	transition: $base-transition;
+}
+
+
+.pub-card {
 	position: relative;
 	display: flex;
 	gap: ($base-size*.5);
 	
 	padding: ($base-size*.5);
-	border: 2px solid gray;
+	border-radius: $base-border-radius;
 
-	.pub-card-type-wrapper {
+	text-decoration: none;
+	transition: $base-transition;
+
+	&[class*="pub-card-idea"] {
+		border: $base-border-width solid rgba($accent-color-r, .25);
+
+		&:hover {
+			border-color: rgba($accent-color-r, .75);
+
+			& .pub-card-type-idea {
+				color: rgba($accent-color-r, 1);
+			}
+		}
+	}
+
+	&[class*="pub-card-problem"] {
+		border: $base-border-width solid rgba(darken($accent-color-b, 25%), .25);
+
+		&:hover {
+			border-color: rgba(darken($accent-color-b, 15%), .75);
+
+			& .pub-card-type-problem {
+				color: rgba(darken($accent-color-b, 15%), 1);
+			}
+		}
+	}
+
+	.pub-card-type {
 		position: absolute;
-		top: -($base-size*.25 + 1px);  // 1px - это с учетом border: 2px
+		top: -($base-size*.25 + $base-border-width*.5);
 		left: ($base-size*.25);
 
-		width: 150px;
-		height: ($base-size*.5);
 		padding: 0 ($base-size*.25);
 
-		background-color: aqua;
+		font: .8rem/calc($base-size*.5) 'Montserrat-Bold';
+		background-color: $light-color;
+		transition: $base-transition;
+
+		&[class*="pub-card-type-idea"] {
+			color: rgba($accent-color-r, .5);
+		}
+
+		&[class*="pub-card-type-problem"] {
+			color: rgba(darken($accent-color-b, 25%), .5);
+		}
 	}
 
 	.pub-card-img-wrapper {
-		flex: 1 1 auto;
+		flex: 1 1 50%;
 
-		height: 150px;
+		/*****************************************************************************
+		**																																					**
+		**	Сделать чтоб все фото публикаций сохраняли соотношение сторон 16 к 9 !	**
+		**																																					**
+		*****************************************************************************/
+		.pub-card-img {
+			// width: 100%;
+			// height: 56.25%;  // 100% * 16 / 9
+			border-radius: $base-border-radius;
 
-		background-color: aqua;
+			object-fit: cover;
+		}
 	}
 
 	.pub-card-not-img-wrapper {
 		display: flex;
 		flex-direction: column;
 		row-gap: ($base-size*.5);
-		flex: 1 1 0;
+		flex: 1 1 50%;
 
-		.pub-card-title-wrapper {
-			height: 34px;
+		.pub-card-title,
+		.pub-card-description {
+			max-height: 2.4rem;
 
-			background-color: aqua;
+			@include ellipsis(2);  // троеточие
+			color: $dark-color;
+		}				
+
+		.pub-card-title {
+			font: 1rem/1.2rem 'Montserrat-Bold';
 		}
 
-		.pub-card-description-wrapper {
-			height: 34px;
-
-			background-color: aqua;
+		.pub-card-description {
+			font: 1rem/1.2rem 'Montserrat-Regular';
 		}
 
 		.pub-card-statistics-wrapper {
@@ -90,11 +179,29 @@ $base-font-size: 14px;
 			gap: ($base-size*.5);
 			flex-wrap: wrap;
 
-			.pub-card-statistic-item-wrapper {
-				width: 18px;
-				height: 18px;
+			.pub-card-statistic-donations-wrapper {
+				padding: 0 ($base-size*.25);
+				border-radius: $base-border-radius;
 
-				background-color: aqua;
+				font: 1rem/calc($base-size) 'Montserrat-Regular';
+				color: $dark-color;
+				background-color: lighten($accent-color-g, 25%);
+			}
+
+			.pub-card-statistic-item-wrapper {
+				display: flex;
+				column-gap: ($base-size*.2);
+				align-items: center;
+
+				.pub-card-statistic-item-ico {
+					font-size: 1rem;
+					color: darken($light-color, 25%);
+				}
+
+				.pub-card-statistic-item-value {
+					font: 1rem/calc($base-size) 'Montserrat-Regular';
+					color: $dark-color;
+				}
 			}
 		}
 
@@ -103,29 +210,26 @@ $base-font-size: 14px;
 			gap: ($base-size*.5);
 			flex-wrap: wrap;
 
-			.pub-card-pubdate-wrapper {
-				width: 100px;
-				height: 18px;
-
-				background-color: aqua;
+			.pub-card-pubdate {
+				font: 1rem/calc($base-size) 'Montserrat-Regular';
+				color: darken($light-color, 50%);
 			}
 
 			.pub-card-author-wrapper {
 				display: flex;
-				column-gap: ($base-size*.25);
+				column-gap: ($base-size*.2);
 
-				.pub-card-author-img-wrapper {
-					width: 18px;
-					height: 18px;
+				.pub-card-author-img {
+					width: $base-size;
+					height: $base-size;
+					border-radius: 50%;
 
-					background-color: aqua;
+					object-fit: cover;
 				}
 
-				.pub-card-author-name-wrapper {
-					width: 100px;
-					height: 18px;
-
-					background-color: aqua;
+				.pub-card-author-name {
+					font: 1rem/calc($base-size) 'Montserrat-Regular';
+					color: $dark-color;
 				}
 			}
 		}
@@ -663,11 +767,9 @@ main {
 		display: flex;
 		column-gap: $base-size;
 
-		.main-selected-tags-label-wrapper {
-			width: 150px;
-			height: ($base-size*1.5);
-
-			background-color: aqua;
+		.main-selected-tags-label {
+			font: 1rem/calc($base-size*1.5) 'Montserrat-Regular';
+			color: darken($light-color, 25%);
 		}
 
 		.main-selected-tags-wrapper {
@@ -676,10 +778,31 @@ main {
 			flex-wrap: wrap;
 
 			.main-selected-tag-item-wrapper {
-				width: 200px;
-				height: ($base-size*1.5);
+				display: flex;
+				column-gap: ($base-size*.5);
 
-				background-color: aqua;
+				padding-left: ($base-size*.5);
+				border-radius: $base-border-radius;
+
+				background-color: darken($light-color, 5%);
+
+				.main-selected-tag {
+					font: 1rem/calc($base-size*1.5) 'Montserrat-Regular';
+					color: darken($accent-color-b, 25%);
+				}
+
+				.main-selected-tag-cancel-btn {
+					color: $light-color;
+					background-color: darken($light-color, 35%);
+
+					&:hover {
+						background-color: darken($light-color, 50%);
+					}
+				}
+			}
+
+			.main-selected-tag-cancel-all-btn:hover {
+				background-color: darken($light-color, 5%);
 			}
 		}
 	}
@@ -705,121 +828,103 @@ main {
 
 				background-color: darken($light-color, 5%);
 
-				.main-selection-block-title-wrapper {
-
-					.main-selection-block-title {
-						font: 1rem/1rem 'Montserrat-Bold';
-						color: $dark-color;
-						text-align: center;
-					}
+				.main-selection-block-title {
+					font: 1rem/1rem 'Montserrat-Bold';
+					color: $dark-color;
+					text-align: center;
 				}
 
-				.main-selection-form-wrapper {
+				.main-categories-form {
 
-					.main-categories-form {
+					.main-category-item {
+						position: relative;
+						display: block;
 
-						.main-category-item {
-							position: relative;
-							display: block;
+						padding-left: calc(1.2rem + $base-size*.25);
 
-							padding-left: calc(1.2rem + $base-size*.25);
+						font: 1rem/calc($base-size*1.5) 'Montserrat-Regular';
+						cursor: pointer;
+						-webkit-user-select: none;
+						-moz-user-select: none;
+						-ms-user-select: none;
+						user-select: none;
 
-							font: 1rem/calc($base-size*1.5) 'Montserrat-Regular';
+						&:hover .category-radio ~ .custom-category-radio {
+							background-color: darken($light-color, 20%);
+						}
+
+						.category-radio {
+							position: absolute;
+
+							opacity: 0;
 							cursor: pointer;
-							-webkit-user-select: none;
-							-moz-user-select: none;
-							-ms-user-select: none;
-							user-select: none;
 
-							&:hover .category-radio ~ .custom-category-radio {
-								background-color: darken($light-color, 20%);
+							&:checked ~ .custom-category-radio {
+								background-color: $dark-color;
 							}
 
-							.category-radio {
-								position: absolute;
-
-								opacity: 0;
-								cursor: pointer;
-
-								&:checked ~ .custom-category-radio {
-									background-color: $dark-color;
-								}
-
-								&:checked ~ .custom-category-radio:after {
-									display: block;
-								}
+							&:checked ~ .custom-category-radio:after {
+								display: block;
 							}
+						}
 
-							.custom-category-radio {
+						.custom-category-radio {
+							position: absolute;
+							top: calc($base-size*.75 - .6rem);
+							left: 0;
+
+							width: 1.2rem;
+							height: 1.2rem;
+							border-radius: 50%;
+							
+							background-color: $light-color;
+							transition: $base-transition;
+
+							&:after {
 								position: absolute;
-								top: calc($base-size*.75 - .6rem);
-								left: 0;
+								display: none;
+								top: .3rem;
+								left: .3rem;
 
-								width: 1.2rem;
-								height: 1.2rem;
+								width: .6rem;
+								height: .6rem;
 								border-radius: 50%;
 								
-								background-color: $light-color;
-								transition: $base-transition;
-
-								&:after {
-									position: absolute;
-									display: none;
-									top: .3rem;
-									left: .3rem;
-
-									width: .6rem;
-									height: .6rem;
-									border-radius: 50%;
-									
-									content: "";
-									background: $light-color;
-								}
+								content: "";
+								background: $light-color;
 							}
 						}
 					}
-
-					.main-tags-form {
-						display: flex;
-						flex-direction: column;
-
-						.main-tag-btn {
-							padding: calc($base-size*.75 - .6rem) 0;
-							border: 0;
-							margin: 0;
-
-							font: 1rem/1.2rem 'Montserrat-Regular';
-							text-align: left;
-							word-wrap: break-word;
-							color: darken($accent-color-b, 25%);
-							background-color: transparent;
-							cursor: pointer;
-
-							&:hover {
-								text-decoration: underline;
-							}
-						}
-					}					
 				}
+
+				.main-tags-form {
+					display: flex;
+					flex-direction: column;
+
+					.main-tag-btn {
+						padding: calc($base-size*.75 - .6rem) 0;
+						border: 0;
+						margin: 0;
+
+						font: 1rem/1.2rem 'Montserrat-Regular';
+						text-align: left;
+						word-wrap: break-word;
+						color: darken($accent-color-b, 25%);
+						background-color: transparent;
+						cursor: pointer;
+
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}					
 
 				.main-selection-btn-wrapper {
 					align-self: center;
 
-					.ghost-btn {
-						height: ($base-size*1.5);
-						padding: 0 $base-size;
-						border: 0;
-						border-radius: $base-border-radius;
-						margin: 0;
-
-						font: 1rem/calc($base-size*1.5) 'Montserrat-Bold';
-						background-color: transparent;
-						transition: $base-transition;
-						cursor: pointer;
-					}
-
 					.main-tag-settings-btn {
 						color: darken($light-color, 50%);
+						white-space: nowrap;
 
 						&:hover {
 							background-color: darken($light-color, 10%);
@@ -833,11 +938,11 @@ main {
 			flex: 1 1 auto;
 			display: grid;
 			grid-gap: $base-size;
-			grid-template: auto / repeat(3, 1fr);
+			grid-template: auto / repeat(4, 1fr);
 
 			.main-publication-item-wrapper {
 
-				.pub-card-wrapper {
+				.pub-card {
 					flex-direction: column;
 				}
 			}
@@ -967,7 +1072,7 @@ main {
 
 				.profile-content-item-wrapper {
 
-					.pub-card-wrapper {
+					.pub-card {
 						flex-direction: column;
 					}
 
@@ -1431,7 +1536,7 @@ main {
 
 					.publication-idea-item-wrapper {
 
-						.pub-card-wrapper {
+						.pub-card {
 							flex-direction: column;
 						}
 					}
@@ -1599,7 +1704,7 @@ main {
 		
 			.publication-recommendation-item-wrapper {
 
-				.pub-card-wrapper {
+				.pub-card {
 					flex-direction: column;
 				}
 			}

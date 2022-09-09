@@ -6,6 +6,7 @@
 	<title>Main</title>
 	<link rel="stylesheet" href="css/nulling.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://kit.fontawesome.com/3aac8b0827.js" crossorigin="anonymous"></script>
 </head>
 <body>	
 	<header>
@@ -95,57 +96,55 @@
 
 	<main class="main-main">
 		<div class="main-wrapper-1">
-			<div class="main-selected-tags-label-wrapper"></div>
+			<span class="main-selected-tags-label">Выбранные теги:</span>
 
 			<div class="main-selected-tags-wrapper">
-				<div class="main-selected-tag-item-wrapper"></div>
-				<div class="main-selected-tag-item-wrapper"></div>
-				<div class="main-selected-tag-item-wrapper"></div>
-				<div class="main-selected-tag-item-wrapper"></div>
+				<div class="main-selected-tag-item-wrapper">
+					<span class="main-selected-tag">#название_тега</span>
+					<button class="ico-btn main-selected-tag-cancel-btn"><i class="fa-solid fa-xmark"></i></button>
+				</div>
+				<div class="main-selected-tag-item-wrapper">
+					<span class="main-selected-tag">#название_тега</span>
+					<button class="ico-btn main-selected-tag-cancel-btn"><i class="fa-solid fa-xmark"></i></button>
+				</div>
+				
+				<button class="ghost-btn main-selected-tag-cancel-all-btn">Сбросить все</button>
 			</div>
 		</div>
 
 		<div class="main-wrapper-2">
 			<div class="main-wrapper-2-1">
 				<div class="main-selection-block-wrapper">
-					<div class="main-selection-block-title-wrapper">
-						<p class="main-selection-block-title">Категории</p>
-					</div>
+					<p class="main-selection-block-title">Категории</p>
 
-					<div class="main-selection-form-wrapper">
-						<form class="main-categories-form" method="get">
-							<label class="main-category-item">Все
-								<input class="category-radio" type="radio" value="Все" checked="checked" name="category-radio">
-								<span class="custom-category-radio"></span>
-							</label>
-							<label class="main-category-item">Идеи
-								<input class="category-radio" type="radio" value="Идеи" name="category-radio">
-								<span class="custom-category-radio"></span>
-							</label>
-							<label class="main-category-item">Проблемы
-								<input class="category-radio" type="radio" value="Проблемы" name="category-radio">
-								<span class="custom-category-radio"></span>
-							</label>
-						</form>
-					</div>
+					<form class="main-categories-form" method="get">
+						<label class="main-category-item">Все
+							<input class="category-radio" type="radio" value="Все" checked="checked" name="category-radio">
+							<span class="custom-category-radio"></span>
+						</label>
+						<label class="main-category-item">Идеи
+							<input class="category-radio" type="radio" value="Идеи" name="category-radio">
+							<span class="custom-category-radio"></span>
+						</label>
+						<label class="main-category-item">Проблемы
+							<input class="category-radio" type="radio" value="Проблемы" name="category-radio">
+							<span class="custom-category-radio"></span>
+						</label>
+					</form>
 				</div>
 
 				<div class="main-selection-block-wrapper">
-					<div class="main-selection-block-title-wrapper">
-						<p class="main-selection-block-title">Трендовые теги</p>
-					</div>
+					<p class="main-selection-block-title">Трендовые теги</p>
 
-					<div class="main-selection-form-wrapper">
-						<form class="main-tags-form" method="get">
-							<button class="main-tag-btn">#название_тега</button>
-							<button class="main-tag-btn">#название_тега</button>
-							<button class="main-tag-btn">#название_тега</button>
-							<button class="main-tag-btn">#название_тега</button>
-							<button class="main-tag-btn">#название_тега</button>
-							<button class="main-tag-btn">#название_тега</button>
-							<button class="main-tag-btn">#название_тега</button>
-						</form>
-					</div>
+					<form class="main-tags-form" method="get">
+						<button class="main-tag-btn">#название_тега</button>
+						<button class="main-tag-btn">#название_тега</button>
+						<button class="main-tag-btn">#название_тега</button>
+						<button class="main-tag-btn">#название_тега</button>
+						<button class="main-tag-btn">#название_тега</button>
+						<button class="main-tag-btn">#название_тега</button>
+						<button class="main-tag-btn">#название_тега</button>
+					</form>
 
 					<div class="main-selection-btn-wrapper">
 						<button class="ghost-btn main-tag-settings-btn">Настройки тегов</button>
@@ -155,439 +154,550 @@
 
 			<div class="main-wrapper-2-2">
 				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
+					<a href="#" class="pub-card pub-card-idea">
+						<span class="pub-card-type pub-card-type-idea">Идея</span>
 
-						<div class="pub-card-img-wrapper"></div>
+						<div class="pub-card-img-wrapper">
+							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
+						</div>
 
 						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
+							<p class="pub-card-title">Название идеи</p>
 
-							<div class="pub-card-description-wrapper"></div>
+							<p class="pub-card-description">Описание идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи</p>
 
 							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
+								<span class="pub-card-statistic-donations-wrapper">$ 151k</span>
+
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-user-group pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">12</span>
+								</div>
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-eye pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">458</span>
+								</div>
 							</div>
 
 							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
+								<span class="pub-card-pubdate">5 дней назад</span>
 								
 								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
+									<img class="pub-card-author-img" src="img/user.jpg" alt="Фото автора">
 
-									<div class="pub-card-author-name-wrapper"></div>
+									<span class="pub-card-author-name">Стас Монблан</span>
 								</div>
+
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
+					<a href="#" class="pub-card pub-card-problem">
+						<span class="pub-card-type pub-card-type-problem">Проблема</span>
 
-						<div class="pub-card-img-wrapper"></div>
+						<div class="pub-card-img-wrapper">
+							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
+						</div>
 
 						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
+							<p class="pub-card-title">Название проблемы</p>
 
-							<div class="pub-card-description-wrapper"></div>
+							<p class="pub-card-description">Описание проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы</p>
 
 							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
+								<span class="pub-card-statistic-donations-wrapper">$ 151k</span>
+
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-user-group pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">12</span>
+								</div>
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-eye pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">458</span>
+								</div>
 							</div>
 
 							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
+								<span class="pub-card-pubdate">5 дней назад</span>
 								
 								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
+									<img class="pub-card-author-img" src="img/user.jpg" alt="Фото автора">
 
-									<div class="pub-card-author-name-wrapper"></div>
+									<span class="pub-card-author-name">Стас Монблан</span>
 								</div>
+
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
+					<a href="#" class="pub-card pub-card-idea">
+						<span class="pub-card-type pub-card-type-idea">Идея</span>
 
-						<div class="pub-card-img-wrapper"></div>
+						<div class="pub-card-img-wrapper">
+							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
+						</div>
 
 						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
+							<p class="pub-card-title">Название идеи</p>
 
-							<div class="pub-card-description-wrapper"></div>
+							<p class="pub-card-description">Описание идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи</p>
 
 							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
+								<span class="pub-card-statistic-donations-wrapper">$ 151k</span>
+
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-user-group pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">12</span>
+								</div>
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-eye pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">458</span>
+								</div>
 							</div>
 
 							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
+								<span class="pub-card-pubdate">5 дней назад</span>
 								
 								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
+									<img class="pub-card-author-img" src="img/user.jpg" alt="Фото автора">
 
-									<div class="pub-card-author-name-wrapper"></div>
+									<span class="pub-card-author-name">Стас Монблан</span>
 								</div>
+
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
+					<a href="#" class="pub-card pub-card-problem">
+						<span class="pub-card-type pub-card-type-problem">Проблема</span>
 
-						<div class="pub-card-img-wrapper"></div>
+						<div class="pub-card-img-wrapper">
+							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
+						</div>
 
 						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
+							<p class="pub-card-title">Название проблемы</p>
 
-							<div class="pub-card-description-wrapper"></div>
+							<p class="pub-card-description">Описание проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы</p>
 
 							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
+								<span class="pub-card-statistic-donations-wrapper">$ 151k</span>
+
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-user-group pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">12</span>
+								</div>
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-eye pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">458</span>
+								</div>
 							</div>
 
 							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
+								<span class="pub-card-pubdate">5 дней назад</span>
 								
 								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
+									<img class="pub-card-author-img" src="img/user.jpg" alt="Фото автора">
 
-									<div class="pub-card-author-name-wrapper"></div>
+									<span class="pub-card-author-name">Стас Монблан</span>
 								</div>
+
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
+					<a href="#" class="pub-card pub-card-idea">
+						<span class="pub-card-type pub-card-type-idea">Идея</span>
 
-						<div class="pub-card-img-wrapper"></div>
+						<div class="pub-card-img-wrapper">
+							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
+						</div>
 
 						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
+							<p class="pub-card-title">Название идеи</p>
 
-							<div class="pub-card-description-wrapper"></div>
+							<p class="pub-card-description">Описание идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи</p>
 
 							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
+								<span class="pub-card-statistic-donations-wrapper">$ 151k</span>
+
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-user-group pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">12</span>
+								</div>
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-eye pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">458</span>
+								</div>
 							</div>
 
 							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
+								<span class="pub-card-pubdate">5 дней назад</span>
 								
 								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
+									<img class="pub-card-author-img" src="img/user.jpg" alt="Фото автора">
 
-									<div class="pub-card-author-name-wrapper"></div>
+									<span class="pub-card-author-name">Стас Монблан</span>
 								</div>
+
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
+					<a href="#" class="pub-card pub-card-problem">
+						<span class="pub-card-type pub-card-type-problem">Проблема</span>
 
-						<div class="pub-card-img-wrapper"></div>
+						<div class="pub-card-img-wrapper">
+							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
+						</div>
 
 						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
+							<p class="pub-card-title">Название проблемы</p>
 
-							<div class="pub-card-description-wrapper"></div>
+							<p class="pub-card-description">Описание проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы</p>
 
 							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
+								<span class="pub-card-statistic-donations-wrapper">$ 151k</span>
+
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-user-group pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">12</span>
+								</div>
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-eye pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">458</span>
+								</div>
 							</div>
 
 							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
+								<span class="pub-card-pubdate">5 дней назад</span>
 								
 								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
+									<img class="pub-card-author-img" src="img/user.jpg" alt="Фото автора">
 
-									<div class="pub-card-author-name-wrapper"></div>
+									<span class="pub-card-author-name">Стас Монблан</span>
 								</div>
+
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
+					<a href="#" class="pub-card pub-card-idea">
+						<span class="pub-card-type pub-card-type-idea">Идея</span>
 
-						<div class="pub-card-img-wrapper"></div>
+						<div class="pub-card-img-wrapper">
+							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
+						</div>
 
 						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
+							<p class="pub-card-title">Название идеи</p>
 
-							<div class="pub-card-description-wrapper"></div>
+							<p class="pub-card-description">Описание идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи</p>
 
 							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
+								<span class="pub-card-statistic-donations-wrapper">$ 151k</span>
+
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-user-group pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">12</span>
+								</div>
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-eye pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">458</span>
+								</div>
 							</div>
 
 							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
+								<span class="pub-card-pubdate">5 дней назад</span>
 								
 								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
+									<img class="pub-card-author-img" src="img/user.jpg" alt="Фото автора">
 
-									<div class="pub-card-author-name-wrapper"></div>
+									<span class="pub-card-author-name">Стас Монблан</span>
 								</div>
+
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
+					<a href="#" class="pub-card pub-card-problem">
+						<span class="pub-card-type pub-card-type-problem">Проблема</span>
 
-						<div class="pub-card-img-wrapper"></div>
+						<div class="pub-card-img-wrapper">
+							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
+						</div>
 
 						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
+							<p class="pub-card-title">Название проблемы</p>
 
-							<div class="pub-card-description-wrapper"></div>
+							<p class="pub-card-description">Описание проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы</p>
 
 							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
+								<span class="pub-card-statistic-donations-wrapper">$ 151k</span>
+
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-user-group pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">12</span>
+								</div>
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-eye pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">458</span>
+								</div>
 							</div>
 
 							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
+								<span class="pub-card-pubdate">5 дней назад</span>
 								
 								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
+									<img class="pub-card-author-img" src="img/user.jpg" alt="Фото автора">
 
-									<div class="pub-card-author-name-wrapper"></div>
+									<span class="pub-card-author-name">Стас Монблан</span>
 								</div>
+
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
+					<a href="#" class="pub-card pub-card-idea">
+						<span class="pub-card-type pub-card-type-idea">Идея</span>
 
-						<div class="pub-card-img-wrapper"></div>
+						<div class="pub-card-img-wrapper">
+							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
+						</div>
 
 						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
+							<p class="pub-card-title">Название идеи</p>
 
-							<div class="pub-card-description-wrapper"></div>
+							<p class="pub-card-description">Описание идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи</p>
 
 							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
+								<span class="pub-card-statistic-donations-wrapper">$ 151k</span>
+
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-user-group pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">12</span>
+								</div>
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-eye pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">458</span>
+								</div>
 							</div>
 
 							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
+								<span class="pub-card-pubdate">5 дней назад</span>
 								
 								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
+									<img class="pub-card-author-img" src="img/user.jpg" alt="Фото автора">
 
-									<div class="pub-card-author-name-wrapper"></div>
+									<span class="pub-card-author-name">Стас Монблан</span>
 								</div>
+
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
+					<a href="#" class="pub-card pub-card-problem">
+						<span class="pub-card-type pub-card-type-problem">Проблема</span>
 
-						<div class="pub-card-img-wrapper"></div>
+						<div class="pub-card-img-wrapper">
+							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
+						</div>
 
 						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
+							<p class="pub-card-title">Название проблемы</p>
 
-							<div class="pub-card-description-wrapper"></div>
+							<p class="pub-card-description">Описание проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы</p>
 
 							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
+								<span class="pub-card-statistic-donations-wrapper">$ 151k</span>
+
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-user-group pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">12</span>
+								</div>
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-eye pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">458</span>
+								</div>
 							</div>
 
 							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
+								<span class="pub-card-pubdate">5 дней назад</span>
 								
 								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
+									<img class="pub-card-author-img" src="img/user.jpg" alt="Фото автора">
 
-									<div class="pub-card-author-name-wrapper"></div>
+									<span class="pub-card-author-name">Стас Монблан</span>
 								</div>
+
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
+					<a href="#" class="pub-card pub-card-idea">
+						<span class="pub-card-type pub-card-type-idea">Идея</span>
 
-						<div class="pub-card-img-wrapper"></div>
+						<div class="pub-card-img-wrapper">
+							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
+						</div>
 
 						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
+							<p class="pub-card-title">Название идеи</p>
 
-							<div class="pub-card-description-wrapper"></div>
+							<p class="pub-card-description">Описание идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи</p>
 
 							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
+								<span class="pub-card-statistic-donations-wrapper">$ 151k</span>
+
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-user-group pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">12</span>
+								</div>
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-eye pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">458</span>
+								</div>
 							</div>
 
 							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
+								<span class="pub-card-pubdate">5 дней назад</span>
 								
 								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
+									<img class="pub-card-author-img" src="img/user.jpg" alt="Фото автора">
 
-									<div class="pub-card-author-name-wrapper"></div>
+									<span class="pub-card-author-name">Стас Монблан</span>
 								</div>
+
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
+					<a href="#" class="pub-card pub-card-problem">
+						<span class="pub-card-type pub-card-type-problem">Проблема</span>
 
-						<div class="pub-card-img-wrapper"></div>
+						<div class="pub-card-img-wrapper">
+							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
+						</div>
 
 						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
+							<p class="pub-card-title">Название проблемы</p>
 
-							<div class="pub-card-description-wrapper"></div>
+							<p class="pub-card-description">Описание проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы</p>
 
 							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
+								<span class="pub-card-statistic-donations-wrapper">$ 151k</span>
+
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-user-group pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">12</span>
+								</div>
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-eye pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">458</span>
+								</div>
 							</div>
 
 							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
+								<span class="pub-card-pubdate">5 дней назад</span>
 								
 								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
+									<img class="pub-card-author-img" src="img/user.jpg" alt="Фото автора">
 
-									<div class="pub-card-author-name-wrapper"></div>
+									<span class="pub-card-author-name">Стас Монблан</span>
 								</div>
+
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
+					<a href="#" class="pub-card pub-card-idea">
+						<span class="pub-card-type pub-card-type-idea">Идея</span>
 
-						<div class="pub-card-img-wrapper"></div>
+						<div class="pub-card-img-wrapper">
+							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
+						</div>
 
 						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
+							<p class="pub-card-title">Название идеи</p>
 
-							<div class="pub-card-description-wrapper"></div>
+							<p class="pub-card-description">Описание идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи идеи</p>
 
 							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
+								<span class="pub-card-statistic-donations-wrapper">$ 151k</span>
+
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-user-group pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">12</span>
+								</div>
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-eye pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">458</span>
+								</div>
 							</div>
 
 							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
+								<span class="pub-card-pubdate">5 дней назад</span>
 								
 								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
+									<img class="pub-card-author-img" src="img/user.jpg" alt="Фото автора">
 
-									<div class="pub-card-author-name-wrapper"></div>
+									<span class="pub-card-author-name">Стас Монблан</span>
 								</div>
+
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
+					<a href="#" class="pub-card pub-card-problem">
+						<span class="pub-card-type pub-card-type-problem">Проблема</span>
 
-						<div class="pub-card-img-wrapper"></div>
+						<div class="pub-card-img-wrapper">
+							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
+						</div>
 
 						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
+							<p class="pub-card-title">Название проблемы</p>
 
-							<div class="pub-card-description-wrapper"></div>
+							<p class="pub-card-description">Описание проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы проблемы</p>
 
 							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
+								<span class="pub-card-statistic-donations-wrapper">$ 151k</span>
+
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-user-group pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">12</span>
+								</div>
+								<div class="pub-card-statistic-item-wrapper">
+									<i class="fa-solid fa-eye pub-card-statistic-item-ico"></i>
+									<span class="pub-card-statistic-item-value">458</span>
+								</div>
 							</div>
 
 							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
+								<span class="pub-card-pubdate">5 дней назад</span>
 								
 								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
+									<img class="pub-card-author-img" src="img/user.jpg" alt="Фото автора">
 
-									<div class="pub-card-author-name-wrapper"></div>
+									<span class="pub-card-author-name">Стас Монблан</span>
 								</div>
+
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="main-publication-item-wrapper">
-					<div class="pub-card-wrapper">
-						<div class="pub-card-type-wrapper"></div>
-
-						<div class="pub-card-img-wrapper"></div>
-
-						<div class="pub-card-not-img-wrapper">
-							<div class="pub-card-title-wrapper"></div>
-
-							<div class="pub-card-description-wrapper"></div>
-
-							<div class="pub-card-statistics-wrapper">
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-								<div class="pub-card-statistic-item-wrapper"></div>
-							</div>
-
-							<div class="pub-card-pubdate-author-wrapper">
-								<div class="pub-card-pubdate-wrapper"></div>
-								
-								<div class="pub-card-author-wrapper">
-									<div class="pub-card-author-img-wrapper"></div>
-
-									<div class="pub-card-author-name-wrapper"></div>
-								</div>
-							</div>
-						</div>
-					</div>
+					</a>
 				</div>
 			</div>
 		</div>
