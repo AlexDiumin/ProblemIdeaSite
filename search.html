@@ -6,6 +6,7 @@
 	<title>Search</title>
 	<link rel="stylesheet" href="css/nulling.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://kit.fontawesome.com/3aac8b0827.js" crossorigin="anonymous"></script>
 </head>
 <body>	
 	<header>
@@ -95,18 +96,21 @@
 
 	<main class="search-main">
 		<div class="search-results-block-wrapper">
-			<div class="search-request-wrapper"></div>
+			<p class="search-request-wrapper">Результаты по запросу <span class="search-request">Постройка дома</span></p>
 
-			<div class="search-tabs-wrapper"></div>
+			<div class="search-tabs-wrapper">
+				<button class="search-tab-item selected-tab">Все</button>
+				<button class="search-tab-item">Проблемы</button>
+				<button class="search-tab-item">Идеи</button>
+				<button class="search-tab-item">Люди</button>
+			</div>
 
 			<div class="search-results-wrapper">
 				<div class="search-result-item-wrapper">
 					<a href="#" class="pub-card pub-card-idea">
 						<span class="pub-card-type pub-card-type-idea">Идея</span>
 
-						<div class="pub-card-img-wrapper">
-							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
-						</div>
+						<div class="pub-card-img-wrapper pub-card-img-horizontal"></div>
 
 						<div class="pub-card-not-img-wrapper">
 							<p class="pub-card-title">Название идеи</p>
@@ -143,9 +147,7 @@
 					<a href="#" class="pub-card pub-card-problem">
 						<span class="pub-card-type pub-card-type-problem">Проблема</span>
 
-						<div class="pub-card-img-wrapper">
-							<img class="pub-card-img" src="img/user.jpg" alt="Фото публикации">
-						</div>
+						<div class="pub-card-img-wrapper pub-card-img-horizontal"></div>
 
 						<div class="pub-card-not-img-wrapper">
 							<p class="pub-card-title">Название проблемы</p>
@@ -181,7 +183,7 @@
 
 				<div class="search-result-item-wrapper">
 					<div class="user-card-wrapper">
-						<div class="user-card-img-wrapper"></div>
+						<div class="user-card-img-wrapper user-card-img-horizontal"></div>
 
 						<div class="user-card-not-img-wrapper">
 							<div class="user-card-name-wrapper"></div>

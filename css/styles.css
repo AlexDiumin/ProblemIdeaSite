@@ -1,7 +1,10 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Montserrat-Regular";
   src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("../fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Montserrat-Bold";
@@ -56,22 +59,22 @@
   text-decoration: none;
   transition: 0.1s;
 }
-.pub-card[class*=pub-card-idea] {
+.pub-card[class~=pub-card-idea] {
   border: 2px solid rgba(252, 87, 94, 0.25);
 }
-.pub-card[class*=pub-card-idea]:hover {
+.pub-card[class~=pub-card-idea]:hover {
   border-color: rgba(252, 87, 94, 0.75);
 }
-.pub-card[class*=pub-card-idea]:hover .pub-card-type-idea {
+.pub-card[class~=pub-card-idea]:hover .pub-card-type-idea {
   color: #fc575e;
 }
-.pub-card[class*=pub-card-problem] {
+.pub-card[class~=pub-card-problem] {
   border: 2px solid rgba(0, 124, 196, 0.25);
 }
-.pub-card[class*=pub-card-problem]:hover {
+.pub-card[class~=pub-card-problem]:hover {
   border-color: rgba(0, 157, 247, 0.75);
 }
-.pub-card[class*=pub-card-problem]:hover .pub-card-type-problem {
+.pub-card[class~=pub-card-problem]:hover .pub-card-type-problem {
   color: #009df7;
 }
 .pub-card .pub-card-type {
@@ -83,29 +86,32 @@
   background-color: #F0F1F5;
   transition: 0.1s;
 }
-.pub-card .pub-card-type[class*=pub-card-type-idea] {
+.pub-card .pub-card-type[class~=pub-card-type-idea] {
   color: rgba(252, 87, 94, 0.5);
 }
-.pub-card .pub-card-type[class*=pub-card-type-problem] {
+.pub-card .pub-card-type[class~=pub-card-type-problem] {
   color: rgba(0, 124, 196, 0.5);
 }
 .pub-card .pub-card-img-wrapper {
-  flex: 1 1 50%;
-  /*****************************************************************************
-  **																																					**
-  **	Сделать чтоб все фото публикаций сохраняли соотношение сторон 16 к 9 !	**
-  **																																					**
-  *****************************************************************************/
-}
-.pub-card .pub-card-img-wrapper .pub-card-img {
+  flex: 1 1 calc(50% - 6px);
   border-radius: 2px;
-  object-fit: cover;
+  background-image: url("../img/user.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.pub-card .pub-card-img-wrapper[class~=pub-card-img-vertical] {
+  width: 100%;
+  padding-top: 56.25%;
+}
+.pub-card .pub-card-img-wrapper[class~=pub-card-img-horizontal] {
+  width: calc(50% - 6px);
+  padding-top: calc((50% - 6px) * 0.5625);
 }
 .pub-card .pub-card-not-img-wrapper {
   display: flex;
   flex-direction: column;
   row-gap: 12px;
-  flex: 1 1 50%;
+  flex: 1 1 calc(50% - 6px);
 }
 .pub-card .pub-card-not-img-wrapper .pub-card-title,
 .pub-card .pub-card-not-img-wrapper .pub-card-description {
@@ -177,15 +183,25 @@
   gap: 12px;
 }
 .user-card-wrapper .user-card-img-wrapper {
-  width: 150px;
-  height: 150px;
-  background-color: aqua;
+  flex: 1 1 calc(50% - 6px);
+  border-radius: 50%;
+  background-image: url("../img/user.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.user-card-wrapper .user-card-img-wrapper[class~=user-card-img-vertical] {
+  width: 56.25%;
+  padding-top: 56.25%;
+}
+.user-card-wrapper .user-card-img-wrapper[class~=user-card-img-horizontal] {
+  width: calc((50% - 6px) * 0.5625);
+  padding-top: calc((50% - 6px) * 0.5625);
 }
 .user-card-wrapper .user-card-not-img-wrapper {
   display: flex;
   flex-direction: column;
   row-gap: 12px;
-  flex: 1 1 auto;
+  flex: 1 1 calc(50% - 6px);
 }
 .user-card-wrapper .user-card-not-img-wrapper .user-card-name-wrapper {
   width: 200px;
@@ -858,13 +874,37 @@ main {
   row-gap: 24px;
 }
 .search-main .search-results-block-wrapper .search-request-wrapper {
-  width: 500px;
-  height: 24px;
-  background-color: aqua;
+  font: 1rem/1.2rem "Montserrat-Regular";
+  color: #a4aac2;
+}
+.search-main .search-results-block-wrapper .search-request-wrapper .search-request {
+  font-family: "Montserrat-SemiBold";
 }
 .search-main .search-results-block-wrapper .search-tabs-wrapper {
-  height: 36px;
-  background-color: aqua;
+  display: flex;
+  border-bottom: 2px solid #112233;
+}
+.search-main .search-results-block-wrapper .search-tabs-wrapper .search-tab-item {
+  flex: 1 1 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  font-size: 1rem;
+  line-height: 33px;
+  color: #112233;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.search-main .search-results-block-wrapper .search-tabs-wrapper .search-tab-item[class~=selected-tab] {
+  border-bottom: 3px solid #112233;
+  font-family: "Montserrat-Bold";
+}
+.search-main .search-results-block-wrapper .search-tabs-wrapper .search-tab-item:not([class~=selected-tab]) {
+  border-bottom: 3px solid transparent;
+  font-family: "Montserrat-SemiBold";
+}
+.search-main .search-results-block-wrapper .search-tabs-wrapper .search-tab-item:not([class~=selected-tab]):hover {
+  border-bottom: 3px solid #a4aac2;
 }
 .search-main .search-results-block-wrapper .search-results-wrapper {
   display: flex;

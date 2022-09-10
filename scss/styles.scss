@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: 'Montserrat-SemiBold';
+  src: url('../fonts/Montserrat/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Montserrat-Bold';
   src: url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
 }
@@ -91,7 +96,7 @@ $base-font-size: 14px;
 	text-decoration: none;
 	transition: $base-transition;
 
-	&[class*="pub-card-idea"] {
+	&[class~="pub-card-idea"] {
 		border: $base-border-width solid rgba($accent-color-r, .25);
 
 		&:hover {
@@ -103,7 +108,7 @@ $base-font-size: 14px;
 		}
 	}
 
-	&[class*="pub-card-problem"] {
+	&[class~="pub-card-problem"] {
 		border: $base-border-width solid rgba(darken($accent-color-b, 25%), .25);
 
 		&:hover {
@@ -126,29 +131,32 @@ $base-font-size: 14px;
 		background-color: $light-color;
 		transition: $base-transition;
 
-		&[class*="pub-card-type-idea"] {
+		&[class~="pub-card-type-idea"] {
 			color: rgba($accent-color-r, .5);
 		}
 
-		&[class*="pub-card-type-problem"] {
+		&[class~="pub-card-type-problem"] {
 			color: rgba(darken($accent-color-b, 25%), .5);
 		}
 	}
 
 	.pub-card-img-wrapper {
-		flex: 1 1 50%;
+		flex: 1 1 calc(50% - $base-size*.25);
 
-		/*****************************************************************************
-		**																																					**
-		**	Сделать чтоб все фото публикаций сохраняли соотношение сторон 16 к 9 !	**
-		**																																					**
-		*****************************************************************************/
-		.pub-card-img {
-			// width: 100%;
-			// height: 56.25%;  // 100% * 16 / 9
-			border-radius: $base-border-radius;
+		border-radius: $base-border-radius;
 
-			object-fit: cover;
+		background-image: url('../img/user.jpg');
+		background-size: cover;
+		background-position: center;
+
+		&[class~="pub-card-img-vertical"] {
+			width: 100%;
+			padding-top: 56.25%;
+		}
+
+		&[class~="pub-card-img-horizontal"] {
+			width: calc(50% - $base-size*.25);
+			padding-top: calc((50% - $base-size*.25)*.5625);
 		}
 	}
 
@@ -156,7 +164,7 @@ $base-font-size: 14px;
 		display: flex;
 		flex-direction: column;
 		row-gap: ($base-size*.5);
-		flex: 1 1 50%;
+		flex: 1 1 calc(50% - $base-size*.25);
 
 		.pub-card-title,
 		.pub-card-description {
@@ -242,17 +250,33 @@ $base-font-size: 14px;
 	gap: ($base-size*.5);
 
 	.user-card-img-wrapper {
-		width: 150px;
-		height: 150px;
+		flex: 1 1 calc(50% - $base-size*.25);
 
-		background-color: aqua;
+		border-radius: 50%;
+
+		background-image: url('../img/user.jpg');
+		background-size: cover;
+		background-position: center;
+
+		&[class~="user-card-img-vertical"] {
+			width: 56.25%;
+			padding-top: 56.25%;
+		}
+
+		&[class~="user-card-img-horizontal"] {
+			width: calc((50% - $base-size*.25)*.5625);
+			padding-top: calc((50% - $base-size*.25)*.5625);
+
+			// border-left: 50px solid $light-color;
+			// border-right: 50px solid $light-color;
+		}
 	}
 
 	.user-card-not-img-wrapper {
 		display: flex;
 		flex-direction: column;
 		row-gap: ($base-size*.5);
-		flex: 1 1 auto;
+		flex: 1 1 calc(50% - $base-size*.25);
 
 		.user-card-name-wrapper {
 			width: 200px;
@@ -1189,16 +1213,48 @@ main {
 		row-gap: $base-size;
 
 		.search-request-wrapper {
-			width: 500px;
-			height: 24px;
+			font: 1rem/1.2rem 'Montserrat-Regular';
+			color: darken($light-color, 25%);
 
-			background-color: aqua;
+			.search-request {
+				font-family: 'Montserrat-SemiBold';
+			}
 		}
 
 		.search-tabs-wrapper {
-			height: 36px;
+			display: flex;
 
-			background-color: aqua;
+			border-bottom: $base-border-width solid $dark-color;
+
+			.search-tab-item {
+				flex: 1 1 0;
+
+				border-left: 0;
+				border-top: 0;
+				border-right: 0;
+			
+				font-size: 1rem;
+				line-height: calc($base-size*1.5 - $base-border-width*1.5);
+				color: $dark-color;
+				cursor: pointer;
+				transition: $base-transition;
+
+				&[class~="selected-tab"] {
+					border-bottom: ($base-border-width*1.5) solid $dark-color;
+
+					font-family: 'Montserrat-Bold';
+				}
+
+				&:not([class~="selected-tab"]) {
+					border-bottom: ($base-border-width*1.5) solid transparent;
+
+					font-family: 'Montserrat-SemiBold';
+
+					&:hover {
+						border-bottom: ($base-border-width*1.5) solid darken($light-color, 25%);
+					}
+				}
+			}
 		}
 
 		.search-results-wrapper {
