@@ -53,65 +53,65 @@
 .pub-card {
   position: relative;
   display: flex;
-  gap: 12px;
-  padding: 12px;
-  border-radius: 2px;
+  gap: 6px;
   text-decoration: none;
-  transition: 0.1s;
 }
-.pub-card[class~=pub-card-idea] {
-  border: 2px solid rgba(252, 87, 94, 0.25);
+.pub-card[class~=pub-card-idea]:before {
+  border: 2px solid rgba(252, 87, 94, 0.5);
 }
-.pub-card[class~=pub-card-idea]:hover {
-  border-color: rgba(252, 87, 94, 0.75);
+.pub-card[class~=pub-card-idea]:hover .pub-card-img-wrapper .pub-card-type {
+  background-color: rgba(208, 4, 12, 0.9);
 }
-.pub-card[class~=pub-card-idea]:hover .pub-card-type-idea {
-  color: #fc575e;
+.pub-card[class~=pub-card-idea] .pub-card-img-wrapper .pub-card-type {
+  background-color: rgba(208, 4, 12, 0.7);
 }
-.pub-card[class~=pub-card-problem] {
-  border: 2px solid rgba(0, 124, 196, 0.25);
+.pub-card[class~=pub-card-problem]:before {
+  border: 2px solid rgba(68, 187, 255, 0.5);
 }
-.pub-card[class~=pub-card-problem]:hover {
-  border-color: rgba(0, 157, 247, 0.75);
+.pub-card[class~=pub-card-problem]:hover .pub-card-img-wrapper .pub-card-type {
+  background-color: rgba(0, 124, 196, 0.9);
 }
-.pub-card[class~=pub-card-problem]:hover .pub-card-type-problem {
-  color: #009df7;
+.pub-card[class~=pub-card-problem] .pub-card-img-wrapper .pub-card-type {
+  background-color: rgba(0, 124, 196, 0.7);
 }
-.pub-card .pub-card-type {
+.pub-card:before {
   position: absolute;
-  top: -7px;
-  left: 6px;
-  padding: 0 6px;
-  font: 0.8rem/12px "Montserrat-Bold";
-  background-color: #F0F1F5;
+  top: -6px;
+  left: -6px;
+  z-index: -1;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  border-radius: 2px;
+  content: "";
   transition: 0.1s;
+  opacity: 0;
 }
-.pub-card .pub-card-type[class~=pub-card-type-idea] {
-  color: rgba(252, 87, 94, 0.5);
-}
-.pub-card .pub-card-type[class~=pub-card-type-problem] {
-  color: rgba(0, 124, 196, 0.5);
+.pub-card:hover:before {
+  opacity: 1;
 }
 .pub-card .pub-card-img-wrapper {
-  flex: 1 1 calc(50% - 6px);
+  flex: 1 1 0;
+  position: relative;
+  padding-top: 56.25%;
   border-radius: 2px;
   background-image: url("../img/user.jpg");
   background-size: cover;
   background-position: center;
 }
-.pub-card .pub-card-img-wrapper[class~=pub-card-img-vertical] {
-  width: 100%;
-  padding-top: 56.25%;
-}
-.pub-card .pub-card-img-wrapper[class~=pub-card-img-horizontal] {
-  width: calc(50% - 6px);
-  padding-top: calc((50% - 6px) * 0.5625);
+.pub-card .pub-card-img-wrapper .pub-card-type {
+  position: absolute;
+  top: 4.8px;
+  left: 4.8px;
+  padding: 0 4.8px;
+  border-radius: 2px;
+  font: 0.8rem/1.2rem "Montserrat-SemiBold";
+  color: #F0F1F5;
 }
 .pub-card .pub-card-not-img-wrapper {
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
-  flex: 1 1 calc(50% - 6px);
+  row-gap: 6px;
 }
 .pub-card .pub-card-not-img-wrapper .pub-card-title,
 .pub-card .pub-card-not-img-wrapper .pub-card-description {
@@ -129,53 +129,38 @@
 .pub-card .pub-card-not-img-wrapper .pub-card-description {
   font: 1rem/1.2rem "Montserrat-Regular";
 }
-.pub-card .pub-card-not-img-wrapper .pub-card-statistics-wrapper {
+.pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper {
   display: flex;
-  gap: 12px;
+  gap: 6px;
   flex-wrap: wrap;
 }
-.pub-card .pub-card-not-img-wrapper .pub-card-statistics-wrapper .pub-card-statistic-donations-wrapper {
-  padding: 0 6px;
-  border-radius: 2px;
-  font: 1rem/24px "Montserrat-Regular";
-  color: #112233;
-  background-color: #c6ecd9;
+.pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-pubdate,
+.pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-author {
+  font: 0.8rem/1.2rem "Montserrat-SemiBold";
+}
+.pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-author {
+  color: #5c658a;
+}
+.pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-pubdate {
+  color: #a4aac2;
+}
+.pub-card .pub-card-not-img-wrapper .pub-card-statistics-wrapper {
+  display: flex;
+  gap: 7.2px;
+  flex-wrap: wrap;
 }
 .pub-card .pub-card-not-img-wrapper .pub-card-statistics-wrapper .pub-card-statistic-item-wrapper {
   display: flex;
-  column-gap: 4.8px;
-  align-items: center;
+  column-gap: 2.4px;
 }
 .pub-card .pub-card-not-img-wrapper .pub-card-statistics-wrapper .pub-card-statistic-item-wrapper .pub-card-statistic-item-ico {
-  font-size: 1rem;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
   color: #a4aac2;
 }
 .pub-card .pub-card-not-img-wrapper .pub-card-statistics-wrapper .pub-card-statistic-item-wrapper .pub-card-statistic-item-value {
-  font: 1rem/24px "Montserrat-Regular";
-  color: #112233;
-}
-.pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-pubdate {
-  font: 1rem/24px "Montserrat-Regular";
+  font: 0.8rem/1.2rem "Montserrat-SemiBold";
   color: #5c658a;
-}
-.pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-author-wrapper {
-  display: flex;
-  column-gap: 4.8px;
-}
-.pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-author-wrapper .pub-card-author-img {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-author-wrapper .pub-card-author-name {
-  font: 1rem/24px "Montserrat-Regular";
-  color: #112233;
 }
 
 .user-card-wrapper {
@@ -704,7 +689,7 @@ main {
   flex: 1 1 auto;
   display: grid;
   grid-gap: 24px;
-  grid-template: auto/repeat(4, 1fr);
+  grid-template: min-content/repeat(4, 1fr);
 }
 .main-main .main-wrapper-2 .main-wrapper-2-2 .main-publication-item-wrapper .pub-card {
   flex-direction: column;

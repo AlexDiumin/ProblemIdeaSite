@@ -85,86 +85,248 @@ $base-font-size: 14px;
 }
 
 
+// .pub-card {
+// 	position: relative;
+// 	display: flex;
+// 	gap: ($base-size*.5);
+	
+// 	padding: ($base-size*.5);
+// 	border-radius: $base-border-radius;
+
+// 	text-decoration: none;
+// 	transition: $base-transition;
+
+// 	&[class~="pub-card-idea"] {
+// 		border: $base-border-width solid rgba($accent-color-r, .25);
+
+// 		&:hover {
+// 			border-color: rgba($accent-color-r, .75);
+
+// 			& .pub-card-type-idea {
+// 				color: rgba($accent-color-r, 1);
+// 			}
+// 		}
+// 	}
+
+// 	&[class~="pub-card-problem"] {
+// 		border: $base-border-width solid rgba(darken($accent-color-b, 25%), .25);
+
+// 		&:hover {
+// 			border-color: rgba(darken($accent-color-b, 15%), .75);
+
+// 			& .pub-card-type-problem {
+// 				color: rgba(darken($accent-color-b, 15%), 1);
+// 			}
+// 		}
+// 	}
+
+// 	.pub-card-type {
+// 		position: absolute;
+// 		top: -($base-size*.25 + $base-border-width*.5);
+// 		left: ($base-size*.25);
+
+// 		padding: 0 ($base-size*.25);
+
+// 		font: .8rem/calc($base-size*.5) 'Montserrat-Bold';
+// 		background-color: $light-color;
+// 		transition: $base-transition;
+
+// 		&[class~="pub-card-type-idea"] {
+// 			color: rgba($accent-color-r, .5);
+// 		}
+
+// 		&[class~="pub-card-type-problem"] {
+// 			color: rgba(darken($accent-color-b, 25%), .5);
+// 		}
+// 	}
+
+// 	.pub-card-img-wrapper {
+// 		flex: 1 1 calc(50% - $base-size*.25);
+
+// 		border-radius: $base-border-radius;
+
+// 		background-image: url('../img/user.jpg');
+// 		background-size: cover;
+// 		background-position: center;
+
+// 		&[class~="pub-card-img-vertical"] {
+// 			width: 100%;
+// 			padding-top: 56.25%;
+// 		}
+
+// 		&[class~="pub-card-img-horizontal"] {
+// 			width: calc(50% - $base-size*.25);
+// 			padding-top: calc((50% - $base-size*.25)*.5625);
+// 		}
+// 	}
+
+// 	.pub-card-not-img-wrapper {
+// 		display: flex;
+// 		flex-direction: column;
+// 		row-gap: ($base-size*.5);
+// 		flex: 1 1 calc(50% - $base-size*.25);
+
+// 		.pub-card-title,
+// 		.pub-card-description {
+// 			max-height: 2.4rem;
+
+// 			@include ellipsis(2);  // троеточие
+// 			color: $dark-color;
+// 		}				
+
+// 		.pub-card-title {
+// 			font: 1rem/1.2rem 'Montserrat-Bold';
+// 		}
+
+// 		.pub-card-description {
+// 			font: 1rem/1.2rem 'Montserrat-Regular';
+// 		}
+
+// 		.pub-card-statistics-wrapper {
+// 			display: flex;
+// 			gap: ($base-size*.5);
+// 			flex-wrap: wrap;
+
+// 			.pub-card-statistic-donations-wrapper {
+// 				padding: 0 ($base-size*.25);
+// 				border-radius: $base-border-radius;
+
+// 				font: 1rem/calc($base-size) 'Montserrat-Regular';
+// 				color: $dark-color;
+// 				background-color: lighten($accent-color-g, 25%);
+// 			}
+
+// 			.pub-card-statistic-item-wrapper {
+// 				display: flex;
+// 				column-gap: ($base-size*.2);
+// 				align-items: center;
+
+// 				.pub-card-statistic-item-ico {
+// 					font-size: 1rem;
+// 					color: darken($light-color, 25%);
+// 				}
+
+// 				.pub-card-statistic-item-value {
+// 					font: 1rem/calc($base-size) 'Montserrat-Regular';
+// 					color: $dark-color;
+// 				}
+// 			}
+// 		}
+
+// 		.pub-card-pubdate-author-wrapper {
+// 			display: flex;
+// 			gap: ($base-size*.5);
+// 			flex-wrap: wrap;
+
+// 			.pub-card-pubdate {
+// 				font: 1rem/calc($base-size) 'Montserrat-Regular';
+// 				color: darken($light-color, 50%);
+// 			}
+
+// 			.pub-card-author-wrapper {
+// 				display: flex;
+// 				column-gap: ($base-size*.2);
+
+// 				.pub-card-author-img {
+// 					width: $base-size;
+// 					height: $base-size;
+// 					border-radius: 50%;
+
+// 					object-fit: cover;
+// 				}
+
+// 				.pub-card-author-name {
+// 					font: 1rem/calc($base-size) 'Montserrat-Regular';
+// 					color: $dark-color;
+// 				}
+// 			}
+// 		}
+// 	}	
+// }
 .pub-card {
 	position: relative;
 	display: flex;
-	gap: ($base-size*.5);
-	
-	padding: ($base-size*.5);
-	border-radius: $base-border-radius;
+	gap: ($base-size*.25);
 
 	text-decoration: none;
-	transition: $base-transition;
 
-	&[class~="pub-card-idea"] {
-		border: $base-border-width solid rgba($accent-color-r, .25);
+	&[class~='pub-card-idea'] {
 
-		&:hover {
-			border-color: rgba($accent-color-r, .75);
+		&:before {
+			border: $base-border-width solid rgba($accent-color-r, .5);
+		}
 
-			& .pub-card-type-idea {
-				color: rgba($accent-color-r, 1);
-			}
+		&:hover .pub-card-img-wrapper .pub-card-type {
+			background-color: rgba(darken($accent-color-r, 25%), .9);
+		}
+
+		.pub-card-img-wrapper .pub-card-type {
+			background-color: rgba(darken($accent-color-r, 25%), .7);
 		}
 	}
 
-	&[class~="pub-card-problem"] {
-		border: $base-border-width solid rgba(darken($accent-color-b, 25%), .25);
+	&[class~='pub-card-problem'] {
 
-		&:hover {
-			border-color: rgba(darken($accent-color-b, 15%), .75);
+		&:before {
+			border: $base-border-width solid rgba($accent-color-b, .5);
+		}
 
-			& .pub-card-type-problem {
-				color: rgba(darken($accent-color-b, 15%), 1);
-			}
+		&:hover .pub-card-img-wrapper .pub-card-type {
+			background-color: rgba(darken($accent-color-b, 25%), .9);
+		}
+
+		.pub-card-img-wrapper .pub-card-type {
+			background-color: rgba(darken($accent-color-b, 25%), .7);
 		}
 	}
 
-	.pub-card-type {
+	&:before {
 		position: absolute;
-		top: -($base-size*.25 + $base-border-width*.5);
-		left: ($base-size*.25);
+		top: (-$base-size*.25);
+		left: (-$base-size*.25);
+		z-index: -1;  // чтоб отображался атрибут title у иконок
 
-		padding: 0 ($base-size*.25);
+		width: calc(100% + $base-size*.5);
+		height: calc(100% + $base-size*.5);
+		border-radius: $base-border-radius;
 
-		font: .8rem/calc($base-size*.5) 'Montserrat-Bold';
-		background-color: $light-color;
+		content: '';
 		transition: $base-transition;
-
-		&[class~="pub-card-type-idea"] {
-			color: rgba($accent-color-r, .5);
-		}
-
-		&[class~="pub-card-type-problem"] {
-			color: rgba(darken($accent-color-b, 25%), .5);
-		}
+		opacity: 0;
+	}
+	&:hover:before {
+		opacity: 1;
 	}
 
 	.pub-card-img-wrapper {
-		flex: 1 1 calc(50% - $base-size*.25);
+		flex: 1 1 0;
+		position: relative;
 
+		padding-top: 56.25%;
 		border-radius: $base-border-radius;
 
 		background-image: url('../img/user.jpg');
 		background-size: cover;
 		background-position: center;
 
-		&[class~="pub-card-img-vertical"] {
-			width: 100%;
-			padding-top: 56.25%;
-		}
+		.pub-card-type {
+			position: absolute;
+			top: ($base-size*.2);
+			left: ($base-size*.2);
 
-		&[class~="pub-card-img-horizontal"] {
-			width: calc(50% - $base-size*.25);
-			padding-top: calc((50% - $base-size*.25)*.5625);
+			padding: 0 ($base-size*.2);
+			border-radius: $base-border-radius;
+
+			font: .8rem/1.2rem 'Montserrat-SemiBold';
+			color: $light-color;
 		}
 	}
 
 	.pub-card-not-img-wrapper {
+		flex: 1 1 0;
 		display: flex;
 		flex-direction: column;
-		row-gap: ($base-size*.5);
-		flex: 1 1 calc(50% - $base-size*.25);
+		row-gap: ($base-size*.25);
 
 		.pub-card-title,
 		.pub-card-description {
@@ -172,7 +334,7 @@ $base-font-size: 14px;
 
 			@include ellipsis(2);  // троеточие
 			color: $dark-color;
-		}				
+		}
 
 		.pub-card-title {
 			font: 1rem/1.2rem 'Montserrat-Bold';
@@ -182,67 +344,49 @@ $base-font-size: 14px;
 			font: 1rem/1.2rem 'Montserrat-Regular';
 		}
 
-		.pub-card-statistics-wrapper {
+		.pub-card-pubdate-author-wrapper {
 			display: flex;
-			gap: ($base-size*.5);
+			gap: ($base-size*.25);
 			flex-wrap: wrap;
 
-			.pub-card-statistic-donations-wrapper {
-				padding: 0 ($base-size*.25);
-				border-radius: $base-border-radius;
-
-				font: 1rem/calc($base-size) 'Montserrat-Regular';
-				color: $dark-color;
-				background-color: lighten($accent-color-g, 25%);
+			.pub-card-pubdate,
+			.pub-card-author {
+				font: .8rem/1.2rem 'Montserrat-SemiBold';
 			}
+
+			.pub-card-author {
+				color: darken($light-color, 50%);
+			}
+
+			.pub-card-pubdate {
+				color: darken($light-color, 25%);
+			}
+		}
+
+		.pub-card-statistics-wrapper {
+			display: flex;
+			gap: ($base-size*.3);
+			flex-wrap: wrap;
 
 			.pub-card-statistic-item-wrapper {
 				display: flex;
-				column-gap: ($base-size*.2);
-				align-items: center;
+				column-gap: ($base-size*.1);
 
 				.pub-card-statistic-item-ico {
-					font-size: 1rem;
+					font-size: .8rem;
+					line-height: 1.2rem;
 					color: darken($light-color, 25%);
 				}
 
 				.pub-card-statistic-item-value {
-					font: 1rem/calc($base-size) 'Montserrat-Regular';
-					color: $dark-color;
+					font: .8rem/1.2rem 'Montserrat-SemiBold';
+					color: darken($light-color, 50%);
 				}
 			}
 		}
-
-		.pub-card-pubdate-author-wrapper {
-			display: flex;
-			gap: ($base-size*.5);
-			flex-wrap: wrap;
-
-			.pub-card-pubdate {
-				font: 1rem/calc($base-size) 'Montserrat-Regular';
-				color: darken($light-color, 50%);
-			}
-
-			.pub-card-author-wrapper {
-				display: flex;
-				column-gap: ($base-size*.2);
-
-				.pub-card-author-img {
-					width: $base-size;
-					height: $base-size;
-					border-radius: 50%;
-
-					object-fit: cover;
-				}
-
-				.pub-card-author-name {
-					font: 1rem/calc($base-size) 'Montserrat-Regular';
-					color: $dark-color;
-				}
-			}
-		}
-	}	
+	}
 }
+
 
 
 .user-card-wrapper {
@@ -962,7 +1106,7 @@ main {
 			flex: 1 1 auto;
 			display: grid;
 			grid-gap: $base-size;
-			grid-template: auto / repeat(4, 1fr);
+			grid-template: min-content / repeat(4, 1fr);
 
 			.main-publication-item-wrapper {
 
