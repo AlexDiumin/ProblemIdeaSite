@@ -14,6 +14,30 @@
   display: none !important;
 }
 
+/***** Custom Scrollbar *****/
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 2px;
+  background-color: #e1e3eb;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #c2c6d6;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a4aac2;
+}
+
+/***** /Custom Scrollbar *****/
 .scroll-up-wrapper {
   position: fixed;
   top: 0;
@@ -29,7 +53,7 @@
   border: 0;
   border-radius: 2px;
   margin: 0;
-  font: 1rem/36px "Montserrat-Bold";
+  font: 1rem/36px "Montserrat-SemiBold";
   background-color: transparent;
   transition: 0.1s;
   cursor: pointer;
@@ -53,34 +77,16 @@
 .pub-card {
   position: relative;
   display: flex;
-  gap: 6px;
+  gap: 12px;
   text-decoration: none;
-}
-.pub-card[class~=pub-card-idea]:before {
-  border: 2px solid rgba(252, 87, 94, 0.5);
-}
-.pub-card[class~=pub-card-idea]:hover .pub-card-img-wrapper .pub-card-type {
-  background-color: rgba(208, 4, 12, 0.9);
-}
-.pub-card[class~=pub-card-idea] .pub-card-img-wrapper .pub-card-type {
-  background-color: rgba(208, 4, 12, 0.7);
-}
-.pub-card[class~=pub-card-problem]:before {
-  border: 2px solid rgba(68, 187, 255, 0.5);
-}
-.pub-card[class~=pub-card-problem]:hover .pub-card-img-wrapper .pub-card-type {
-  background-color: rgba(0, 124, 196, 0.9);
-}
-.pub-card[class~=pub-card-problem] .pub-card-img-wrapper .pub-card-type {
-  background-color: rgba(0, 124, 196, 0.7);
 }
 .pub-card:before {
   position: absolute;
-  top: -6px;
-  left: -6px;
+  top: -12px;
+  left: -12px;
   z-index: -1;
-  width: calc(100% + 12px);
-  height: calc(100% + 12px);
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
   border-radius: 2px;
   content: "";
   transition: 0.1s;
@@ -89,16 +95,43 @@
 .pub-card:hover:before {
   opacity: 1;
 }
-.pub-card .pub-card-img-wrapper {
-  flex: 1 1 0;
-  position: relative;
-  padding-top: 56.25%;
-  border-radius: 2px;
-  background-image: url("../img/user.jpg");
-  background-size: cover;
-  background-position: center;
+.pub-card[class~=pub-card-idea]:before {
+  border: 2px solid rgba(252, 87, 94, 0.5);
 }
-.pub-card .pub-card-img-wrapper .pub-card-type {
+.pub-card[class~=pub-card-idea]:hover .pub-card-img-wrapper .pub-card-type-vertical {
+  background-color: rgba(208, 4, 12, 0.9);
+}
+.pub-card[class~=pub-card-idea]:hover .pub-card-not-img-wrapper .pub-card-type-horizontal {
+  color: rgba(252, 62, 70, 0.9);
+}
+.pub-card[class~=pub-card-idea] .pub-card-img-wrapper .pub-card-type-vertical {
+  background-color: rgba(208, 4, 12, 0.7);
+}
+.pub-card[class~=pub-card-idea] .pub-card-not-img-wrapper .pub-card-type-horizontal {
+  color: rgba(252, 62, 70, 0.7);
+}
+.pub-card[class~=pub-card-problem]:before {
+  border: 2px solid rgba(68, 187, 255, 0.5);
+}
+.pub-card[class~=pub-card-problem]:hover .pub-card-img-wrapper .pub-card-type-vertical {
+  background-color: rgba(0, 124, 196, 0.9);
+}
+.pub-card[class~=pub-card-problem]:hover .pub-card-not-img-wrapper .pub-card-type-horizontal {
+  color: rgba(43, 178, 255, 0.9);
+}
+.pub-card[class~=pub-card-problem] .pub-card-img-wrapper .pub-card-type-vertical {
+  background-color: rgba(0, 124, 196, 0.7);
+}
+.pub-card[class~=pub-card-problem] .pub-card-not-img-wrapper .pub-card-type-horizontal {
+  color: rgba(43, 178, 255, 0.7);
+}
+.pub-card[class~=pub-card-vertical] {
+  flex-direction: column;
+}
+.pub-card[class~=pub-card-vertical] .pub-card-img-wrapper {
+  padding-top: 56.25%;
+}
+.pub-card[class~=pub-card-vertical] .pub-card-img-wrapper .pub-card-type-vertical {
   position: absolute;
   top: 4.8px;
   left: 4.8px;
@@ -106,6 +139,23 @@
   border-radius: 2px;
   font: 0.8rem/1.2rem "Montserrat-SemiBold";
   color: #F0F1F5;
+}
+.pub-card[class~=pub-card-horizontal] {
+  flex-direction: row;
+}
+.pub-card[class~=pub-card-horizontal] .pub-card-img-wrapper {
+  padding-top: calc((50% - 6px) * 0.5625);
+}
+.pub-card[class~=pub-card-horizontal] .pub-card-not-img-wrapper .pub-card-type-horizontal {
+  font: 0.8rem/1.2rem "Montserrat-SemiBold";
+}
+.pub-card .pub-card-img-wrapper {
+  flex: 1 1 0;
+  position: relative;
+  border-radius: 2px;
+  background-image: url("../img/user.jpg");
+  background-size: cover;
+  background-position: center;
 }
 .pub-card .pub-card-not-img-wrapper {
   flex: 1 1 0;
@@ -161,65 +211,6 @@
 .pub-card .pub-card-not-img-wrapper .pub-card-statistics-wrapper .pub-card-statistic-item-wrapper .pub-card-statistic-item-value {
   font: 0.8rem/1.2rem "Montserrat-SemiBold";
   color: #5c658a;
-}
-
-.user-card-wrapper {
-  display: flex;
-  gap: 12px;
-}
-.user-card-wrapper .user-card-img-wrapper {
-  flex: 1 1 calc(50% - 6px);
-  border-radius: 50%;
-  background-image: url("../img/user.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.user-card-wrapper .user-card-img-wrapper[class~=user-card-img-vertical] {
-  width: 56.25%;
-  padding-top: 56.25%;
-}
-.user-card-wrapper .user-card-img-wrapper[class~=user-card-img-horizontal] {
-  width: calc((50% - 6px) * 0.5625);
-  padding-top: calc((50% - 6px) * 0.5625);
-}
-.user-card-wrapper .user-card-not-img-wrapper {
-  display: flex;
-  flex-direction: column;
-  row-gap: 12px;
-  flex: 1 1 calc(50% - 6px);
-}
-.user-card-wrapper .user-card-not-img-wrapper .user-card-name-wrapper {
-  width: 200px;
-  height: 20px;
-  background-color: aqua;
-}
-.user-card-wrapper .user-card-not-img-wrapper .user-card-description-wrapper {
-  height: 40px;
-  background-color: aqua;
-}
-.user-card-wrapper .user-card-not-img-wrapper .user-card-statistics-block-wrapper {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-.user-card-wrapper .user-card-not-img-wrapper .user-card-statistics-block-wrapper .user-card-statistic-item-wrapper {
-  display: flex;
-  column-gap: 3px;
-}
-.user-card-wrapper .user-card-not-img-wrapper .user-card-statistics-block-wrapper .user-card-statistic-item-wrapper .user-card-statistic-ico-wrapper {
-  width: 24px;
-  height: 24px;
-  background-color: aqua;
-}
-.user-card-wrapper .user-card-not-img-wrapper .user-card-statistics-block-wrapper .user-card-statistic-item-wrapper .user-card-statistic-text-wrapper {
-  width: 40px;
-  height: 24px;
-  background-color: aqua;
-}
-.user-card-wrapper .user-card-not-img-wrapper .user-card-location-wrapper {
-  width: 150px;
-  height: 24px;
-  background-color: aqua;
 }
 
 .comments-block-wrapper {
@@ -580,10 +571,13 @@ main {
 }
 .main-main .main-wrapper-1 .main-selected-tags-wrapper .main-selected-tag-item-wrapper .main-selected-tag-cancel-btn {
   color: #F0F1F5;
-  background-color: #858dae;
+  background-color: #949bb8;
 }
 .main-main .main-wrapper-1 .main-selected-tags-wrapper .main-selected-tag-item-wrapper .main-selected-tag-cancel-btn:hover {
   background-color: #5c658a;
+}
+.main-main .main-wrapper-1 .main-selected-tags-wrapper .main-selected-tag-cancel-all-btn {
+  color: #5c658a;
 }
 .main-main .main-wrapper-1 .main-selected-tags-wrapper .main-selected-tag-cancel-all-btn:hover {
   background-color: #e1e3eb;
@@ -623,7 +617,7 @@ main {
   user-select: none;
 }
 .main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-categories-form .main-category-item:hover .category-radio ~ .custom-category-radio {
-  background-color: #b3b8cc;
+  background-color: #d1d4e1;
 }
 .main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-categories-form .main-category-item .category-radio {
   position: absolute;
@@ -775,13 +769,10 @@ main {
   display: grid;
   grid-gap: 24px;
   grid-template: auto/repeat(3, 1fr);
-  max-height: 689px;
-  padding-top: 5px;
-  margin-top: -5px;
+  max-height: calc(100vh - 96px);
+  padding: 12px;
+  margin: -12px;
   overflow: auto;
-}
-.user-main .user-wrapper-2 .profile-content-block-wrapper .profile-content-wrapper .profile-content-item-wrapper .pub-card {
-  flex-direction: column;
 }
 .user-main .user-wrapper-2 .profile-content-block-wrapper .profile-content-wrapper .profile-content-item-wrapper .user-card-wrapper {
   flex-direction: column;
@@ -877,6 +868,7 @@ main {
   font-size: 1rem;
   line-height: 33px;
   color: #112233;
+  background-color: transparent;
   cursor: pointer;
   transition: 0.1s;
 }
@@ -1136,9 +1128,6 @@ main {
   grid-gap: 24px;
   grid-template: auto/repeat(3, 1fr);
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-tabs-block-wrapper .publication-ideas-wrapper .publication-idea-item-wrapper .pub-card {
-  flex-direction: column;
-}
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 {
   flex: 1 1 0;
   max-width: calc((100% - 48px) * 0.4);
@@ -1254,10 +1243,7 @@ main {
 .publication-main .publication-wrapper-2 .publication-recommendations-block-wrapper {
   display: grid;
   grid-gap: 24px;
-  grid-template: auto/repeat(3, 1fr);
-}
-.publication-main .publication-wrapper-2 .publication-recommendations-block-wrapper .publication-recommendation-item-wrapper .pub-card {
-  flex-direction: column;
+  grid-template: auto/repeat(4, 1fr);
 }
 
 /* ---------- /publication.html ---------- */
