@@ -112,6 +112,28 @@ $base-font-size: 14px;
 }
 
 
+.card-statistics-wrapper {
+	display: flex;
+	gap: ($base-size*.3);
+	flex-wrap: wrap;
+
+	.card-statistic-item-wrapper {
+		display: flex;
+		column-gap: ($base-size*.1);
+
+		.card-statistic-item-ico {
+			font-size: .8rem;
+			line-height: 1.2rem;
+			color: darken($light-color, 40%);
+		}
+
+		.card-statistic-item-value {
+			font: .8rem/1.2rem 'Montserrat-SemiBold';
+			color: darken($light-color, 60%);
+		}
+	}
+}
+
 .pub-card {
 	position: relative;
 	display: flex;
@@ -140,7 +162,7 @@ $base-font-size: 14px;
 	&[class~='pub-card-idea'] {
 
 		&:before {
-			border: $base-border-width solid rgba($accent-color-r, .5);
+			background-color: mix(darken($accent-color-r, 5%), $light-color, 15%);
 		}
 
 		&:hover {
@@ -152,7 +174,7 @@ $base-font-size: 14px;
 
 			.pub-card-not-img-wrapper {
 				.pub-card-type-horizontal {
-					color: rgba(darken($accent-color-r, 5%), .9);
+					color: rgba(darken($accent-color-r, 10%), .9);
 				}
 			}			
 		} 
@@ -165,7 +187,7 @@ $base-font-size: 14px;
 
 		.pub-card-not-img-wrapper {
 			.pub-card-type-horizontal {
-				color: rgba(darken($accent-color-r, 5%), .7);
+				color: rgba(darken($accent-color-r, 10%), .7);
 			}
 		}
 	}
@@ -173,7 +195,7 @@ $base-font-size: 14px;
 	&[class~='pub-card-problem'] {
 
 		&:before {
-			border: $base-border-width solid rgba($accent-color-b, .5);
+			background-color: mix(darken($accent-color-b, 5%), $light-color, 15%);
 		}
 
 		&:hover {
@@ -185,7 +207,7 @@ $base-font-size: 14px;
 
 			.pub-card-not-img-wrapper {
 				.pub-card-type-horizontal {
-					color: rgba(darken($accent-color-b, 5%), .9);
+					color: rgba(darken($accent-color-b, 10%), .9);
 				}
 			}
 		}
@@ -198,7 +220,7 @@ $base-font-size: 14px;
 
 		.pub-card-not-img-wrapper {
 			.pub-card-type-horizontal {
-				color: rgba(darken($accent-color-b, 5%), .7);
+				color: rgba(darken($accent-color-b, 10%), .7);
 			}
 		}
 	}
@@ -281,120 +303,125 @@ $base-font-size: 14px;
 			}
 
 			.pub-card-author {
-				color: darken($light-color, 50%);
+				color: darken($light-color, 60%);
 			}
 
 			.pub-card-pubdate {
-				color: darken($light-color, 25%);
-			}
-		}
-
-		.pub-card-statistics-wrapper {
-			display: flex;
-			gap: ($base-size*.3);
-			flex-wrap: wrap;
-
-			.pub-card-statistic-item-wrapper {
-				display: flex;
-				column-gap: ($base-size*.1);
-
-				.pub-card-statistic-item-ico {
-					font-size: .8rem;
-					line-height: 1.2rem;
-					color: darken($light-color, 25%);
-				}
-
-				.pub-card-statistic-item-value {
-					font: .8rem/1.2rem 'Montserrat-SemiBold';
-					color: darken($light-color, 50%);
-				}
+				color: darken($light-color, 40%);
 			}
 		}
 	}
 }
 
 
+.user-card {
+	position: relative;
+	display: flex;
+	gap: ($base-size*.5);
 
-// .user-card-wrapper {
-// 	display: flex;
-// 	gap: ($base-size*.5);
+	text-decoration: none;
 
-// 	.user-card-img-wrapper {
-// 		flex: 1 1 calc(50% - $base-size*.25);
+	&:before {
+		position: absolute;
+		top: (-$base-size*.5);
+		left: (-$base-size*.5);
+		z-index: -1;  // чтоб отображался атрибут title у иконок
 
-// 		border-radius: 50%;
+		width: calc(100% + $base-size);
+		height: calc(100% + $base-size);
+		border-radius: $base-border-radius;
 
-// 		background-image: url('../img/user.jpg');
-// 		background-size: cover;
-// 		background-position: center;
+		content: '';
+		transition: $base-transition;
+		background-color: transparent;
+	}
+	&:hover:before {
+		background-color: rgba(darken($light-color, 5%), 1);
+	}
 
-// 		&[class~="user-card-img-vertical"] {
-// 			width: 56.25%;
-// 			padding-top: 56.25%;
-// 		}
+	&[class~='user-card-vertical'] {
+		flex-direction: column;
 
-// 		&[class~="user-card-img-horizontal"] {
-// 			width: calc((50% - $base-size*.25)*.5625);
-// 			padding-top: calc((50% - $base-size*.25)*.5625);
+		.user-card-img-wrapper {
+			.user-card-online:after {
+				bottom: 7%;
+			}
+		}
+	}
 
-// 			// border-left: 50px solid $light-color;
-// 			// border-right: 50px solid $light-color;
-// 		}
-// 	}
+	&[class~='user-card-horizontal'] {
+		flex-direction: row;
 
-// 	.user-card-not-img-wrapper {
-// 		display: flex;
-// 		flex-direction: column;
-// 		row-gap: ($base-size*.5);
-// 		flex: 1 1 calc(50% - $base-size*.25);
+		.user-card-not-img-wrapper {
+			justify-content: center;
+		}
 
-// 		.user-card-name-wrapper {
-// 			width: 200px;
-// 			height: 20px;
+		.user-card-img-wrapper {
+			.user-card-online:after {
+				bottom: 12%;
+			}
+		}
+	}
 
-// 			background-color: aqua;
-// 		}
+	.user-card-img-wrapper {
+		flex: 1 1 0;
+		display: flex;
+		justify-content: center;
 
-// 		.user-card-description-wrapper {
-// 			height: 40px;
+		.user-card-img {
+			position: relative;
 
-// 			background-color: aqua;
-// 		}
+			width: 56.25%;
+			padding-top: 56.25%;
+			border-radius: 50%;
 
-// 		.user-card-statistics-block-wrapper {
-// 			display: flex;
-// 			gap: ($base-size*.25);
-// 			flex-wrap: wrap;
+			background-image: url('../img/user.jpg');
+			background-size: cover;
+			background-position: center;
 
-// 			.user-card-statistic-item-wrapper {
-// 				display: flex;
-// 				column-gap: ($base-size*.125);
+			&[class~='user-card-online']:after {
+				position: absolute;
+				right: 7%;
 
-// 				.user-card-statistic-ico-wrapper {
-// 					width: $base-size;
-// 					height: $base-size;
+				width: ($base-size*.75);
+				height: ($base-size*.75);
+				border: $base-border-width solid $light-color;
+				border-radius: 50%;
 
-// 					background-color: aqua;
-// 				}
+				content: '';
+				background-color: darken($accent-color-g, 5%);
+			}
+		}
+	}
 
-// 				.user-card-statistic-text-wrapper {
-// 					width: 40px;
-// 					height: $base-size;
+	.user-card-not-img-wrapper {
+		flex: 1 1 0;
+		display: flex;
+		flex-direction: column;
+		row-gap: ($base-size*.25);
 
-// 					background-color: aqua;	
-// 				}
-// 			}
-// 		}
+		.user-card-name,
+		.user-card-description {
+			max-height: 2.4rem;
 
-// 		.user-card-location-wrapper {
-// 			width: 150px;
-// 			height: 24px;
+			@include ellipsis(2);  // троеточие
+			color: $dark-color;			
+		} 
 
-// 			background-color: aqua;
-// 		}
-// 	}
-// }
+		.user-card-name {
+			font: 1rem/1.2rem 'Montserrat-Bold';
+		}
 
+		.user-card-description {
+			font: 1rem/1.2rem 'Montserrat-Regular';			
+		}
+
+		.user-card-location {
+			font: .8rem/1.2rem 'Montserrat-SemiBold';
+			color: darken($light-color, 40%);
+		}
+	}
+}
 
 
 .comments-block-wrapper {
@@ -1160,7 +1187,7 @@ main {
 			.profile-content-wrapper {
 				display: grid;
 				grid-gap: $base-size;
-				grid-template: auto / repeat(3, 1fr);
+				grid-template: auto / repeat(4, 1fr);
 
 				max-height: calc(100vh - $base-size*4);
 				// место для border при :hover 
@@ -1168,14 +1195,6 @@ main {
 				margin: (-$base-size*.5);
 
 				overflow: auto;
-
-				.profile-content-item-wrapper {
-
-					.user-card-wrapper {
-						flex-direction: column;
-						align-items: center;
-					}
-				}
 			}
 		}
 
@@ -1821,7 +1840,7 @@ main {
 		.publication-recommendations-block-wrapper {
 			display: grid;
 			grid-gap: $base-size;
-			grid-template: auto / repeat(4, 1fr);
+			grid-template: auto / repeat(5, 1fr);
 		}
 	}
 }
