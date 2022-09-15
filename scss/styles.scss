@@ -80,7 +80,7 @@ $base-font-size: 14px;
 }
 
 
-.ghost-btn {
+.btn {
 	height: ($base-size*1.5);
 	padding: 0 $base-size;
 	border: 0;
@@ -88,11 +88,9 @@ $base-font-size: 14px;
 	margin: 0;
 
 	font: 1rem/calc($base-size*1.5) 'Montserrat-SemiBold';
-	background-color: transparent;
 	transition: $base-transition;
-	cursor: pointer;
+	cursor: pointer;	
 }
-
 
 .ico-btn {
 	display: flex;
@@ -105,8 +103,8 @@ $base-font-size: 14px;
 	border: 0;
 	border-radius: $base-border-radius;
 	margin: 0;
+
 	font-size: ($base-size*.75);
-	
 	cursor: pointer;
 	transition: $base-transition;
 }
@@ -561,6 +559,7 @@ $base-font-size: 14px;
 
 html {
 	font-size: $base-font-size;
+	scroll-behavior: smooth;
 }
 
 
@@ -925,6 +924,7 @@ main {
 
 			.main-selected-tag-cancel-all-btn {
 				color: darken($light-color, 50%);
+				background-color: transparent;
 
 				&:hover {
 					background-color: darken($light-color, 5%);
@@ -1050,6 +1050,7 @@ main {
 
 					.main-tag-settings-btn {
 						color: darken($light-color, 50%);
+						background-color: transparent;
 						white-space: nowrap;
 
 						&:hover {
@@ -1083,13 +1084,11 @@ main {
 	display: flex;
 	column-gap: ($base-size*2);
 
-	padding: $base-size*4 $base-size*2 $base-size*2;
+	padding: ($base-size*4) ($base-size*2) ($base-size*2);
 
-	.profile-h-wrapper {
-		width: 250px;
-		height: 24px;
-
-		background-color: aqua;
+	.profile-h {
+		font: 1.2rem/1.4rem 'Montserrat-Bold';
+		color: $dark-color;
 	}
 
 	.user-wrapper-1,
@@ -1097,93 +1096,154 @@ main {
 		display: flex;
 		flex-direction: column;
 		row-gap: ($base-size*2);
+		// flex: 1 1 0;
 	}
 
 	.user-wrapper-1 {
-		min-width: ($base-size*10);
-
-		.profile-img-wrapper,
-		.profile-btns-wrapper,
-		.profile-info-wrapper {
-
-		}
-
 		.profile-img-wrapper {
-			height: 300px;
+			width: 100%;
+			padding-top: 100%;
+			border-radius: $base-border-radius;
 
-			background-color: aqua;
+			background-image: url('../img/user.jpg');
+			background-size: cover;
+			background-position: center;
+
+			// .profile-img {
+			// 	border-radius: $base-border-radius;
+			// }
 		}
 
 		.profile-btns-wrapper {
 			display: flex;
 			column-gap: ($base-size*.5);
 
-			.profile-btn-wrapper {
-				width: 150px;
-				height: ($base-size*1.5);
+			.profile-settings-btn, 
+			.profile-subscribe-btn {
+				color: $light-color;
+				background-color: $dark-color;
+			
+				&:hover {
+					background-color: lighten($dark-color, 10%);				
+				}	
+			}
 
-				background-color: aqua;
-
-				.profile-btn-submenu-wrapper {
-					position: relative;
-					top: ($base-size*1.5);
-					right: (200px - $base-size*1.5);
-
-					width: 200px;
-					height: 300px;
-
-					background-color: gray;
+			.profile-write-btn {
+				color: $dark-color;
+				background-color: darken($light-color, 5%);
+				
+				&:hover {
+					background-color: darken($light-color, 10%);
 				}
 			}
-			.profile-btn-wrapper:last-of-type {
-				width: ($base-size*1.5) !important;
+
+			.profile-submenu-btn {
+				position: relative;
+
+				color: $dark-color;
+				background-color: transparent;
+
+				&:hover {
+					background-color: darken($light-color, 5%);
+				}
+
+				.profile-submenu-wrapper {
+					position: absolute;
+					top: ($base-size*2);
+					right: 0;
+
+					width: 200px;
+					height: 200px;
+					border-radius: $base-border-radius;
+
+					background-color: $dark-color;
+				
+					&:after {
+						position: absolute;
+						top: (-$base-size*.5);
+						right: ($base-size*.5);
+
+						width: ($base-size*.5);
+						height: ($base-size*.5);
+						border-top: ($base-size*.25) solid transparent;
+						border-left: ($base-size*.25) solid transparent;
+						border-right: ($base-size*.25) solid transparent;
+						border-bottom: ($base-size*.25) solid $dark-color;
+
+						content: '';
+					}
+				}
 			}
 		}
 
 		.profile-info-wrapper {
 			display: flex;
 			flex-direction: column;
-			row-gap: $base-size;
+			row-gap: ($base-size*.5);
 
-			.profile-info-list-wrapper {
-				height: 250px;
+			.profile-info-list {
+				display: flex;
+				flex-direction: column;
 
-				background-color: aqua;
+				.profile-info-item {
+					display: flex;
+					column-gap: ($base-size*.25);
+					align-items: center;
+
+					.profile-info-item-ico {	
+						font-size: 1rem;
+						color: darken($light-color, 25%);
+					}
+
+					.profile-info-item-text {
+						font-size: 1rem;
+						line-height: ($base-size*1.5);
+						font-family: 'Montserrat-Regular';
+						color: $dark-color;
+						text-decoration: none;
+
+						@include ellipsis(1);  // троеточие
+
+						&[href]:hover {
+							text-decoration: underline;
+						}
+					}
+
+					.profile-info-item-main-text {
+						font-family: 'Montserrat-SemiBold';
+					}
+				}
 			}
 		}
 	}
 
 	.user-wrapper-2 {
-		flex: 1 1 0;
-
-		.profile-name-description-wrapper,
 		.profile-content-block-wrapper,
 		.profile-comments-block-wrapper {
 			display: flex;
 			flex-direction: column;
 			row-gap: $base-size;
+
+			scroll-margin-top: ($base-size*2);
 		}
 
 		.profile-name-description-wrapper {
+			display: flex;
+			flex-direction: column;
+			row-gap: ($base-size*.5);			
 
-			.profile-name-wrapper,
-			.profile-description-wrapper {
-				background-color: aqua;
+			.profile-name {
+				font: 1.4rem/1.6rem 'Montserrat-Bold';
+				color: $dark-color;
 			}
 
-			.profile-name-wrapper {
-				width: 400px;
-				height: 28px;
-			}
-
-			.profile-description-wrapper {
-				max-width: ($base-size*30);
-				height: 48px;
+			.profile-description {
+				font: 1rem/1.2rem 'Montserrat-Regular';
+				color: $dark-color;	
 			}
 		}
 
 		.profile-content-block-wrapper {
-
 			.profile-content-wrapper {
 				display: grid;
 				grid-gap: $base-size;
