@@ -427,22 +427,66 @@ $base-font-size: 14px;
 	flex-direction: column;
 	row-gap: $base-size;
 
-	.comment-img-wrapper {
+	.comment-img-link {
 		width: ($base-size*1.5);
 		height: ($base-size*1.5);
-	
-		background-color: aqua;
+
+		.comment-img {
+			width: ($base-size*1.5);
+			height: ($base-size*1.5);
+			border-radius: 50%;
+
+			object-fit: cover;
+			object-position: center;
+		}
 	}
 
 	.add-comment-wrapper {
 		display: flex;
 		column-gap: ($base-size*.5);
 
-		.add-comment-form-wrapper {
-			width: ($base-size*30);
-			height: 48px;
+		.add-comment-form {
+			display: flex;
+			flex-direction: column;
+			row-gap: ($base-size*.5);
+			flex: 0 1 ($base-size*30);
 
-			background-color: aqua;
+			.add-comment-field {
+				padding: ($base-size*.25) ($base-size*.5);
+				border: 0;
+				border-radius: $base-border-radius;
+				outline: $base-border-width solid transparent;
+
+				font: 1rem/calc($base-size) 'Montserrat-Regular';
+				color: $dark-color;
+				background-color: darken($light-color, 5%);
+				resize: none;
+				transition: $base-transition;
+
+				&:focus {
+					outline: $base-border-width solid darken($light-color, 25%);
+				}
+
+				&::placeholder {
+					font: 1rem/calc($base-size) 'Montserrat-Regular';
+					color: darken($light-color, 25%);
+				}
+
+				&:placeholder-shown ~ .add-comment-submit-btn {
+					display: none;
+				}
+			}
+
+			.add-comment-submit-btn {
+				align-self: end;
+
+				color: $light-color;
+				background-color: $dark-color;
+			
+				&:hover {
+					background-color: lighten($dark-color, 10%);
+				}
+			}
 		}
 	}
 
@@ -465,56 +509,81 @@ $base-font-size: 14px;
 					flex-direction: column;
 					row-gap: ($base-size*.5);
 
+					// flex: 0 1 ($base-size*30);
+
 					.comment-name-pubdate-wrapper,
-					.comment-text-wrapper,
-					.comment-reaction-btns-wrapper,
-					.comment-answers-btn-wrapper {
+					.comment-text,
+					.comment-reaction-btns-wrapper {
 						width: ($base-size*30);
+						// flex: 0 1 ($base-size*30);
 					}				
 
 					.comment-name-pubdate-wrapper {
 						display: flex;
 						column-gap: ($base-size*.5);
 
-						.comment-name-wrapper,
-						.comment-pubdate-wrapper {
-							height: 20px;
+						.comment-name {
+							font: .8rem/1.2rem 'Montserrat-SemiBold';
+							color: darken($light-color, 60%);
+							text-decoration: none;
+							cursor: pointer;
 
-							background-color: aqua;
+							&:hover {
+								text-decoration: underline;
+							}
 						}
 
-						.comment-name-wrapper {
-							width: 100px;
-						}
-
-						.comment-pubdate-wrapper {
-							width: 50px;
+						.comment-pubdate {
+							font: .8rem/1.2rem 'Montserrat-SemiBold';
+							color: darken($light-color, 40%);
+							cursor: default;
 						}
 					}
 
-					.comment-text-wrapper {
-						height: 48px;
-
-						background-color: aqua;
+					.comment-text {
+						font: 1rem/1.2rem 'Montserrat-Regular';
+						color: $dark-color;
 					}
 
 					.comment-reaction-btns-wrapper {
 						display: flex;
 						column-gap: ($base-size*.5);
 
-						.comment-reply-btn-wrapper,
-						.comment-like-btns-wrapper {
-							height: ($base-size*1.5);
+						.comment-reply-btn {
+							color: darken($light-color, 50%);
+							background-color: transparent;
 
-							background-color: aqua;
+							&:hover {
+								background-color: darken($light-color, 5%);
+							}
 						}
 
-						.comment-reply-btn-wrapper {
-							width: 100px;
-						}
+						.comment-like-dislike-btn {
+							display: flex;
+							column-gap: ($base-size*.25);
 
-						.comment-like-btns-wrapper {
-							width: 70px;
+							padding: 0 ($base-size*.5);
+							border: 0;
+							border-radius: $base-border-radius;
+
+							background-color: transparent;
+							cursor: pointer;
+							transition: $base-transition;
+
+							&:hover {
+								background-color: darken($light-color, 5%);
+							}
+
+							.comment-like-dislike-ico {
+								font-size: 1rem;
+								line-height: calc($base-size*1.5); 
+								color: darken($light-color, 50%);
+							}
+
+							.comment-likes-dislikes-count {
+								font: .8rem/calc($base-size*1.5) 'Montserrat-Regular';
+								color: darken($light-color, 50%);
+							}
 						}
 					}
 				}
@@ -523,12 +592,34 @@ $base-font-size: 14px;
 
 				}
 
-				.comment-answers-btn-wrapper {
-					height: ($base-size*1.5);
+				.comment-answers-btn {
+					display: flex;
+					column-gap: ($base-size*.25);
+					align-self: start;
 
-					background-color: aqua;
+					padding: 0 $base-size;
+					border: 0;
+					border-radius: $base-border-radius;
+
+					background-color: transparent;
+					cursor: pointer;
+					transition: $base-transition;
+
+					&:hover {
+						background-color: darken($light-color, 5%);
+					}
+
+					.comment-answers-btn-text {
+						font: 1rem/calc($base-size*1.5) 'Montserrat-SemiBold';
+						color: darken($light-color, 50%);
+					}	
+
+					.comment-answers-btn-ico {
+						font-size: 1rem;
+						line-height: calc($base-size*1.5);
+						color: darken($light-color, 50%);
+					}
 				}
-
 			}
 		}
 	}
@@ -1259,7 +1350,7 @@ main {
 		}
 
 		.profile-comments-block-wrapper {
-
+			
 		}
 	}
 }

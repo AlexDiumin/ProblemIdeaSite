@@ -305,19 +305,55 @@
   flex-direction: column;
   row-gap: 24px;
 }
-.comments-block-wrapper .comment-img-wrapper {
+.comments-block-wrapper .comment-img-link {
   width: 36px;
   height: 36px;
-  background-color: aqua;
+}
+.comments-block-wrapper .comment-img-link .comment-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
 .comments-block-wrapper .add-comment-wrapper {
   display: flex;
   column-gap: 12px;
 }
-.comments-block-wrapper .add-comment-wrapper .add-comment-form-wrapper {
-  width: 720px;
-  height: 48px;
-  background-color: aqua;
+.comments-block-wrapper .add-comment-wrapper .add-comment-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  flex: 0 1 720px;
+}
+.comments-block-wrapper .add-comment-wrapper .add-comment-form .add-comment-field {
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 2px;
+  outline: 2px solid transparent;
+  font: 1rem/24px "Montserrat-Regular";
+  color: #112233;
+  background-color: #e1e3eb;
+  resize: none;
+  transition: 0.1s;
+}
+.comments-block-wrapper .add-comment-wrapper .add-comment-form .add-comment-field:focus {
+  outline: 2px solid #a4aac2;
+}
+.comments-block-wrapper .add-comment-wrapper .add-comment-form .add-comment-field::placeholder {
+  font: 1rem/24px "Montserrat-Regular";
+  color: #a4aac2;
+}
+.comments-block-wrapper .add-comment-wrapper .add-comment-form .add-comment-field:placeholder-shown ~ .add-comment-submit-btn {
+  display: none;
+}
+.comments-block-wrapper .add-comment-wrapper .add-comment-form .add-comment-submit-btn {
+  align-self: end;
+  color: #F0F1F5;
+  background-color: #112233;
+}
+.comments-block-wrapper .add-comment-wrapper .add-comment-form .add-comment-submit-btn:hover {
+  background-color: #1e3c59;
 }
 .comments-block-wrapper .comments-wrapper {
   display: flex;
@@ -339,48 +375,87 @@
   row-gap: 12px;
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-name-pubdate-wrapper,
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-text-wrapper,
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper,
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-answers-btn-wrapper {
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-text,
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper {
   width: 720px;
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-name-pubdate-wrapper {
   display: flex;
   column-gap: 12px;
 }
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-name-pubdate-wrapper .comment-name-wrapper,
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-name-pubdate-wrapper .comment-pubdate-wrapper {
-  height: 20px;
-  background-color: aqua;
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-name-pubdate-wrapper .comment-name {
+  font: 0.8rem/1.2rem "Montserrat-SemiBold";
+  color: #484f6b;
+  text-decoration: none;
+  cursor: pointer;
 }
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-name-pubdate-wrapper .comment-name-wrapper {
-  width: 100px;
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-name-pubdate-wrapper .comment-name:hover {
+  text-decoration: underline;
 }
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-name-pubdate-wrapper .comment-pubdate-wrapper {
-  width: 50px;
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-name-pubdate-wrapper .comment-pubdate {
+  font: 0.8rem/1.2rem "Montserrat-SemiBold";
+  color: #767fa3;
+  cursor: default;
 }
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-text-wrapper {
-  height: 48px;
-  background-color: aqua;
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-text {
+  font: 1rem/1.2rem "Montserrat-Regular";
+  color: #112233;
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper {
   display: flex;
   column-gap: 12px;
 }
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-reply-btn-wrapper,
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-like-btns-wrapper {
-  height: 36px;
-  background-color: aqua;
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-reply-btn {
+  color: #5c658a;
+  background-color: transparent;
 }
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-reply-btn-wrapper {
-  width: 100px;
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-reply-btn:hover {
+  background-color: #e1e3eb;
 }
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-like-btns-wrapper {
-  width: 70px;
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-like-dislike-btn {
+  display: flex;
+  column-gap: 6px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 2px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.1s;
 }
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .comment-answers-btn-wrapper {
-  height: 36px;
-  background-color: aqua;
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-like-dislike-btn:hover {
+  background-color: #e1e3eb;
+}
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-like-dislike-btn .comment-like-dislike-ico {
+  font-size: 1rem;
+  line-height: 36px;
+  color: #5c658a;
+}
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-like-dislike-btn .comment-likes-dislikes-count {
+  font: 0.8rem/36px "Montserrat-Regular";
+  color: #5c658a;
+}
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .comment-answers-btn {
+  display: flex;
+  column-gap: 6px;
+  align-self: start;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 2px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .comment-answers-btn:hover {
+  background-color: #e1e3eb;
+}
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .comment-answers-btn .comment-answers-btn-text {
+  font: 1rem/36px "Montserrat-SemiBold";
+  color: #5c658a;
+}
+.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .comment-answers-btn .comment-answers-btn-ico {
+  font-size: 1rem;
+  line-height: 36px;
+  color: #5c658a;
 }
 
 .form-wrapper {
