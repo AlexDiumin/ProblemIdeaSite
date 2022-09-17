@@ -19,6 +19,8 @@ $light-color: #F0F1F5;
 $accent-color-r: #FC575E;
 $accent-color-g: #66CC99;
 $accent-color-b: #44BBFF;
+$dark-font-color: darken($dark-color, 13%);
+$light-font-color: lighten($light-color, 4%);
 
 $base-size: 24px;
 $base-border-width: 2px;
@@ -122,7 +124,7 @@ $base-font-size: 14px;
 		.card-statistic-item-ico {
 			font-size: .8rem;
 			line-height: 1.2rem;
-			color: darken($light-color, 40%);
+			color: darken($light-color, 30%);
 		}
 
 		.card-statistic-item-value {
@@ -166,26 +168,26 @@ $base-font-size: 14px;
 		&:hover {
 			.pub-card-img-wrapper {
 				.pub-card-type-vertical {
-					background-color: rgba(darken($accent-color-r, 25%), .9);
+					background-color: rgba(darken($accent-color-r, 25%), .95);
 				}	
 			}
 
 			.pub-card-not-img-wrapper {
 				.pub-card-type-horizontal {
-					color: rgba(darken($accent-color-r, 10%), .9);
+					color: darken($accent-color-r, 25%);
 				}
 			}			
 		} 
 
 		.pub-card-img-wrapper {
 			.pub-card-type-vertical {
-				background-color: rgba(darken($accent-color-r, 25%), .7);
+				background-color: rgba(darken($accent-color-r, 25%), .8);
 			}
 		}
 
 		.pub-card-not-img-wrapper {
 			.pub-card-type-horizontal {
-				color: rgba(darken($accent-color-r, 10%), .7);
+				color: darken($accent-color-r, 23%);
 			}
 		}
 	}
@@ -199,26 +201,26 @@ $base-font-size: 14px;
 		&:hover {
 			.pub-card-img-wrapper {
 				.pub-card-type-vertical {
-					background-color: rgba(darken($accent-color-b, 25%), .9);
+					background-color: rgba(darken($accent-color-b, 36%), .95);
 				}
 			}
 
 			.pub-card-not-img-wrapper {
 				.pub-card-type-horizontal {
-					color: rgba(darken($accent-color-b, 10%), .9);
+					color: darken($accent-color-b, 30%);
 				}
 			}
 		}
 
 		.pub-card-img-wrapper {
 			.pub-card-type-vertical {
-				background-color: rgba(darken($accent-color-b, 25%), .7);
+				background-color: rgba(darken($accent-color-b, 36%), .8);
 			}
 		}
 
 		.pub-card-not-img-wrapper {
 			.pub-card-type-horizontal {
-				color: rgba(darken($accent-color-b, 10%), .7);
+				color: darken($accent-color-b, 28%);
 			}
 		}
 	}
@@ -238,7 +240,7 @@ $base-font-size: 14px;
 				border-radius: $base-border-radius;
 
 				font: .8rem/1.2rem 'Montserrat-SemiBold';
-				color: $light-color;
+				color: $light-font-color;
 			}
 		}
 	}
@@ -279,7 +281,7 @@ $base-font-size: 14px;
 			max-height: 2.4rem;
 
 			@include ellipsis(2);  // троеточие
-			color: $dark-color;
+			color: $dark-font-color;
 		}
 
 		.pub-card-title {
@@ -301,11 +303,11 @@ $base-font-size: 14px;
 			}
 
 			.pub-card-author {
-				color: darken($light-color, 60%);
+				color: $dark-font-color;
 			}
 
 			.pub-card-pubdate {
-				color: darken($light-color, 40%);
+				color: rgba($dark-font-color, .55);
 			}
 		}
 	}
@@ -333,8 +335,18 @@ $base-font-size: 14px;
 		transition: $base-transition;
 		background-color: transparent;
 	}
-	&:hover:before {
-		background-color: rgba(darken($light-color, 5%), 1);
+
+	&:hover {
+		
+		&:before {
+			background-color: rgba(darken($light-color, 5%), 1);
+		}
+
+		.user-card-img-wrapper {
+			.user-card-online:after {
+				border: $base-border-width solid darken($light-color, 5%) !important;
+			}
+		}
 	}
 
 	&[class~='user-card-vertical'] {
@@ -403,7 +415,7 @@ $base-font-size: 14px;
 			max-height: 2.4rem;
 
 			@include ellipsis(2);  // троеточие
-			color: $dark-color;			
+			color: $dark-font-color;			
 		} 
 
 		.user-card-name {
@@ -416,7 +428,7 @@ $base-font-size: 14px;
 
 		.user-card-location {
 			font: .8rem/1.2rem 'Montserrat-SemiBold';
-			color: darken($light-color, 40%);
+			color: rgba($dark-font-color, .55);
 		}
 	}
 }
@@ -428,6 +440,8 @@ $base-font-size: 14px;
 	row-gap: $base-size;
 
 	.comment-img-link {
+		flex: 0 0 ($base-size*1.5);
+
 		width: ($base-size*1.5);
 		height: ($base-size*1.5);
 
@@ -458,7 +472,7 @@ $base-font-size: 14px;
 				outline: $base-border-width solid transparent;
 
 				font: 1rem/calc($base-size) 'Montserrat-Regular';
-				color: $dark-color;
+				color: $dark-font-color;
 				background-color: darken($light-color, 5%);
 				resize: none;
 				transition: $base-transition;
@@ -469,7 +483,7 @@ $base-font-size: 14px;
 
 				&::placeholder {
 					font: 1rem/calc($base-size) 'Montserrat-Regular';
-					color: darken($light-color, 25%);
+					color: darken($light-color, 55%);
 				}
 
 				&:placeholder-shown ~ .add-comment-submit-btn {
@@ -480,7 +494,7 @@ $base-font-size: 14px;
 			.add-comment-submit-btn {
 				align-self: end;
 
-				color: $light-color;
+				color: $light-font-color;
 				background-color: $dark-color;
 			
 				&:hover {
@@ -502,29 +516,22 @@ $base-font-size: 14px;
 			.comment-not-img-wrapper {
 				display: flex;
 				flex-direction: column;
-				row-gap: $base-size;
+				row-gap: ($base-size*.5);
 
 				.only-comment-not-img-wrapper {
 					display: flex;
 					flex-direction: column;
-					row-gap: ($base-size*.5);
+					row-gap: ($base-size*.25);
 
-					// flex: 0 1 ($base-size*30);
-
-					.comment-name-pubdate-wrapper,
-					.comment-text,
-					.comment-reaction-btns-wrapper {
-						width: ($base-size*30);
-						// flex: 0 1 ($base-size*30);
-					}				
+					max-width: ($base-size*30);
 
 					.comment-name-pubdate-wrapper {
 						display: flex;
-						column-gap: ($base-size*.5);
+						column-gap: ($base-size*.25);
 
 						.comment-name {
-							font: .8rem/1.2rem 'Montserrat-SemiBold';
-							color: darken($light-color, 60%);
+							font: .8rem/1rem 'Montserrat-SemiBold';
+							color: $dark-font-color;
 							text-decoration: none;
 							cursor: pointer;
 
@@ -534,23 +541,23 @@ $base-font-size: 14px;
 						}
 
 						.comment-pubdate {
-							font: .8rem/1.2rem 'Montserrat-SemiBold';
-							color: darken($light-color, 40%);
+							font: .8rem/1rem 'Montserrat-SemiBold';
+							color: rgba($dark-font-color, .55);
 							cursor: default;
 						}
 					}
 
 					.comment-text {
 						font: 1rem/1.2rem 'Montserrat-Regular';
-						color: $dark-color;
+						color: $dark-font-color;
 					}
 
 					.comment-reaction-btns-wrapper {
 						display: flex;
-						column-gap: ($base-size*.5);
+						column-gap: ($base-size*.25);
 
 						.comment-reply-btn {
-							color: darken($light-color, 50%);
+							color: darken($light-color, 55%);
 							background-color: transparent;
 
 							&:hover {
@@ -577,19 +584,21 @@ $base-font-size: 14px;
 							.comment-like-dislike-ico {
 								font-size: 1rem;
 								line-height: calc($base-size*1.5); 
-								color: darken($light-color, 50%);
+								color: darken($light-color, 55%);
 							}
 
 							.comment-likes-dislikes-count {
 								font: .8rem/calc($base-size*1.5) 'Montserrat-Regular';
-								color: darken($light-color, 50%);
+								color: darken($light-color, 55%);
 							}
 						}
 					}
 				}
 
 				.comment-answers-wrapper {
-
+					display: flex;
+					flex-direction: column;
+					row-gap: $base-size;
 				}
 
 				.comment-answers-btn {
@@ -609,16 +618,16 @@ $base-font-size: 14px;
 						background-color: darken($light-color, 5%);
 					}
 
-					.comment-answers-btn-text {
-						font: 1rem/calc($base-size*1.5) 'Montserrat-SemiBold';
-						color: darken($light-color, 50%);
-					}	
-
 					.comment-answers-btn-ico {
 						font-size: 1rem;
 						line-height: calc($base-size*1.5);
-						color: darken($light-color, 50%);
+						color: darken($light-color, 55%);
 					}
+
+					.comment-answers-btn-text {
+						font: 1rem/calc($base-size*1.5) 'Montserrat-SemiBold';
+						color: darken($light-color, 55%);
+					}	
 				}
 			}
 		}
@@ -981,7 +990,7 @@ main {
 
 		.main-selected-tags-label {
 			font: 1rem/calc($base-size*1.5) 'Montserrat-Regular';
-			color: darken($light-color, 25%);
+			color: rgba($dark-font-color, .55);
 		}
 
 		.main-selected-tags-wrapper {
@@ -1000,12 +1009,12 @@ main {
 
 				.main-selected-tag {
 					font: 1rem/calc($base-size*1.5) 'Montserrat-Regular';
-					color: darken($accent-color-b, 25%);
+					color: darken($accent-color-b, 31%);
 				}
 
 				.main-selected-tag-cancel-btn {
 					color: $light-color;
-					background-color: darken($light-color, 30%);
+					background-color: darken($light-color, 40%);
 
 					&:hover {
 						background-color: darken($light-color, 50%);
@@ -1014,7 +1023,7 @@ main {
 			}
 
 			.main-selected-tag-cancel-all-btn {
-				color: darken($light-color, 50%);
+				color: darken($light-color, 55%);
 				background-color: transparent;
 
 				&:hover {
@@ -1047,7 +1056,7 @@ main {
 
 				.main-selection-block-title {
 					font: 1rem/1rem 'Montserrat-Bold';
-					color: $dark-color;
+					color: $dark-font-color;
 					text-align: center;
 				}
 
@@ -1060,6 +1069,7 @@ main {
 						padding-left: calc(1.2rem + $base-size*.25);
 
 						font: 1rem/calc($base-size*1.5) 'Montserrat-Regular';
+						color: $dark-font-color;
 						cursor: pointer;
 						-webkit-user-select: none;
 						-moz-user-select: none;
@@ -1124,9 +1134,9 @@ main {
 						margin: 0;
 
 						font: 1rem/1.2rem 'Montserrat-Regular';
+						color: darken($accent-color-b, 31%);
 						text-align: left;
 						word-wrap: break-word;
-						color: darken($accent-color-b, 25%);
 						background-color: transparent;
 						cursor: pointer;
 
@@ -1140,7 +1150,7 @@ main {
 					align-self: center;
 
 					.main-tag-settings-btn {
-						color: darken($light-color, 50%);
+						color: darken($light-color, 55%);
 						background-color: transparent;
 						white-space: nowrap;
 
@@ -1179,7 +1189,7 @@ main {
 
 	.profile-h {
 		font: 1.2rem/1.4rem 'Montserrat-Bold';
-		color: $dark-color;
+		color: $dark-font-color;
 	}
 
 	.user-wrapper-1,
@@ -1211,7 +1221,7 @@ main {
 
 			.profile-settings-btn, 
 			.profile-subscribe-btn {
-				color: $light-color;
+				color: $light-font-color;
 				background-color: $dark-color;
 			
 				&:hover {
@@ -1220,7 +1230,7 @@ main {
 			}
 
 			.profile-write-btn {
-				color: $dark-color;
+				color: $dark-font-color;
 				background-color: darken($light-color, 5%);
 				
 				&:hover {
@@ -1231,7 +1241,7 @@ main {
 			.profile-submenu-btn {
 				position: relative;
 
-				color: $dark-color;
+				color: $dark-font-color;
 				background-color: transparent;
 
 				&:hover {
@@ -1283,14 +1293,14 @@ main {
 
 					.profile-info-item-ico {	
 						font-size: 1rem;
-						color: darken($light-color, 25%);
+						color: darken($light-color, 30%);
 					}
 
 					.profile-info-item-text {
 						font-size: 1rem;
 						line-height: ($base-size*1.5);
 						font-family: 'Montserrat-Regular';
-						color: $dark-color;
+						color: $dark-font-color;
 						text-decoration: none;
 
 						@include ellipsis(1);  // троеточие
@@ -1325,12 +1335,14 @@ main {
 
 			.profile-name {
 				font: 1.4rem/1.6rem 'Montserrat-Bold';
-				color: $dark-color;
+				color: $dark-font-color;
 			}
 
 			.profile-description {
+				max-width: ($base-size*30);
+
 				font: 1rem/1.2rem 'Montserrat-Regular';
-				color: $dark-color;	
+				color: $dark-font-color;	
 			}
 		}
 
@@ -1455,7 +1467,7 @@ main {
 
 		.search-request-wrapper {
 			font: 1rem/1.2rem 'Montserrat-Regular';
-			color: darken($light-color, 25%);
+			color: rgba($dark-font-color, .55);
 
 			.search-request {
 				font-family: 'Montserrat-SemiBold';
