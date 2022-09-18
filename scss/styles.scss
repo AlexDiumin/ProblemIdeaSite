@@ -235,6 +235,7 @@ $base-font-size: 14px;
 				position: absolute;
 				top: ($base-size*.2);
 				left: ($base-size*.2);
+				z-index: 1;
 
 				padding: 0 ($base-size*.2);
 				border-radius: $base-border-radius;
@@ -263,11 +264,20 @@ $base-font-size: 14px;
 		flex: 1 1 0;
 		position: relative;
 
-		border-radius: $base-border-radius;
+		.pub-card-img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
 
-		background-image: url('../img/user.jpg');
-		background-size: cover;
-		background-position: center;
+			width: 100%;
+			height: 100%;
+			border-radius: $base-border-radius;
+
+			object-fit: cover;
+			object-position: center;
+		}
 	}
 
 	.pub-card-not-img-wrapper {
@@ -285,7 +295,7 @@ $base-font-size: 14px;
 		}
 
 		.pub-card-title {
-			font: 1rem/1.2rem 'Montserrat-Bold';
+			font: 1rem/1.2rem 'Montserrat-SemiBold';
 		}
 
 		.pub-card-description {
@@ -303,7 +313,7 @@ $base-font-size: 14px;
 			}
 
 			.pub-card-author {
-				color: $dark-font-color;
+				color: rgba($dark-font-color, .8);
 			}
 
 			.pub-card-pubdate {
@@ -342,7 +352,7 @@ $base-font-size: 14px;
 			background-color: rgba(darken($light-color, 5%), 1);
 		}
 
-		.user-card-img-wrapper {
+		.user-card-img-block {
 			.user-card-online:after {
 				border: $base-border-width solid darken($light-color, 5%) !important;
 			}
@@ -352,7 +362,7 @@ $base-font-size: 14px;
 	&[class~='user-card-vertical'] {
 		flex-direction: column;
 
-		.user-card-img-wrapper {
+		.user-card-img-block {
 			.user-card-online:after {
 				bottom: 7%;
 			}
@@ -366,28 +376,23 @@ $base-font-size: 14px;
 			justify-content: center;
 		}
 
-		.user-card-img-wrapper {
+		.user-card-img-block {
 			.user-card-online:after {
 				bottom: 12%;
 			}
 		}
 	}
 
-	.user-card-img-wrapper {
+	.user-card-img-block {
 		flex: 1 1 0;
 		display: flex;
 		justify-content: center;
 
-		.user-card-img {
+		.user-card-img-wrapper {
 			position: relative;
 
 			width: 56.25%;
 			padding-top: 56.25%;
-			border-radius: 50%;
-
-			background-image: url('../img/user.jpg');
-			background-size: cover;
-			background-position: center;
 
 			&[class~='user-card-online']:after {
 				position: absolute;
@@ -400,6 +405,21 @@ $base-font-size: 14px;
 
 				content: '';
 				background-color: darken($accent-color-g, 5%);
+			}
+
+			.user-card-img {
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+
+				object-fit: cover;
+				object-position: center;
 			}
 		}
 	}
@@ -419,7 +439,7 @@ $base-font-size: 14px;
 		} 
 
 		.user-card-name {
-			font: 1rem/1.2rem 'Montserrat-Bold';
+			font: 1rem/1.2rem 'Montserrat-SemiBold';
 		}
 
 		.user-card-description {
@@ -635,6 +655,45 @@ $base-font-size: 14px;
 }
 
 
+.tabs-wrapper {
+	display: flex;
+
+	border-bottom: $base-border-width solid $dark-color;
+
+	.tab-item {
+		flex: 1 1 0;
+
+		padding: 0 ($base-size*.5);
+		border-left: 0;
+		border-top: 0;
+		border-right: 0;
+	
+		font-size: 1rem;
+		line-height: calc($base-size*1.5 - $base-border-width*1.5);
+		color: $dark-color;
+		background-color: transparent;
+		cursor: pointer;
+		transition: $base-transition;
+
+		&[class~="selected-tab"] {
+			border-bottom: ($base-border-width*1.5) solid $dark-color;
+
+			font-family: 'Montserrat-Bold';
+		}
+
+		&:not([class~="selected-tab"]) {
+			border-bottom: ($base-border-width*1.5) solid transparent;
+
+			font-family: 'Montserrat-SemiBold';
+
+			&:hover {
+				border-bottom: ($base-border-width*1.5) solid darken($light-color, 25%);
+			}
+		}
+	}
+}
+
+
 .form-wrapper {
 	position: relative;
 	display: flex;
@@ -655,6 +714,18 @@ $base-font-size: 14px;
 		background-color: aqua;
 	}
 }
+
+
+h1 {
+	font: 1.4rem/1.6rem 'Montserrat-Bold';
+	color: $dark-font-color;
+}
+
+
+h2 {
+	font: 1.2rem/1.4rem 'Montserrat-Bold';
+	color: $dark-font-color;
+}
 		
 
 html {
@@ -671,7 +742,7 @@ body {
 header, 
 footer {
 	display: flex;
-	z-index: 1;
+	z-index: 999;
 
 	width: 100%;
 	padding: ($base-size*.25) ($base-size*2);
@@ -1187,32 +1258,39 @@ main {
 
 	padding: ($base-size*4) ($base-size*2) ($base-size*2);
 
-	.profile-h {
-		font: 1.2rem/1.4rem 'Montserrat-Bold';
-		color: $dark-font-color;
-	}
+	// .profile-h {
+	// 	font: 1.2rem/1.4rem 'Montserrat-Bold';
+	// 	color: $dark-font-color;
+	// }
 
 	.user-wrapper-1,
 	.user-wrapper-2 {
 		display: flex;
 		flex-direction: column;
 		row-gap: ($base-size*2);
-		// flex: 1 1 0;
 	}
 
 	.user-wrapper-1 {
 		.profile-img-wrapper {
+			position: relative;
+
 			width: 100%;
 			padding-top: 100%;
-			border-radius: $base-border-radius;
 
-			background-image: url('../img/user.jpg');
-			background-size: cover;
-			background-position: center;
+			.profile-img {
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
 
-			// .profile-img {
-			// 	border-radius: $base-border-radius;
-			// }
+				width: 100%;
+				height: 100%;
+				border-radius: $base-border-radius;
+			
+				object-fit: cover;
+				object-position: center;
+			}
 		}
 
 		.profile-btns-wrapper {
@@ -1291,7 +1369,7 @@ main {
 					column-gap: ($base-size*.25);
 					align-items: center;
 
-					.profile-info-item-ico {	
+					.profile-info-item-ico {
 						font-size: 1rem;
 						color: darken($light-color, 30%);
 					}
@@ -1332,11 +1410,6 @@ main {
 			display: flex;
 			flex-direction: column;
 			row-gap: ($base-size*.5);			
-
-			.profile-name {
-				font: 1.4rem/1.6rem 'Montserrat-Bold';
-				color: $dark-font-color;
-			}
 
 			.profile-description {
 				max-width: ($base-size*30);
@@ -1471,43 +1544,6 @@ main {
 
 			.search-request {
 				font-family: 'Montserrat-SemiBold';
-			}
-		}
-
-		.search-tabs-wrapper {
-			display: flex;
-
-			border-bottom: $base-border-width solid $dark-color;
-
-			.search-tab-item {
-				flex: 1 1 0;
-
-				border-left: 0;
-				border-top: 0;
-				border-right: 0;
-			
-				font-size: 1rem;
-				line-height: calc($base-size*1.5 - $base-border-width*1.5);
-				color: $dark-color;
-				background-color: transparent;
-				cursor: pointer;
-				transition: $base-transition;
-
-				&[class~="selected-tab"] {
-					border-bottom: ($base-border-width*1.5) solid $dark-color;
-
-					font-family: 'Montserrat-Bold';
-				}
-
-				&:not([class~="selected-tab"]) {
-					border-bottom: ($base-border-width*1.5) solid transparent;
-
-					font-family: 'Montserrat-SemiBold';
-
-					&:hover {
-						border-bottom: ($base-border-width*1.5) solid darken($light-color, 25%);
-					}
-				}
 			}
 		}
 
@@ -1753,9 +1789,65 @@ main {
 				row-gap: $base-size;
 
 				.publication-img-wrapper {
-					height: 400px;
+					position: relative;
 
-					background-color: aqua;
+					padding-top: 56.25%;
+				
+					.publication-img-prev-btn,
+					.publication-img-next-btn {
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						z-index: 1;
+
+						width: 20%;
+						padding: 0;
+						border: 0;
+						border-radius: $base-border-radius;
+
+						background-color: transparent;
+						cursor: pointer;
+						transition: $base-transition;
+
+						&[class*='publication-img-prev-btn'] {
+							left: 0;
+						}
+
+						&[class*='publication-img-next-btn'] {
+							right: 0;
+						}						
+
+						&:hover {
+							background-color: rgba($dark-color, .4);
+
+							.publication-img-prev-next-ico {
+								color: rgba($light-color, .8);
+							}
+						}
+
+						.publication-img-prev-next-ico {
+							font-size: 2rem;
+							color: transparent;
+						}
+					}
+
+					.publication-img {
+						position: absolute;
+						left: 0;
+						top: 0;
+						right: 0;
+						bottom: 0;
+
+						width: 100%;
+						height: 100%;
+						border-radius: $base-border-radius;
+
+						object-fit: cover;
+						object-position: center;
+					}
 				}
 
 				.publication-small-imgs-wrapper {
@@ -1765,21 +1857,28 @@ main {
 					justify-content: center;
 					flex-wrap: wrap;
 
+					.publication-small-img {
+						border-radius: $base-border-radius;
 
-					.publication-small-img-item-wrapper {
-						flex: 0 0 ($base-size*1.5);
+						object-fit: cover;
+						object-position: center;
+						cursor: pointer;
+						transition: $base-transition;
+						outline: $base-border-width solid transparent;
 
-						width: ($base-size*1.5);
-						height: ($base-size*1.5);
+						&:hover {
+							outline: $base-border-width solid darken($light-color, 25%);
+						}
 
-						background-color: aqua;
-					}
+						&[class*='publication-img-selected'] {
+							width: ($base-size*2);
+							height: ($base-size*2);						
+						}
 
-					.publication-img-selected {
-						flex: 0 0 ($base-size*2);
-
-						width: ($base-size*2);
-						height: ($base-size*2);
+						&:not([class*='publication-img-selected']) {
+							width: ($base-size*1.5);
+							height: ($base-size*1.5);
+						}
 					}
 				}
 			} 
@@ -1788,12 +1887,6 @@ main {
 				display: flex;
 				flex-direction: column;
 				row-gap: $base-size;
-
-				.publication-tabs-wrapper {
-					height: 36px;
-
-					background-color: aqua;
-				}
 
 				.publication-presentation-wrapper,
 				.publication-realization-wrapper {
@@ -1865,33 +1958,26 @@ main {
 					display: flex;
 					column-gap: $base-size;
 
-					.publication-type-wrapper,
-					.publication-location-wrapper {
-						height: 20px;
+					.publication-type {
+						font: .8rem/1rem 'Montserrat-SemiBold';
+					
+						&[class*='publication-type-idea'] {
+							color: darken($accent-color-r, 23%);
+						}
 
-						background-color: aqua;
+						&[class*='publication-type-problem'] {
+							color: darken($accent-color-b, 28%);
+						}						
 					}
 
-					.publication-type-wrapper {
-						width: 100px;
+					.publication-location {
+						font: .8rem/1rem 'Montserrat-SemiBold';
+						color: rgba($dark-font-color, .55);
 					}
 
-					.publication-location-wrapper {
-						width: 150px;
-					}
-
-					.publication-title-wrapper {
-						width: 100%;
-						height: 60px;
-
-						background-color: aqua;
-					}	
-
-					.publication-description-wrapper {
-						width: 100%;
-						height: 100px;
-
-						background-color: aqua;
+					.publication-description {
+						font: 1rem/1.2rem 'Montserrat-Regular';
+						color: $dark-font-color;
 					}
 
 					.publication-tags-wrapper {
@@ -1899,38 +1985,45 @@ main {
 						gap: ($base-size*.5);
 						flex-wrap: wrap;
 
-						.publication-tag-item-wrapper {
-							width: 100px;
-							height: 15px;
-
-							background-color: aqua;
+						.publication-tag-item {
+							font: 1rem/1.2rem 'Montserrat-Regular';
+							color: darken($accent-color-b, 31%);
 						}
 					}
 
-					.publication-date-wrapper {
-						width: 100px;
-						height: ($base-size*1.5);
-
-						background-color: aqua;
+					.publication-date {
+						font: .8rem/calc($base-size*1.5) 'Montserrat-SemiBold';
+						color: rgba($dark-font-color, .55);
 					}
 
 					.publication-author-wrapper {
 						display: flex;
-						column-gap: ($base-size*.5);
-					
-						.publication-author-img-wrapper,
-						.publication-author-name-wrapper {
-							height: ($base-size*1.5);
+						column-gap: ($base-size*.25);
 
-							background-color: aqua;
+						padding: 0;
+						border: 0;
+
+						background-color: transparent;
+						text-decoration: none;
+
+						&:hover {
+							.publication-author-name {
+								text-decoration: underline;
+							}
 						}
 
-						.publication-author-img-wrapper {
+						.publication-author-img {
 							width: ($base-size*1.5);
+							height: ($base-size*1.5);
+							border-radius: 50%;
+
+							object-fit: cover;
+							object-position: center;
 						}
 
-						.publication-author-name-wrapper {
-							width: 150px;
+						.publication-author-name {
+							font: .8rem/calc($base-size*1.5) 'Montserrat-SemiBold';
+							color: $dark-font-color;
 						}
 					}
 				}
@@ -1946,41 +2039,88 @@ main {
 					flex-direction: column;
 					row-gap: ($base-size*.5);
 
-					.publication-reaction-statistic-wrapper {
-						width: 300px;
-						height: 20px;
+					.publication-reaction-statistic {
+						font: 1rem/1.2rem 'Montserrat-Regular';
+						color: $dark-font-color;
 
-						background-color: aqua;
+						span {
+							font: 1rem/1.2rem 'Montserrat-Bold';
+						}
 					}
 
-					.publication-reaction-btns-block-wrapper {
+					.publication-reaction-btns-wrapper {
 						display: flex;
 						column-gap: ($base-size*.5);
 
-						.publication-reaction-btn {
-							width: 150px;
-							height: ($base-size*1.5);
+						// .publication-reaction-btn {
+						// 	width: 150px;
+						// 	height: ($base-size*1.5);
 
-							background-color: aqua;
-						}
+						// 	background-color: aqua;
+						// }
 
-						.publication-reaction-like-btns-wrapper {
-							display: flex;
-							column-gap: ($base-size*.25);
+						// .publication-reaction-like-btns-wrapper {
+						// 	display: flex;
+						// 	column-gap: ($base-size*.25);
 
-							.publication-reaction-like-btn {
-								width: 80px;
-								height: ($base-size*1.5);
+						// 	.publication-reaction-like-btn {
+						// 		width: 80px;
+						// 		height: ($base-size*1.5);
 
-								background-color: aqua;
+						// 		background-color: aqua;
+						// 	}
+						// }
+
+						// .publication-reaction-other-btn {
+						// 	width: ($base-size*1.5);
+						// 	height: ($base-size*1.5);
+
+						// 	background-color: aqua;
+						// }
+
+						.publication-suscribe-btn {
+							color: $light-font-color;
+							background-color: $dark-color;
+
+							&:hover {
+								background-color: lighten($dark-color, 10%);
 							}
 						}
 
-						.publication-reaction-other-btn {
-							width: ($base-size*1.5);
-							height: ($base-size*1.5);
+						.publication-total-stats-submenu-btn {
+							color: $dark-color;
+							background-color: transparent;
 
-							background-color: aqua;
+							&:hover {
+								background-color: darken($light-color, 5%);
+							}
+						}
+
+						.publication-add-idea-btn {
+							color: $light-font-color;
+							background-color: darken($accent-color-r, 25%);
+
+							&:hover {
+								background-color: darken($accent-color-r, 20%);
+							}
+						}
+
+						.publication-donate-btn {
+							color: $light-font-color;
+							background-color: darken($accent-color-g, 35%);
+
+							&:hover {
+								background-color: darken($accent-color-g, 30%);
+							}
+						}
+
+						.publication-donations-submenu-btn {
+							color: darken($accent-color-g, 25%);
+							background-color: transparent;
+
+							&:hover {
+								background-color: darken($light-color, 5%);
+							}
 						}
 					}
 				}
@@ -1992,13 +2132,6 @@ main {
 		display: flex;
 		flex-direction: column;
 		row-gap: $base-size;
-
-		.publication-recommendations-title-wrapper {
-			width: 200px;
-			height: 24px;
-
-			background-color: aqua;
-		}
 
 		.publication-recommendations-block-wrapper {
 			display: grid;

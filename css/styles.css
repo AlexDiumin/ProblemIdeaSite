@@ -153,6 +153,7 @@
   position: absolute;
   top: 4.8px;
   left: 4.8px;
+  z-index: 1;
   padding: 0 4.8px;
   border-radius: 2px;
   font: 0.8rem/1.2rem "Montserrat-SemiBold";
@@ -170,10 +171,18 @@
 .pub-card .pub-card-img-wrapper {
   flex: 1 1 0;
   position: relative;
+}
+.pub-card .pub-card-img-wrapper .pub-card-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 2px;
-  background-image: url("../img/user.jpg");
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 .pub-card .pub-card-not-img-wrapper {
   flex: 1 1 0;
@@ -192,7 +201,7 @@
   color: #000101;
 }
 .pub-card .pub-card-not-img-wrapper .pub-card-title {
-  font: 1rem/1.2rem "Montserrat-Bold";
+  font: 1rem/1.2rem "Montserrat-SemiBold";
 }
 .pub-card .pub-card-not-img-wrapper .pub-card-description {
   font: 1rem/1.2rem "Montserrat-Regular";
@@ -207,7 +216,7 @@
   font: 0.8rem/1.2rem "Montserrat-SemiBold";
 }
 .pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-author {
-  color: #000101;
+  color: rgba(0, 1, 1, 0.8);
 }
 .pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-pubdate {
   color: rgba(0, 1, 1, 0.55);
@@ -234,13 +243,13 @@
 .user-card:hover:before {
   background-color: #e1e3eb;
 }
-.user-card:hover .user-card-img-wrapper .user-card-online:after {
+.user-card:hover .user-card-img-block .user-card-online:after {
   border: 2px solid #e1e3eb !important;
 }
 .user-card[class~=user-card-vertical] {
   flex-direction: column;
 }
-.user-card[class~=user-card-vertical] .user-card-img-wrapper .user-card-online:after {
+.user-card[class~=user-card-vertical] .user-card-img-block .user-card-online:after {
   bottom: 7%;
 }
 .user-card[class~=user-card-horizontal] {
@@ -249,24 +258,20 @@
 .user-card[class~=user-card-horizontal] .user-card-not-img-wrapper {
   justify-content: center;
 }
-.user-card[class~=user-card-horizontal] .user-card-img-wrapper .user-card-online:after {
+.user-card[class~=user-card-horizontal] .user-card-img-block .user-card-online:after {
   bottom: 12%;
 }
-.user-card .user-card-img-wrapper {
+.user-card .user-card-img-block {
   flex: 1 1 0;
   display: flex;
   justify-content: center;
 }
-.user-card .user-card-img-wrapper .user-card-img {
+.user-card .user-card-img-block .user-card-img-wrapper {
   position: relative;
   width: 56.25%;
   padding-top: 56.25%;
-  border-radius: 50%;
-  background-image: url("../img/user.jpg");
-  background-size: cover;
-  background-position: center;
 }
-.user-card .user-card-img-wrapper .user-card-img[class~=user-card-online]:after {
+.user-card .user-card-img-block .user-card-img-wrapper[class~=user-card-online]:after {
   position: absolute;
   right: 7%;
   width: 18px;
@@ -275,6 +280,18 @@
   border-radius: 50%;
   content: "";
   background-color: #53c68c;
+}
+.user-card .user-card-img-block .user-card-img-wrapper .user-card-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
 .user-card .user-card-not-img-wrapper {
   flex: 1 1 0;
@@ -293,7 +310,7 @@
   color: #000101;
 }
 .user-card .user-card-not-img-wrapper .user-card-name {
-  font: 1rem/1.2rem "Montserrat-Bold";
+  font: 1rem/1.2rem "Montserrat-SemiBold";
 }
 .user-card .user-card-not-img-wrapper .user-card-description {
   font: 1rem/1.2rem "Montserrat-Regular";
@@ -463,6 +480,35 @@
   color: #525a7b;
 }
 
+.tabs-wrapper {
+  display: flex;
+  border-bottom: 2px solid #112233;
+}
+.tabs-wrapper .tab-item {
+  flex: 1 1 0;
+  padding: 0 12px;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  font-size: 1rem;
+  line-height: 33px;
+  color: #112233;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.tabs-wrapper .tab-item[class~=selected-tab] {
+  border-bottom: 3px solid #112233;
+  font-family: "Montserrat-Bold";
+}
+.tabs-wrapper .tab-item:not([class~=selected-tab]) {
+  border-bottom: 3px solid transparent;
+  font-family: "Montserrat-SemiBold";
+}
+.tabs-wrapper .tab-item:not([class~=selected-tab]):hover {
+  border-bottom: 3px solid #a4aac2;
+}
+
 .form-wrapper {
   position: relative;
   display: flex;
@@ -480,6 +526,16 @@
   background-color: aqua;
 }
 
+h1 {
+  font: 1.4rem/1.6rem "Montserrat-Bold";
+  color: #000101;
+}
+
+h2 {
+  font: 1.2rem/1.4rem "Montserrat-Bold";
+  color: #000101;
+}
+
 html {
   font-size: 14px;
   scroll-behavior: smooth;
@@ -492,7 +548,7 @@ body {
 header,
 footer {
   display: flex;
-  z-index: 1;
+  z-index: 999;
   width: 100%;
   padding: 6px 48px;
   background-color: #112233;
@@ -867,10 +923,6 @@ main {
   column-gap: 48px;
   padding: 96px 48px 48px;
 }
-.user-main .profile-h {
-  font: 1.2rem/1.4rem "Montserrat-Bold";
-  color: #000101;
-}
 .user-main .user-wrapper-1,
 .user-main .user-wrapper-2 {
   display: flex;
@@ -878,12 +930,21 @@ main {
   row-gap: 48px;
 }
 .user-main .user-wrapper-1 .profile-img-wrapper {
+  position: relative;
   width: 100%;
   padding-top: 100%;
+}
+.user-main .user-wrapper-1 .profile-img-wrapper .profile-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 2px;
-  background-image: url("../img/user.jpg");
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 .user-main .user-wrapper-1 .profile-btns-wrapper {
   display: flex;
@@ -982,10 +1043,6 @@ main {
   flex-direction: column;
   row-gap: 12px;
 }
-.user-main .user-wrapper-2 .profile-name-description-wrapper .profile-name {
-  font: 1.4rem/1.6rem "Montserrat-Bold";
-  color: #000101;
-}
 .user-main .user-wrapper-2 .profile-name-description-wrapper .profile-description {
   max-width: 720px;
   font: 1rem/1.2rem "Montserrat-Regular";
@@ -1077,33 +1134,6 @@ main {
 }
 .search-main .search-results-block-wrapper .search-request-wrapper .search-request {
   font-family: "Montserrat-SemiBold";
-}
-.search-main .search-results-block-wrapper .search-tabs-wrapper {
-  display: flex;
-  border-bottom: 2px solid #112233;
-}
-.search-main .search-results-block-wrapper .search-tabs-wrapper .search-tab-item {
-  flex: 1 1 0;
-  border-left: 0;
-  border-top: 0;
-  border-right: 0;
-  font-size: 1rem;
-  line-height: 33px;
-  color: #112233;
-  background-color: transparent;
-  cursor: pointer;
-  transition: 0.1s;
-}
-.search-main .search-results-block-wrapper .search-tabs-wrapper .search-tab-item[class~=selected-tab] {
-  border-bottom: 3px solid #112233;
-  font-family: "Montserrat-Bold";
-}
-.search-main .search-results-block-wrapper .search-tabs-wrapper .search-tab-item:not([class~=selected-tab]) {
-  border-bottom: 3px solid transparent;
-  font-family: "Montserrat-SemiBold";
-}
-.search-main .search-results-block-wrapper .search-tabs-wrapper .search-tab-item:not([class~=selected-tab]):hover {
-  border-bottom: 3px solid #a4aac2;
 }
 .search-main .search-results-block-wrapper .search-results-wrapper {
   display: flex;
@@ -1275,8 +1305,58 @@ main {
   row-gap: 24px;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-img-wrapper {
-  height: 400px;
-  background-color: aqua;
+  position: relative;
+  padding-top: 56.25%;
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-img-wrapper .publication-img-prev-btn,
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-img-wrapper .publication-img-next-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  width: 20%;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-img-wrapper .publication-img-prev-btn[class*=publication-img-prev-btn],
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-img-wrapper .publication-img-next-btn[class*=publication-img-prev-btn] {
+  left: 0;
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-img-wrapper .publication-img-prev-btn[class*=publication-img-next-btn],
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-img-wrapper .publication-img-next-btn[class*=publication-img-next-btn] {
+  right: 0;
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-img-wrapper .publication-img-prev-btn:hover,
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-img-wrapper .publication-img-next-btn:hover {
+  background-color: rgba(17, 34, 51, 0.4);
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-img-wrapper .publication-img-prev-btn:hover .publication-img-prev-next-ico,
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-img-wrapper .publication-img-next-btn:hover .publication-img-prev-next-ico {
+  color: rgba(240, 241, 245, 0.8);
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-img-wrapper .publication-img-prev-btn .publication-img-prev-next-ico,
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-img-wrapper .publication-img-next-btn .publication-img-prev-next-ico {
+  font-size: 2rem;
+  color: transparent;
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-img-wrapper .publication-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  object-fit: cover;
+  object-position: center;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-small-imgs-wrapper {
   display: flex;
@@ -1285,25 +1365,29 @@ main {
   justify-content: center;
   flex-wrap: wrap;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-small-imgs-wrapper .publication-small-img-item-wrapper {
-  flex: 0 0 36px;
-  width: 36px;
-  height: 36px;
-  background-color: aqua;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-small-imgs-wrapper .publication-small-img {
+  border-radius: 2px;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+  transition: 0.1s;
+  outline: 2px solid transparent;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-small-imgs-wrapper .publication-img-selected {
-  flex: 0 0 48px;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-small-imgs-wrapper .publication-small-img:hover {
+  outline: 2px solid #a4aac2;
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-small-imgs-wrapper .publication-small-img[class*=publication-img-selected] {
   width: 48px;
   height: 48px;
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-small-imgs-wrapper .publication-small-img:not([class*=publication-img-selected]) {
+  width: 36px;
+  height: 36px;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-tabs-block-wrapper {
   display: flex;
   flex-direction: column;
   row-gap: 24px;
-}
-.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-tabs-block-wrapper .publication-tabs-wrapper {
-  height: 36px;
-  background-color: aqua;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-tabs-block-wrapper .publication-presentation-wrapper,
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-tabs-block-wrapper .publication-realization-wrapper {
@@ -1363,56 +1447,57 @@ main {
   display: flex;
   column-gap: 24px;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-type-wrapper,
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-location-wrapper {
-  height: 20px;
-  background-color: aqua;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-type {
+  font: 0.8rem/1rem "Montserrat-SemiBold";
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-type-wrapper {
-  width: 100px;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-type[class*=publication-type-idea] {
+  color: #da040d;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-location-wrapper {
-  width: 150px;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-type[class*=publication-type-problem] {
+  color: #0073b4;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-title-wrapper {
-  width: 100%;
-  height: 60px;
-  background-color: aqua;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-location {
+  font: 0.8rem/1rem "Montserrat-SemiBold";
+  color: rgba(0, 1, 1, 0.55);
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-description-wrapper {
-  width: 100%;
-  height: 100px;
-  background-color: aqua;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-description {
+  font: 1rem/1.2rem "Montserrat-Regular";
+  color: #000101;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-tags-wrapper {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-tags-wrapper .publication-tag-item-wrapper {
-  width: 100px;
-  height: 15px;
-  background-color: aqua;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-tags-wrapper .publication-tag-item {
+  font: 1rem/1.2rem "Montserrat-Regular";
+  color: #0069a5;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-date-wrapper {
-  width: 100px;
-  height: 36px;
-  background-color: aqua;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-date {
+  font: 0.8rem/36px "Montserrat-SemiBold";
+  color: rgba(0, 1, 1, 0.55);
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-author-wrapper {
   display: flex;
-  column-gap: 12px;
+  column-gap: 6px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  text-decoration: none;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-author-wrapper .publication-author-img-wrapper,
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-author-wrapper .publication-author-name-wrapper {
-  height: 36px;
-  background-color: aqua;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-author-wrapper:hover .publication-author-name {
+  text-decoration: underline;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-author-wrapper .publication-author-img-wrapper {
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-author-wrapper .publication-author-img {
   width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-author-wrapper .publication-author-name-wrapper {
-  width: 150px;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-author-wrapper .publication-author-name {
+  font: 0.8rem/36px "Montserrat-SemiBold";
+  color: #000101;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper {
   display: flex;
@@ -1424,43 +1509,56 @@ main {
   flex-direction: column;
   row-gap: 12px;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-statistic-wrapper {
-  width: 300px;
-  height: 20px;
-  background-color: aqua;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-statistic {
+  font: 1rem/1.2rem "Montserrat-Regular";
+  color: #000101;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-block-wrapper {
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-statistic span {
+  font: 1rem/1.2rem "Montserrat-Bold";
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper {
   display: flex;
   column-gap: 12px;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-block-wrapper .publication-reaction-btn {
-  width: 150px;
-  height: 36px;
-  background-color: aqua;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-suscribe-btn {
+  color: #fcfcfd;
+  background-color: #112233;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-block-wrapper .publication-reaction-like-btns-wrapper {
-  display: flex;
-  column-gap: 6px;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-suscribe-btn:hover {
+  background-color: #1e3c59;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-block-wrapper .publication-reaction-like-btns-wrapper .publication-reaction-like-btn {
-  width: 80px;
-  height: 36px;
-  background-color: aqua;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-total-stats-submenu-btn {
+  color: #112233;
+  background-color: transparent;
 }
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-block-wrapper .publication-reaction-other-btn {
-  width: 36px;
-  height: 36px;
-  background-color: aqua;
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-total-stats-submenu-btn:hover {
+  background-color: #e1e3eb;
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-add-idea-btn {
+  color: #fcfcfd;
+  background-color: #d0040c;
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-add-idea-btn:hover {
+  background-color: #e9040e;
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-donate-btn {
+  color: #fcfcfd;
+  background-color: #206040;
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-donate-btn:hover {
+  background-color: #26734d;
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-donations-submenu-btn {
+  color: #2d8659;
+  background-color: transparent;
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-donations-submenu-btn:hover {
+  background-color: #e1e3eb;
 }
 .publication-main .publication-wrapper-2 {
   display: flex;
   flex-direction: column;
   row-gap: 24px;
-}
-.publication-main .publication-wrapper-2 .publication-recommendations-title-wrapper {
-  width: 200px;
-  height: 24px;
-  background-color: aqua;
 }
 .publication-main .publication-wrapper-2 .publication-recommendations-block-wrapper {
   display: grid;
