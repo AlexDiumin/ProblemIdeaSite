@@ -349,9 +349,9 @@
 						<p class="publication-description">Описание проблемы или идеи проблемы или идеи проблемы или идеи проблемы или идеи проблемы или идеи проблемы или идеи проблемы или идеи</p>
 					</div>
 					<div class="publication-main-info-row-wrapper">
-						<ul class="publication-tags-wrapper">
-							<li class="publication-tag-item">#название_тега</li>
-						</ul>
+						<div class="publication-tags-wrapper">
+							<a href="#" class="tag-link">#название_тега</a>
+						</div>
 					</div>
 					<div class="publication-main-info-row-wrapper">
 						<span class="publication-date">12 мар. 2020 г.</span>
@@ -370,10 +370,20 @@
 
 						<div class="publication-reaction-btns-wrapper">
 							<button class="btn publication-suscribe-btn">Подписаться</button>
-							<!-- <div class="publication-reaction-like-btns-wrapper">
-								<div class="publication-reaction-like-btn"></div>
-								<div class="publication-reaction-like-btn"></div>
-							</div> -->
+							
+							<div class="like-btns-wrapper">
+								<button class="like-btn">
+									<i class="fa-solid fa-thumbs-up like-ico"></i>
+
+									<span class="dislikes-count">8</span>	
+								</button>
+								<button class="dislike-btn">
+									<i class="fa-solid fa-thumbs-down dislike-ico"></i>
+
+									<span class="dislikes-count">3</span>
+								</button>
+							</div>
+
 							<button class="ico-btn publication-total-stats-submenu-btn">
 								<i class="fa-solid fa-ellipsis-vertical"></i>
 							</button>

@@ -106,9 +106,61 @@ $base-font-size: 14px;
 	border-radius: $base-border-radius;
 	margin: 0;
 
-	font-size: ($base-size*.75);
+	font-size: 1.2rem;
 	cursor: pointer;
 	transition: $base-transition;
+}
+
+
+.like-btns-wrapper {
+	display: flex;
+
+	button[class*='like-btn'] {
+		display: flex;
+		column-gap: ($base-size*.25);
+		align-items: center;
+
+		height: ($base-size*1.5);
+		padding: 0 ($base-size*.5);
+		border: 0;
+		border-radius: $base-border-radius;
+
+		font-family: 'Montserrat-Regular';
+		background-color: transparent;
+		cursor: pointer;
+		transition: $base-transition;		
+
+		&:hover {
+			background-color: darken($light-color, 5%);
+		}
+
+		i[class*='like-ico'] {
+			font-size: 1.2rem;
+		}
+
+		span[class*='likes-count'] {
+			font-size: 1rem;
+		}
+	}
+}
+
+
+.tag {
+	font: 1rem/1.2rem 'Montserrat-Regular';
+	color: darken($accent-color-b, 31%);
+	word-wrap: break-word;
+}
+
+
+.tag-link {
+	font: 1rem/1.2rem 'Montserrat-Regular';
+	color: darken($accent-color-b, 31%);
+	word-wrap: break-word;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 
@@ -124,12 +176,12 @@ $base-font-size: 14px;
 		.card-statistic-item-ico {
 			font-size: .8rem;
 			line-height: 1.2rem;
-			color: darken($light-color, 30%);
+			color: darken($light-color, 53%);
 		}
 
 		.card-statistic-item-value {
 			font: .8rem/1.2rem 'Montserrat-SemiBold';
-			color: darken($light-color, 60%);
+			color: darken($light-color, 80%);
 		}
 	}
 }
@@ -317,7 +369,7 @@ $base-font-size: 14px;
 			}
 
 			.pub-card-pubdate {
-				color: rgba($dark-font-color, .55);
+				color: rgba($dark-font-color, .56);
 			}
 		}
 	}
@@ -404,7 +456,7 @@ $base-font-size: 14px;
 				border-radius: 50%;
 
 				content: '';
-				background-color: darken($accent-color-g, 5%);
+				background-color: darken($accent-color-g, 20%);
 			}
 
 			.user-card-img {
@@ -448,7 +500,7 @@ $base-font-size: 14px;
 
 		.user-card-location {
 			font: .8rem/1.2rem 'Montserrat-SemiBold';
-			color: rgba($dark-font-color, .55);
+			color: rgba($dark-font-color, .56);
 		}
 	}
 }
@@ -503,7 +555,7 @@ $base-font-size: 14px;
 
 				&::placeholder {
 					font: 1rem/calc($base-size) 'Montserrat-Regular';
-					color: darken($light-color, 55%);
+					color: darken($light-color, 51%);
 				}
 
 				&:placeholder-shown ~ .add-comment-submit-btn {
@@ -574,42 +626,15 @@ $base-font-size: 14px;
 
 					.comment-reaction-btns-wrapper {
 						display: flex;
-						column-gap: ($base-size*.25);
+						gap: ($base-size*.25);
+						flex-wrap: wrap;
 
 						.comment-reply-btn {
-							color: darken($light-color, 55%);
+							color: darken($light-color, 51%);
 							background-color: transparent;
 
 							&:hover {
 								background-color: darken($light-color, 5%);
-							}
-						}
-
-						.comment-like-dislike-btn {
-							display: flex;
-							column-gap: ($base-size*.25);
-
-							padding: 0 ($base-size*.5);
-							border: 0;
-							border-radius: $base-border-radius;
-
-							background-color: transparent;
-							cursor: pointer;
-							transition: $base-transition;
-
-							&:hover {
-								background-color: darken($light-color, 5%);
-							}
-
-							.comment-like-dislike-ico {
-								font-size: 1rem;
-								line-height: calc($base-size*1.5); 
-								color: darken($light-color, 55%);
-							}
-
-							.comment-likes-dislikes-count {
-								font: .8rem/calc($base-size*1.5) 'Montserrat-Regular';
-								color: darken($light-color, 55%);
 							}
 						}
 					}
@@ -641,12 +666,12 @@ $base-font-size: 14px;
 					.comment-answers-btn-ico {
 						font-size: 1rem;
 						line-height: calc($base-size*1.5);
-						color: darken($light-color, 55%);
+						color: darken($light-color, 51%);
 					}
 
 					.comment-answers-btn-text {
 						font: 1rem/calc($base-size*1.5) 'Montserrat-SemiBold';
-						color: darken($light-color, 55%);
+						color: darken($light-color, 51%);
 					}	
 				}
 			}
@@ -1072,29 +1097,25 @@ main {
 			.main-selected-tag-item-wrapper {
 				display: flex;
 				column-gap: ($base-size*.5);
+				align-items: center;
 
 				padding-left: ($base-size*.5);
 				border-radius: $base-border-radius;
 
 				background-color: darken($light-color, 5%);
 
-				.main-selected-tag {
-					font: 1rem/calc($base-size*1.5) 'Montserrat-Regular';
-					color: darken($accent-color-b, 31%);
-				}
-
 				.main-selected-tag-cancel-btn {
-					color: $light-color;
-					background-color: darken($light-color, 40%);
+					color: $light-font-color;
+					background-color: darken($light-color, 44%);
 
 					&:hover {
-						background-color: darken($light-color, 50%);
+						background-color: darken($light-color, 51%);
 					}
 				}
 			}
 
 			.main-selected-tag-cancel-all-btn {
-				color: darken($light-color, 55%);
+				color: darken($light-color, 51%);
 				background-color: transparent;
 
 				&:hover {
@@ -1175,7 +1196,7 @@ main {
 							height: 1.2rem;
 							border-radius: 50%;
 							
-							background-color: $light-color;
+							background-color: $light-font-color;
 							transition: $base-transition;
 
 							&:after {
@@ -1189,31 +1210,18 @@ main {
 								border-radius: 50%;
 								
 								content: "";
-								background: $light-color;
+								background: $light-font-color;
 							}
 						}
 					}
 				}
 
-				.main-tags-form {
+				.main-tags-wrapper {
 					display: flex;
 					flex-direction: column;
 
-					.main-tag-btn {
+					.tag-link {
 						padding: calc($base-size*.75 - .6rem) 0;
-						border: 0;
-						margin: 0;
-
-						font: 1rem/1.2rem 'Montserrat-Regular';
-						color: darken($accent-color-b, 31%);
-						text-align: left;
-						word-wrap: break-word;
-						background-color: transparent;
-						cursor: pointer;
-
-						&:hover {
-							text-decoration: underline;
-						}
 					}
 				}					
 
@@ -1221,7 +1229,7 @@ main {
 					align-self: center;
 
 					.main-tag-settings-btn {
-						color: darken($light-color, 55%);
+						color: darken($light-color, 51%);
 						background-color: transparent;
 						white-space: nowrap;
 
@@ -1257,11 +1265,6 @@ main {
 	column-gap: ($base-size*2);
 
 	padding: ($base-size*4) ($base-size*2) ($base-size*2);
-
-	// .profile-h {
-	// 	font: 1.2rem/1.4rem 'Montserrat-Bold';
-	// 	color: $dark-font-color;
-	// }
 
 	.user-wrapper-1,
 	.user-wrapper-2 {
@@ -1371,7 +1374,7 @@ main {
 
 					.profile-info-item-ico {
 						font-size: 1rem;
-						color: darken($light-color, 30%);
+						color: darken($light-color, 47%);
 					}
 
 					.profile-info-item-text {
@@ -1435,7 +1438,9 @@ main {
 		}
 
 		.profile-comments-block-wrapper {
-			
+			button[class*='like-btn'] {
+				color: darken($light-color, 51%);
+			}
 		}
 	}
 }
@@ -1580,16 +1585,51 @@ main {
 
 		// background-color: pink;
 
-		.chat-global-search-block-wrapper {
+		.chat-global-search-wrapper {
 			padding: ($base-size*.25) ($base-size*.5);
 
-			background-color: gray;
+			background-color: lighten($accent-color-b, 15%);
 		
-			.chat-global-search-wrapper {
-				width: 100%;
-				height: ($base-size*1.5);
+			.chat-global-search-form {
+				display: flex;
+				column-gap: $base-border-width;
 
-				background-color: aqua;
+				width: 100%;
+				border-radius: $base-border-radius;
+
+				background-color: darken($light-color, 5%);
+
+				.chat-global-search-field {
+					flex: 1 1 auto;
+
+					padding: 0 ($base-size*.5);
+					border: 0;
+					border-radius: $base-border-radius;
+					outline: $base-border-width solid transparent;
+
+					font: 1rem/calc($base-size*1.5) 'Montserrat-Regular';
+					color: $dark-font-color;
+					background-color: transparent;
+
+					&::placeholder {
+						color: darken($light-color, 51%);	
+					}
+
+					&:focus {
+						outline: $base-border-width solid darken($light-color, 25%);
+					}
+				}
+
+				.chat-global-search-btn {
+					flex: 0 0 ($base-size*1.5);
+
+					color: darken($light-color, 47%);
+					background-color: $light-color;
+
+					&:hover {
+						background-color: $light-font-color;
+					}
+				}
 			}
 		}
 
@@ -1604,11 +1644,23 @@ main {
 
 				padding: ($base-size*.5);
 
-				.chat-conversation-img-wrapper {
+				// background-color: darken($light-color, 5%);
+				background-color: transparent;
+				cursor: pointer;
+				transition: $base-transition;
+
+				&:hover {
+					background-color: darken($light-color, 5%);
+				}
+
+				.chat-conversation-img {
 					width: ($base-size*1.5);
 					height: ($base-size*1.5);
 
-					background-color: aqua;
+					border-radius: 50%;					
+
+					object-fit: cover;
+					object-position: center;
 				}
 
 				.chat-conversation-not-img-wrapper {
@@ -1625,38 +1677,40 @@ main {
 					.chat-conversation-not-img-wrapper-1 {
 						justify-content: space-between;
 
-						.chat-conversation-name-wrapper,
-						.chat-conversation-pubdate-wrapper {
-							height: 15px;
-
-							background-color: aqua;
+						.chat-conversation-name {
+							font: .8rem/1rem 'Montserrat-Bold';
+							color: $dark-font-color;
 						}
 
-						.chat-conversation-name-wrapper {
-							width: 150px;
-						}
-
-						.chat-conversation-pubdate-wrapper {
-							width: 75px;
+						.chat-conversation-pubdate {
+							font: .8rem/1rem 'Montserrat-SemiBold';
+							color: rgba($dark-font-color, .56);
 						}
 					}
 
 					.chat-conversation-not-img-wrapper-2 {
 						column-gap: ($base-size*.25);
 
-						.chat-conversation-last-message-wrapper,
-						.chat-conversation-last-message-status-wrapper {
-							height: 15px;
-
-							background-color: aqua;
-						}
-
-						.chat-conversation-last-message-wrapper {
+						.chat-conversation-last-message {
 							flex: 1 1 0;
+
+							@include ellipsis(1);  // троеточие
+							font: 1rem/1.2rem 'Montserrat-Regular';
+							color: rgba($dark-font-color, .7);  //.56);
+
+							span {
+								font: .8rem/1.2rem 'Montserrat-SemiBold';
+								color: darken($accent-color-g, 30%);
+							}
 						}
 
-						.chat-conversation-last-message-status-wrapper {
-							width: 15px;
+						.chat-conversation-last-message-status {
+							padding: 0 .45rem;
+							border-radius: .6rem;
+
+							font: .8rem/1.2rem 'Montserrat-SemiBold';
+							color: $light-font-color;
+							background-color: darken($accent-color-g, 26%);
 						}
 					}
 				}
@@ -1778,10 +1832,8 @@ main {
 			row-gap: ($base-size*2);
 		}
 
-		.publication-wrapper-1-1 {		
-			flex: 1.5 1.5 0;
-
-			max-width: calc((100% - $base-size*2)*.6);
+		.publication-wrapper-1-1 {
+			max-width: calc((100% - $base-size*2)*.7);
 
 			.publication-img-block-wrapper {
 				display: flex;
@@ -1945,9 +1997,7 @@ main {
 		}
 
 		.publication-wrapper-1-2 {		
-			flex: 1 1 0;
-
-			max-width: calc((100% - $base-size*2)*.4);
+			max-width: calc((100% - $base-size*2)*.3);
 
 			.publication-main-info-wrapper {
 				display: flex;
@@ -1982,13 +2032,8 @@ main {
 
 					.publication-tags-wrapper {
 						display: flex;
-						gap: ($base-size*.5);
+						gap: calc($base-size*.5 - .2rem) ($base-size*.5);
 						flex-wrap: wrap;
-
-						.publication-tag-item {
-							font: 1rem/1.2rem 'Montserrat-Regular';
-							color: darken($accent-color-b, 31%);
-						}
 					}
 
 					.publication-date {
@@ -2044,39 +2089,13 @@ main {
 						color: $dark-font-color;
 
 						span {
-							font: 1rem/1.2rem 'Montserrat-Bold';
+							font: 1rem/1.2rem 'Montserrat-SemiBold';
 						}
 					}
 
 					.publication-reaction-btns-wrapper {
 						display: flex;
 						column-gap: ($base-size*.5);
-
-						// .publication-reaction-btn {
-						// 	width: 150px;
-						// 	height: ($base-size*1.5);
-
-						// 	background-color: aqua;
-						// }
-
-						// .publication-reaction-like-btns-wrapper {
-						// 	display: flex;
-						// 	column-gap: ($base-size*.25);
-
-						// 	.publication-reaction-like-btn {
-						// 		width: 80px;
-						// 		height: ($base-size*1.5);
-
-						// 		background-color: aqua;
-						// 	}
-						// }
-
-						// .publication-reaction-other-btn {
-						// 	width: ($base-size*1.5);
-						// 	height: ($base-size*1.5);
-
-						// 	background-color: aqua;
-						// }
 
 						.publication-suscribe-btn {
 							color: $light-font-color;
@@ -2085,6 +2104,10 @@ main {
 							&:hover {
 								background-color: lighten($dark-color, 10%);
 							}
+						}
+
+						button[class*='like-btn'] {
+							color: $dark-color;		
 						}
 
 						.publication-total-stats-submenu-btn {
@@ -2098,10 +2121,10 @@ main {
 
 						.publication-add-idea-btn {
 							color: $light-font-color;
-							background-color: darken($accent-color-r, 25%);
+							background-color: darken($accent-color-r, 31%);
 
 							&:hover {
-								background-color: darken($accent-color-r, 20%);
+								background-color: darken($accent-color-r, 26%);
 							}
 						}
 
@@ -2115,7 +2138,7 @@ main {
 						}
 
 						.publication-donations-submenu-btn {
-							color: darken($accent-color-g, 25%);
+							color: darken($accent-color-g, 30%);
 							background-color: transparent;
 
 							&:hover {

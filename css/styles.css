@@ -68,9 +68,51 @@
   border: 0;
   border-radius: 2px;
   margin: 0;
-  font-size: 18px;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: 0.1s;
+}
+
+.like-btns-wrapper {
+  display: flex;
+}
+.like-btns-wrapper button[class*=like-btn] {
+  display: flex;
+  column-gap: 6px;
+  align-items: center;
+  height: 36px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 2px;
+  font-family: "Montserrat-Regular";
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.like-btns-wrapper button[class*=like-btn]:hover {
+  background-color: #e1e3eb;
+}
+.like-btns-wrapper button[class*=like-btn] i[class*=like-ico] {
+  font-size: 1.2rem;
+}
+.like-btns-wrapper button[class*=like-btn] span[class*=likes-count] {
+  font-size: 1rem;
+}
+
+.tag {
+  font: 1rem/1.2rem "Montserrat-Regular";
+  color: #0069a5;
+  word-wrap: break-word;
+}
+
+.tag-link {
+  font: 1rem/1.2rem "Montserrat-Regular";
+  color: #0069a5;
+  word-wrap: break-word;
+  text-decoration: none;
+}
+.tag-link:hover {
+  text-decoration: underline;
 }
 
 .card-statistics-wrapper {
@@ -85,11 +127,11 @@
 .card-statistics-wrapper .card-statistic-item-wrapper .card-statistic-item-ico {
   font-size: 0.8rem;
   line-height: 1.2rem;
-  color: #949bb8;
+  color: #565e81;
 }
 .card-statistics-wrapper .card-statistic-item-wrapper .card-statistic-item-value {
   font: 0.8rem/1.2rem "Montserrat-SemiBold";
-  color: #484f6b;
+  color: #1f222e;
 }
 
 .pub-card {
@@ -219,7 +261,7 @@
   color: rgba(0, 1, 1, 0.8);
 }
 .pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-pubdate {
-  color: rgba(0, 1, 1, 0.55);
+  color: rgba(0, 1, 1, 0.56);
 }
 
 .user-card {
@@ -279,7 +321,7 @@
   border: 2px solid #F0F1F5;
   border-radius: 50%;
   content: "";
-  background-color: #53c68c;
+  background-color: #339966;
 }
 .user-card .user-card-img-block .user-card-img-wrapper .user-card-img {
   position: absolute;
@@ -317,7 +359,7 @@
 }
 .user-card .user-card-not-img-wrapper .user-card-location {
   font: 0.8rem/1.2rem "Montserrat-SemiBold";
-  color: rgba(0, 1, 1, 0.55);
+  color: rgba(0, 1, 1, 0.56);
 }
 
 .comments-block-wrapper {
@@ -363,7 +405,7 @@
 }
 .comments-block-wrapper .add-comment-wrapper .add-comment-form .add-comment-field::placeholder {
   font: 1rem/24px "Montserrat-Regular";
-  color: #525a7b;
+  color: #5a6387;
 }
 .comments-block-wrapper .add-comment-wrapper .add-comment-form .add-comment-field:placeholder-shown ~ .add-comment-submit-btn {
   display: none;
@@ -420,36 +462,15 @@
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper {
   display: flex;
-  column-gap: 6px;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-reply-btn {
-  color: #525a7b;
+  color: #5a6387;
   background-color: transparent;
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-reply-btn:hover {
   background-color: #e1e3eb;
-}
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-like-dislike-btn {
-  display: flex;
-  column-gap: 6px;
-  padding: 0 12px;
-  border: 0;
-  border-radius: 2px;
-  background-color: transparent;
-  cursor: pointer;
-  transition: 0.1s;
-}
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-like-dislike-btn:hover {
-  background-color: #e1e3eb;
-}
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-like-dislike-btn .comment-like-dislike-ico {
-  font-size: 1rem;
-  line-height: 36px;
-  color: #525a7b;
-}
-.comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-like-dislike-btn .comment-likes-dislikes-count {
-  font: 0.8rem/36px "Montserrat-Regular";
-  color: #525a7b;
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .comment-answers-wrapper {
   display: flex;
@@ -473,11 +494,11 @@
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .comment-answers-btn .comment-answers-btn-ico {
   font-size: 1rem;
   line-height: 36px;
-  color: #525a7b;
+  color: #5a6387;
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .comment-answers-btn .comment-answers-btn-text {
   font: 1rem/36px "Montserrat-SemiBold";
-  color: #525a7b;
+  color: #5a6387;
 }
 
 .tabs-wrapper {
@@ -785,23 +806,20 @@ main {
 .main-main .main-wrapper-1 .main-selected-tags-wrapper .main-selected-tag-item-wrapper {
   display: flex;
   column-gap: 12px;
+  align-items: center;
   padding-left: 12px;
   border-radius: 2px;
   background-color: #e1e3eb;
 }
-.main-main .main-wrapper-1 .main-selected-tags-wrapper .main-selected-tag-item-wrapper .main-selected-tag {
-  font: 1rem/36px "Montserrat-Regular";
-  color: #0069a5;
-}
 .main-main .main-wrapper-1 .main-selected-tags-wrapper .main-selected-tag-item-wrapper .main-selected-tag-cancel-btn {
-  color: #F0F1F5;
-  background-color: #767fa3;
+  color: #fcfcfd;
+  background-color: #69739b;
 }
 .main-main .main-wrapper-1 .main-selected-tags-wrapper .main-selected-tag-item-wrapper .main-selected-tag-cancel-btn:hover {
-  background-color: #5c658a;
+  background-color: #5a6387;
 }
 .main-main .main-wrapper-1 .main-selected-tags-wrapper .main-selected-tag-cancel-all-btn {
-  color: #525a7b;
+  color: #5a6387;
   background-color: transparent;
 }
 .main-main .main-wrapper-1 .main-selected-tags-wrapper .main-selected-tag-cancel-all-btn:hover {
@@ -863,7 +881,7 @@ main {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
-  background-color: #F0F1F5;
+  background-color: #fcfcfd;
   transition: 0.1s;
 }
 .main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-categories-form .main-category-item .custom-category-radio:after {
@@ -875,31 +893,20 @@ main {
   height: 0.6rem;
   border-radius: 50%;
   content: "";
-  background: #F0F1F5;
+  background: #fcfcfd;
 }
-.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-tags-form {
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-tags-wrapper {
   display: flex;
   flex-direction: column;
 }
-.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-tags-form .main-tag-btn {
+.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-tags-wrapper .tag-link {
   padding: calc(18px - 0.6rem) 0;
-  border: 0;
-  margin: 0;
-  font: 1rem/1.2rem "Montserrat-Regular";
-  color: #0069a5;
-  text-align: left;
-  word-wrap: break-word;
-  background-color: transparent;
-  cursor: pointer;
-}
-.main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-tags-form .main-tag-btn:hover {
-  text-decoration: underline;
 }
 .main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-btn-wrapper {
   align-self: center;
 }
 .main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-btn-wrapper .main-tag-settings-btn {
-  color: #525a7b;
+  color: #5a6387;
   background-color: transparent;
   white-space: nowrap;
 }
@@ -1011,7 +1018,7 @@ main {
 }
 .user-main .user-wrapper-1 .profile-info-wrapper .profile-info-list .profile-info-item .profile-info-item-ico {
   font-size: 1rem;
-  color: #949bb8;
+  color: #626c93;
 }
 .user-main .user-wrapper-1 .profile-info-wrapper .profile-info-list .profile-info-item .profile-info-item-text {
   font-size: 1rem;
@@ -1057,6 +1064,10 @@ main {
   margin: -12px;
   overflow: auto;
 }
+.user-main .user-wrapper-2 .profile-comments-block-wrapper button[class*=like-btn] {
+  color: #5a6387;
+}
+
 /* ---------- /user.html ---------- */
 /* ---------- settings.html ---------- */
 .settings-main {
@@ -1155,14 +1166,40 @@ main {
 .chat-main .chat-wrapper-1 {
   width: 30%;
 }
-.chat-main .chat-wrapper-1 .chat-global-search-block-wrapper {
+.chat-main .chat-wrapper-1 .chat-global-search-wrapper {
   padding: 6px 12px;
-  background-color: gray;
+  background-color: #91d7ff;
 }
-.chat-main .chat-wrapper-1 .chat-global-search-block-wrapper .chat-global-search-wrapper {
+.chat-main .chat-wrapper-1 .chat-global-search-wrapper .chat-global-search-form {
+  display: flex;
+  column-gap: 2px;
   width: 100%;
-  height: 36px;
-  background-color: aqua;
+  border-radius: 2px;
+  background-color: #e1e3eb;
+}
+.chat-main .chat-wrapper-1 .chat-global-search-wrapper .chat-global-search-form .chat-global-search-field {
+  flex: 1 1 auto;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 2px;
+  outline: 2px solid transparent;
+  font: 1rem/36px "Montserrat-Regular";
+  color: #000101;
+  background-color: transparent;
+}
+.chat-main .chat-wrapper-1 .chat-global-search-wrapper .chat-global-search-form .chat-global-search-field::placeholder {
+  color: #5a6387;
+}
+.chat-main .chat-wrapper-1 .chat-global-search-wrapper .chat-global-search-form .chat-global-search-field:focus {
+  outline: 2px solid #a4aac2;
+}
+.chat-main .chat-wrapper-1 .chat-global-search-wrapper .chat-global-search-form .chat-global-search-btn {
+  flex: 0 0 36px;
+  color: #626c93;
+  background-color: #F0F1F5;
+}
+.chat-main .chat-wrapper-1 .chat-global-search-wrapper .chat-global-search-form .chat-global-search-btn:hover {
+  background-color: #fcfcfd;
 }
 .chat-main .chat-wrapper-1 .chat-conversations-wrapper {
   flex: 1 1 0;
@@ -1172,11 +1209,19 @@ main {
   display: flex;
   column-gap: 6px;
   padding: 12px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.1s;
 }
-.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-img-wrapper {
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper:hover {
+  background-color: #e1e3eb;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-img {
   width: 36px;
   height: 36px;
-  background-color: aqua;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
 .chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper {
   display: flex;
@@ -1191,30 +1236,37 @@ main {
 .chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1 {
   justify-content: space-between;
 }
-.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1 .chat-conversation-name-wrapper,
-.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1 .chat-conversation-pubdate-wrapper {
-  height: 15px;
-  background-color: aqua;
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1 .chat-conversation-name {
+  font: 0.8rem/1rem "Montserrat-Bold";
+  color: #000101;
 }
-.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1 .chat-conversation-name-wrapper {
-  width: 150px;
-}
-.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1 .chat-conversation-pubdate-wrapper {
-  width: 75px;
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1 .chat-conversation-pubdate {
+  font: 0.8rem/1rem "Montserrat-SemiBold";
+  color: rgba(0, 1, 1, 0.56);
 }
 .chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 {
   column-gap: 6px;
 }
-.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 .chat-conversation-last-message-wrapper,
-.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 .chat-conversation-last-message-status-wrapper {
-  height: 15px;
-  background-color: aqua;
-}
-.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 .chat-conversation-last-message-wrapper {
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 .chat-conversation-last-message {
   flex: 1 1 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: 1rem/1.2rem "Montserrat-Regular";
+  color: rgba(0, 1, 1, 0.7);
 }
-.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 .chat-conversation-last-message-status-wrapper {
-  width: 15px;
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 .chat-conversation-last-message span {
+  font: 0.8rem/1.2rem "Montserrat-SemiBold";
+  color: #26734d;
+}
+.chat-main .chat-wrapper-1 .chat-conversations-wrapper .chat-conversation-item-wrapper .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 .chat-conversation-last-message-status {
+  padding: 0 0.45rem;
+  border-radius: 0.6rem;
+  font: 0.8rem/1.2rem "Montserrat-SemiBold";
+  color: #fcfcfd;
+  background-color: #2b8257;
 }
 .chat-main .chat-wrapper-2 {
   width: 70%;
@@ -1296,8 +1348,7 @@ main {
   row-gap: 48px;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 {
-  flex: 1.5 1.5 0;
-  max-width: calc((100% - 48px) * 0.6);
+  max-width: calc((100% - 48px) * 0.7);
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper {
   display: flex;
@@ -1435,8 +1486,7 @@ main {
   grid-template: auto/repeat(3, 1fr);
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 {
-  flex: 1 1 0;
-  max-width: calc((100% - 48px) * 0.4);
+  max-width: calc((100% - 48px) * 0.3);
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper {
   display: flex;
@@ -1466,12 +1516,8 @@ main {
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-tags-wrapper {
   display: flex;
-  gap: 12px;
+  gap: calc(12px - 0.2rem) 12px;
   flex-wrap: wrap;
-}
-.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-tags-wrapper .publication-tag-item {
-  font: 1rem/1.2rem "Montserrat-Regular";
-  color: #0069a5;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-date {
   font: 0.8rem/36px "Montserrat-SemiBold";
@@ -1514,7 +1560,7 @@ main {
   color: #000101;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-statistic span {
-  font: 1rem/1.2rem "Montserrat-Bold";
+  font: 1rem/1.2rem "Montserrat-SemiBold";
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper {
   display: flex;
@@ -1527,6 +1573,9 @@ main {
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-suscribe-btn:hover {
   background-color: #1e3c59;
 }
+.publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper button[class*=like-btn] {
+  color: #112233;
+}
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-total-stats-submenu-btn {
   color: #112233;
   background-color: transparent;
@@ -1536,10 +1585,10 @@ main {
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-add-idea-btn {
   color: #fcfcfd;
-  background-color: #d0040c;
+  background-color: #b2030b;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-add-idea-btn:hover {
-  background-color: #e9040e;
+  background-color: #cb040c;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-donate-btn {
   color: #fcfcfd;
@@ -1549,7 +1598,7 @@ main {
   background-color: #26734d;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-donations-submenu-btn {
-  color: #2d8659;
+  color: #26734d;
   background-color: transparent;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-donations-submenu-btn:hover {
