@@ -17,7 +17,7 @@
 /***** Custom Scrollbar *****/
 /* width */
 ::-webkit-scrollbar {
-  width: 7.92px;
+  width: 8px;
 }
 
 /* Track */
@@ -42,18 +42,16 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 24px;
+  width: calc(20px + 1.25rem);
   height: 100vh;
   background-color: pink;
 }
 
 .btn {
-  height: 36px;
-  padding: 0 24px;
+  padding: 10px 20px;
   border: 0;
   border-radius: 2px;
-  margin: 0;
-  font: 1rem/36px "Montserrat-SemiBold";
+  font: 1rem/1.25rem "Montserrat-SemiBold";
   transition: 0.1s;
   cursor: pointer;
 }
@@ -62,13 +60,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 36px;
-  height: 36px;
+  width: calc(20px + 1.25rem);
+  height: calc(20px + 1.25rem);
   padding: 0;
   border: 0;
   border-radius: 2px;
-  margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   cursor: pointer;
   transition: 0.1s;
 }
@@ -78,10 +75,10 @@
 }
 .like-btns-wrapper button[class*=like-btn] {
   display: flex;
-  column-gap: 6px;
+  column-gap: 4px;
   align-items: center;
-  height: 36px;
-  padding: 0 12px;
+  min-width: calc(20px + 1.25rem);
+  padding: 10px;
   border: 0;
   border-radius: 2px;
   font-family: "Montserrat-Regular";
@@ -93,18 +90,20 @@
   background-color: #e1e3eb;
 }
 .like-btns-wrapper button[class*=like-btn] i[class*=like-ico] {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
 }
 .like-btns-wrapper button[class*=like-btn] span[class*=likes-count] {
   font-size: 1rem;
+  line-height: 1.25rem;
 }
 
 .textarea {
-  padding: 6px 12px;
+  padding: 10px;
   border: 0;
   border-radius: 2px;
   outline: 2px solid transparent;
-  font: 1rem/24px "Montserrat-Regular";
+  font: 1rem/1.25rem "Montserrat-Regular";
   color: #000101;
   background-color: #e1e3eb;
   resize: none;
@@ -114,7 +113,7 @@
   outline: 2px solid #a4aac2;
 }
 .textarea::placeholder {
-  font: 1rem/24px "Montserrat-Regular";
+  font: 1rem/1.25rem "Montserrat-Regular";
   color: #5a6387;
 }
 
@@ -145,11 +144,11 @@
 }
 .card-statistics-wrapper .card-statistic-item-wrapper .card-statistic-item-ico {
   font-size: 0.85rem;
-  line-height: 1.25rem;
+  line-height: 1rem;
   color: #565e81;
 }
 .card-statistics-wrapper .card-statistic-item-wrapper .card-statistic-item-value {
-  font: 0.85rem/1.25rem "Montserrat-SemiBold";
+  font: 0.85rem/1rem "Montserrat-SemiBold";
   color: #1f222e;
 }
 
@@ -161,11 +160,11 @@
 }
 .pub-card:before {
   position: absolute;
-  top: -12px;
-  left: -12px;
+  top: -16px;
+  left: -16px;
   z-index: -1;
-  width: calc(100% + 24px);
-  height: calc(100% + 24px);
+  width: calc(100% + 32px);
+  height: calc(100% + 32px);
   border-radius: 2px;
   content: "";
   transition: 0.1s;
@@ -212,22 +211,22 @@
 }
 .pub-card[class~=pub-card-vertical] .pub-card-img-wrapper .pub-card-type-vertical {
   position: absolute;
-  top: 4.8px;
-  left: 4.8px;
+  top: 4px;
+  left: 4px;
   z-index: 1;
-  padding: 0 4.8px;
+  padding: 2px 4px;
   border-radius: 2px;
-  font: 0.85rem/1.25rem "Montserrat-SemiBold";
+  font: 0.85rem/1rem "Montserrat-SemiBold";
   color: #fcfcfd;
 }
 .pub-card[class~=pub-card-horizontal] {
   flex-direction: row;
 }
 .pub-card[class~=pub-card-horizontal] .pub-card-img-wrapper {
-  padding-top: calc((50% - 6px) * 0.5625);
+  padding-top: calc((50% - 8px) * 0.5625);
 }
 .pub-card[class~=pub-card-horizontal] .pub-card-not-img-wrapper .pub-card-type-horizontal {
-  font: 0.85rem/1.25rem "Montserrat-SemiBold";
+  font: 0.85rem/1rem "Montserrat-SemiBold";
 }
 .pub-card .pub-card-img-wrapper {
   flex: 1 1 0;
@@ -253,7 +252,7 @@
 }
 .pub-card .pub-card-not-img-wrapper .pub-card-title,
 .pub-card .pub-card-not-img-wrapper .pub-card-description {
-  max-height: 2.4rem;
+  max-height: 2.5rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -274,7 +273,7 @@
 }
 .pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-pubdate,
 .pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-author {
-  font: 0.85rem/1.25rem "Montserrat-SemiBold";
+  font: 0.85rem/1rem "Montserrat-SemiBold";
 }
 .pub-card .pub-card-not-img-wrapper .pub-card-pubdate-author-wrapper .pub-card-author {
   color: rgba(0, 1, 1, 0.8);
@@ -286,16 +285,16 @@
 .user-card {
   position: relative;
   display: flex;
-  gap: 12px;
+  gap: 16px;
   text-decoration: none;
 }
 .user-card:before {
   position: absolute;
-  top: -12px;
-  left: -12px;
+  top: -16px;
+  left: -16px;
   z-index: -1;
-  width: calc(100% + 24px);
-  height: calc(100% + 24px);
+  width: calc(100% + 32px);
+  height: calc(100% + 32px);
   border-radius: 2px;
   content: "";
   transition: 0.1s;
@@ -311,7 +310,7 @@
   flex-direction: column;
 }
 .user-card[class~=user-card-vertical] .user-card-img-block .user-card-online:after {
-  bottom: 7%;
+  bottom: 7.5%;
 }
 .user-card[class~=user-card-horizontal] {
   flex-direction: row;
@@ -320,7 +319,7 @@
   justify-content: center;
 }
 .user-card[class~=user-card-horizontal] .user-card-img-block .user-card-online:after {
-  bottom: 12%;
+  bottom: 12.5%;
 }
 .user-card .user-card-img-block {
   flex: 1 1 0;
@@ -334,9 +333,9 @@
 }
 .user-card .user-card-img-block .user-card-img-wrapper[class~=user-card-online]:after {
   position: absolute;
-  right: 7%;
-  width: 18px;
-  height: 18px;
+  right: 7.5%;
+  width: 16px;
+  height: 16px;
   border: 2px solid #F0F1F5;
   border-radius: 50%;
   content: "";
@@ -358,11 +357,11 @@
   flex: 1 1 0;
   display: flex;
   flex-direction: column;
-  row-gap: 6px;
+  row-gap: 8px;
 }
 .user-card .user-card-not-img-wrapper .user-card-name,
 .user-card .user-card-not-img-wrapper .user-card-description {
-  max-height: 2.4rem;
+  max-height: 2.5rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -387,26 +386,26 @@
   row-gap: 24px;
 }
 .comments-block-wrapper .comment-img-link {
-  flex: 0 0 36px;
-  width: 36px;
-  height: 36px;
+  flex: 0 0 calc(20px + 1.25rem);
+  width: calc(20px + 1.25rem);
+  height: calc(20px + 1.25rem);
 }
 .comments-block-wrapper .comment-img-link .comment-img {
-  width: 36px;
-  height: 36px;
+  width: calc(20px + 1.25rem);
+  height: calc(20px + 1.25rem);
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
 }
 .comments-block-wrapper .add-comment-wrapper {
   display: flex;
-  column-gap: 12px;
+  column-gap: 16px;
 }
 .comments-block-wrapper .add-comment-wrapper .add-comment-form {
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
-  flex: 0 1 720px;
+  row-gap: 16px;
+  flex: 0 1 800px;
 }
 .comments-block-wrapper .add-comment-wrapper .add-comment-form .add-comment-field:placeholder-shown ~ .add-comment-submit-btn {
   display: none;
@@ -426,22 +425,22 @@
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper {
   display: flex;
-  column-gap: 12px;
+  column-gap: 16px;
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 16px;
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 6px;
-  max-width: 720px;
+  row-gap: 8px;
+  max-width: 800px;
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-name-pubdate-wrapper {
   display: flex;
-  column-gap: 6px;
+  column-gap: 8px;
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-name-pubdate-wrapper .comment-name {
   font: 0.85rem/1rem "Montserrat-SemiBold";
@@ -463,7 +462,7 @@
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .only-comment-not-img-wrapper .comment-reaction-btns-wrapper .comment-reply-btn {
@@ -480,9 +479,9 @@
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .comment-answers-btn {
   display: flex;
-  column-gap: 6px;
+  column-gap: 4px;
   align-self: start;
-  padding: 0 24px;
+  padding: 10px 20px;
   border: 0;
   border-radius: 2px;
   background-color: transparent;
@@ -494,11 +493,11 @@
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .comment-answers-btn .comment-answers-btn-ico {
   font-size: 1rem;
-  line-height: 36px;
+  line-height: 1.25rem;
   color: #5a6387;
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper .comment-answers-btn .comment-answers-btn-text {
-  font: 1rem/36px "Montserrat-SemiBold";
+  font: 1rem/1.25rem "Montserrat-SemiBold";
   color: #5a6387;
 }
 
@@ -508,12 +507,12 @@
 }
 .tabs-wrapper .tab-item {
   flex: 1 1 0;
-  padding: 0 12px;
+  padding: 10px 20px;
   border-left: 0;
   border-top: 0;
   border-right: 0;
   font-size: 1rem;
-  line-height: 33px;
+  line-height: 1.25rem;
   color: #112233;
   background-color: transparent;
   cursor: pointer;

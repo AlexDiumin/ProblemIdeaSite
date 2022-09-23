@@ -22,6 +22,7 @@ $accent-color-b: #44BBFF;
 $dark-font-color: darken($dark-color, 13%);
 $light-font-color: lighten($light-color, 4%);
 
+$new-base-size: 2px;
 $base-size: 24px;
 $base-border-width: 2px;
 $base-border-radius: 2px;
@@ -46,7 +47,7 @@ $base-font-size: 14px;
 /***** Custom Scrollbar *****/
 /* width */
 ::-webkit-scrollbar {
-  width: ($base-size*.33);
+  width: (4*$new-base-size); 
 }
 
 /* Track */
@@ -75,7 +76,7 @@ $base-font-size: 14px;
 	top: 0;
 	left: 0;
 
-	width: $base-size;
+	width: calc(10*$new-base-size + 1.25rem);
 	height: 100vh;
 
 	background-color: pink;
@@ -83,13 +84,11 @@ $base-font-size: 14px;
 
 
 .btn {
-	height: ($base-size*1.5);
-	padding: 0 $base-size;
+	padding: (5*$new-base-size) (10*$new-base-size);
 	border: 0;
 	border-radius: $base-border-radius;
-	margin: 0;
 
-	font: 1rem/calc($base-size*1.5) 'Montserrat-SemiBold';
+	font: 1rem/1.25rem 'Montserrat-SemiBold';
 	transition: $base-transition;
 	cursor: pointer;	
 }
@@ -99,14 +98,13 @@ $base-font-size: 14px;
 	justify-content: center;
 	align-items: center;
 
-	width: ($base-size*1.5);
-	height: ($base-size*1.5);
+	width: calc(10*$new-base-size + 1.25rem);
+	height: calc(10*$new-base-size + 1.25rem);
 	padding: 0;
 	border: 0;
 	border-radius: $base-border-radius;
-	margin: 0;
 
-	font-size: 1.2rem;
+	font-size: 1.25rem;
 	cursor: pointer;
 	transition: $base-transition;
 }
@@ -117,11 +115,11 @@ $base-font-size: 14px;
 
 	button[class*='like-btn'] {
 		display: flex;
-		column-gap: ($base-size*.25);
+		column-gap: (2*$new-base-size);
 		align-items: center;
 
-		height: ($base-size*1.5);
-		padding: 0 ($base-size*.5);
+		min-width: calc(10*$new-base-size + 1.25rem);
+		padding: (5*$new-base-size);
 		border: 0;
 		border-radius: $base-border-radius;
 
@@ -135,23 +133,25 @@ $base-font-size: 14px;
 		}
 
 		i[class*='like-ico'] {
-			font-size: 1.2rem;
+			font-size: 1.25rem;
+			line-height: 1.25rem;
 		}
 
 		span[class*='likes-count'] {
 			font-size: 1rem;
+			line-height: 1.25rem;
 		}
 	}
 }
 
 
 .textarea {
-	padding: ($base-size*.25) ($base-size*.5);
+	padding: (5*$new-base-size);
 	border: 0;
 	border-radius: $base-border-radius;
 	outline: $base-border-width solid transparent;
 
-	font: 1rem/calc($base-size) 'Montserrat-Regular';
+	font: 1rem/1.25rem 'Montserrat-Regular';
 	color: $dark-font-color;
 	background-color: darken($light-color, 5%);
 	resize: none;
@@ -162,7 +162,7 @@ $base-font-size: 14px;
 	}
 
 	&::placeholder {
-		font: 1rem/calc($base-size) 'Montserrat-Regular';
+		font: 1rem/1.25rem 'Montserrat-Regular';
 		color: darken($light-color, 51%);
 	}
 }
@@ -189,23 +189,21 @@ $base-font-size: 14px;
 
 .card-statistics-wrapper {
 	display: flex;
-	// gap: ($base-size*.3);
-	gap: 8px;
+	gap: (4*$new-base-size);
 	flex-wrap: wrap;
 
 	.card-statistic-item-wrapper {
 		display: flex;
-		// column-gap: ($base-size*.1);
-		column-gap: 2px;
+		column-gap: $new-base-size;
 
 		.card-statistic-item-ico {
 			font-size: .85rem;
-			line-height: 1.25rem;
+			line-height: 1rem;
 			color: darken($light-color, 53%);
 		}
 
 		.card-statistic-item-value {
-			font: .85rem/1.25rem 'Montserrat-SemiBold';
+			font: .85rem/1rem 'Montserrat-SemiBold';
 			color: darken($light-color, 80%);
 		}
 	}
@@ -214,19 +212,18 @@ $base-font-size: 14px;
 .pub-card {
 	position: relative;
 	display: flex;
-	// gap: ($base-size*.5);
-	gap: 16px;
+	gap: (8*$new-base-size);
 
 	text-decoration: none;
 
 	&:before {
 		position: absolute;
-		top: (-$base-size*.5);
-		left: (-$base-size*.5);
+		top: (-8*$new-base-size);
+		left: (-8*$new-base-size);
 		z-index: -1;  // чтоб отображался атрибут title у иконок
 
-		width: calc(100% + $base-size);
-		height: calc(100% + $base-size);
+		width: calc(100% + 16*$new-base-size);
+		height: calc(100% + 16*$new-base-size);
 		border-radius: $base-border-radius;
 
 		content: '';
@@ -311,14 +308,14 @@ $base-font-size: 14px;
 		
 			.pub-card-type-vertical {
 				position: absolute;
-				top: ($base-size*.2);
-				left: ($base-size*.2);
+				top: (2*$new-base-size);
+				left: (2*$new-base-size);
 				z-index: 1;
 
-				padding: 0 ($base-size*.2);
+				padding: $new-base-size (2*$new-base-size);
 				border-radius: $base-border-radius;
 
-				font: .85rem/1.25rem 'Montserrat-SemiBold';
+				font: .85rem/1rem 'Montserrat-SemiBold';
 				color: $light-font-color;
 			}
 		}
@@ -328,12 +325,12 @@ $base-font-size: 14px;
 		flex-direction: row;
 
 		.pub-card-img-wrapper {
-			padding-top: calc((50% - $base-size*.25)*.5625);
+			padding-top: calc((50% - 4*$new-base-size)*.5625);
 		}
 
 		.pub-card-not-img-wrapper {
 			.pub-card-type-horizontal {
-				font: .85rem/1.25rem 'Montserrat-SemiBold';
+				font: .85rem/1rem 'Montserrat-SemiBold';
 			}
 		}
 	}
@@ -362,12 +359,11 @@ $base-font-size: 14px;
 		flex: 1 1 0;
 		display: flex;
 		flex-direction: column;
-		// row-gap: ($base-size*.25);
-		row-gap: 8px;
+		row-gap: (4*$new-base-size);
 
 		.pub-card-title,
 		.pub-card-description {
-			max-height: 2.4rem;
+			max-height: 2.5rem;
 
 			@include ellipsis(2);  // троеточие
 			color: $dark-font-color;
@@ -384,12 +380,11 @@ $base-font-size: 14px;
 		.pub-card-pubdate-author-wrapper {
 			display: flex;
 			flex-wrap: wrap;
-			// gap: ($base-size*.25);
-			gap: 8px;
+			gap: (4*$new-base-size);
 
 			.pub-card-pubdate,
 			.pub-card-author {
-				font: .85rem/1.25rem 'Montserrat-SemiBold';
+				font: .85rem/1rem 'Montserrat-SemiBold';
 			}
 
 			.pub-card-author {
@@ -407,18 +402,18 @@ $base-font-size: 14px;
 .user-card {
 	position: relative;
 	display: flex;
-	gap: ($base-size*.5);
+	gap: (8*$new-base-size);
 
 	text-decoration: none;
 
 	&:before {
 		position: absolute;
-		top: (-$base-size*.5);
-		left: (-$base-size*.5);
+		top: (-8*$new-base-size);
+		left: (-8*$new-base-size);
 		z-index: -1;  // чтоб отображался атрибут title у иконок
 
-		width: calc(100% + $base-size);
-		height: calc(100% + $base-size);
+		width: calc(100% + 16*$new-base-size);
+		height: calc(100% + 16*$new-base-size);
 		border-radius: $base-border-radius;
 
 		content: '';
@@ -444,7 +439,7 @@ $base-font-size: 14px;
 
 		.user-card-img-block {
 			.user-card-online:after {
-				bottom: 7%;
+				bottom: 7.5%;
 			}
 		}
 	}
@@ -458,7 +453,7 @@ $base-font-size: 14px;
 
 		.user-card-img-block {
 			.user-card-online:after {
-				bottom: 12%;
+				bottom: 12.5%;
 			}
 		}
 	}
@@ -476,10 +471,10 @@ $base-font-size: 14px;
 
 			&[class~='user-card-online']:after {
 				position: absolute;
-				right: 7%;
+				right: 7.5%;
 
-				width: ($base-size*.75);
-				height: ($base-size*.75);
+				width: (8*$new-base-size);
+				height: (8*$new-base-size);
 				border: $base-border-width solid $light-color;
 				border-radius: 50%;
 
@@ -508,11 +503,11 @@ $base-font-size: 14px;
 		flex: 1 1 0;
 		display: flex;
 		flex-direction: column;
-		row-gap: ($base-size*.25);
+		row-gap: (4*$new-base-size);
 
 		.user-card-name,
 		.user-card-description {
-			max-height: 2.4rem;
+			max-height: 2.5rem;
 
 			@include ellipsis(2);  // троеточие
 			color: $dark-font-color;			
@@ -537,17 +532,17 @@ $base-font-size: 14px;
 .comments-block-wrapper {
 	display: flex;
 	flex-direction: column;
-	row-gap: $base-size;
+	row-gap: (12*$new-base-size);
 
 	.comment-img-link {
-		flex: 0 0 ($base-size*1.5);
+		flex: 0 0 calc(10*$new-base-size + 1.25rem);
 
-		width: ($base-size*1.5);
-		height: ($base-size*1.5);
+		width: calc(10*$new-base-size + 1.25rem);
+		height: calc(10*$new-base-size + 1.25rem);
 
 		.comment-img {
-			width: ($base-size*1.5);
-			height: ($base-size*1.5);
+			width: calc(10*$new-base-size + 1.25rem);
+			height: calc(10*$new-base-size + 1.25rem);
 			border-radius: 50%;
 
 			object-fit: cover;
@@ -557,13 +552,13 @@ $base-font-size: 14px;
 
 	.add-comment-wrapper {
 		display: flex;
-		column-gap: ($base-size*.5);
+		column-gap: (8*$new-base-size);
 
 		.add-comment-form {
 			display: flex;
 			flex-direction: column;
-			row-gap: ($base-size*.5);
-			flex: 0 1 ($base-size*30);
+			row-gap: (8*$new-base-size);
+			flex: 0 1 (400*$new-base-size);
 
 			.add-comment-field:placeholder-shown ~ .add-comment-submit-btn {
 				display: none;
@@ -585,27 +580,27 @@ $base-font-size: 14px;
 	.comments-wrapper {
 		display: flex;
 		flex-direction: column;
-		row-gap: $base-size;
+		row-gap: (12*$new-base-size);
 
 		.comment-wrapper {
 			display: flex;
-			column-gap: ($base-size*.5);
+			column-gap: (8*$new-base-size);
 
 			.comment-not-img-wrapper {
 				display: flex;
 				flex-direction: column;
-				row-gap: ($base-size*.5);
+				row-gap: (8*$new-base-size);
 
 				.only-comment-not-img-wrapper {
 					display: flex;
 					flex-direction: column;
-					row-gap: ($base-size*.25);
+					row-gap: (4*$new-base-size);
 
-					max-width: ($base-size*30);
+					max-width: (400*$new-base-size);
 
 					.comment-name-pubdate-wrapper {
 						display: flex;
-						column-gap: ($base-size*.25);
+						column-gap: (4*$new-base-size);
 
 						.comment-name {
 							font: .85rem/1rem 'Montserrat-SemiBold';
@@ -632,7 +627,7 @@ $base-font-size: 14px;
 
 					.comment-reaction-btns-wrapper {
 						display: flex;
-						gap: ($base-size*.25);
+						gap: (4*$new-base-size);
 						flex-wrap: wrap;
 
 						.comment-reply-btn {
@@ -649,15 +644,15 @@ $base-font-size: 14px;
 				.comment-answers-wrapper {
 					display: flex;
 					flex-direction: column;
-					row-gap: $base-size;
+					row-gap: (12*$new-base-size);
 				}
 
 				.comment-answers-btn {
 					display: flex;
-					column-gap: ($base-size*.25);
+					column-gap: (2*$new-base-size);
 					align-self: start;
 
-					padding: 0 $base-size;
+					padding: (5*$new-base-size) (10*$new-base-size);
 					border: 0;
 					border-radius: $base-border-radius;
 
@@ -671,12 +666,12 @@ $base-font-size: 14px;
 
 					.comment-answers-btn-ico {
 						font-size: 1rem;
-						line-height: calc($base-size*1.5);
+						line-height: 1.25rem;
 						color: darken($light-color, 51%);
 					}
 
 					.comment-answers-btn-text {
-						font: 1rem/calc($base-size*1.5) 'Montserrat-SemiBold';
+						font: 1rem/1.25rem 'Montserrat-SemiBold';
 						color: darken($light-color, 51%);
 					}	
 				}
@@ -694,31 +689,31 @@ $base-font-size: 14px;
 	.tab-item {
 		flex: 1 1 0;
 
-		padding: 0 ($base-size*.5);
+		padding: (5*$new-base-size) (10*$new-base-size);
 		border-left: 0;
 		border-top: 0;
 		border-right: 0;
 	
 		font-size: 1rem;
-		line-height: calc($base-size*1.5 - $base-border-width*1.5);
+		line-height: 1.25rem;
 		color: $dark-color;
 		background-color: transparent;
 		cursor: pointer;
 		transition: $base-transition;
 
 		&[class~="selected-tab"] {
-			border-bottom: ($base-border-width*1.5) solid $dark-color;
+			border-bottom: (1.5*$base-border-width) solid $dark-color;
 
 			font-family: 'Montserrat-Bold';
 		}
 
 		&:not([class~="selected-tab"]) {
-			border-bottom: ($base-border-width*1.5) solid transparent;
+			border-bottom: (1.5*$base-border-width) solid transparent;
 
 			font-family: 'Montserrat-SemiBold';
 
 			&:hover {
-				border-bottom: ($base-border-width*1.5) solid darken($light-color, 25%);
+				border-bottom: (1.5*$base-border-width) solid darken($light-color, 25%);
 			}
 		}
 	}
