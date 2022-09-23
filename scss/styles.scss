@@ -552,7 +552,7 @@ $base-font-size: 14px;
 
 	.add-comment-wrapper {
 		display: flex;
-		column-gap: (8*$new-base-size);
+		column-gap: (6*$new-base-size);
 
 		.add-comment-form {
 			display: flex;
@@ -584,7 +584,7 @@ $base-font-size: 14px;
 
 		.comment-wrapper {
 			display: flex;
-			column-gap: (8*$new-base-size);
+			column-gap: (6*$new-base-size);
 
 			.comment-not-img-wrapper {
 				display: flex;
@@ -732,7 +732,7 @@ $base-font-size: 14px;
 	.form-title-wrapper {
 		position: absolute;
 		top: -($base-size*.5 + 1px);  // 1px - это с учетом border: 2px
-		left: ($base-size*.5);
+		left: (8*$new-base-size);
 
 		width: 200px;
 		height: 24px;
@@ -771,7 +771,7 @@ footer {
 	z-index: 999;
 
 	width: 100%;
-	padding: ($base-size*.25) ($base-size*2);
+	padding: (4*$new-base-size) (18*$new-base-size);
 
 	background-color: $dark-color;
 }
@@ -779,7 +779,7 @@ footer {
 
 header {
 	position: fixed;
-	column-gap: ($base-size*2);
+	column-gap: (18*$new-base-size);
 
 	.burger-btn-wrapper,
 	.logo-wrapper,
@@ -787,26 +787,26 @@ header {
 	.public-btns-wrapper,
 	.sign-btns-wrapper,
 	.user-btns-wrapper {
-		height: ($base-size*1.5);
+		height: calc(10*$new-base-size + 1.25rem);
 	}
 
 	.burger-btn-wrapper {
-		width: ($base-size*1.5);
+		width: calc(10*$new-base-size + 1.25rem);
 
 		background-color: aqua;
 
 		.menu-wrapper {
 			position: fixed;
-			top: ($base-size*2);
+			top: calc(18*$new-base-size + 1.25rem);
 			left: 0;
 			display: flex;
 			flex-direction: column;
-			row-gap: ($base-size*2);
+			row-gap: (18*$new-base-size);
 			transform: translateX(-100%);
 
-			height: calc(100vh - $base-size*2);
-			border-top: ($base-size*.25) solid $dark-color;
-			border-bottom: ($base-size*2.25) solid $dark-color;
+			height: calc(100vh - 18*$new-base-size);
+			border-top: (4*$new-base-size) solid $dark-color;
+			border-bottom: calc(22*$new-base-size + 1.25rem) solid $dark-color;
 
 			background-color: $dark-color;
 			// transition: $transition-val;
@@ -820,19 +820,19 @@ header {
 
 			.menu-selects-wrapper {
 				display: flex;
-				column-gap: ($base-size*.5);
+				column-gap: (4*$new-base-size);
 
-				padding: 0 ($base-size*2);
+				padding: 0 (18*$new-base-size);
 
 				.custom-select-wrapper {
 					width: 100px;
-					height: ($base-size*1.5);
+					height: calc(10*$new-base-size + 1.25rem);
 
 					background-color: pink;
 
 					.custom-select-options-wrapper {
 						position: relative;
-						top: ($base-size*1.5);
+						top: calc(10*$new-base-size + 1.25rem);
 
 						height: 100px;
 
@@ -859,7 +859,7 @@ header {
 
 		.search-autocomplete-wrapper {
 			position: relative;
-			top: ($base-size*1.75);
+			top: calc(14*$new-base-size + 1.25rem);
 
 			height: 100px;
 
@@ -869,11 +869,11 @@ header {
 
 	.public-btns-wrapper {
 		display: flex;
-		column-gap: ($base-size*.5);
+		column-gap: (4*$new-base-size);
 
 		.public-btn-wrapper {
 			width: 200px;
-			height: ($base-size*1.5);
+			height: calc(10*$new-base-size + 1.25rem);
 
 			background-color: aqua;
 		}				
@@ -881,11 +881,11 @@ header {
 
 	.sign-btns-wrapper {
 		display: flex;
-		column-gap: ($base-size*.5);
+		column-gap: (4*$new-base-size);
 
 		.sign-btn-wrapper {
 			width: 200px;
-			height: ($base-size*1.5);
+			height: calc(10*$new-base-size + 1.25rem);
 
 			background-color: aqua;
 		}
@@ -893,34 +893,34 @@ header {
 
 	.user-btns-wrapper {
 		display: flex;
-		column-gap: $base-size;
+		column-gap: (8*$new-base-size);
 
 		.user-btn-wrapper {
-			width: ($base-size*1.5);
-			height: ($base-size*1.5);
+			width: calc(10*$new-base-size + 1.25rem);
+			height: calc(10*$new-base-size + 1.25rem);
 
 			background-color: aqua;
 		
 			.notifications-wrapper {
 				position: relative;
-				top: ($base-size*1.5);
-				right: ($base-size*20 - $base-size*1.5);
+				top: calc(10*$new-base-size + 1.25rem);
+				right: calc(250*$new-base-size - 10*$new-base-size - 1.25rem);
 				display: flex;
 				flex-direction: column;
-				row-gap: ($base-size*.5);
+				row-gap: (8*$new-base-size);
 
-				width: ($base-size*20);
-				padding: ($base-size*.5);
+				width: (250*$new-base-size);
+				padding: (8*$new-base-size);
 
 				background-color: $dark-color;
 
 				.notification-wrapper {
 					display: flex;
-					column-gap: ($base-size*.25);
+					column-gap: (4*$new-base-size);
 
 					.notification-img-wrapper {
-						width: ($base-size*1.5);
-						height: ($base-size*1.5);
+						width: calc(10*$new-base-size + 1.25rem);
+						height: calc(10*$new-base-size + 1.25rem);
 
 						background-color: aqua;
 					}
@@ -928,7 +928,7 @@ header {
 					.notification-not-img-wrapper {
 						display: flex;
 						flex-direction: column;
-						row-gap: ($base-size*.25);
+						row-gap: (4*$new-base-size);
 						flex: 1 1 0;
 
 						.notification-text-wrapper {
@@ -943,11 +943,11 @@ header {
 
 							.notification-btns-wrapper {
 								display: flex;
-								column-gap: ($base-size*.25);
+								column-gap: (4*$new-base-size);
 
 								.notification-btn-wrapper {
 									width: 100px;
-									height: ($base-size*1.5);
+									height: calc(10*$new-base-size + 1.25rem);
 								
 									background-color: aqua;
 								}
@@ -955,7 +955,7 @@ header {
 
 							.notification-pubdate-wrapper {
 								width: 100px;
-								height: ($base-size*1.5);
+								height: calc(10*$new-base-size + 1.25rem);
 								
 								background-color: aqua;
 							}
@@ -982,12 +982,12 @@ footer {
 
 	.documents-btns-wrapper {
 		display: flex;
-		margin-right: (-$base-size*.5);
+		margin-right: (-8*$new-base-size);
 
 		.document-btn-wrapper {
 			width: 150px;
-			height: ($base-size*1.5);
-			margin-right: ($base-size*.5);
+			height: calc(10*$new-base-size + 1.25rem);
+			margin-right: (8*$new-base-size);
 		
 			background-color: aqua;
 		}
@@ -995,19 +995,19 @@ footer {
 
 	.copyright-wrapper {
 		width: 100px;
-		height: ($base-size*1.5);
+		height: calc(10*$new-base-size + 1.25rem);
 
 		background-color: aqua;
 	}
 
 	.social-media-btns-wrapper {
 		display: flex;
-		margin-right: -$base-size;
+		margin-right: (-12*$new-base-size);
 
 		.social-media-btn-wrapper {
-			width: ($base-size*1.5);
-			height: ($base-size*1.5);
-			margin-right: $base-size;
+			width: calc(10*$new-base-size + 1.25rem);
+			height: calc(10*$new-base-size + 1.25rem);
+			margin-right: (12*$new-base-size);
 
 			background-color: aqua;
 		}
@@ -1016,13 +1016,13 @@ footer {
 
 
 main {
-	min-height: calc(100vh - $base-size*2);
+	min-height: calc(100vh - 18*$new-base-size - 1.25rem);
 }
 
 
 /* ---------- signup.html ---------- */
 .signup-main {
-	padding: ($base-size*4) 35% ($base-size*2);	
+	padding: calc(36*$new-base-size + 1.25rem) 35% calc(18*$new-base-size + 1.25rem);	
 
 	.form-wrapper {
 
@@ -1038,7 +1038,7 @@ main {
 
 /* ---------- signin.html ---------- */
 .signin-main {
-	padding: ($base-size*4) 35% ($base-size*2);	
+	padding: calc(36*$new-base-size + 1.25rem) 35% calc(18*$new-base-size + 1.25rem);	
 
 	.form-wrapper {
 
@@ -1054,7 +1054,7 @@ main {
 
 /* ---------- passrecovery.html ---------- */
 .passrecovery-main {
-	padding: ($base-size*4) 35% ($base-size*2);	
+	padding: calc(36*$new-base-size + 1.25rem) 35% calc(18*$new-base-size + 1.25rem);	
 
 	.form-wrapper {
 
@@ -1072,9 +1072,9 @@ main {
 .main-main {
 	display: flex;
 	flex-direction: column;
-	row-gap: ($base-size*2);
+	row-gap: (18*$new-base-size);
 
-	padding: ($base-size*4) ($base-size*2) ($base-size*2);
+	padding: calc(36*$new-base-size + 1.25rem) (18*$new-base-size) (18*$new-base-size);
 
 	.main-wrapper-1,
 	.main-wrapper-2 {
@@ -1083,24 +1083,24 @@ main {
 
 	.main-wrapper-1 {
 		display: flex;
-		column-gap: $base-size;
+		column-gap: (12*$new-base-size);
 
 		.main-selected-tags-label {
-			font: 1rem/calc($base-size*1.5) 'Montserrat-Regular';
+			font: 1rem/calc(10*$new-base-size + 1.25rem) 'Montserrat-Regular';
 			color: rgba($dark-font-color, .55);
 		}
 
 		.main-selected-tags-wrapper {
 			display: flex;
-			gap: ($base-size*.5);
+			gap: (8*$new-base-size);
 			flex-wrap: wrap;
 
 			.main-selected-tag-item-wrapper {
 				display: flex;
-				column-gap: ($base-size*.5);
+				column-gap: (8*$new-base-size);
 				align-items: center;
 
-				padding-left: ($base-size*.5);
+				padding-left: (8*$new-base-size);
 				border-radius: $base-border-radius;
 
 				background-color: darken($light-color, 5%);
@@ -1131,21 +1131,21 @@ main {
 
 	.main-wrapper-2 {
 		display: flex;
-		column-gap: ($base-size*2);
+		column-gap: (18*$new-base-size);
 
 		.main-wrapper-2-1 {
 			display: flex;
 			flex-direction: column;
-			row-gap: $base-size;
+			row-gap: (12*$new-base-size);
 
 			max-width: 25%;
 
 			.main-selection-block-wrapper {
 				display: flex;
 				flex-direction: column;
-				row-gap: ($base-size*.5);
+				row-gap: (8*$new-base-size);
 
-				padding: $base-size;
+				padding: (12*$new-base-size);
 				border-radius: $base-border-radius;
 
 				background-color: darken($light-color, 5%);
@@ -1162,9 +1162,9 @@ main {
 						position: relative;
 						display: block;
 
-						padding-left: calc(1.2rem + $base-size*.25);
+						padding: (5*$new-base-size) 0 (5*$new-base-size) calc(1.25rem + 4*$new-base-size);
 
-						font: 1rem/calc($base-size*1.5) 'Montserrat-Regular';
+						font: 1rem/1.25rem 'Montserrat-Regular';
 						color: $dark-font-color;
 						cursor: pointer;
 						-webkit-user-select: none;
@@ -1193,11 +1193,11 @@ main {
 
 						.custom-category-radio {
 							position: absolute;
-							top: calc($base-size*.75 - .6rem);
+							top: (5*$new-base-size);
 							left: 0;
 
-							width: 1.2rem;
-							height: 1.2rem;
+							width: 1.25rem;
+							height: 1.25rem;
 							border-radius: 50%;
 							
 							background-color: $light-font-color;
@@ -1206,8 +1206,8 @@ main {
 							&:after {
 								position: absolute;
 								display: none;
-								top: .3rem;
-								left: .3rem;
+								top: .325rem;
+								left: .325rem;
 
 								width: .6rem;
 								height: .6rem;
@@ -1225,7 +1225,7 @@ main {
 					flex-direction: column;
 
 					.tag-link {
-						padding: calc($base-size*.75 - .6rem) 0;
+						padding: (5*$new-base-size) 0;
 					}
 				}					
 
@@ -1248,7 +1248,7 @@ main {
 		.main-wrapper-2-2 {
 			flex: 1 1 auto;
 			display: grid;
-			grid-gap: $base-size;
+			grid-gap: (12*$new-base-size);
 			grid-template: min-content / repeat(4, 1fr);
 
 			.main-publication-item-wrapper {
@@ -1266,15 +1266,15 @@ main {
 /* ---------- user.html ---------- */
 .user-main {
 	display: flex;
-	column-gap: ($base-size*2);
+	column-gap: (18*$new-base-size);
 
-	padding: ($base-size*4) ($base-size*2) ($base-size*2);
+	padding: calc(36*$new-base-size + 1.25rem) (18*$new-base-size) (18*$new-base-size);
 
 	.user-wrapper-1,
 	.user-wrapper-2 {
 		display: flex;
 		flex-direction: column;
-		row-gap: ($base-size*2);
+		row-gap: (18*$new-base-size);
 	}
 
 	.user-wrapper-1 {
@@ -1302,7 +1302,7 @@ main {
 
 		.profile-btns-wrapper {
 			display: flex;
-			column-gap: ($base-size*.5);
+			column-gap: (8*$new-base-size);
 
 			.profile-settings-btn, 
 			.profile-subscribe-btn {
@@ -1335,7 +1335,7 @@ main {
 
 				.profile-submenu-wrapper {
 					position: absolute;
-					top: ($base-size*2);
+					top: (18*$new-base-size);
 					right: 0;
 
 					width: 200px;
@@ -1346,15 +1346,15 @@ main {
 				
 					&:after {
 						position: absolute;
-						top: (-$base-size*.5);
-						right: ($base-size*.5);
+						top: (-8*$new-base-size);
+						right: (8*$new-base-size);
 
-						width: ($base-size*.5);
-						height: ($base-size*.5);
-						border-top: ($base-size*.25) solid transparent;
-						border-left: ($base-size*.25) solid transparent;
-						border-right: ($base-size*.25) solid transparent;
-						border-bottom: ($base-size*.25) solid $dark-color;
+						width: (8*$new-base-size);
+						height: (8*$new-base-size);
+						border-top: (4*$new-base-size) solid transparent;
+						border-left: (4*$new-base-size) solid transparent;
+						border-right: (4*$new-base-size) solid transparent;
+						border-bottom: (4*$new-base-size) solid $dark-color;
 
 						content: '';
 					}
@@ -1365,7 +1365,7 @@ main {
 		.profile-info-wrapper {
 			display: flex;
 			flex-direction: column;
-			row-gap: ($base-size*.5);
+			row-gap: (8*$new-base-size);
 
 			.profile-info-list {
 				display: flex;
@@ -1373,7 +1373,7 @@ main {
 
 				.profile-info-item {
 					display: flex;
-					column-gap: ($base-size*.25);
+					column-gap: (4*$new-base-size);
 					align-items: center;
 
 					.profile-info-item-ico {
@@ -1383,7 +1383,7 @@ main {
 
 					.profile-info-item-text {
 						font-size: 1rem;
-						line-height: ($base-size*1.5);
+						line-height: calc(10*$new-base-size + 1.25rem);
 						font-family: 'Montserrat-Regular';
 						color: $dark-font-color;
 						text-decoration: none;
@@ -1408,18 +1408,18 @@ main {
 		.profile-comments-block-wrapper {
 			display: flex;
 			flex-direction: column;
-			row-gap: $base-size;
+			row-gap: (12*$new-base-size);
 
-			scroll-margin-top: ($base-size*2);
+			scroll-margin-top: (18*$new-base-size);
 		}
 
 		.profile-name-description-wrapper {
 			display: flex;
 			flex-direction: column;
-			row-gap: ($base-size*.5);			
+			row-gap: (8*$new-base-size);			
 
 			.profile-description {
-				max-width: ($base-size*30);
+				max-width: (400*$new-base-size);
 
 				font: 1rem/1.25rem 'Montserrat-Regular';
 				color: $dark-font-color;	
@@ -1429,13 +1429,13 @@ main {
 		.profile-content-block-wrapper {
 			.profile-content-wrapper {
 				display: grid;
-				grid-gap: $base-size;
+				grid-gap: (12*$new-base-size);
 				grid-template: auto / repeat(4, 1fr);
 
-				max-height: calc(100vh - $base-size*4);
+				max-height: calc(100vh - 36*$new-base-size - 2.5rem);
 				// место для border при :hover 
-				padding: ($base-size*.5);
-				margin: (-$base-size*.5);
+				padding: (8*$new-base-size);
+				margin: (-8*$new-base-size);
 
 				overflow: auto;
 			}
@@ -1453,19 +1453,19 @@ main {
 
 /* ---------- settings.html ---------- */
 .settings-main {
-	padding: $base-size*4 35% $base-size*2;	
+	padding: calc(36*$new-base-size + 1.25rem) 35% 18*$new-base-size;	
 
 	.form-wrapper {
 
 		.settings-wrapper {
 			display: flex;
 			flex-direction: column;
-			row-gap: ($base-size*2);
+			row-gap: (18*$new-base-size);
 
 			.settings-group-wrapper {
 				display: flex;
 				flex-direction: column;
-				row-gap: $base-size;
+				row-gap: (12*$new-base-size);
 
 				.settings-group-title-wrapper {
 					width: 200px;
@@ -1477,11 +1477,11 @@ main {
 				.settings-group-content-wrapper {
 					display: flex;
 					flex-direction: column;
-					row-gap: ($base-size*.5);
+					row-gap: (8*$new-base-size);
 
 					.settings-group-btn-wrapper {
 						width: 150px;
-						height: ($base-size*1.5);
+						height: calc(10*$new-base-size + 1.25rem);
 
 						background-color: aqua;
 					}
@@ -1495,7 +1495,7 @@ main {
 
 /* ---------- passchange.html ---------- */
 .passchange-main {
-	padding: $base-size*4 35% $base-size*2;	
+	padding: calc(36*$new-base-size + 1.25rem) 35% 18*$new-base-size;	
 
 	.form-wrapper {
 
@@ -1511,7 +1511,7 @@ main {
 
 /* ---------- about.html ---------- */
 .about-main {
-	padding: ($base-size*4) ($base-size*2) ($base-size*2);	
+	padding: calc(36*$new-base-size + 1.25rem) (18*$new-base-size) (18*$new-base-size);	
 
 	.about-wrapper {
 		height: 1000px;
@@ -1524,7 +1524,7 @@ main {
 
 /* ---------- support.html ---------- */
 .support-main {
-	padding: ($base-size*4) 25% ($base-size*2);	
+	padding: calc(36*$new-base-size + 1.25rem) 25% (18*$new-base-size);	
 
 	.form-wrapper {
 
@@ -1540,12 +1540,12 @@ main {
 
 /* ---------- search.html ---------- */
 .search-main {
-	padding: ($base-size*4) 25% ($base-size*2);
+	padding: calc(36*$new-base-size + 1.25rem) 25% (18*$new-base-size);
 
 	.search-results-block-wrapper {
 		display: flex;
 		flex-direction: column;
-		row-gap: $base-size;
+		row-gap: (12*$new-base-size);
 
 		.search-request-wrapper {
 			font: 1rem/1.25rem 'Montserrat-Regular';
@@ -1559,7 +1559,7 @@ main {
 		.search-results-wrapper {
 			display: flex;
 			flex-direction: column;
-			row-gap: $base-size;
+			row-gap: (12*$new-base-size);
 
 			.search-result-item-wrapper {
 
@@ -1574,21 +1574,21 @@ main {
 .chat-main {
 	display: flex;
 
-	padding: $base-size*2 $base-size*2 0;
+	padding: calc(18*$new-base-size + 1.25rem) 18*$new-base-size 0;
 
 	.chat-wrapper-1,
 	.chat-wrapper-2 {
 		display: flex;
 		flex-direction: column;
 
-		height: calc(100vh - $base-size*4);					
+		height: calc(100vh - 36*$new-base-size - 2.5rem);					
 	}
 
 	.chat-wrapper-1 {
 		width: 30%;
 
 		.chat-global-search-wrapper {
-			padding: ($base-size*.25) ($base-size*.5);
+			padding: (4*$new-base-size) (8*$new-base-size);
 		
 			.chat-global-search-form {
 				display: flex;
@@ -1602,12 +1602,12 @@ main {
 				.chat-global-search-field {
 					flex: 1 1 auto;
 
-					padding: 0 ($base-size*.5);
+					padding: 0 (8*$new-base-size);
 					border: 0;
 					border-radius: $base-border-radius;
 					outline: $base-border-width solid transparent;
 
-					font: 1rem/calc($base-size*1.5) 'Montserrat-Regular';
+					font: 1rem/calc(10*$new-base-size + 1.25rem) 'Montserrat-Regular';
 					color: $dark-font-color;
 					background-color: transparent;
 
@@ -1621,7 +1621,7 @@ main {
 				}
 
 				.chat-global-search-btn {
-					flex: 0 0 ($base-size*1.5);
+					flex: 0 0 calc(10*$new-base-size + 1.25rem);
 
 					color: darken($light-color, 55%);
 					background-color: darken($light-color, 10%);
@@ -1689,10 +1689,10 @@ main {
 
 				.chat-conversation-item {
 					display: flex;
-					column-gap: ($base-size*.5);
+					column-gap: (4*$new-base-size);
 
 					width: 100%;
-					padding: ($base-size*.5);
+					padding: (8*$new-base-size);
 					border: 0;
 
 					text-align: left;
@@ -1705,8 +1705,8 @@ main {
 					}
 
 					.chat-conversation-img {
-						width: ($base-size*1.5);
-						height: ($base-size*1.5);
+						width: calc(10*$new-base-size + 1.25rem);
+						height: calc(10*$new-base-size + 1.25rem);
 
 						border-radius: 50%;					
 
@@ -1720,12 +1720,12 @@ main {
 						justify-content: space-between;
 						flex: 1 1 0;
 
-						height: ($base-size*1.5);
+						height: calc(10*$new-base-size + 1.25rem);
 
 						.chat-conversation-not-img-wrapper-1,
 						.chat-conversation-not-img-wrapper-2 {
 							display: flex;
-							column-gap: ($base-size*.25);
+							column-gap: (4*$new-base-size);
 						}
 
 						.chat-conversation-not-img-wrapper-1 {
@@ -1758,8 +1758,8 @@ main {
 								display: flex;
 								justify-content: center;
 
-								min-width: 1.2rem;
-								padding: 0.1rem .4rem;
+								min-width: 1.25rem;
+								padding: 0.125rem .4rem;
 								border-radius: .6rem;
 
 								font: .85rem/1rem 'Montserrat-SemiBold';
@@ -1784,7 +1784,7 @@ main {
 
 		.chat-wrapper-2-header,
 		.chat-wrapper-2-footer {
-			padding: ($base-size*.25) ($base-size*.5);
+			padding: (4*$new-base-size) (8*$new-base-size);
 
 			background-color: lighten($dark-color, 25%);
 
@@ -1799,7 +1799,7 @@ main {
 				align-items: center;
 
 				.chat-wrapper-2-header-name {
-					font: 1rem/calc($base-size*1.5) 'Montserrat-SemiBold';
+					font: 1rem/calc(10*$new-base-size + 1.25rem) 'Montserrat-SemiBold';
 					color: $light-font-color;
 					text-decoration: none;
 
@@ -1809,9 +1809,9 @@ main {
 				}
 
 				.chat-header-name-online {
-					width: ($base-size*.83);
-					height: ($base-size*.83);
-					border: ($base-size*.25) solid lighten($dark-color, 25%);
+					width: (12*$new-base-size);
+					height: (12*$new-base-size);
+					border: (4*$new-base-size) solid lighten($dark-color, 25%);
 					border-radius: 50%;
 
 					background-color: $accent-color-g;
@@ -1820,7 +1820,7 @@ main {
 
 			.chat-wrapper-2-header-btns-wrapper {
 				display: flex;
-				column-gap: ($base-size*.25);
+				column-gap: (4*$new-base-size);
 
 				.chat-wrapper-2-header-btn {
 					color: $light-color;
@@ -1837,10 +1837,10 @@ main {
 			position: relative;
 			display: flex;
 			flex-direction: column;
-			row-gap: ($base-size*.5);
+			row-gap: (8*$new-base-size);
 			flex: 1 1 0;
 
-			padding: ($base-size*.5);
+			padding: (8*$new-base-size);
 
 			background-color: darken($light-color, 5%);
 			overflow: auto;
@@ -1859,7 +1859,7 @@ main {
 							color: $light-font-color;
 
 							&:after {
-								width: ($base-size*2.5);
+								width: (28*$new-base-size);
 							}
 						}
 
@@ -1885,7 +1885,7 @@ main {
 						background-color: $light-font-color;
 					
 						.chat-message:after {
-							width: ($base-size*1.5);
+							width: (18*$new-base-size);
 						}
 					}
 				}
@@ -1894,7 +1894,7 @@ main {
 					position: relative;
 
 					max-width: 80%;
-					padding: ($base-size*.33);
+					padding: (4*$new-base-size);
 					border-radius: $base-border-radius;
 
 					.chat-message {
@@ -1912,11 +1912,11 @@ main {
 
 					.chat-message-meta-wrapper {
 						position: absolute;
-						right: ($base-size*.125);
-						bottom: ($base-size*.125);
+						right: (2*$new-base-size);
+						bottom: (2*$new-base-size);
 						display: flex;
 						align-items: center;
-						column-gap: ($base-size*.125);
+						column-gap: (2*$new-base-size);
 
 						.chat-message-pubdate {
 							font: .85rem/1rem 'Montserrat-Regular';
@@ -1934,7 +1934,7 @@ main {
 				justify-content: center;
 
 				.chat-pubdate-block {
-					padding: ($base-size*.125) ($base-size*.25);
+					padding: (2*$new-base-size) (4*$new-base-size);
 					border-radius: $base-border-radius;
 
 					font: .85rem/1rem 'Montserrat-SemiBold';
@@ -1945,12 +1945,12 @@ main {
 		}
 
 		.chat-wrapper-2-footer {
-			padding: ($base-size*.25) ($base-size*.5);
+			padding: (4*$new-base-size) (8*$new-base-size);
 
 			.chat-send-message-form {
 				display: flex;
 				align-items: end;
-				column-gap: ($base-size*.25);
+				column-gap: (4*$new-base-size);
 				flex: 1 1 100%;
 
 				.chat-send-message-field {
@@ -1982,9 +1982,9 @@ main {
 .publication-main {
 	display: flex;
 	flex-direction: column;
-	row-gap: ($base-size*2);
+	row-gap: (18*$new-base-size);
 
-	padding: ($base-size*4) ($base-size*2) ($base-size*2);
+	padding: calc(36*$new-base-size + 1.25rem) (18*$new-base-size) (18*$new-base-size);
 
 	.publication-wrapper-1,
 	.publication-wrapper-2 {
@@ -1993,22 +1993,22 @@ main {
 
 	.publication-wrapper-1 {
 		display: flex;
-		column-gap: ($base-size*2);
+		column-gap: (18*$new-base-size);
 
 		.publication-wrapper-1-1,
 		.publication-wrapper-1-2 {
 			display: flex;
 			flex-direction: column;
-			row-gap: ($base-size*2);
+			row-gap: (18*$new-base-size);
 		}
 
 		.publication-wrapper-1-1 {
-			max-width: calc((100% - $base-size*2)*.7);
+			max-width: calc((100% - 18*$new-base-size)*.7);
 
 			.publication-img-block-wrapper {
 				display: flex;
 				flex-direction: column;
-				row-gap: $base-size;
+				row-gap: (12*$new-base-size);
 
 				.publication-img-wrapper {
 					position: relative;
@@ -2074,7 +2074,7 @@ main {
 
 				.publication-small-imgs-wrapper {
 					display: flex;
-					gap: ($base-size*.5);
+					gap: (8*$new-base-size);
 					align-items: center;
 					justify-content: center;
 					flex-wrap: wrap;
@@ -2093,13 +2093,13 @@ main {
 						}
 
 						&[class*='publication-img-selected'] {
-							width: ($base-size*2);
-							height: ($base-size*2);						
+							width: (18*$new-base-size);
+							height: (18*$new-base-size);						
 						}
 
 						&:not([class*='publication-img-selected']) {
-							width: ($base-size*1.5);
-							height: ($base-size*1.5);
+							width: calc(10*$new-base-size + 1.25rem);
+							height: calc(10*$new-base-size + 1.25rem);
 						}
 					}
 				}
@@ -2108,21 +2108,21 @@ main {
 			.publication-tabs-block-wrapper {
 				display: flex;
 				flex-direction: column;
-				row-gap: $base-size;
+				row-gap: (12*$new-base-size);
 
 				.publication-presentation-wrapper,
 				.publication-realization-wrapper {
 					display: flex;
-					column-gap: $base-size;
+					column-gap: (12*$new-base-size);
 
 					.publication-section-btns-block-wrapper {
 						display: flex;
 						flex-direction: column;
-						row-gap: ($base-size*.5);
+						row-gap: (8*$new-base-size);
 						flex: 1 1 0;
 
 						.publication-section-btn-wrapper {
-							height: ($base-size*1.5);
+							height: calc(10*$new-base-size + 1.25rem);
 
 							background-color: aqua;
 						}
@@ -2131,13 +2131,13 @@ main {
 					.publication-sections-block-wrapper {
 						display: flex;
 						flex-direction: column;
-						row-gap: $base-size;
+						row-gap: (12*$new-base-size);
 						flex: 5 5 0;
 
 						.publication-section-wrapper {
 							display: flex;
 							flex-direction: column;
-							row-gap: ($base-size*.5);
+							row-gap: (8*$new-base-size);
 
 							.publication-section-header-wrapper {
 								height: 24px;
@@ -2156,7 +2156,7 @@ main {
 
 				.publication-ideas-wrapper {
 					display: grid;
-					grid-gap: $base-size;
+					grid-gap: (12*$new-base-size);
 					grid-template: auto / repeat(3, 1fr);
 				}
 
@@ -2167,16 +2167,16 @@ main {
 		}
 
 		.publication-wrapper-1-2 {		
-			max-width: calc((100% - $base-size*2)*.3);
+			max-width: calc((100% - 18*$new-base-size)*.3);
 
 			.publication-main-info-wrapper {
 				display: flex;
 				flex-direction: column;
-				row-gap: $base-size;
+				row-gap: (12*$new-base-size);
 
 				.publication-main-info-row-wrapper {
 					display: flex;
-					column-gap: $base-size;
+					column-gap: (12*$new-base-size);
 
 					.publication-type {
 						font: .85rem/1rem 'Montserrat-SemiBold';
@@ -2202,18 +2202,18 @@ main {
 
 					.publication-tags-wrapper {
 						display: flex;
-						gap: calc($base-size*.5 - .2rem) ($base-size*.5);
+						gap: calc(8*$new-base-size - .25rem) (8*$new-base-size);
 						flex-wrap: wrap;
 					}
 
 					.publication-date {
-						font: .85rem/calc($base-size*1.5) 'Montserrat-SemiBold';
+						font: .85rem/calc(10*$new-base-size + 1.25rem) 'Montserrat-SemiBold';
 						color: rgba($dark-font-color, .55);
 					}
 
 					.publication-author-wrapper {
 						display: flex;
-						column-gap: ($base-size*.25);
+						column-gap: (4*$new-base-size);
 
 						padding: 0;
 						border: 0;
@@ -2228,8 +2228,8 @@ main {
 						}
 
 						.publication-author-img {
-							width: ($base-size*1.5);
-							height: ($base-size*1.5);
+							width: calc(10*$new-base-size + 1.25rem);
+							height: calc(10*$new-base-size + 1.25rem);
 							border-radius: 50%;
 
 							object-fit: cover;
@@ -2237,7 +2237,7 @@ main {
 						}
 
 						.publication-author-name {
-							font: .85rem/calc($base-size*1.5) 'Montserrat-SemiBold';
+							font: .85rem/calc(10*$new-base-size + 1.25rem) 'Montserrat-SemiBold';
 							color: $dark-font-color;
 						}
 					}
@@ -2247,12 +2247,12 @@ main {
 			.publication-reactions-wrapper {
 				display: flex;
 				flex-direction: column;
-				row-gap: $base-size;
+				row-gap: (12*$new-base-size);
 
 				.publication-reactions-item-wrapper {
 					display: flex;
 					flex-direction: column;
-					row-gap: ($base-size*.5);
+					row-gap: (8*$new-base-size);
 
 					.publication-reaction-statistic {
 						font: 1rem/1.25rem 'Montserrat-Regular';
@@ -2265,7 +2265,7 @@ main {
 
 					.publication-reaction-btns-wrapper {
 						display: flex;
-						column-gap: ($base-size*.5);
+						column-gap: (8*$new-base-size);
 
 						.publication-suscribe-btn {
 							color: $light-font-color;
@@ -2324,11 +2324,11 @@ main {
 	.publication-wrapper-2 {		
 		display: flex;
 		flex-direction: column;
-		row-gap: $base-size;
+		row-gap: (12*$new-base-size);
 
 		.publication-recommendations-block-wrapper {
 			display: grid;
-			grid-gap: $base-size;
+			grid-gap: (12*$new-base-size);
 			grid-template: auto / repeat(5, 1fr);
 		}
 	}
@@ -2338,7 +2338,7 @@ main {
 
 /* ---------- pubpublication.html ---------- */
 .pubpublication-main {
-	padding: ($base-size*4) 25% ($base-size*2);	
+	padding: calc(36*$new-base-size + 1.25rem) 25% (18*$new-base-size);	
 
 	.form-wrapper {
 

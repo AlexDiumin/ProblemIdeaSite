@@ -399,7 +399,7 @@
 }
 .comments-block-wrapper .add-comment-wrapper {
   display: flex;
-  column-gap: 16px;
+  column-gap: 12px;
 }
 .comments-block-wrapper .add-comment-wrapper .add-comment-form {
   display: flex;
@@ -425,7 +425,7 @@
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper {
   display: flex;
-  column-gap: 16px;
+  column-gap: 12px;
 }
 .comments-block-wrapper .comments-wrapper .comment-wrapper .comment-not-img-wrapper {
   display: flex;
@@ -541,7 +541,7 @@
 .form-wrapper .form-title-wrapper {
   position: absolute;
   top: -13px;
-  left: 12px;
+  left: 16px;
   width: 200px;
   height: 24px;
   background-color: aqua;
@@ -571,13 +571,13 @@ footer {
   display: flex;
   z-index: 999;
   width: 100%;
-  padding: 6px 48px;
+  padding: 8px 36px;
   background-color: #112233;
 }
 
 header {
   position: fixed;
-  column-gap: 48px;
+  column-gap: 36px;
 }
 header .burger-btn-wrapper,
 header .logo-wrapper,
@@ -585,23 +585,23 @@ header .search-wrapper,
 header .public-btns-wrapper,
 header .sign-btns-wrapper,
 header .user-btns-wrapper {
-  height: 36px;
+  height: calc(20px + 1.25rem);
 }
 header .burger-btn-wrapper {
-  width: 36px;
+  width: calc(20px + 1.25rem);
   background-color: aqua;
 }
 header .burger-btn-wrapper .menu-wrapper {
   position: fixed;
-  top: 48px;
+  top: calc(36px + 1.25rem);
   left: 0;
   display: flex;
   flex-direction: column;
-  row-gap: 48px;
+  row-gap: 36px;
   transform: translateX(-100%);
-  height: calc(100vh - 48px);
-  border-top: 6px solid #112233;
-  border-bottom: 54px solid #112233;
+  height: calc(100vh - 36px);
+  border-top: 8px solid #112233;
+  border-bottom: calc(44px + 1.25rem) solid #112233;
   background-color: #112233;
   overflow: auto;
 }
@@ -611,17 +611,17 @@ header .burger-btn-wrapper .menu-wrapper .menu-items-wrapper {
 }
 header .burger-btn-wrapper .menu-wrapper .menu-selects-wrapper {
   display: flex;
-  column-gap: 12px;
-  padding: 0 48px;
+  column-gap: 8px;
+  padding: 0 36px;
 }
 header .burger-btn-wrapper .menu-wrapper .menu-selects-wrapper .custom-select-wrapper {
   width: 100px;
-  height: 36px;
+  height: calc(20px + 1.25rem);
   background-color: pink;
 }
 header .burger-btn-wrapper .menu-wrapper .menu-selects-wrapper .custom-select-wrapper .custom-select-options-wrapper {
   position: relative;
-  top: 36px;
+  top: calc(20px + 1.25rem);
   height: 100px;
   background-color: gray;
 }
@@ -638,61 +638,61 @@ header .search-wrapper {
 }
 header .search-wrapper .search-autocomplete-wrapper {
   position: relative;
-  top: 42px;
+  top: calc(28px + 1.25rem);
   height: 100px;
   background-color: #112233;
 }
 header .public-btns-wrapper {
   display: flex;
-  column-gap: 12px;
+  column-gap: 8px;
 }
 header .public-btns-wrapper .public-btn-wrapper {
   width: 200px;
-  height: 36px;
+  height: calc(20px + 1.25rem);
   background-color: aqua;
 }
 header .sign-btns-wrapper {
   display: flex;
-  column-gap: 12px;
+  column-gap: 8px;
 }
 header .sign-btns-wrapper .sign-btn-wrapper {
   width: 200px;
-  height: 36px;
+  height: calc(20px + 1.25rem);
   background-color: aqua;
 }
 header .user-btns-wrapper {
   display: flex;
-  column-gap: 24px;
+  column-gap: 16px;
 }
 header .user-btns-wrapper .user-btn-wrapper {
-  width: 36px;
-  height: 36px;
+  width: calc(20px + 1.25rem);
+  height: calc(20px + 1.25rem);
   background-color: aqua;
 }
 header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper {
   position: relative;
-  top: 36px;
-  right: 444px;
+  top: calc(20px + 1.25rem);
+  right: calc(480px - 1.25rem);
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
-  width: 480px;
-  padding: 12px;
+  row-gap: 16px;
+  width: 500px;
+  padding: 16px;
   background-color: #112233;
 }
 header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper {
   display: flex;
-  column-gap: 6px;
+  column-gap: 8px;
 }
 header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper .notification-img-wrapper {
-  width: 36px;
-  height: 36px;
+  width: calc(20px + 1.25rem);
+  height: calc(20px + 1.25rem);
   background-color: aqua;
 }
 header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper .notification-not-img-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 6px;
+  row-gap: 8px;
   flex: 1 1 0;
 }
 header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper .notification-not-img-wrapper .notification-text-wrapper {
@@ -705,16 +705,16 @@ header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification
 }
 header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper .notification-not-img-wrapper .notification-not-text-wrapper .notification-btns-wrapper {
   display: flex;
-  column-gap: 6px;
+  column-gap: 8px;
 }
 header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper .notification-not-img-wrapper .notification-not-text-wrapper .notification-btns-wrapper .notification-btn-wrapper {
   width: 100px;
-  height: 36px;
+  height: calc(20px + 1.25rem);
   background-color: aqua;
 }
 header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper .notification-not-img-wrapper .notification-not-text-wrapper .notification-pubdate-wrapper {
   width: 100px;
-  height: 36px;
+  height: calc(20px + 1.25rem);
   background-color: aqua;
 }
 
@@ -725,17 +725,17 @@ footer {
 }
 footer .documents-btns-wrapper {
   display: flex;
-  margin-right: -12px;
+  margin-right: -16px;
 }
 footer .documents-btns-wrapper .document-btn-wrapper {
   width: 150px;
-  height: 36px;
-  margin-right: 12px;
+  height: calc(20px + 1.25rem);
+  margin-right: 16px;
   background-color: aqua;
 }
 footer .copyright-wrapper {
   width: 100px;
-  height: 36px;
+  height: calc(20px + 1.25rem);
   background-color: aqua;
 }
 footer .social-media-btns-wrapper {
@@ -743,19 +743,19 @@ footer .social-media-btns-wrapper {
   margin-right: -24px;
 }
 footer .social-media-btns-wrapper .social-media-btn-wrapper {
-  width: 36px;
-  height: 36px;
+  width: calc(20px + 1.25rem);
+  height: calc(20px + 1.25rem);
   margin-right: 24px;
   background-color: aqua;
 }
 
 main {
-  min-height: calc(100vh - 48px);
+  min-height: calc(100vh - 36px - 1.25rem);
 }
 
 /* ---------- signup.html ---------- */
 .signup-main {
-  padding: 96px 35% 48px;
+  padding: calc(72px + 1.25rem) 35% calc(36px + 1.25rem);
 }
 .signup-main .form-wrapper .signup-wrapper {
   height: 600px;
@@ -765,7 +765,7 @@ main {
 /* ---------- /signup.html ---------- */
 /* ---------- signin.html ---------- */
 .signin-main {
-  padding: 96px 35% 48px;
+  padding: calc(72px + 1.25rem) 35% calc(36px + 1.25rem);
 }
 .signin-main .form-wrapper .signin-wrapper {
   height: 600px;
@@ -775,7 +775,7 @@ main {
 /* ---------- /signin.html ---------- */
 /* ---------- passrecovery.html ---------- */
 .passrecovery-main {
-  padding: 96px 35% 48px;
+  padding: calc(72px + 1.25rem) 35% calc(36px + 1.25rem);
 }
 .passrecovery-main .form-wrapper .passrecovery-form-wrapper {
   height: 300px;
@@ -787,27 +787,27 @@ main {
 .main-main {
   display: flex;
   flex-direction: column;
-  row-gap: 48px;
-  padding: 96px 48px 48px;
+  row-gap: 36px;
+  padding: calc(72px + 1.25rem) 36px 36px;
 }
 .main-main .main-wrapper-1 {
   display: flex;
   column-gap: 24px;
 }
 .main-main .main-wrapper-1 .main-selected-tags-label {
-  font: 1rem/36px "Montserrat-Regular";
+  font: 1rem/calc(20px + 1.25rem) "Montserrat-Regular";
   color: rgba(0, 1, 1, 0.55);
 }
 .main-main .main-wrapper-1 .main-selected-tags-wrapper {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 .main-main .main-wrapper-1 .main-selected-tags-wrapper .main-selected-tag-item-wrapper {
   display: flex;
-  column-gap: 12px;
+  column-gap: 16px;
   align-items: center;
-  padding-left: 12px;
+  padding-left: 16px;
   border-radius: 2px;
   background-color: #e1e3eb;
 }
@@ -824,7 +824,7 @@ main {
 }
 .main-main .main-wrapper-2 {
   display: flex;
-  column-gap: 48px;
+  column-gap: 36px;
 }
 .main-main .main-wrapper-2 .main-wrapper-2-1 {
   display: flex;
@@ -835,7 +835,7 @@ main {
 .main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 16px;
   padding: 24px;
   border-radius: 2px;
   background-color: #e1e3eb;
@@ -848,8 +848,8 @@ main {
 .main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-categories-form .main-category-item {
   position: relative;
   display: block;
-  padding-left: calc(1.2rem + 6px);
-  font: 1rem/36px "Montserrat-Regular";
+  padding: 10px 0 10px calc(1.25rem + 8px);
+  font: 1rem/1.25rem "Montserrat-Regular";
   color: #000101;
   cursor: pointer;
   -webkit-user-select: none;
@@ -873,10 +873,10 @@ main {
 }
 .main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-categories-form .main-category-item .custom-category-radio {
   position: absolute;
-  top: calc(18px - 0.6rem);
+  top: 10px;
   left: 0;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
   background-color: #fcfcfd;
   transition: 0.1s;
@@ -884,8 +884,8 @@ main {
 .main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-categories-form .main-category-item .custom-category-radio:after {
   position: absolute;
   display: none;
-  top: 0.3rem;
-  left: 0.3rem;
+  top: 0.325rem;
+  left: 0.325rem;
   width: 0.6rem;
   height: 0.6rem;
   border-radius: 50%;
@@ -897,7 +897,7 @@ main {
   flex-direction: column;
 }
 .main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-tags-wrapper .tag-link {
-  padding: calc(18px - 0.6rem) 0;
+  padding: 10px 0;
 }
 .main-main .main-wrapper-2 .main-wrapper-2-1 .main-selection-block-wrapper .main-selection-btn-wrapper {
   align-self: center;
@@ -924,14 +924,14 @@ main {
 /* ---------- user.html ---------- */
 .user-main {
   display: flex;
-  column-gap: 48px;
-  padding: 96px 48px 48px;
+  column-gap: 36px;
+  padding: calc(72px + 1.25rem) 36px 36px;
 }
 .user-main .user-wrapper-1,
 .user-main .user-wrapper-2 {
   display: flex;
   flex-direction: column;
-  row-gap: 48px;
+  row-gap: 36px;
 }
 .user-main .user-wrapper-1 .profile-img-wrapper {
   position: relative;
@@ -952,7 +952,7 @@ main {
 }
 .user-main .user-wrapper-1 .profile-btns-wrapper {
   display: flex;
-  column-gap: 12px;
+  column-gap: 16px;
 }
 .user-main .user-wrapper-1 .profile-btns-wrapper .profile-settings-btn,
 .user-main .user-wrapper-1 .profile-btns-wrapper .profile-subscribe-btn {
@@ -980,7 +980,7 @@ main {
 }
 .user-main .user-wrapper-1 .profile-btns-wrapper .profile-submenu-btn .profile-submenu-wrapper {
   position: absolute;
-  top: 48px;
+  top: 36px;
   right: 0;
   width: 200px;
   height: 200px;
@@ -989,20 +989,20 @@ main {
 }
 .user-main .user-wrapper-1 .profile-btns-wrapper .profile-submenu-btn .profile-submenu-wrapper:after {
   position: absolute;
-  top: -12px;
-  right: 12px;
-  width: 12px;
-  height: 12px;
-  border-top: 6px solid transparent;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid #112233;
+  top: -16px;
+  right: 16px;
+  width: 16px;
+  height: 16px;
+  border-top: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #112233;
   content: "";
 }
 .user-main .user-wrapper-1 .profile-info-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 16px;
 }
 .user-main .user-wrapper-1 .profile-info-wrapper .profile-info-list {
   display: flex;
@@ -1010,7 +1010,7 @@ main {
 }
 .user-main .user-wrapper-1 .profile-info-wrapper .profile-info-list .profile-info-item {
   display: flex;
-  column-gap: 6px;
+  column-gap: 8px;
   align-items: center;
 }
 .user-main .user-wrapper-1 .profile-info-wrapper .profile-info-list .profile-info-item .profile-info-item-ico {
@@ -1019,7 +1019,7 @@ main {
 }
 .user-main .user-wrapper-1 .profile-info-wrapper .profile-info-list .profile-info-item .profile-info-item-text {
   font-size: 1rem;
-  line-height: 36px;
+  line-height: calc(20px + 1.25rem);
   font-family: "Montserrat-Regular";
   color: #000101;
   text-decoration: none;
@@ -1040,15 +1040,15 @@ main {
   display: flex;
   flex-direction: column;
   row-gap: 24px;
-  scroll-margin-top: 48px;
+  scroll-margin-top: 36px;
 }
 .user-main .user-wrapper-2 .profile-name-description-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 16px;
 }
 .user-main .user-wrapper-2 .profile-name-description-wrapper .profile-description {
-  max-width: 720px;
+  max-width: 800px;
   font: 1rem/1.25rem "Montserrat-Regular";
   color: #000101;
 }
@@ -1056,9 +1056,9 @@ main {
   display: grid;
   grid-gap: 24px;
   grid-template: auto/repeat(4, 1fr);
-  max-height: calc(100vh - 96px);
-  padding: 12px;
-  margin: -12px;
+  max-height: calc(100vh - 72px - 2.5rem);
+  padding: 16px;
+  margin: -16px;
   overflow: auto;
 }
 .user-main .user-wrapper-2 .profile-comments-block-wrapper button[class*=like-btn] {
@@ -1068,12 +1068,12 @@ main {
 /* ---------- /user.html ---------- */
 /* ---------- settings.html ---------- */
 .settings-main {
-  padding: 96px 35% 48px;
+  padding: calc(72px + 1.25rem) 35% 36px;
 }
 .settings-main .form-wrapper .settings-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 48px;
+  row-gap: 36px;
 }
 .settings-main .form-wrapper .settings-wrapper .settings-group-wrapper {
   display: flex;
@@ -1088,18 +1088,18 @@ main {
 .settings-main .form-wrapper .settings-wrapper .settings-group-wrapper .settings-group-content-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 16px;
 }
 .settings-main .form-wrapper .settings-wrapper .settings-group-wrapper .settings-group-content-wrapper .settings-group-btn-wrapper {
   width: 150px;
-  height: 36px;
+  height: calc(20px + 1.25rem);
   background-color: aqua;
 }
 
 /* ---------- /settings.html ---------- */
 /* ---------- passchange.html ---------- */
 .passchange-main {
-  padding: 96px 35% 48px;
+  padding: calc(72px + 1.25rem) 35% 36px;
 }
 .passchange-main .form-wrapper .passchange-form-wrapper {
   height: 400px;
@@ -1109,7 +1109,7 @@ main {
 /* ---------- /passchange.html ---------- */
 /* ---------- about.html ---------- */
 .about-main {
-  padding: 96px 48px 48px;
+  padding: calc(72px + 1.25rem) 36px 36px;
 }
 .about-main .about-wrapper {
   height: 1000px;
@@ -1119,7 +1119,7 @@ main {
 /* ---------- /about.html ---------- */
 /* ---------- support.html ---------- */
 .support-main {
-  padding: 96px 25% 48px;
+  padding: calc(72px + 1.25rem) 25% 36px;
 }
 .support-main .form-wrapper .support-wrapper {
   height: 500px;
@@ -1129,7 +1129,7 @@ main {
 /* ---------- /support.html ---------- */
 /* ---------- search.html ---------- */
 .search-main {
-  padding: 96px 25% 48px;
+  padding: calc(72px + 1.25rem) 25% 36px;
 }
 .search-main .search-results-block-wrapper {
   display: flex;
@@ -1152,19 +1152,19 @@ main {
 /* ---------- chat.html ---------- */
 .chat-main {
   display: flex;
-  padding: 48px 48px 0;
+  padding: calc(36px + 1.25rem) 36px 0;
 }
 .chat-main .chat-wrapper-1,
 .chat-main .chat-wrapper-2 {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 96px);
+  height: calc(100vh - 72px - 2.5rem);
 }
 .chat-main .chat-wrapper-1 {
   width: 30%;
 }
 .chat-main .chat-wrapper-1 .chat-global-search-wrapper {
-  padding: 6px 12px;
+  padding: 8px 16px;
 }
 .chat-main .chat-wrapper-1 .chat-global-search-wrapper .chat-global-search-form {
   display: flex;
@@ -1175,11 +1175,11 @@ main {
 }
 .chat-main .chat-wrapper-1 .chat-global-search-wrapper .chat-global-search-form .chat-global-search-field {
   flex: 1 1 auto;
-  padding: 0 12px;
+  padding: 0 16px;
   border: 0;
   border-radius: 2px;
   outline: 2px solid transparent;
-  font: 1rem/36px "Montserrat-Regular";
+  font: 1rem/calc(20px + 1.25rem) "Montserrat-Regular";
   color: #000101;
   background-color: transparent;
 }
@@ -1190,7 +1190,7 @@ main {
   outline: 2px solid #a4aac2;
 }
 .chat-main .chat-wrapper-1 .chat-global-search-wrapper .chat-global-search-form .chat-global-search-btn {
-  flex: 0 0 36px;
+  flex: 0 0 calc(20px + 1.25rem);
   color: #525a7b;
   background-color: #d1d4e1;
 }
@@ -1237,9 +1237,9 @@ main {
 }
 .chat-main .chat-wrapper-1 .chat-conversations-form .chat-conversation-item-wrapper .chat-conversation-item {
   display: flex;
-  column-gap: 12px;
+  column-gap: 8px;
   width: 100%;
-  padding: 12px;
+  padding: 16px;
   border: 0;
   text-align: left;
   cursor: pointer;
@@ -1250,8 +1250,8 @@ main {
   background-color: #e1e3eb;
 }
 .chat-main .chat-wrapper-1 .chat-conversations-form .chat-conversation-item-wrapper .chat-conversation-item .chat-conversation-img {
-  width: 36px;
-  height: 36px;
+  width: calc(20px + 1.25rem);
+  height: calc(20px + 1.25rem);
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
@@ -1261,12 +1261,12 @@ main {
   flex-direction: column;
   justify-content: space-between;
   flex: 1 1 0;
-  height: 36px;
+  height: calc(20px + 1.25rem);
 }
 .chat-main .chat-wrapper-1 .chat-conversations-form .chat-conversation-item-wrapper .chat-conversation-item .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1,
 .chat-main .chat-wrapper-1 .chat-conversations-form .chat-conversation-item-wrapper .chat-conversation-item .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 {
   display: flex;
-  column-gap: 6px;
+  column-gap: 8px;
 }
 .chat-main .chat-wrapper-1 .chat-conversations-form .chat-conversation-item-wrapper .chat-conversation-item .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-1 .chat-conversation-name {
   font: 0.85rem/1rem "Montserrat-SemiBold";
@@ -1293,8 +1293,8 @@ main {
 .chat-main .chat-wrapper-1 .chat-conversations-form .chat-conversation-item-wrapper .chat-conversation-item .chat-conversation-not-img-wrapper .chat-conversation-not-img-wrapper-2 .chat-conversation-last-message-status {
   display: flex;
   justify-content: center;
-  min-width: 1.2rem;
-  padding: 0.1rem 0.4rem;
+  min-width: 1.25rem;
+  padding: 0.125rem 0.4rem;
   border-radius: 0.6rem;
   font: 0.85rem/1rem "Montserrat-SemiBold";
   color: #fcfcfd;
@@ -1310,7 +1310,7 @@ main {
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-header,
 .chat-main .chat-wrapper-2 .chat-wrapper-2-footer {
-  padding: 6px 12px;
+  padding: 8px 16px;
   background-color: #316293;
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-header {
@@ -1322,7 +1322,7 @@ main {
   align-items: center;
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-header .chat-wrapper-2-header-name-wrapper .chat-wrapper-2-header-name {
-  font: 1rem/36px "Montserrat-SemiBold";
+  font: 1rem/calc(20px + 1.25rem) "Montserrat-SemiBold";
   color: #fcfcfd;
   text-decoration: none;
 }
@@ -1330,15 +1330,15 @@ main {
   text-decoration: underline;
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-header .chat-wrapper-2-header-name-wrapper .chat-header-name-online {
-  width: 19.92px;
-  height: 19.92px;
-  border: 6px solid #316293;
+  width: 24px;
+  height: 24px;
+  border: 8px solid #316293;
   border-radius: 50%;
   background-color: #66CC99;
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-header .chat-wrapper-2-header-btns-wrapper {
   display: flex;
-  column-gap: 6px;
+  column-gap: 8px;
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-header .chat-wrapper-2-header-btns-wrapper .chat-wrapper-2-header-btn {
   color: #F0F1F5;
@@ -1351,9 +1351,9 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 16px;
   flex: 1 1 0;
-  padding: 12px;
+  padding: 16px;
   background-color: #e1e3eb;
   overflow: auto;
 }
@@ -1370,7 +1370,7 @@ main {
   color: #fcfcfd;
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-main .chat-message-item-wrapper[class*=my-message] .chat-message-wrapper .chat-message:after {
-  width: 60px;
+  width: 56px;
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-main .chat-message-item-wrapper[class*=my-message] .chat-message-wrapper .chat-message-meta-wrapper .chat-message-pubdate {
   color: rgba(252, 252, 253, 0.8);
@@ -1392,7 +1392,7 @@ main {
 .chat-main .chat-wrapper-2 .chat-wrapper-2-main .chat-message-item-wrapper .chat-message-wrapper {
   position: relative;
   max-width: 80%;
-  padding: 7.92px;
+  padding: 8px;
   border-radius: 2px;
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-main .chat-message-item-wrapper .chat-message-wrapper .chat-message {
@@ -1406,11 +1406,11 @@ main {
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-main .chat-message-item-wrapper .chat-message-wrapper .chat-message-meta-wrapper {
   position: absolute;
-  right: 3px;
-  bottom: 3px;
+  right: 4px;
+  bottom: 4px;
   display: flex;
   align-items: center;
-  column-gap: 3px;
+  column-gap: 4px;
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-main .chat-message-item-wrapper .chat-message-wrapper .chat-message-meta-wrapper .chat-message-pubdate {
   font: 0.85rem/1rem "Montserrat-Regular";
@@ -1424,19 +1424,19 @@ main {
   justify-content: center;
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-main .chat-pubdate-block-wrapper .chat-pubdate-block {
-  padding: 3px 6px;
+  padding: 4px 8px;
   border-radius: 2px;
   font: 0.85rem/1rem "Montserrat-SemiBold";
   color: #fcfcfd;
   background-color: rgba(17, 34, 51, 0.62);
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-footer {
-  padding: 6px 12px;
+  padding: 8px 16px;
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-footer .chat-send-message-form {
   display: flex;
   align-items: end;
-  column-gap: 6px;
+  column-gap: 8px;
   flex: 1 1 100%;
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-footer .chat-send-message-form .chat-send-message-field {
@@ -1459,21 +1459,21 @@ main {
 .publication-main {
   display: flex;
   flex-direction: column;
-  row-gap: 48px;
-  padding: 96px 48px 48px;
+  row-gap: 36px;
+  padding: calc(72px + 1.25rem) 36px 36px;
 }
 .publication-main .publication-wrapper-1 {
   display: flex;
-  column-gap: 48px;
+  column-gap: 36px;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1,
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 {
   display: flex;
   flex-direction: column;
-  row-gap: 48px;
+  row-gap: 36px;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 {
-  max-width: calc((100% - 48px) * 0.7);
+  max-width: calc((100% - 36px) * 0.7);
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper {
   display: flex;
@@ -1536,7 +1536,7 @@ main {
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-small-imgs-wrapper {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -1553,12 +1553,12 @@ main {
   outline: 2px solid #a4aac2;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-small-imgs-wrapper .publication-small-img[class*=publication-img-selected] {
-  width: 48px;
-  height: 48px;
-}
-.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-small-imgs-wrapper .publication-small-img:not([class*=publication-img-selected]) {
   width: 36px;
   height: 36px;
+}
+.publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-img-block-wrapper .publication-small-imgs-wrapper .publication-small-img:not([class*=publication-img-selected]) {
+  width: calc(20px + 1.25rem);
+  height: calc(20px + 1.25rem);
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-tabs-block-wrapper {
   display: flex;
@@ -1574,12 +1574,12 @@ main {
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-tabs-block-wrapper .publication-realization-wrapper .publication-section-btns-block-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 16px;
   flex: 1 1 0;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-tabs-block-wrapper .publication-presentation-wrapper .publication-section-btns-block-wrapper .publication-section-btn-wrapper,
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-tabs-block-wrapper .publication-realization-wrapper .publication-section-btns-block-wrapper .publication-section-btn-wrapper {
-  height: 36px;
+  height: calc(20px + 1.25rem);
   background-color: aqua;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-tabs-block-wrapper .publication-presentation-wrapper .publication-sections-block-wrapper,
@@ -1593,7 +1593,7 @@ main {
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-tabs-block-wrapper .publication-realization-wrapper .publication-sections-block-wrapper .publication-section-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 16px;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-tabs-block-wrapper .publication-presentation-wrapper .publication-sections-block-wrapper .publication-section-wrapper .publication-section-header-wrapper,
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-tabs-block-wrapper .publication-realization-wrapper .publication-sections-block-wrapper .publication-section-wrapper .publication-section-header-wrapper {
@@ -1611,7 +1611,7 @@ main {
   grid-template: auto/repeat(3, 1fr);
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 {
-  max-width: calc((100% - 48px) * 0.3);
+  max-width: calc((100% - 36px) * 0.3);
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper {
   display: flex;
@@ -1641,16 +1641,16 @@ main {
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-tags-wrapper {
   display: flex;
-  gap: calc(12px - 0.2rem) 12px;
+  gap: calc(16px - 0.25rem) 16px;
   flex-wrap: wrap;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-date {
-  font: 0.85rem/36px "Montserrat-SemiBold";
+  font: 0.85rem/calc(20px + 1.25rem) "Montserrat-SemiBold";
   color: rgba(0, 1, 1, 0.55);
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-author-wrapper {
   display: flex;
-  column-gap: 6px;
+  column-gap: 8px;
   padding: 0;
   border: 0;
   background-color: transparent;
@@ -1660,14 +1660,14 @@ main {
   text-decoration: underline;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-author-wrapper .publication-author-img {
-  width: 36px;
-  height: 36px;
+  width: calc(20px + 1.25rem);
+  height: calc(20px + 1.25rem);
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-main-info-wrapper .publication-main-info-row-wrapper .publication-author-wrapper .publication-author-name {
-  font: 0.85rem/36px "Montserrat-SemiBold";
+  font: 0.85rem/calc(20px + 1.25rem) "Montserrat-SemiBold";
   color: #000101;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper {
@@ -1678,7 +1678,7 @@ main {
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 16px;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-statistic {
   font: 1rem/1.25rem "Montserrat-Regular";
@@ -1689,7 +1689,7 @@ main {
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper {
   display: flex;
-  column-gap: 12px;
+  column-gap: 16px;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-2 .publication-reactions-wrapper .publication-reactions-item-wrapper .publication-reaction-btns-wrapper .publication-suscribe-btn {
   color: #fcfcfd;
@@ -1743,7 +1743,7 @@ main {
 /* ---------- /publication.html ---------- */
 /* ---------- pubpublication.html ---------- */
 .pubpublication-main {
-  padding: 96px 25% 48px;
+  padding: calc(72px + 1.25rem) 25% 36px;
 }
 .pubpublication-main .form-wrapper .pubpublication-tabs-wrapper {
   height: 36px;
