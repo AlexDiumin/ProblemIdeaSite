@@ -119,39 +119,104 @@
 
 				<div class="publication-tabs-block-wrapper">
 					<div class="tabs-wrapper">
-						<button class="tab-item">Презентация</button>
+						<button class="tab-item selected-tab">Презентация</button>
 						<button class="tab-item">9 идей</button>
 						<!-- <button class="tab-item">2 реализации</button> -->
-						<button class="tab-item selected-tab">9 комментариев</button>
+						<button class="tab-item">9 комментариев</button>
 					</div>
 
-					<!-- <div class="publication-presentation-wrapper">
-						<div class="publication-section-btns-block-wrapper">
-							<div class="publication-section-btn-wrapper"></div>
-							<div class="publication-section-btn-wrapper"></div>
-							<div class="publication-section-btn-wrapper"></div>
+					<div class="publication-presentation-wrapper">
+						<div class="publication-section-links-block">
+							<div class="publication-section-links-wrapper">
+								<a href="#problem" class="publication-section-link">Проблема</a>
+								<a href="#needs" class="publication-section-link">Что нужно?</a>
+								<a href="#survey" class="publication-section-link">Опрос</a>
+							</div>
 						</div>
 
 						<div class="publication-sections-block-wrapper">
-							<div class="publication-section-wrapper">
-								<div class="publication-section-header-wrapper"></div>
+							<div id="problem" class="publication-section-wrapper">
+								<h2>Проблема</h2>
 
-								<div class="publication-section-content-wrapper"></div>
+								<div class="publication-section-content-wrapper">
+									<p class="publication-section-text">Задача организации, в особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке дальнейших направлений развития. Идейные соображения высшего порядка, а также укрепление и развитие структуры играет важную роль в формировании новых предложений. Равным образом новая модель организационной деятельности требуют от нас анализа дальнейших направлений развития. Идейные соображения высшего порядка, а также реализация намеченных плановых заданий способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.</p>
+									
+									<img src="img/user.jpg" alt="Фото" class="publication-section-img">
+
+								</div>
 							</div>
-							<div class="publication-section-wrapper">
-								<div class="publication-section-header-wrapper"></div>
+							<div id="needs" class="publication-section-wrapper">
+								<h2>Что нужно?</h2>
 
-								<div class="publication-section-content-wrapper"></div>
+								<div class="publication-section-content-wrapper">
+									<p class="publication-section-text">Задача организации, в особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке дальнейших направлений развития. Идейные соображения высшего порядка, а также укрепление и развитие структуры играет важную роль в формировании новых предложений. Равным образом новая модель организационной деятельности требуют от нас анализа дальнейших направлений развития. Идейные соображения высшего порядка, а также реализация намеченных плановых заданий способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.</p>
+								</div>
 							</div>
-							<div class="publication-section-wrapper">
-								<div class="publication-section-header-wrapper"></div>
+							<div id="survey" class="publication-section-wrapper">
+								<h2>Опрос</h2>
 
-								<div class="publication-section-content-wrapper"></div>
+								<div class="publication-section-content-wrapper">
+									<form method="post" class="checkmark-form radio-form">
+										<h3>Текст вопроса заданного пользователем, который публикует проблему?</h3>
+										
+										<label class="checkmark-answer">Вариант 1
+											<input type="radio" name="radio" checked>
+											
+											<span class="checkmark"></span>
+										</label>
+										<label class="checkmark-answer">Вариант 2
+											<input type="radio" name="radio">
+											
+											<span class="checkmark"></span>
+										</label>
+
+										<button class="ico-btn">
+											<i class="fa-solid fa-caret-down"></i>
+
+											<span>Показать 2 ответа</span>
+										</button>
+									</form>
+
+									<form method="post" class="checkmark-form checkbox-form">
+										<h3>Текст вопроса заданного пользователем, который публикует проблему?</h3>
+										
+										<label class="checkmark-answer">Вариант 1
+											<input type="checkbox" name="radio" checked>
+											
+											<span class="checkmark"></span>
+										</label>
+										<label class="checkmark-answer">Вариант 2
+											<input type="checkbox" name="radio">
+											
+											<span class="checkmark"></span>
+										</label>
+										
+										<button class="ico-btn">
+											<i class="fa-solid fa-caret-down"></i>
+
+											<span>Показать 2 ответа</span>
+										</button>
+									</form>
+
+									<form method="post" class="textarea-form">
+										<h3>Текст вопроса заданного пользователем, который публикует проблему?</h3>
+
+										<textarea class="textarea" placeholder="Введите ответ" rows="1"></textarea>
+
+										<input type="submit" class="btn textarea-btn" value="Отправить">
+										
+										<button class="ico-btn">
+											<i class="fa-solid fa-caret-down"></i>
+
+											<span>Показать 2 ответа</span>
+										</button>
+									</form>
+								</div>
 							</div>
 						</div>
-					</div> -->
+					</div>
 
-					<div class="publication-ideas-wrapper">
+					<!-- <div class="publication-ideas-wrapper">
 						<div class="publication-idea-item-wrapper">
 							<a href="#" class="pub-card pub-card-idea pub-card-vertical">
 								<div class="pub-card-img-wrapper">
@@ -185,7 +250,7 @@
 								</div>
 							</a>
 						</div>
-					</div>
+					</div> -->
 
 					<!-- <div class="publication-realization-wrapper">
 						<div class="publication-section-btns-block-wrapper">
@@ -207,130 +272,7 @@
 						</div>
 					</div> -->
 
-					<!-- <div class="publication-comments-wrapper">
-						<div class="comments-block-wrapper">
-							<div class="add-comment-wrapper">
-								<a href="#" class="comment-img-link">
-									<img src="img/user.jpg" alt="Фото пользователя" class="comment-img">
-								</a>
-
-								<form method="post" class="add-comment-form">
-									<textarea class="textarea add-comment-field" placeholder="Введите комментарий" rows="1"></textarea>
-
-									<input type="submit" class="btn add-comment-submit-btn" value="Отправить">
-								</form>
-							</div>
-
-							<div class="comments-wrapper">
-								<div class="comment-wrapper">
-									<a href="#" class="comment-img-link">
-										<img src="img/user.jpg" alt="Фото пользователя" class="comment-img">
-									</a>
-									
-									<div class="comment-not-img-wrapper">
-										<div class="only-comment-not-img-wrapper">
-											<div class="comment-name-pubdate-wrapper">
-												<a href="#" class="comment-name">Александр Егоров</a>
-
-												<span class="comment-pubdate" title="12:58 11.06.2022">12:58</span>
-											</div>
-
-											<p class="comment-text">Текст комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария</p>
-
-											<div class="comment-reaction-btns-wrapper">
-												<button class="btn comment-reply-btn">Ответить</button>
-												<button class="comment-like-dislike-btn">
-													<i class="fa-solid fa-thumbs-up comment-like-dislike-ico"></i>
-
-													<span class="comment-likes-dislikes-count">8</span>	
-												</button>
-												<button class="comment-like-dislike-btn">
-													<i class="fa-solid fa-thumbs-down comment-like-dislike-ico"></i>
-
-													<span class="comment-likes-dislikes-count">3</span>
-												</button>
-											</div>
-										</div>
-
-										<div class="comment-answers-wrapper">
-											<div class="comment-wrapper">
-												<a href="#" class="comment-img-link">
-													<img src="img/user.jpg" alt="Фото пользователя" class="comment-img">
-												</a>
-												
-												<div class="comment-not-img-wrapper">
-													<div class="only-comment-not-img-wrapper">
-														<div class="comment-name-pubdate-wrapper">
-															<a href="#" class="comment-name">Александр Егоров</a>
-
-															<span class="comment-pubdate" title="12:58 11.06.2022">12:58</span>
-														</div>
-
-														<p class="comment-text">Текст комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария</p>
-
-														<div class="comment-reaction-btns-wrapper">
-															<button class="btn comment-reply-btn">Ответить</button>
-															<button class="comment-like-dislike-btn">
-																<i class="fa-solid fa-thumbs-up comment-like-dislike-ico"></i>
-
-																<span class="comment-likes-dislikes-count">8</span>
-															</button>
-															<button class="comment-like-dislike-btn">
-																<i class="fa-solid fa-thumbs-down comment-like-dislike-ico"></i>
-
-																<span class="comment-likes-dislikes-count">3</span>
-															</button>
-														</div>
-													</div>
-
-													<button class="comment-answers-btn">
-														<i class="fa-solid fa-caret-down comment-answers-btn-ico"></i>
-
-														<span class="comment-answers-btn-text">Показать 2 ответа</span>
-													</button>
-												</div>
-											</div>
-										</div>
-
-										<button class="comment-answers-btn">
-											<i class="fa-solid fa-caret-up comment-answers-btn-ico"></i>
-
-											<span class="comment-answers-btn-text">Скрыть 1 ответ</span>
-										</button>
-									</div>
-								</div>
-								<div class="comment-wrapper">
-									<a href="#" class="comment-img-link">
-										<img src="img/user.jpg" alt="Фото пользователя" class="comment-img">
-									</a>
-									
-									<div class="comment-not-img-wrapper">
-										<div class="only-comment-not-img-wrapper">
-											<div class="comment-name-pubdate-wrapper">
-												<a href="#" class="comment-name">Александр Егоров</a>
-
-												<span class="comment-pubdate" title="12:58 11.06.2022">12:58</span>
-											</div>
-
-											<p class="comment-text">Текст комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария комментария</p>
-
-											<div class="comment-reaction-btns-wrapper">
-												<button class="btn comment-reply-btn">Ответить</button>
-												<button class="comment-like-dislike-btn">
-													<i class="fa-solid fa-thumbs-up comment-like-dislike-ico"></i>
-													<span class="comment-likes-dislikes-count">8</span>	
-												</button>
-												<button class="comment-like-dislike-btn">
-													<i class="fa-solid fa-thumbs-down comment-like-dislike-ico"></i>
-													<span class="comment-likes-dislikes-count">3</span>
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div> -->
+					<!-- <div class="publication-comments-wrapper"></div> -->
 
 				</div>
 			</div>
@@ -372,15 +314,15 @@
 							<button class="btn publication-suscribe-btn">Подписаться</button>
 							
 							<div class="like-btns-wrapper">
-								<button class="like-btn">
-									<i class="fa-solid fa-thumbs-up like-ico"></i>
+								<button class="ico-btn">
+									<i class="fa-solid fa-thumbs-up"></i>
 
-									<span class="dislikes-count">8</span>	
+									<span>8</span>	
 								</button>
-								<button class="dislike-btn">
-									<i class="fa-solid fa-thumbs-down dislike-ico"></i>
+								<button class="ico-btn">
+									<i class="fa-solid fa-thumbs-down"></i>
 
-									<span class="dislikes-count">3</span>
+									<span>3</span>
 								</button>
 							</div>
 
