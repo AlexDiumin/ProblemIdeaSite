@@ -6,6 +6,7 @@
 	<title>PubPublication</title>
 	<link rel="stylesheet" href="css/nulling.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://kit.fontawesome.com/3aac8b0827.js" crossorigin="anonymous"></script>
 </head>
 <body>	
 	<header>
@@ -94,12 +95,84 @@
 
 
 	<main class="pubpublication-main">
-		<div class="form-wrapper">
+		<!-- <div class="form-wrapper">
 			<div class="form-title-wrapper"></div>
 
 			<div class="pubpublication-tabs-wrapper"></div>
 
 			<div class="pubpublication-form-wrapper"></div>
+		</div> -->
+
+		<p class="pubpublication-title">Публикация идеи</p>
+		<!-- <p class="pubpublication-title">Публикация проблемы</p> -->
+
+		<div class="pubpublication-block">
+			<div class="tabs-wrapper">
+				<button class="tab-item selected-tab">Основное</button>
+				<button class="tab-item">Описание</button>
+				<button class="tab-item">Опрос</button>
+			</div>
+
+			<form method="post" class="pubpublication-form">
+				<div class="pubpublication-form-row">
+					<h3>Изображения и видео</h3>
+
+					<div class="pubpublication-upload-wrapper">
+						<!-- <div class="pubpublication-upload-ico-wrapper">
+							<i class="fa-solid fa-camera"></i>
+							<i class="fa-solid fa-video"></i>
+						</div> -->
+						<i class="fa-solid fa-cloud-arrow-up pubpublication-upload-ico"></i>
+
+						<p class="pubpublication-upload-text">Поместите сюда файл</p>
+						<p class="pubpublication-upload-text">или</p>
+
+						<button class="btn pubpublication-upload-btn">Открыть файл</button>
+					</div>
+				</div>
+				<div class="pubpublication-form-row">
+					<h3>Название идеи</h3>
+
+					<input type="text" class="input" placeholder="Введите название идеи">
+				</div>
+				<div class="pubpublication-form-row">
+					<h3>Краткое описание</h3>
+
+					<textarea rows="3" class="textarea" placeholder="Опишите идею в нескольких предложениях"></textarea>
+				</div>
+				<div class="pubpublication-form-row">
+					<h3>Локализация</h3>
+
+
+
+
+
+					<details class="custom-select">
+						<summary class="radios">
+							<input type="radio" name="item" id="default" title="Auswählen..." checked>
+							<input type="radio" name="item" id="item1" title="Item 1">
+							<input type="radio" name="item" id="item2" title="Item 2">
+						</summary>
+						<ul class="list">
+							<li>
+								<label for="item1">Item 1</label>
+							</li>
+							<li>
+								<label for="item2">Item 2</label>
+							</li>
+						</ul>
+					</details>
+
+
+
+
+				</div>
+				<div class="pubpublication-form-row">
+					<h3>Теги</h3>
+
+					<input type="text" class="input" placeholder="Добавьте до 5 тегов через пробел">
+				</div>
+			</form>
 		</div>
 	</main>
 
