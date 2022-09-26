@@ -115,7 +115,7 @@
 
 			<form method="post" class="pubpublication-form">
 				<div class="pubpublication-form-row">
-					<h3>Изображения и видео</h3>
+					<h3>Изображения и видео<span title="Обязательное поле"> * </span></h3>
 
 					<div class="pubpublication-upload-wrapper">
 						<!-- <div class="pubpublication-upload-ico-wrapper">
@@ -131,7 +131,7 @@
 					</div>
 				</div>
 				<div class="pubpublication-form-row">
-					<h3>Название идеи</h3>
+					<h3>Название идеи<span title="Обязательное поле"> * </span></h3>
 
 					<input type="text" class="input" placeholder="Введите название идеи">
 				</div>
@@ -141,37 +141,26 @@
 					<textarea rows="3" class="textarea" placeholder="Опишите идею в нескольких предложениях"></textarea>
 				</div>
 				<div class="pubpublication-form-row">
-					<h3>Локализация</h3>
-
-
-
-
-
-					<details class="custom-select">
-						<summary class="radios">
-							<input type="radio" name="item" id="default" title="Auswählen..." checked>
-							<input type="radio" name="item" id="item1" title="Item 1">
-							<input type="radio" name="item" id="item2" title="Item 2">
-						</summary>
-						<ul class="list">
-							<li>
-								<label for="item1">Item 1</label>
-							</li>
-							<li>
-								<label for="item2">Item 2</label>
-							</li>
-						</ul>
-					</details>
-
-
-
-
+					<div class="pubpublication-form-columns-wrapper">
+						<div class="pubpublication-form-row">
+							<h3>Страна</h3>
+							
+							<input type="text" class="input" placeholder="Начните вводить страну">
+						</div>
+						<div class="pubpublication-form-row">
+							<h3>Город</h3>
+							
+							<input type="text" class="input" placeholder="Начните вводить город">
+						</div>
+					</div>
 				</div>
 				<div class="pubpublication-form-row">
 					<h3>Теги</h3>
 
 					<input type="text" class="input" placeholder="Добавьте до 5 тегов через пробел">
 				</div>
+
+				<input type="submit" value="Далее" class="btn pubpublication-next-btn">
 			</form>
 		</div>
 	</main>

@@ -2241,10 +2241,8 @@ main {
 												left: .125rem;
 
 												content: '\f00c';
-												font-family: "Font Awesome 5 Free";
+												font: 1rem/1.25rem 'Font Awesome 5 Free';
 												font-weight: 900;
-												font-size: 1rem;
-												line-height: 1.25rem;
 												color: $light-font-color;
 											}
 										}
@@ -2650,23 +2648,6 @@ main {
 
 /* ---------- pubpublication.html ---------- */
 .pubpublication-main {
-	// padding: calc(36*$new-base-size + 1.25rem) 25% (18*$new-base-size);	
-
-	// .form-wrapper {
-
-	// 	.pubpublication-tabs-wrapper {
-	// 		height: 36px;
-
-	// 		background-color: aqua;
-	// 	}
-
-	// 	.pubpublication-form-wrapper {
-	// 		height: 800px;
-
-	// 		background-color: aqua;
-	// 	}
-	// }
-
 	display: flex;
 	flex-direction: column;
 	row-gap: (12*$new-base-size);
@@ -2674,14 +2655,14 @@ main {
 	padding: calc(36*$new-base-size + 1.25rem) 25% (18*$new-base-size);	
 
 	.pubpublication-title {
-		font: 1.15rem/1.35rem 'Montserrat-SemiBold';
-		color: darken($accent-color-r, 25%);
+		font: 1.3rem/1.5rem 'Montserrat-SemiBold';
+		color: darken($accent-color-r, 25%);		
 	}
 
 	.pubpublication-block {
 		display: flex;
 		flex-direction: column;
-		row-gap: (10*$new-base-size);
+		row-gap: (8*$new-base-size);
 
 		.pubpublication-form {
 			display: flex;
@@ -2691,7 +2672,15 @@ main {
 			.pubpublication-form-row {
 				display: flex;
 				flex-direction: column;
-				row-gap: (4*$new-base-size);
+				row-gap: (2*$new-base-size);
+
+				h3 {
+					span {
+						font-family: 'Montserrat-Regular';
+						color: $accent-color-r;
+						cursor: default;
+					}
+				}
 
 				.pubpublication-upload-wrapper {
 					display: flex;
@@ -2725,152 +2714,25 @@ main {
 					}
 				}
 
-
-
-
-
-
-
-
-
-
-				details {
-					position: relative;
-				}
-
-				details[open] {
-					z-index: 1;
-				}
-
-				summary {
+				.pubpublication-form-columns-wrapper {
 					display: flex;
-					justify-content: space-between;
-					align-items: center;
+					column-gap: (4*$new-base-size);
 
-					padding: (5*$new-base-size);
-					border-radius: $base-border-radius;
-					outline: $base-border-width solid transparent;
-
-					background-color: darken($light-color, 5%);
-					cursor: pointer;
-					list-style: none;
-					transition: $base-transition;
-				}
-
-				summary::-webkit-details-marker {
-					display: none;
-				}
-
-				details[open] summary:before {
-					position: fixed;
-					top: 0;
-					left: 0;
-					display: flex;
-					
-					width: 100vw;
-					height: 100vh;
-
-					content: '';
-					background: transparent;
-				}
-
-				summary:after {
-					content: '\f0d7';
-					font: 1.25rem/1.25rem "Font Awesome 5 Free";
-					font-weight: 900;
-					transition: $base-transition;
-				}
-
-				summary:focus {
-					outline: $base-border-width solid darken($light-color, 25%);
-				}
-
-				details[open] summary:after {
-					content: '\f0d8';
-				}
-
-				ul {
-					position: absolute;
-					top: calc(100% + 2*$base-border-width);
-					left: 0;
-
-					width: 100%;
-					max-height: (100*$new-base-size);
-					border-radius: $base-border-radius;
-
-					background-color: darken($light-color, 5%);
-					overflow-y: auto;
-				}
-
-				li {
-					padding: 0;
-					border: 0;
-					margin: 0;
-				}
-
-				/* FAKE SELECT */
-
-				summary.radios {
-					counter-reset: radios;
-				}
-
-				summary.radios:before {
-					content: var(--selection);
-				}
-
-				input[type=radio] {
-					display: none;
-
-					margin: 0;
-
-					counter-increment: radios;
-					appearance: none;
-
-					&[id='default']:after {
-						color: darken($light-color, 55%) !important;
+					.pubpublication-form-row {
+						flex: 1 1 100%;
 					}
 				}
+			}
 
-				input[type=radio]:checked {
-					--display: block;
-					display: inline-flex;
+			.pubpublication-next-btn {
+				align-self: end;
+
+				color: $light-font-color;
+				background-color: darken($accent-color-r, 25%);
+
+				&:hover {
+					background-color: darken($accent-color-r, 20%);
 				}
-
-				input[type=radio]:after {
-					display: inline-flex;
-
-					content: attr(title);
-					font: 1rem/1.25rem 'Montserrat-Regular';
-					color: $dark-font-color;
-				}
-
-				ul.list {
-					counter-reset: labels;
-				}
-
-				label {
-					display: flex;
-					justify-content: space-between;
-					
-					padding: (5*$new-base-size);
-
-					background-color: transparent;
-					cursor: pointer;
-					transition: $base-transition;
-
-					&:hover {
-						background-color: darken($light-color, 10%);
-					}
-				}
-
-
-
-
-
-
-
-
-
 			}
 		}
 	}

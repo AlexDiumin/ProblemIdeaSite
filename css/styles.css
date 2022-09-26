@@ -1674,10 +1674,8 @@ main {
   top: 0;
   left: 0.125rem;
   content: "\f00c";
-  font-family: "Font Awesome 5 Free";
+  font: 1rem/1.25rem "Font Awesome 5 Free";
   font-weight: 900;
-  font-size: 1rem;
-  line-height: 1.25rem;
   color: #fcfcfd;
 }
 .publication-main .publication-wrapper-1 .publication-wrapper-1-1 .publication-tabs-block-wrapper .publication-presentation-wrapper .publication-sections-block-wrapper .publication-section-wrapper .publication-section-content-wrapper .textarea-form {
@@ -1977,13 +1975,13 @@ main {
   padding: calc(72px + 1.25rem) 25% 36px;
 }
 .pubpublication-main .pubpublication-title {
-  font: 1.15rem/1.35rem "Montserrat-SemiBold";
+  font: 1.3rem/1.5rem "Montserrat-SemiBold";
   color: #d0040c;
 }
 .pubpublication-main .pubpublication-block {
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 16px;
 }
 .pubpublication-main .pubpublication-block .pubpublication-form {
   display: flex;
@@ -1993,8 +1991,12 @@ main {
 .pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row {
   display: flex;
   flex-direction: column;
-  row-gap: 8px;
-  /* FAKE SELECT */
+  row-gap: 4px;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row h3 span {
+  font-family: "Montserrat-Regular";
+  color: #FC575E;
+  cursor: default;
 }
 .pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-upload-wrapper {
   display: flex;
@@ -2021,102 +2023,20 @@ main {
 .pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-upload-wrapper .pubpublication-upload-btn:hover {
   background-color: #172f46;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row details {
-  position: relative;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row details[open] {
-  z-index: 1;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row summary {
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-form-columns-wrapper {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-radius: 2px;
-  outline: 2px solid transparent;
-  background-color: #e1e3eb;
-  cursor: pointer;
-  list-style: none;
-  transition: 0.1s;
+  column-gap: 8px;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row summary::-webkit-details-marker {
-  display: none;
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-form-columns-wrapper .pubpublication-form-row {
+  flex: 1 1 100%;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row details[open] summary:before {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  content: "";
-  background: transparent;
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-next-btn {
+  align-self: end;
+  color: #fcfcfd;
+  background-color: #d0040c;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row summary:after {
-  content: "\f0d7";
-  font: 1.25rem/1.25rem "Font Awesome 5 Free";
-  font-weight: 900;
-  transition: 0.1s;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row summary:focus {
-  outline: 2px solid #a4aac2;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row details[open] summary:after {
-  content: "\f0d8";
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row ul {
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
-  width: 100%;
-  max-height: 200px;
-  border-radius: 2px;
-  background-color: #e1e3eb;
-  overflow-y: auto;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row li {
-  padding: 0;
-  border: 0;
-  margin: 0;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row summary.radios {
-  counter-reset: radios;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row summary.radios:before {
-  content: var(--selection);
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row input[type=radio] {
-  display: none;
-  margin: 0;
-  counter-increment: radios;
-  appearance: none;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row input[type=radio][id=default]:after {
-  color: #525a7b !important;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row input[type=radio]:checked {
-  --display: block;
-  display: inline-flex;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row input[type=radio]:after {
-  display: inline-flex;
-  content: attr(title);
-  font: 1rem/1.25rem "Montserrat-Regular";
-  color: #000101;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row ul.list {
-  counter-reset: labels;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row label {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: transparent;
-  cursor: pointer;
-  transition: 0.1s;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row label:hover {
-  background-color: #d1d4e1;
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-next-btn:hover {
+  background-color: #e9040e;
 }
 
 /* ---------- /pubpublication.html ---------- */
