@@ -2030,6 +2030,53 @@ main {
 .pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-form-columns-wrapper .pubpublication-form-row {
   flex: 1 1 100%;
 }
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-contenteditable-outside .pubpublication-contenteditable-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: #e1e3eb;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-contenteditable-outside .pubpublication-contenteditable-wrapper .pubpublication-contenteditable-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 2px;
+  background-color: #d1d4e1;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-contenteditable-outside .pubpublication-contenteditable-wrapper .pubpublication-contenteditable-header .ico-btn {
+  color: #484f6b;
+  background-color: transparent;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-contenteditable-outside .pubpublication-contenteditable-wrapper .pubpublication-contenteditable-header .ico-btn:hover {
+  background-color: #c2c6d6;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-contenteditable-outside .pubpublication-contenteditable-wrapper .pubpublication-contenteditable-field {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 12px;
+  max-height: calc(100vh - 104px - 9px - 5rem);
+  padding: 16px;
+  border-radius: 2px;
+  outline: 2px solid transparent;
+  transition: 0.1s;
+  overflow: auto;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-contenteditable-outside .pubpublication-contenteditable-wrapper .pubpublication-contenteditable-field:focus {
+  outline-color: #a4aac2;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-contenteditable-outside .pubpublication-contenteditable-wrapper .pubpublication-contenteditable-field p {
+  font: 1rem/1.5rem "Montserrat-Regular";
+  color: #000101;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-contenteditable-outside .pubpublication-contenteditable-wrapper .pubpublication-contenteditable-field img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
 .pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-next-btn {
   align-self: end;
   color: #fcfcfd;

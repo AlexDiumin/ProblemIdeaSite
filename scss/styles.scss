@@ -2722,6 +2722,127 @@ main {
 						flex: 1 1 100%;
 					}
 				}
+
+				.pubpublication-contenteditable-outside {
+					.pubpublication-contenteditable-wrapper {
+						display: inline-flex;
+						flex-direction: column;
+						row-gap: $base-border-width;
+
+						width: 100%;
+						border-radius: $base-border-radius;
+
+						background-color: darken($light-color, 5%);
+
+						.pubpublication-contenteditable-header {
+							display: flex;
+							flex-wrap: wrap;
+							gap: $new-base-size;
+
+							padding: (2*$new-base-size);
+							border-radius: $base-border-radius;
+
+							background-color: darken($light-color, 10%);
+
+							.ico-btn {
+								color: darken($light-color, 60%);
+								background-color: transparent;
+
+								&:hover {
+									background-color: darken($light-color, 15%);
+								}
+							}
+						}
+
+						.pubpublication-contenteditable-field {
+							display: flex;
+							justify-content: center;
+							flex-direction: column;
+							row-gap: (6*$new-base-size);
+
+							max-height: calc(100vh - 52*$new-base-size - 4.5*$base-border-width - 5rem);
+							padding: (8*$new-base-size);
+							border-radius: $base-border-radius;
+							outline: $base-border-width solid transparent;
+
+							transition: $base-transition;
+							overflow: auto;
+
+							&:focus {
+								outline-color: darken($light-color, 25%);
+							}
+
+							p {
+								font: 1rem/1.5rem 'Montserrat-Regular';
+								color: $dark-font-color;
+							}
+
+							img {
+								max-width: 100%;
+								height: auto;
+								border-radius: $base-border-radius;
+							}
+						}
+					}
+				}
+
+				// .pubpublication-add-link-wrapper {
+				// 	display: flex;
+				// 	column-gap: (4*$new-base-size);
+				
+				// 	padding: (4*$new-base-size);
+				// 	border: $base-border-width solid darken($light-color, 5%);
+				// 	border-radius: $base-border-radius;
+
+				// 	.input {
+				// 		flex: 1 1 100%;
+				// 	}
+
+				// 	.pubpublication-add-link-btn {
+				// 		color: $dark-font-color;
+				// 		background-color: transparent;
+
+				// 		&:hover {
+				// 			background-color: darken($light-color, 5%);
+				// 		}
+				// 	}
+				// }
+
+				// .pubpublication-links-wrapper {
+				// 	display: flex;
+				// 	flex-wrap: wrap;
+				// 	gap: (4*$new-base-size);
+
+				// 	.pubpublication-link-item {
+				// 		display: flex;
+
+				// 		border-radius: $base-border-radius;
+
+				// 		background-color: darken($light-color, 5%);
+
+				// 		.pubpublication-link {
+				// 			padding: (5*$new-base-size) (10*$new-base-size);
+				// 			border-radius: $base-border-radius;
+
+				// 			font: 1rem/1.25rem 'Montserrat-Regular';
+				// 			color: darken($accent-color-b, 25%);
+				// 			text-decoration: none;
+
+				// 			&:hover {
+				// 				text-decoration: underline;
+				// 			}
+				// 		}
+
+				// 		.pubpublication-cancel-link-btn {
+				// 			color: darken($light-color, 55%);
+				// 			background-color: darken($light-color, 10%);
+
+				// 			&:hover {
+				// 				background-color: darken($light-color, 15%);
+				// 			}
+				// 		}
+				// 	}
+				// }				
 			}
 
 			.pubpublication-next-btn {
