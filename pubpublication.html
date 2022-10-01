@@ -108,9 +108,9 @@
 
 		<div class="pubpublication-block">
 			<div class="tabs-wrapper">
-				<button class="tab-item selected-tab">Основное</button>
+				<button class="tab-item">Основное</button>
 				<button class="tab-item">Описание</button>
-				<button class="tab-item">Опрос</button>
+				<button class="tab-item selected-tab">Опрос</button>
 			</div>
 
 			<!-- <form method="post" class="pubpublication-form">
@@ -160,7 +160,7 @@
 			</form> -->
 
 
-			<form method="post" class="pubpublication-form">
+			<!-- <form method="post" class="pubpublication-form">
 				<div class="pubpublication-form-row">
 					<h3>Идея<span title="Обязательное поле"> * </span></h3>
 					
@@ -191,7 +191,7 @@
 					</div>
 				</div>
 
-				<!-- <div class="pubpublication-form-row">
+				<div class="pubpublication-form-row">
 					<h3>Ссылки</h3>
 					
 					<div class="pubpublication-add-link-wrapper">
@@ -209,9 +209,100 @@
 							</button>
 						</div>
 					</div>
-				</div> -->
+				</div>
 
 				<input type="submit" value="Далее" class="btn pubpublication-next-btn">
+			</form> -->
+
+
+			<form method="post" class="pubpublication-form">
+				<div class="pubpublication-form-row">
+					<h3>Опрос</h3>
+					
+					<div class="publication-survey-wrapper">
+						<div class="publication-survey-item">
+							<div class="checkmark-form radio-form">
+								<h3>Текст вопроса заданного пользователем?</h3>
+
+								<label class="checkmark-answer">Вариант 1
+									<input type="radio" name="radio" checked>
+									
+									<span class="checkmark"></span>
+								</label>
+								<label class="checkmark-answer">Вариант 2
+									<input type="radio" name="radio">
+									
+									<span class="checkmark"></span>
+								</label>
+							</div>
+
+							<button class="ico-btn">
+								<i class="fa-solid fa-ellipsis-vertical"></i>
+							</button>
+						</div>
+						<div class="publication-survey-item">
+							<div class="checkmark-form checkbox-form">
+								<h3>Текст вопроса заданного пользователем?</h3>
+
+								<label class="checkmark-answer">Вариант 1
+									<input type="checkbox" name="radio" checked>
+									
+									<span class="checkmark"></span>
+								</label>
+								<label class="checkmark-answer">Вариант 2
+									<input type="checkbox" name="radio">
+									
+									<span class="checkmark"></span>
+								</label>
+							</div>
+
+							<button class="ico-btn">
+								<i class="fa-solid fa-ellipsis-vertical"></i>
+							</button>
+						</div>
+						<div class="publication-survey-item">
+							<div class="publication-survey-question-field-wrapper">
+								<h3>Текст вопроса заданного пользователем?</h3>
+
+								<input type="text" class="input" placeholder="Введите ответ">
+							</div>
+
+							<button class="ico-btn">
+								<i class="fa-solid fa-ellipsis-vertical"></i>
+							</button>
+						</div>
+						<div class="publication-survey-add-wrapper">
+							<div class="publication-survey-add-question-wrapper">
+								<input type="text" class="input question" placeholder="Введите вопрос">
+								<input type="text" class="input question-type" placeholder="Выпадающий список!">
+							</div>
+							<div class="publication-survey-add-answer-wrapper">
+								<p class="publication-survey-add-answer-title">Варианты ответа</p>
+
+								<input type="text" class="input" placeholder="Введите вариант ответа">
+
+								<button class="btn">Добавить</button>
+								
+								<div class="publication-survey-add-answer-variant-wrapper">
+									<div class="publication-survey-add-answer-variant-item">
+										<input type="text" class="input" placeholder="Введите вариант ответа" value="Вариант ответа">
+
+										<button class="ico-btn">
+											<i class="fa-solid fa-xmark"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+							
+							<div class="publication-survey-save-wrapper">
+								<button class="btn save-btn">Сохранить</button>
+								<button class="btn cancel-btn">Отмена</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <input type="submit" value="Далее" class="btn pubpublication-next-btn"> -->
+				<input type="submit" value="Опубликовать идею" class="btn pubpublication-next-btn">
 			</form>
 		</div>
 	</main>

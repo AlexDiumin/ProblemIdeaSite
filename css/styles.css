@@ -2077,6 +2077,210 @@ main {
   height: auto;
   border-radius: 2px;
 }
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-add-link-wrapper {
+  display: flex;
+  column-gap: 8px;
+  padding: 8px;
+  border: 2px solid #e1e3eb;
+  border-radius: 2px;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-add-link-wrapper .input {
+  flex: 1 1 100%;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-add-link-wrapper .pubpublication-add-link-btn {
+  color: #000101;
+  background-color: transparent;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-add-link-wrapper .pubpublication-add-link-btn:hover {
+  background-color: #e1e3eb;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-links-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-links-wrapper .pubpublication-link-item {
+  display: flex;
+  border-radius: 2px;
+  background-color: #e1e3eb;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-links-wrapper .pubpublication-link-item .pubpublication-link {
+  padding: 10px 20px;
+  border-radius: 2px;
+  font: 1rem/1.25rem "Montserrat-Regular";
+  color: #007cc4;
+  text-decoration: none;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-links-wrapper .pubpublication-link-item .pubpublication-link:hover {
+  text-decoration: underline;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-links-wrapper .pubpublication-link-item .pubpublication-cancel-link-btn {
+  color: #525a7b;
+  background-color: #d1d4e1;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-links-wrapper .pubpublication-link-item .pubpublication-cancel-link-btn:hover {
+  background-color: #c2c6d6;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item {
+  display: flex;
+  align-items: start;
+  column-gap: 8px;
+  padding: 16px;
+  border: 2px solid #e1e3eb;
+  border-radius: 2px;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .radio-form {
+  flex: 1 1 100%;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .radio-form h3 {
+  margin-bottom: 10px;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .radio-form .checkmark-answer {
+  color: #000101;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .radio-form .checkmark-answer:hover input ~ .checkmark {
+  background-color: #c2c6d6;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .radio-form .checkmark-answer input:checked ~ .checkmark {
+  border: 0.3rem solid #112233;
+  border-radius: 50%;
+  background-color: #fcfcfd;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .radio-form .checkmark-answer .checkmark {
+  border: 0.3rem solid transparent;
+  border-radius: 50%;
+  background-color: #d1d4e1;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .checkbox-form {
+  flex: 1 1 100%;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .checkbox-form h3 {
+  margin-bottom: 10px;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .checkbox-form .checkmark-answer {
+  color: #000101;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .checkbox-form .checkmark-answer:hover input ~ .checkmark {
+  background-color: #c2c6d6;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .checkbox-form .checkmark-answer input:checked ~ .checkmark {
+  background-color: #112233;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .checkbox-form .checkmark-answer input:checked ~ .checkmark:after {
+  display: block;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .checkbox-form .checkmark-answer .checkmark {
+  border-radius: 2px;
+  background-color: #d1d4e1;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .checkbox-form .checkmark-answer .checkmark:after {
+  top: 0;
+  left: 0.125rem;
+  content: "\f00c";
+  font: 1rem/1.25rem "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #fcfcfd;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .publication-survey-question-field-wrapper {
+  flex: 1 1 100%;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .publication-survey-question-field-wrapper h3 {
+  margin-bottom: 10px;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .publication-survey-question-field-wrapper input {
+  width: 100%;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .ico-btn {
+  flex: 0 0 auto;
+  color: #000101;
+  background-color: transparent;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item .ico-btn:hover {
+  background-color: #e1e3eb;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  padding: 16px;
+  border: 2px solid #e1e3eb;
+  border-radius: 2px;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-question-wrapper {
+  display: flex;
+  column-gap: 8px;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-question-wrapper input[class*=question] {
+  flex: 3 3 75%;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-question-wrapper input[class*=question-type] {
+  flex: 1 1 25%;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .publication-survey-add-answer-title {
+  flex: 0 0 100%;
+  font: 0.85rem/1rem "Montserrat-SemiBold";
+  color: #525a7b;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .input {
+  flex: 1 1 50%;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .btn {
+  flex: 0 0 auto;
+  color: #000101;
+  background-color: transparent;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .btn:hover {
+  background-color: #e1e3eb;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .publication-survey-add-answer-variant-wrapper {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .publication-survey-add-answer-variant-wrapper .publication-survey-add-answer-variant-item {
+  display: flex;
+  align-items: center;
+  column-gap: 2px;
+  border-radius: 2px;
+  background-color: #e1e3eb;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .publication-survey-add-answer-variant-wrapper .publication-survey-add-answer-variant-item .ico-btn {
+  color: #525a7b;
+  background-color: #d1d4e1;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .publication-survey-add-answer-variant-wrapper .publication-survey-add-answer-variant-item .ico-btn:hover {
+  background-color: #c2c6d6;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-save-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-save-wrapper .save-btn {
+  color: #fcfcfd;
+  background-color: #112233;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-save-wrapper .save-btn:hover {
+  background-color: #1e3c59;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-save-wrapper .cancel-btn {
+  color: #000101;
+  background-color: transparent;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-save-wrapper .cancel-btn:hover {
+  background-color: #e1e3eb;
+}
 .pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-next-btn {
   align-self: end;
   color: #fcfcfd;
