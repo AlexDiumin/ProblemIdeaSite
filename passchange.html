@@ -6,6 +6,7 @@
 	<title>PassChange</title>
 	<link rel="stylesheet" href="css/nulling.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://kit.fontawesome.com/3aac8b0827.js" crossorigin="anonymous"></script>
 </head>
 <body>	
 	<header>
@@ -95,9 +96,33 @@
 
 	<main class="passchange-main">
 		<div class="form-wrapper">
-			<div class="form-title-wrapper"></div>
+			<h1>Смена пароля</h1>
 
-			<div class="passchange-form-wrapper"></div>
+			<hr>
+
+			<form method="post" class="form">
+				<div class="form-rows-wrapper">
+					<div class="form-row">
+						<h4>Старый пароль<span title="Обязательное поле"> * </span></h4>
+						
+						<input type="password" class="input" placeholder="Введите старый пароль">				
+					</div>
+					<div class="form-row">
+						<h4>Новый пароль<span title="Обязательное поле"> * </span></h4>
+						
+						<input type="password" class="input" placeholder="Придумайте и введите новый пароль">				
+					</div>
+					<div class="form-row">
+						<h4>Подтверждение пароля<span title="Обязательное поле"> * </span></h4>
+						
+						<input type="password" class="input" placeholder="Введите новый пароль еще раз">
+					</div>
+				</div>
+				<div class="form-btns-wrapper">
+					<a href="#" class="btn form-btn-secondary">Забыли старый пароль?</a>
+					<input type="submit" class="btn form-btn-primary" value="Зарегистрироваться">
+				</div>
+			</form>
 		</div>
 	</main>
 

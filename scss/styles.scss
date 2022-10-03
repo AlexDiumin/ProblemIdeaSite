@@ -90,7 +90,8 @@ $base-font-size: 14px;
 
 	font: 1rem/1.25rem 'Montserrat-SemiBold';
 	transition: $base-transition;
-	cursor: pointer;	
+	cursor: pointer;
+	text-decoration: none;
 }
 
 
@@ -749,26 +750,197 @@ $base-font-size: 14px;
 
 
 .form-wrapper {
-	position: relative;
 	display: flex;
 	flex-direction: column;
-	row-gap: $base-size;
+	row-gap: (8*$new-base-size);
 
-	padding: $base-size;
-	border: 2px solid gray;
+	hr {
+		display: block;
 
-	.form-title-wrapper {
-		position: absolute;
-		top: -($base-size*.5 + 1px);  // 1px - это с учетом border: 2px
-		left: (8*$new-base-size);
+		width: 100%;
+		height: $base-border-width;
+		border: 0;
+		border-radius: $base-border-radius;
+		margin: 0;
 
-		width: 200px;
-		height: 24px;
+		background-color: darken($light-color, 5%);
+	}
 
-		background-color: aqua;
+	.sign-social-media-btns-wrapper {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		row-gap: (4*$new-base-size);
+
+		.social-sign-btn {
+			display: flex;
+			align-items: center;
+			column-gap: (5*$new-base-size);
+
+			min-width: 80%;
+			padding: 0 (5*$new-base-size) 0 0;
+			border-radius: $base-border-radius;
+
+			transition: $base-transition;
+			cursor: pointer;	
+
+			&[class*='social-sign-google'] {
+				border: $base-border-width solid #4285F4;
+
+				background-color: #4285F4;
+
+				.social-sign-btn-ico-wrapper {
+					background-color: #fff;
+				}
+
+				i {
+					background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+					color: transparent;
+					-webkit-text-fill-color: transparent;
+					-webkit-background-clip: text;
+					background-clip: text;
+				}
+			}
+
+			&[class*='social-sign-facebook'] {
+				border: $base-border-width solid #4267B2;
+
+				background-color: #4267B2;
+
+				.social-sign-btn-ico-wrapper {
+					background-color: #4267B2;
+				}
+
+				i {
+					color: #fff;
+				}
+			}
+
+			.social-sign-btn-ico-wrapper {
+				flex: 0 0 auto;
+
+				padding: (5*$new-base-size);
+				border-radius: $base-border-radius;
+
+				i {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					font-size: 1.25rem;
+					line-height: 1.25rem;
+				}
+			}
+
+			span {
+				flex: 1 1 100%;
+
+				font: 1rem/1.25rem 'Montserrat-SemiBold';
+				color: #fff;
+				text-align: center;
+			}
+		}
+	}
+
+	.or-block {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		height: 1rem;
+
+		hr {
+			position: absolute;
+			left: 0;
+			top: calc(.5rem - $base-border-width/2);
+		}
+
+		span {
+			z-index: 1;
+
+			padding: 0 (4*$new-base-size);
+
+			font: .85rem/1rem 'Montserrat-SemiBold';
+			color: darken($light-color, 55%);
+			background-color: $light-color;
+		}
+	}
+
+	.form {
+		display: flex;
+		flex-direction: column;
+		row-gap: (8*$new-base-size);
+
+		.form-rows-wrapper {
+			display: flex;
+			flex-direction: column;
+			row-gap: (6*$new-base-size);
+
+			.form-row-columns {
+				display: flex;
+				flex-wrap: wrap;
+				gap: (6*$new-base-size);
+
+				.form-row {
+					flex: 1 1 0;
+				}
+			}
+
+			.form-row {
+				flex: 1 1 100%;
+				display: flex;
+				flex-direction: column;
+				row-gap: $new-base-size;
+
+				h4 {
+					span {
+						color: $accent-color-r;
+						cursor: default;
+					}
+				}
+			}
+
+			.form-additional-info {
+				font: .85rem/1rem 'Montserrat-Regular';
+				color: darken($light-color, 55%);
+
+				a {
+					color: darken($accent-color-b, 25%);
+					text-decoration: none;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		.form-btns-wrapper {
+			display: flex;
+			justify-content: end;
+			column-gap: (4*$new-base-size);
+
+			.form-btn-secondary {
+				color: $dark-font-color;
+				background-color: transparent;
+
+				&:hover {
+					background-color: darken($light-color, 5%);
+				}
+			}
+
+			.form-btn-primary {
+				color: $light-font-color;
+				background-color: darken($accent-color-g, 25%);
+
+				&:hover {
+					background-color: darken($accent-color-g, 20%);
+				}
+			}
+		}
 	}
 }
-
 
 h1 {
 	font: 1.3rem/1.5rem 'Montserrat-Bold';
@@ -784,6 +956,11 @@ h2 {
 
 h3 {
 	font: 1rem/1.25rem 'Montserrat-SemiBold';
+	color: $dark-font-color;
+}
+
+h4 {
+	font: .85rem/1rem 'Montserrat-SemiBold';
 	color: $dark-font-color;
 }
 		
@@ -1057,31 +1234,13 @@ main {
 /* ---------- signup.html ---------- */
 .signup-main {
 	padding: calc(36*$new-base-size + 1.25rem) 35% calc(18*$new-base-size + 1.25rem);	
-
-	.form-wrapper {
-
-		.signup-wrapper {
-			height: 600px;
-
-			background-color: aqua;
-		}
-	}
 }
 /* ---------- /signup.html ---------- */
 
 
 /* ---------- signin.html ---------- */
 .signin-main {
-	padding: calc(36*$new-base-size + 1.25rem) 35% calc(18*$new-base-size + 1.25rem);	
-
-	.form-wrapper {
-
-		.signin-wrapper {
-			height: 600px;
-
-			background-color: aqua;
-		}
-	}	
+	padding: calc(36*$new-base-size + 1.25rem) 35% calc(18*$new-base-size + 1.25rem);
 }
 /* ---------- /signin.html ---------- */
 
@@ -1089,15 +1248,6 @@ main {
 /* ---------- passrecovery.html ---------- */
 .passrecovery-main {
 	padding: calc(36*$new-base-size + 1.25rem) 35% calc(18*$new-base-size + 1.25rem);	
-
-	.form-wrapper {
-
-		.passrecovery-form-wrapper {
-			height: 300px;
-
-			background-color: aqua;
-		}
-	}
 }
 /* ---------- /passrecovery.html ---------- */
 
@@ -1523,15 +1673,6 @@ main {
 /* ---------- passchange.html ---------- */
 .passchange-main {
 	padding: calc(36*$new-base-size + 1.25rem) 35% 18*$new-base-size;	
-
-	.form-wrapper {
-
-		.passchange-form-wrapper {
-			height: 400px;
-
-			background-color: aqua;
-		}
-	}
 }
 /* ---------- /passchange.html ---------- */
 
@@ -1552,15 +1693,6 @@ main {
 /* ---------- support.html ---------- */
 .support-main {
 	padding: calc(36*$new-base-size + 1.25rem) 25% (18*$new-base-size);	
-
-	.form-wrapper {
-
-		.support-wrapper {
-			height: 500px;
-
-			background-color: aqua;
-		}
-	}
 }
 /* ---------- /support.html ---------- */
 
@@ -2953,96 +3085,73 @@ main {
 					.publication-survey-add-wrapper {
 						display: flex;
 						flex-direction: column;
-						row-gap: (8*$new-base-size);
+						row-gap: (6*$new-base-size);
 
 						padding: (8*$new-base-size);
 						border: $base-border-width solid darken($light-color, 5%);
-						border-radius: $base-border-radius;
 
-						.publication-survey-add-question-wrapper {
+						.publication-survey-add-question-type-wrapper {
 							display: flex;
 							column-gap: (4*$new-base-size);
 
-							input {
-								&[class*='question'] {
-									flex: 3 3 75%;
-								}
+							.input-question {
+								flex: 3 3 75%;
+							}
 
-								&[class*='question-type'] {
-									flex: 1 1 25%;
-								}
+							.input-type {
+								flex: 1 1 25%;
 							}
 						}
 
-						.publication-survey-add-answer-wrapper {
+						.publication-survey-add-answer-options-wrapper {
 							display: flex;
-							flex-wrap: wrap;
-							gap: (4*$new-base-size);
+							flex-direction: column;
+							row-gap: (4*$new-base-size);
 
-							.publication-survey-add-answer-title {
-								flex: 0 0 100%;
-
+							.publication-survey-add-answer-options-title {
 								font: .85rem/1rem 'Montserrat-SemiBold';
 								color: darken($light-color, 55%);
 							}
 
-							.input {
-								flex: 1 1 50%;
-							}
-
-							.btn {
-								flex: 0 0 auto;
-
-								color: $dark-font-color;
-								background-color: transparent;
-
-								&:hover {
-									background-color: darken($light-color, 5%);
-								}
-							}
-
-							.publication-survey-add-answer-variant-wrapper {
-								flex: 1 1 100%;
+							.publication-survey-add-answer-option {
 								display: flex;
-								flex-direction: column;
-								row-gap: (4*$new-base-size);
+								column-gap: $base-border-width;
 
-								.publication-survey-add-answer-variant-item {
-									display: flex;
-									align-items: center;
-									column-gap: $base-border-width;
+								border-radius: $base-border-radius;
 
-									border-radius: $base-border-radius;
+								background-color: darken($light-color, 5%);
 
-									background-color: darken($light-color, 5%);
+								.input {
+									flex: 1 1 100%;
+								}
 
-									.ico-btn {
-										color: darken($light-color, 55%);
-										background-color: darken($light-color, 10%);
+								.ico-btn {
+									flex: 0 0 auto;
 
-										&:hover {
-											background-color: darken($light-color, 15%);
-										}
+									color: $dark-font-color;
+									background-color: darken($light-color, 10%);
+
+									&:hover {
+										background-color: darken($light-color, 15%);
 									}
 								}
 							}
 						}
 
-						.publication-survey-save-wrapper {
+						.publication-survey-add-btns-wrapper {
 							display: flex;
-							flex-wrap: wrap;
-							gap: (4*$new-base-size);
+							column-gap: (4*$new-base-size);
 
-							.save-btn {
+							.btn-save {
 								color: $light-font-color;
 								background-color: $dark-color;
 
 								&:hover {
-									background-color: lighten($dark-color, 10%);
+									background-color: lighten($dark-color, 5%);
 								}
 							}
 
-							.cancel-btn {
+							.btn-cancel {
 								color: $dark-font-color;
 								background-color: transparent;
 

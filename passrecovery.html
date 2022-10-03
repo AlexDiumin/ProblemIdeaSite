@@ -6,6 +6,7 @@
 	<title>PassRecovery</title>
 	<link rel="stylesheet" href="css/nulling.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://kit.fontawesome.com/3aac8b0827.js" crossorigin="anonymous"></script>
 </head>
 <body>	
 	<header>
@@ -95,9 +96,22 @@
 
 	<main class="passrecovery-main">
 		<div class="form-wrapper">
-			<div class="form-title-wrapper"></div>
-			
-			<div class="passrecovery-form-wrapper"></div>
+			<h1>Восстановление пароля</h1>
+
+			<hr>
+
+			<form method="post" class="form">
+				<div class="form-rows-wrapper">
+					<div class="form-row">
+						<h4>Email<span title="Обязательное поле"> * </span></h4>
+						
+						<input type="email" class="input" placeholder="Введите email">
+					</div>
+				</div>
+				<div class="form-btns-wrapper">
+					<input type="submit" class="btn form-btn-primary" value="Восстановить пароль">
+				</div>
+			</form>
 		</div>
 	</main>
 

@@ -6,6 +6,7 @@
 	<title>SignUp</title>
 	<link rel="stylesheet" href="css/nulling.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://kit.fontawesome.com/3aac8b0827.js" crossorigin="anonymous"></script>
 </head>
 <body>	
 	<header>
@@ -53,9 +54,70 @@
 
 	<main class="signup-main">
 		<div class="form-wrapper">
-			<div class="form-title-wrapper"></div>
-		
-			<div class="signup-wrapper"></div>
+			<h1>Регистрация</h1>
+
+			<hr>
+
+			<div class="sign-social-media-btns-wrapper">
+				<button class="social-sign-btn social-sign-google">
+					<div class="social-sign-btn-ico-wrapper">
+						<i class="fa-brands fa-google"></i>
+					</div>
+					
+					<span>Зарегистрироваться с Google</span>
+				</button>
+				<button class="social-sign-btn social-sign-facebook">
+					<div class="social-sign-btn-ico-wrapper">
+						<i class="fa-brands fa-facebook"></i>
+					</div>
+
+					<span>Зарегистрироваться с Facebook</span>
+				</button>
+			</div>
+
+			<div class="or-block">
+				<hr>
+
+				<span>или</span>
+			</div>
+
+			<form method="post" class="form">
+				<div class="form-rows-wrapper">
+					<div class="form-row-columns">
+						<div class="form-row">
+							<h4>Имя<span title="Обязательное поле"> * </span></h4>
+							
+							<input type="text" class="input" placeholder="Введите имя">
+						</div>
+						<div class="form-row">
+							<h4>Фамилия</h4>
+							
+							<input type="text" class="input" placeholder="Введите фамилию">
+						</div>
+					</div>
+					<div class="form-row">
+						<h4>Email<span title="Обязательное поле"> * </span></h4>
+						
+						<input type="email" class="input" placeholder="Введите email">
+					</div>
+					<div class="form-row">
+						<h4>Пароль<span title="Обязательное поле"> * </span></h4>
+						
+						<input type="password" class="input" placeholder="Придумайте и введите пароль">				
+					</div>
+					<div class="form-row">
+						<h4>Подтверждение пароля<span title="Обязательное поле"> * </span></h4>
+						
+						<input type="password" class="input" placeholder="Введите пароль еще раз">
+					</div>
+
+					<p class="form-additional-info">Регистрируясь, вы соглашаетесь с <a href="#">Условиями использования</a>, <a href="#">Политикой конфиденциальности</a> и <a href="#">Политикой использования файлов cookie</a>.</p>
+				</div>
+				<div class="form-btns-wrapper">
+					<input type="reset" class="btn form-btn-secondary" value="Отмена">			
+					<input type="submit" class="btn form-btn-primary" value="Зарегистрироваться">
+				</div>
+			</form>
 		</div>
 	</main>
 

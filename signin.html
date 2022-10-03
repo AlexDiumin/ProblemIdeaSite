@@ -6,6 +6,7 @@
 	<title>SignIn</title>
 	<link rel="stylesheet" href="css/nulling.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://kit.fontawesome.com/3aac8b0827.js" crossorigin="anonymous"></script>
 </head>
 <body>	
 	<header>
@@ -53,9 +54,52 @@
 
 	<main class="signin-main">
 		<div class="form-wrapper">
-			<div class="form-title-wrapper"></div>
-		
-			<div class="signin-wrapper"></div>
+			<h1>Авторизация</h1>
+
+			<hr>
+
+			<div class="sign-social-media-btns-wrapper">
+				<button class="social-sign-btn social-sign-google">
+					<div class="social-sign-btn-ico-wrapper">
+						<i class="fa-brands fa-google"></i>
+					</div>
+					
+					<span>Войти с Google</span>
+				</button>
+				<button class="social-sign-btn social-sign-facebook">
+					<div class="social-sign-btn-ico-wrapper">
+						<i class="fa-brands fa-facebook"></i>
+					</div>
+
+					<span>Войти с Facebook</span>
+				</button>
+			</div>
+
+			<div class="or-block">
+				<hr>
+
+				<span>или</span>
+			</div>
+
+			<form method="post" class="form">
+				<div class="form-rows-wrapper">
+					<div class="form-row">
+						<h4>Email<span title="Обязательное поле"> * </span></h4>
+						
+						<input type="email" class="input" placeholder="Введите email">
+					</div>
+					<div class="form-row">
+						<h4>Пароль<span title="Обязательное поле"> * </span></h4>
+						
+						<input type="password" class="input" placeholder="Придумайте и введите пароль">				
+					</div>
+				</div>
+				<div class="form-btns-wrapper">
+					<a href="#" class="btn form-btn-secondary">Забыли старый пароль?</a>			
+					
+					<input type="submit" class="btn form-btn-primary" value="Войти">
+				</div>
+			</form>
 		</div>
 	</main>
 

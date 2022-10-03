@@ -54,6 +54,7 @@
   font: 1rem/1.25rem "Montserrat-SemiBold";
   transition: 0.1s;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .ico-btn {
@@ -549,20 +550,153 @@
 }
 
 .form-wrapper {
-  position: relative;
   display: flex;
   flex-direction: column;
-  row-gap: 24px;
-  padding: 24px;
-  border: 2px solid gray;
+  row-gap: 16px;
 }
-.form-wrapper .form-title-wrapper {
+.form-wrapper hr {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border: 0;
+  border-radius: 2px;
+  margin: 0;
+  background-color: #e1e3eb;
+}
+.form-wrapper .sign-social-media-btns-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.form-wrapper .sign-social-media-btns-wrapper .social-sign-btn {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  min-width: 80%;
+  padding: 0 10px 0 0;
+  border-radius: 2px;
+  transition: 0.1s;
+  cursor: pointer;
+}
+.form-wrapper .sign-social-media-btns-wrapper .social-sign-btn[class*=social-sign-google] {
+  border: 2px solid #4285F4;
+  background-color: #4285F4;
+}
+.form-wrapper .sign-social-media-btns-wrapper .social-sign-btn[class*=social-sign-google] .social-sign-btn-ico-wrapper {
+  background-color: #fff;
+}
+.form-wrapper .sign-social-media-btns-wrapper .social-sign-btn[class*=social-sign-google] i {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.form-wrapper .sign-social-media-btns-wrapper .social-sign-btn[class*=social-sign-facebook] {
+  border: 2px solid #4267B2;
+  background-color: #4267B2;
+}
+.form-wrapper .sign-social-media-btns-wrapper .social-sign-btn[class*=social-sign-facebook] .social-sign-btn-ico-wrapper {
+  background-color: #4267B2;
+}
+.form-wrapper .sign-social-media-btns-wrapper .social-sign-btn[class*=social-sign-facebook] i {
+  color: #fff;
+}
+.form-wrapper .sign-social-media-btns-wrapper .social-sign-btn .social-sign-btn-ico-wrapper {
+  flex: 0 0 auto;
+  padding: 10px;
+  border-radius: 2px;
+}
+.form-wrapper .sign-social-media-btns-wrapper .social-sign-btn .social-sign-btn-ico-wrapper i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+}
+.form-wrapper .sign-social-media-btns-wrapper .social-sign-btn span {
+  flex: 1 1 100%;
+  font: 1rem/1.25rem "Montserrat-SemiBold";
+  color: #fff;
+  text-align: center;
+}
+.form-wrapper .or-block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1rem;
+}
+.form-wrapper .or-block hr {
   position: absolute;
-  top: -13px;
-  left: 16px;
-  width: 200px;
-  height: 24px;
-  background-color: aqua;
+  left: 0;
+  top: calc(0.5rem - 1px);
+}
+.form-wrapper .or-block span {
+  z-index: 1;
+  padding: 0 8px;
+  font: 0.85rem/1rem "Montserrat-SemiBold";
+  color: #525a7b;
+  background-color: #F0F1F5;
+}
+.form-wrapper .form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+.form-wrapper .form .form-rows-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+.form-wrapper .form .form-rows-wrapper .form-row-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.form-wrapper .form .form-rows-wrapper .form-row-columns .form-row {
+  flex: 1 1 0;
+}
+.form-wrapper .form .form-rows-wrapper .form-row {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+}
+.form-wrapper .form .form-rows-wrapper .form-row h4 span {
+  color: #FC575E;
+  cursor: default;
+}
+.form-wrapper .form .form-rows-wrapper .form-additional-info {
+  font: 0.85rem/1rem "Montserrat-Regular";
+  color: #525a7b;
+}
+.form-wrapper .form .form-rows-wrapper .form-additional-info a {
+  color: #007cc4;
+  text-decoration: none;
+}
+.form-wrapper .form .form-rows-wrapper .form-additional-info a:hover {
+  text-decoration: underline;
+}
+.form-wrapper .form .form-btns-wrapper {
+  display: flex;
+  justify-content: end;
+  column-gap: 8px;
+}
+.form-wrapper .form .form-btns-wrapper .form-btn-secondary {
+  color: #000101;
+  background-color: transparent;
+}
+.form-wrapper .form .form-btns-wrapper .form-btn-secondary:hover {
+  background-color: #e1e3eb;
+}
+.form-wrapper .form .form-btns-wrapper .form-btn-primary {
+  color: #fcfcfd;
+  background-color: #2d8659;
+}
+.form-wrapper .form .form-btns-wrapper .form-btn-primary:hover {
+  background-color: #339966;
 }
 
 h1 {
@@ -577,6 +711,11 @@ h2 {
 
 h3 {
   font: 1rem/1.25rem "Montserrat-SemiBold";
+  color: #000101;
+}
+
+h4 {
+  font: 0.85rem/1rem "Montserrat-SemiBold";
   color: #000101;
 }
 
@@ -780,29 +919,17 @@ main {
 .signup-main {
   padding: calc(72px + 1.25rem) 35% calc(36px + 1.25rem);
 }
-.signup-main .form-wrapper .signup-wrapper {
-  height: 600px;
-  background-color: aqua;
-}
 
 /* ---------- /signup.html ---------- */
 /* ---------- signin.html ---------- */
 .signin-main {
   padding: calc(72px + 1.25rem) 35% calc(36px + 1.25rem);
 }
-.signin-main .form-wrapper .signin-wrapper {
-  height: 600px;
-  background-color: aqua;
-}
 
 /* ---------- /signin.html ---------- */
 /* ---------- passrecovery.html ---------- */
 .passrecovery-main {
   padding: calc(72px + 1.25rem) 35% calc(36px + 1.25rem);
-}
-.passrecovery-main .form-wrapper .passrecovery-form-wrapper {
-  height: 300px;
-  background-color: aqua;
 }
 
 /* ---------- /passrecovery.html ---------- */
@@ -1124,10 +1251,6 @@ main {
 .passchange-main {
   padding: calc(72px + 1.25rem) 35% 36px;
 }
-.passchange-main .form-wrapper .passchange-form-wrapper {
-  height: 400px;
-  background-color: aqua;
-}
 
 /* ---------- /passchange.html ---------- */
 /* ---------- about.html ---------- */
@@ -1143,10 +1266,6 @@ main {
 /* ---------- support.html ---------- */
 .support-main {
   padding: calc(72px + 1.25rem) 25% 36px;
-}
-.support-main .form-wrapper .support-wrapper {
-  height: 500px;
-  background-color: aqua;
 }
 
 /* ---------- /support.html ---------- */
@@ -2206,79 +2325,62 @@ main {
 .pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 16px;
+  row-gap: 12px;
   padding: 16px;
   border: 2px solid #e1e3eb;
-  border-radius: 2px;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-question-wrapper {
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-question-type-wrapper {
   display: flex;
   column-gap: 8px;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-question-wrapper input[class*=question] {
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-question-type-wrapper .input-question {
   flex: 3 3 75%;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-question-wrapper input[class*=question-type] {
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-question-type-wrapper .input-type {
   flex: 1 1 25%;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .publication-survey-add-answer-title {
-  flex: 0 0 100%;
-  font: 0.85rem/1rem "Montserrat-SemiBold";
-  color: #525a7b;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .input {
-  flex: 1 1 50%;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .btn {
-  flex: 0 0 auto;
-  color: #000101;
-  background-color: transparent;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .btn:hover {
-  background-color: #e1e3eb;
-}
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .publication-survey-add-answer-variant-wrapper {
-  flex: 1 1 100%;
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-options-wrapper {
   display: flex;
   flex-direction: column;
   row-gap: 8px;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .publication-survey-add-answer-variant-wrapper .publication-survey-add-answer-variant-item {
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-options-wrapper .publication-survey-add-answer-options-title {
+  font: 0.85rem/1rem "Montserrat-SemiBold";
+  color: #525a7b;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-options-wrapper .publication-survey-add-answer-option {
   display: flex;
-  align-items: center;
   column-gap: 2px;
   border-radius: 2px;
   background-color: #e1e3eb;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .publication-survey-add-answer-variant-wrapper .publication-survey-add-answer-variant-item .ico-btn {
-  color: #525a7b;
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-options-wrapper .publication-survey-add-answer-option .input {
+  flex: 1 1 100%;
+}
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-options-wrapper .publication-survey-add-answer-option .ico-btn {
+  flex: 0 0 auto;
+  color: #000101;
   background-color: #d1d4e1;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-wrapper .publication-survey-add-answer-variant-wrapper .publication-survey-add-answer-variant-item .ico-btn:hover {
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-options-wrapper .publication-survey-add-answer-option .ico-btn:hover {
   background-color: #c2c6d6;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-save-wrapper {
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-btns-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  column-gap: 8px;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-save-wrapper .save-btn {
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-btns-wrapper .btn-save {
   color: #fcfcfd;
   background-color: #112233;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-save-wrapper .save-btn:hover {
-  background-color: #1e3c59;
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-btns-wrapper .btn-save:hover {
+  background-color: #172f46;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-save-wrapper .cancel-btn {
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-btns-wrapper .btn-cancel {
   color: #000101;
   background-color: transparent;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-save-wrapper .cancel-btn:hover {
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-btns-wrapper .btn-cancel:hover {
   background-color: #e1e3eb;
 }
 .pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-next-btn {
