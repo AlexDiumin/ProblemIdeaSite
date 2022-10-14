@@ -6,6 +6,7 @@
 	<title>Settings</title>
 	<link rel="stylesheet" href="css/nulling.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://kit.fontawesome.com/3aac8b0827.js" crossorigin="anonymous"></script>
 </head>
 <body>	
 	<header>
@@ -95,32 +96,47 @@
 
 	<main class="settings-main">
 		<div class="form-wrapper">
-			<div class="form-title-wrapper"></div>
+			<h1>Настройки аккаунта</h1>
 
-			<div class="settings-wrapper">
-				<div class="settings-group-wrapper">
-					<div class="settings-group-title-wrapper"></div>
+			<hr>
 
-					<div class="settings-group-content-wrapper">
-						<div class="settings-group-btn-wrapper"></div>
-						<div class="settings-group-btn-wrapper"></div>
-						<div class="settings-group-btn-wrapper"></div>
-						<div class="settings-group-btn-wrapper"></div>
-						<div class="settings-group-btn-wrapper"></div>
-						<div class="settings-group-btn-wrapper"></div>
-					</div>
-				</div>
-				<div class="settings-group-wrapper">
-					<div class="settings-group-title-wrapper"></div>
+			<p class="settings-label">Редактировать профиль</p>
 
-					<div class="settings-group-content-wrapper"></div>
-				</div>
-				<div class="settings-group-wrapper">
-					<div class="settings-group-content-wrapper">
-						<div class="settings-group-btn-wrapper"></div>
-					</div>
-				</div>
+			<ul class="settings-ul">
+				<li class="settings-li"><button class="btn setting-btn">Фото</button></li>
+				<li class="settings-li"><button class="btn setting-btn">Имя Фамилия</button></li>
+				<li class="settings-li"><button class="btn setting-btn">Коротко о себе</button></li>
+				<li class="settings-li"><button class="btn setting-btn">Контакти</button></li>
+				<li class="settings-li"><button class="btn setting-btn">Социальные сети</button></li>
+				<li class="settings-li"><button class="btn setting-btn">Пароль</button></li>
+			</ul>
+
+			<hr>
+
+			<p class="settings-label">Тип аккаунта</p>
+
+			<div class="checkmark-form radio-form">
+				<label class="checkmark-answer">Открытый
+					<input type="radio" name="radio" checked>
+					
+					<span class="checkmark"></span>
+
+					<p class="checkmark-answer-subtext">Свободная подписка, содержание аккаунта доступно всем.</p>
+				</label>
+				<label class="checkmark-answer">Закрытый
+					<input type="radio" name="radio">
+					
+					<span class="checkmark"></span>
+
+					<p class="checkmark-answer-subtext">Подписка по запросу, содержание аккаунта доступно только подписчикам.</p>
+				</label>
 			</div>
+
+			<hr>
+
+			<ul class="settings-ul">
+				<li class="settings-li"><button class="btn  setting-accent-btn">Удалить аккаунт</button></li>
+			</ul>
 		</div>
 	</main>
 

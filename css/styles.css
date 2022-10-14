@@ -662,7 +662,7 @@
   flex: 1 1 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 2px;
+  row-gap: 4px;
 }
 .form-wrapper .form .form-rows-wrapper .form-row h4 span {
   color: #FC575E;
@@ -1220,30 +1220,46 @@ main {
 .settings-main {
   padding: calc(72px + 1.25rem) 35% 36px;
 }
-.settings-main .form-wrapper .settings-wrapper {
+.settings-main .form-wrapper .settings-label {
+  font: 0.85rem/1rem "Montserrat-SemiBold";
+  color: #525a7b;
+}
+.settings-main .form-wrapper .settings-ul .settings-li .setting-btn {
+  color: #000101;
+  background-color: transparent;
+}
+.settings-main .form-wrapper .settings-ul .settings-li .setting-btn:hover {
+  background-color: #e1e3eb;
+}
+.settings-main .form-wrapper .settings-ul .settings-li .setting-accent-btn {
+  color: #FC575E;
+  background-color: transparent;
+}
+.settings-main .form-wrapper .settings-ul .settings-li .setting-accent-btn:hover {
+  background-color: #e1e3eb;
+}
+.settings-main .form-wrapper .radio-form .checkmark-answer {
   display: flex;
   flex-direction: column;
-  row-gap: 36px;
+  row-gap: 4px;
+  color: #000101;
 }
-.settings-main .form-wrapper .settings-wrapper .settings-group-wrapper {
-  display: flex;
-  flex-direction: column;
-  row-gap: 24px;
+.settings-main .form-wrapper .radio-form .checkmark-answer:hover input ~ .checkmark {
+  background-color: #c2c6d6;
 }
-.settings-main .form-wrapper .settings-wrapper .settings-group-wrapper .settings-group-title-wrapper {
-  width: 200px;
-  height: 17px;
-  background-color: aqua;
+.settings-main .form-wrapper .radio-form .checkmark-answer input:checked ~ .checkmark {
+  border: 0.3rem solid #112233;
+  border-radius: 50%;
+  background-color: #fcfcfd;
 }
-.settings-main .form-wrapper .settings-wrapper .settings-group-wrapper .settings-group-content-wrapper {
-  display: flex;
-  flex-direction: column;
-  row-gap: 16px;
+.settings-main .form-wrapper .radio-form .checkmark-answer .checkmark {
+  border: 0.3rem solid transparent;
+  border-radius: 50%;
+  background-color: #d1d4e1;
 }
-.settings-main .form-wrapper .settings-wrapper .settings-group-wrapper .settings-group-content-wrapper .settings-group-btn-wrapper {
-  width: 150px;
-  height: calc(20px + 1.25rem);
-  background-color: aqua;
+.settings-main .form-wrapper .radio-form .checkmark-answer .checkmark-answer-subtext {
+  font: 0.85rem/1rem "Montserrat-Regular";
+  color: #525a7b;
 }
 
 /* ---------- /settings.html ---------- */
@@ -1265,7 +1281,7 @@ main {
 /* ---------- /about.html ---------- */
 /* ---------- support.html ---------- */
 .support-main {
-  padding: calc(72px + 1.25rem) 25% 36px;
+  padding: calc(72px + 1.25rem) 30% 36px;
 }
 
 /* ---------- /support.html ---------- */
@@ -2112,7 +2128,7 @@ main {
   flex-direction: column;
   row-gap: 4px;
 }
-.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row h3 span {
+.pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row h4 span {
   font-family: "Montserrat-Regular";
   color: #FC575E;
   cursor: default;
@@ -2144,7 +2160,7 @@ main {
 }
 .pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-form-columns-wrapper {
   display: flex;
-  column-gap: 8px;
+  column-gap: 12px;
 }
 .pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .pubpublication-form-columns-wrapper .pubpublication-form-row {
   flex: 1 1 100%;
@@ -2243,7 +2259,7 @@ main {
 .pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 8px;
+  row-gap: 4px;
 }
 .pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-item {
   display: flex;
@@ -2342,7 +2358,7 @@ main {
 .pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-options-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 8px;
+  row-gap: 4px;
 }
 .pubpublication-main .pubpublication-block .pubpublication-form .pubpublication-form-row .publication-survey-wrapper .publication-survey-add-wrapper .publication-survey-add-answer-options-wrapper .publication-survey-add-answer-options-title {
   font: 0.85rem/1rem "Montserrat-SemiBold";

@@ -95,9 +95,29 @@
 
 	<main class="support-main">
 		<div class="form-wrapper">
-			<div class="form-title-wrapper"></div>
-		
-			<div class="support-wrapper"></div>		
+			<h1>Служба поддержки</h1>
+
+			<hr>
+
+			<form method="post" class="form">
+				<div class="form-rows-wrapper">
+					<div class="form-row">
+						<h4>Тема</h4>
+						
+						<input type="text" class="input" placeholder="Введите тему сообщения">				
+					</div>
+					<div class="form-row">
+						<h4>Сообщение<span title="Обязательное поле"> * </span></h4>
+						
+						<textarea class="textarea" placeholder="Введите сообщение" rows="3"></textarea>				
+					</div>
+					
+					<p class="form-additional-info">Ответ службы поддержки прийдет вам сообщением в личный кабинет.</p>
+				</div>
+				<div class="form-btns-wrapper">
+					<input type="submit" class="btn form-btn-primary" value="Отправить">
+				</div>
+			</form>
 		</div>		
 	</main>
 

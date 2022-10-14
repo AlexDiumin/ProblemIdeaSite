@@ -891,7 +891,7 @@ $base-font-size: 14px;
 				flex: 1 1 100%;
 				display: flex;
 				flex-direction: column;
-				row-gap: $new-base-size;
+				row-gap: (2*$new-base-size);
 
 				h4 {
 					span {
@@ -1633,35 +1633,64 @@ main {
 	padding: calc(36*$new-base-size + 1.25rem) 35% 18*$new-base-size;	
 
 	.form-wrapper {
+		
+		.settings-label {
+			font: .85rem/1rem 'Montserrat-SemiBold';
+			color: darken($light-color, 55%);
+		}
 
-		.settings-wrapper {
-			display: flex;
-			flex-direction: column;
-			row-gap: (18*$new-base-size);
+		.settings-ul {
 
-			.settings-group-wrapper {
-				display: flex;
-				flex-direction: column;
-				row-gap: (12*$new-base-size);
+			.settings-li {
 
-				.settings-group-title-wrapper {
-					width: 200px;
-					height: 17px;
+				.setting-btn {
+					color: $dark-font-color;
+					background-color: transparent;
 
-					background-color: aqua;
+					&:hover {
+						background-color: darken($light-color, 5%);
+					}
 				}
 
-				.settings-group-content-wrapper {
-					display: flex;
-					flex-direction: column;
-					row-gap: (8*$new-base-size);
-
-					.settings-group-btn-wrapper {
-						width: 150px;
-						height: calc(10*$new-base-size + 1.25rem);
-
-						background-color: aqua;
+				.setting-accent-btn {
+					color: $accent-color-r;
+					background-color: transparent;
+				
+					&:hover {
+						background-color: darken($light-color, 5%);
 					}
+				}
+			}
+		}
+
+		.radio-form {
+
+			.checkmark-answer {
+				display: flex;
+				flex-direction: column;
+				row-gap: (2*$new-base-size);
+
+				color: $dark-font-color;
+
+				&:hover input ~ .checkmark {
+					background-color: darken($light-color, 15%);
+				}
+
+				input:checked ~ .checkmark {
+					border: .3rem solid $dark-color;
+					border-radius: 50%;
+					background-color: $light-font-color;
+				}
+
+				.checkmark {										  
+					border: .3rem solid transparent;
+					border-radius: 50%;
+					background-color: darken($light-color, 10%);
+				}
+
+				.checkmark-answer-subtext {
+					font: .85rem/1rem 'Montserrat-Regular';
+					color: darken($light-color, 55%);
 				}
 			}
 		}
@@ -1692,7 +1721,7 @@ main {
 
 /* ---------- support.html ---------- */
 .support-main {
-	padding: calc(36*$new-base-size + 1.25rem) 25% (18*$new-base-size);	
+	padding: calc(36*$new-base-size + 1.25rem) 30% (18*$new-base-size);	
 }
 /* ---------- /support.html ---------- */
 
@@ -2806,7 +2835,7 @@ main {
 				flex-direction: column;
 				row-gap: (2*$new-base-size);
 
-				h3 {
+				h4 {
 					span {
 						font-family: 'Montserrat-Regular';
 						color: $accent-color-r;
@@ -2848,7 +2877,7 @@ main {
 
 				.pubpublication-form-columns-wrapper {
 					display: flex;
-					column-gap: (4*$new-base-size);
+					column-gap: (6*$new-base-size);
 
 					.pubpublication-form-row {
 						flex: 1 1 100%;
@@ -2979,7 +3008,7 @@ main {
 				.publication-survey-wrapper {
 					display: flex;
 					flex-direction: column;
-					row-gap: (4*$new-base-size);
+					row-gap: (2*$new-base-size);
 
 					.publication-survey-item {
 						display: flex;
@@ -3106,7 +3135,7 @@ main {
 						.publication-survey-add-answer-options-wrapper {
 							display: flex;
 							flex-direction: column;
-							row-gap: (4*$new-base-size);
+							row-gap: (2*$new-base-size);
 
 							.publication-survey-add-answer-options-title {
 								font: .85rem/1rem 'Montserrat-SemiBold';
