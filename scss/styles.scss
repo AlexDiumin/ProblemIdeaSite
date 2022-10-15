@@ -992,19 +992,17 @@ header {
 	position: fixed;
 	column-gap: (18*$new-base-size);
 
-	.burger-btn-wrapper,
-	.logo-wrapper,
-	.search-wrapper,
-	.public-btns-wrapper,
-	.sign-btns-wrapper,
-	.user-btns-wrapper {
-		height: calc(10*$new-base-size + 1.25rem);
-	}
-
 	.burger-btn-wrapper {
-		width: calc(10*$new-base-size + 1.25rem);
 
-		background-color: aqua;
+		.burger-btn {
+
+			color: $light-font-color;
+			background-color: transparent;
+
+			&:hover {
+				background-color: lighten($dark-color, 10%);
+			}
+		}
 
 		.menu-wrapper {
 			position: fixed;
@@ -1057,16 +1055,42 @@ header {
 		}
 	}
 
-	.logo-wrapper {
-		width: 100px;
+	.logo-link {
+		display: flex;
+		align-items: center;
 
-		background-color: aqua;
+		img {
+			width: auto;
+			height: calc(5*$new-base-size + 1.25rem);
+		}
 	}
 
 	.search-wrapper {
 		flex: 1 1 200px;
 
-		background-color: aqua;
+		.search-form {
+			display: flex;
+			column-gap: $new-base-size;
+
+			border-radius: $base-border-radius;
+
+			background-color: darken($light-color, 5%);
+
+			.input {
+				flex: 1 1 100%;
+			}
+
+			.ico-btn {
+				flex: 0 0 auto;
+
+				color: darken($light-color, 55%);
+				background-color: darken($light-color, 10%);
+
+				&:hover {
+					background-color: darken($light-color, 15%);
+				}
+			}
+		}
 
 		.search-autocomplete-wrapper {
 			position: relative;
@@ -1082,99 +1106,170 @@ header {
 		display: flex;
 		column-gap: (4*$new-base-size);
 
-		.public-btn-wrapper {
-			width: 200px;
-			height: calc(10*$new-base-size + 1.25rem);
+		.pub-idea-btn {
+			color: $light-font-color;
+			background-color: darken($accent-color-r, 25%);
 
-			background-color: aqua;
-		}				
+			&:hover {
+				background-color: darken($accent-color-r, 20%);
+			}
+		}
+
+		.pub-problem-btn {
+			color: $light-font-color;
+			background-color: darken($accent-color-b, 25%);
+
+			&:hover {
+				background-color: darken($accent-color-b, 20%);
+			}
+		}
 	}
 
 	.sign-btns-wrapper {
 		display: flex;
 		column-gap: (4*$new-base-size);
 
-		.sign-btn-wrapper {
-			width: 200px;
-			height: calc(10*$new-base-size + 1.25rem);
-
-			background-color: aqua;
+		.btn {
+			background-color: transparent;
+		
+			&:hover {
+				background-color: lighten($dark-color, 10%);
+			}
 		}
+
+		.signin-btn {
+			color: $light-font-color;
+		}
+
+		.signup-btn {
+			color: $accent-color-g;
+		}		
 	}
 
 	.user-btns-wrapper {
 		display: flex;
 		column-gap: (8*$new-base-size);
 
-		.user-btn-wrapper {
+		// .user-btn-wrapper {
+		// 	width: calc(10*$new-base-size + 1.25rem);
+		// 	height: calc(10*$new-base-size + 1.25rem);
+
+		// 	background-color: aqua;
+		
+		// 	.notifications-wrapper {
+		// 		position: relative;
+		// 		top: calc(10*$new-base-size + 1.25rem);
+		// 		right: calc(250*$new-base-size - 10*$new-base-size - 1.25rem);
+		// 		display: flex;
+		// 		flex-direction: column;
+		// 		row-gap: (8*$new-base-size);
+
+		// 		width: (250*$new-base-size);
+		// 		padding: (8*$new-base-size);
+
+		// 		background-color: $dark-color;
+
+		// 		.notification-wrapper {
+		// 			display: flex;
+		// 			column-gap: (4*$new-base-size);
+
+		// 			.notification-img-wrapper {
+		// 				width: calc(10*$new-base-size + 1.25rem);
+		// 				height: calc(10*$new-base-size + 1.25rem);
+
+		// 				background-color: aqua;
+		// 			}
+
+		// 			.notification-not-img-wrapper {
+		// 				display: flex;
+		// 				flex-direction: column;
+		// 				row-gap: (4*$new-base-size);
+		// 				flex: 1 1 0;
+
+		// 				.notification-text-wrapper {
+		// 					height: 48px;
+
+		// 					background-color: aqua;
+		// 				}
+
+		// 				.notification-not-text-wrapper {
+		// 					display: flex;
+		// 					justify-content: space-between;
+
+		// 					.notification-btns-wrapper {
+		// 						display: flex;
+		// 						column-gap: (4*$new-base-size);
+
+		// 						.notification-btn-wrapper {
+		// 							width: 100px;
+		// 							height: calc(10*$new-base-size + 1.25rem);
+								
+		// 							background-color: aqua;
+		// 						}
+		// 					}
+
+		// 					.notification-pubdate-wrapper {
+		// 						width: 100px;
+		// 						height: calc(10*$new-base-size + 1.25rem);
+								
+		// 						background-color: aqua;
+		// 					}
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// }
+
+		.ico-btn {
+			position: relative;
+
+			color: $light-font-color;
+			background-color: transparent;
+
+			&:hover {
+				background-color: lighten($dark-color, 10%);
+			}
+
+			span {
+				position: absolute;
+				left: calc(5*$new-base-size + .625rem);
+				bottom: calc(5*$new-base-size + .625rem);
+
+				padding: $new-base-size (2*$new-base-size);
+				border: $base-border-width solid $dark-color;
+				border-radius: calc($base-border-width + $new-base-size + .5rem);
+
+				font: .85rem/1rem 'Montserrat-SemiBold';
+				color: $dark-font-color;
+				background-color: $accent-color-r;
+			}
+		}
+
+		.header-user-btn {
 			width: calc(10*$new-base-size + 1.25rem);
 			height: calc(10*$new-base-size + 1.25rem);
+			padding: 0;
+			border: 0;
+			margin: 0;
 
-			background-color: aqua;
-		
-			.notifications-wrapper {
-				position: relative;
-				top: calc(10*$new-base-size + 1.25rem);
-				right: calc(250*$new-base-size - 10*$new-base-size - 1.25rem);
-				display: flex;
-				flex-direction: column;
-				row-gap: (8*$new-base-size);
+			background-color: transparent;
+			cursor: pointer;
 
-				width: (250*$new-base-size);
-				padding: (8*$new-base-size);
-
-				background-color: $dark-color;
-
-				.notification-wrapper {
-					display: flex;
-					column-gap: (4*$new-base-size);
-
-					.notification-img-wrapper {
-						width: calc(10*$new-base-size + 1.25rem);
-						height: calc(10*$new-base-size + 1.25rem);
-
-						background-color: aqua;
-					}
-
-					.notification-not-img-wrapper {
-						display: flex;
-						flex-direction: column;
-						row-gap: (4*$new-base-size);
-						flex: 1 1 0;
-
-						.notification-text-wrapper {
-							height: 48px;
-
-							background-color: aqua;
-						}
-
-						.notification-not-text-wrapper {
-							display: flex;
-							justify-content: space-between;
-
-							.notification-btns-wrapper {
-								display: flex;
-								column-gap: (4*$new-base-size);
-
-								.notification-btn-wrapper {
-									width: 100px;
-									height: calc(10*$new-base-size + 1.25rem);
-								
-									background-color: aqua;
-								}
-							}
-
-							.notification-pubdate-wrapper {
-								width: 100px;
-								height: calc(10*$new-base-size + 1.25rem);
-								
-								background-color: aqua;
-							}
-						}
-					}
+			&:hover {
+				img {
+					border-color: $light-font-color;
 				}
 			}
 
+			img {
+				width: calc(10*$new-base-size + 1.25rem);
+				height: calc(10*$new-base-size + 1.25rem);
+				border: $base-border-width solid rgba($light-font-color, 85%);
+				border-radius: 50%;
+
+				object-fit: cover;
+				object-position: center;
+			}
 		}
 	}
 }
@@ -1643,21 +1738,79 @@ main {
 
 			.settings-li {
 
-				.setting-btn {
-					color: $dark-font-color;
-					background-color: transparent;
+				// .setting-btn {
+				// 	display: flex;
 
-					&:hover {
-						background-color: darken($light-color, 5%);
-					}
-				}
+				// 	width: 100%;
 
-				.setting-accent-btn {
-					color: $accent-color-r;
-					background-color: transparent;
+				// 	color: $dark-font-color;
+				// 	background-color: transparent;
+
+				// 	&:hover {
+				// 		background-color: darken($light-color, 5%);
+				// 	}
+				// }
+
+				// .setting-accent-btn {
+				// 	display: flex;
+
+				// 	width: 100%;
+
+				// 	color: $accent-color-r;
+				// 	background-color: transparent;
 				
+				// 	&:hover {
+				// 		background-color: darken($light-color, 5%);
+				// 	}
+				// }
+
+				.menu-item {
+					display: flex;
+					column-gap: (4*$new-base-size);
+
+					width: 100%;
+					padding: (5*$new-base-size) 0;
+					border: 0;
+					border-radius: $base-border-radius;
+
+					background-color: transparent;
+					cursor: pointer;
+					text-decoration: none;
+					transition: $base-transition;
+
+					&[class*='accent-menu-item'] {
+						
+						&:hover {
+						
+							i {
+								color: mix($light-color, darken($accent-color-r, 25%), 75%);
+							}
+						}
+
+						i {
+							color: mix($light-color, darken($accent-color-r, 25%), 85%);
+						}
+
+						span {
+							color: darken($accent-color-r, 25%);
+						}
+					}
+
 					&:hover {
-						background-color: darken($light-color, 5%);
+
+						i {
+							color: darken($light-color, 15%);
+						}
+					}
+
+					i {
+						font-size: 1.25rem;
+						color: darken($light-color, 10%);
+					}
+
+					span {
+						font: 1rem/1.25rem 'Montserrat-SemiBold';
+						color: $dark-font-color;
 					}
 				}
 			}

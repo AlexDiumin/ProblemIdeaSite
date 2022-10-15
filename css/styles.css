@@ -741,17 +741,12 @@ header {
   position: fixed;
   column-gap: 36px;
 }
-header .burger-btn-wrapper,
-header .logo-wrapper,
-header .search-wrapper,
-header .public-btns-wrapper,
-header .sign-btns-wrapper,
-header .user-btns-wrapper {
-  height: calc(20px + 1.25rem);
+header .burger-btn-wrapper .burger-btn {
+  color: #fcfcfd;
+  background-color: transparent;
 }
-header .burger-btn-wrapper {
-  width: calc(20px + 1.25rem);
-  background-color: aqua;
+header .burger-btn-wrapper .burger-btn:hover {
+  background-color: #1e3c59;
 }
 header .burger-btn-wrapper .menu-wrapper {
   position: fixed;
@@ -790,13 +785,33 @@ header .burger-btn-wrapper .menu-wrapper .menu-selects-wrapper .custom-select-wr
 header .burger-btn-wrapper .menu-active {
   transform: translateX(0%);
 }
-header .logo-wrapper {
-  width: 100px;
-  background-color: aqua;
+header .logo-link {
+  display: flex;
+  align-items: center;
+}
+header .logo-link img {
+  width: auto;
+  height: calc(10px + 1.25rem);
 }
 header .search-wrapper {
   flex: 1 1 200px;
-  background-color: aqua;
+}
+header .search-wrapper .search-form {
+  display: flex;
+  column-gap: 2px;
+  border-radius: 2px;
+  background-color: #e1e3eb;
+}
+header .search-wrapper .search-form .input {
+  flex: 1 1 100%;
+}
+header .search-wrapper .search-form .ico-btn {
+  flex: 0 0 auto;
+  color: #525a7b;
+  background-color: #d1d4e1;
+}
+header .search-wrapper .search-form .ico-btn:hover {
+  background-color: #c2c6d6;
 }
 header .search-wrapper .search-autocomplete-wrapper {
   position: relative;
@@ -808,76 +823,78 @@ header .public-btns-wrapper {
   display: flex;
   column-gap: 8px;
 }
-header .public-btns-wrapper .public-btn-wrapper {
-  width: 200px;
-  height: calc(20px + 1.25rem);
-  background-color: aqua;
+header .public-btns-wrapper .pub-idea-btn {
+  color: #fcfcfd;
+  background-color: #d0040c;
+}
+header .public-btns-wrapper .pub-idea-btn:hover {
+  background-color: #e9040e;
+}
+header .public-btns-wrapper .pub-problem-btn {
+  color: #fcfcfd;
+  background-color: #007cc4;
+}
+header .public-btns-wrapper .pub-problem-btn:hover {
+  background-color: #008ddd;
 }
 header .sign-btns-wrapper {
   display: flex;
   column-gap: 8px;
 }
-header .sign-btns-wrapper .sign-btn-wrapper {
-  width: 200px;
-  height: calc(20px + 1.25rem);
-  background-color: aqua;
+header .sign-btns-wrapper .btn {
+  background-color: transparent;
+}
+header .sign-btns-wrapper .btn:hover {
+  background-color: #1e3c59;
+}
+header .sign-btns-wrapper .signin-btn {
+  color: #fcfcfd;
+}
+header .sign-btns-wrapper .signup-btn {
+  color: #66CC99;
 }
 header .user-btns-wrapper {
   display: flex;
   column-gap: 16px;
 }
-header .user-btns-wrapper .user-btn-wrapper {
-  width: calc(20px + 1.25rem);
-  height: calc(20px + 1.25rem);
-  background-color: aqua;
-}
-header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper {
+header .user-btns-wrapper .ico-btn {
   position: relative;
-  top: calc(20px + 1.25rem);
-  right: calc(480px - 1.25rem);
-  display: flex;
-  flex-direction: column;
-  row-gap: 16px;
-  width: 500px;
-  padding: 16px;
-  background-color: #112233;
+  color: #fcfcfd;
+  background-color: transparent;
 }
-header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper {
-  display: flex;
-  column-gap: 8px;
+header .user-btns-wrapper .ico-btn:hover {
+  background-color: #1e3c59;
 }
-header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper .notification-img-wrapper {
+header .user-btns-wrapper .ico-btn span {
+  position: absolute;
+  left: calc(10px + 0.625rem);
+  bottom: calc(10px + 0.625rem);
+  padding: 2px 4px;
+  border: 2px solid #112233;
+  border-radius: calc(4px + 0.5rem);
+  font: 0.85rem/1rem "Montserrat-SemiBold";
+  color: #000101;
+  background-color: #FC575E;
+}
+header .user-btns-wrapper .header-user-btn {
   width: calc(20px + 1.25rem);
   height: calc(20px + 1.25rem);
-  background-color: aqua;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background-color: transparent;
+  cursor: pointer;
 }
-header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper .notification-not-img-wrapper {
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
-  flex: 1 1 0;
+header .user-btns-wrapper .header-user-btn:hover img {
+  border-color: #fcfcfd;
 }
-header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper .notification-not-img-wrapper .notification-text-wrapper {
-  height: 48px;
-  background-color: aqua;
-}
-header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper .notification-not-img-wrapper .notification-not-text-wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper .notification-not-img-wrapper .notification-not-text-wrapper .notification-btns-wrapper {
-  display: flex;
-  column-gap: 8px;
-}
-header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper .notification-not-img-wrapper .notification-not-text-wrapper .notification-btns-wrapper .notification-btn-wrapper {
-  width: 100px;
+header .user-btns-wrapper .header-user-btn img {
+  width: calc(20px + 1.25rem);
   height: calc(20px + 1.25rem);
-  background-color: aqua;
-}
-header .user-btns-wrapper .user-btn-wrapper .notifications-wrapper .notification-wrapper .notification-not-img-wrapper .notification-not-text-wrapper .notification-pubdate-wrapper {
-  width: 100px;
-  height: calc(20px + 1.25rem);
-  background-color: aqua;
+  border: 2px solid rgba(252, 252, 253, 0.85);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
 
 footer {
@@ -1224,19 +1241,37 @@ main {
   font: 0.85rem/1rem "Montserrat-SemiBold";
   color: #525a7b;
 }
-.settings-main .form-wrapper .settings-ul .settings-li .setting-btn {
+.settings-main .form-wrapper .settings-ul .settings-li .menu-item {
+  display: flex;
+  column-gap: 8px;
+  width: 100%;
+  padding: 10px 0;
+  border: 0;
+  border-radius: 2px;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.1s;
+}
+.settings-main .form-wrapper .settings-ul .settings-li .menu-item[class*=accent-menu-item]:hover i {
+  color: #e8b6bb;
+}
+.settings-main .form-wrapper .settings-ul .settings-li .menu-item[class*=accent-menu-item] i {
+  color: #ebcdd2;
+}
+.settings-main .form-wrapper .settings-ul .settings-li .menu-item[class*=accent-menu-item] span {
+  color: #d0040c;
+}
+.settings-main .form-wrapper .settings-ul .settings-li .menu-item:hover i {
+  color: #c2c6d6;
+}
+.settings-main .form-wrapper .settings-ul .settings-li .menu-item i {
+  font-size: 1.25rem;
+  color: #d1d4e1;
+}
+.settings-main .form-wrapper .settings-ul .settings-li .menu-item span {
+  font: 1rem/1.25rem "Montserrat-SemiBold";
   color: #000101;
-  background-color: transparent;
-}
-.settings-main .form-wrapper .settings-ul .settings-li .setting-btn:hover {
-  background-color: #e1e3eb;
-}
-.settings-main .form-wrapper .settings-ul .settings-li .setting-accent-btn {
-  color: #FC575E;
-  background-color: transparent;
-}
-.settings-main .form-wrapper .settings-ul .settings-li .setting-accent-btn:hover {
-  background-color: #e1e3eb;
 }
 .settings-main .form-wrapper .radio-form .checkmark-answer {
   display: flex;

@@ -12,6 +12,10 @@
 	<header>
 		<div class="burger-btn-wrapper">
 			<!-- <button class="burger-btn" title="Меню"></button> -->
+			<button class="ico-btn burger-btn"  title="Меню">
+				<i class="fa-fw fa-solid fa-bars"></i>
+			</button>
+
 			<nav class="menu-wrapper">
 				<div class="menu-items-wrapper"></div>
 
@@ -27,31 +31,31 @@
 			</nav>
 		</div>
 
-		<div class="logo-wrapper">
-			<!-- <a href="main.html" class="logo-link">
-				<img class="logo-img" src="img/Ogo.svg" alt="Логотип Ogo" title="Главная страница">
-			</a> -->
-		</div>
+		<a href="main.html" class="logo-link" title="Главная страница">
+			<img class="logo-img" src="img/logo.svg" alt="Логотип Ogo">
+		</a>
 
 		<div class="search-wrapper">
-			<!-- <form method="get">
-				<input class="search-field" type="search" name="search" required>
-				<button class="search-btn" type="submit" placeholder="Введите запрос" title="Поиск"></button>
-			</form> -->
+			<form method="get" class="search-form">
+				<input class="input" type="search" placeholder="Введите запрос">
+				<button class="ico-btn" type="submit" title="Поиск">
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</button>
+			</form>
 			<div class="search-autocomplete-wrapper display-none"></div>
 		</div>
 
 		<div class="public-btns-wrapper">
-			<div class="public-btn-wrapper"></div>
-			<div class="public-btn-wrapper"></div>
+			<button class="btn pub-idea-btn">Опубликовать идую</button>
+			<button class="btn pub-problem-btn">Опубликовать проблему</button>
 		</div>
 
-<!-- 		<div class="sign-btns-wrapper">
-			<div class="sign-btn-wrapper"></div>
-			<div class="sign-btn-wrapper"></div>
+		<!-- <div class="sign-btns-wrapper">
+			<button class="btn signin-btn">Войти</button>
+			<button class="btn signup-btn">Зарегистрироваться</button>
 		</div> -->
 		<div class="user-btns-wrapper">
-			<div class="user-btn-wrapper"></div>
+			<!-- <div class="user-btn-wrapper"></div>
 			<div class="user-btn-wrapper">
 				<div class="notifications-wrapper display-none">
 					<div class="notification-wrapper">
@@ -89,7 +93,20 @@
 					</div>
 				</div>
 			</div>
-			<div class="user-btn-wrapper"></div>
+			<div class="user-btn-wrapper"></div> -->
+			<button class="ico-btn">
+				<i class="fa-fw fa-solid fa-message"></i>
+
+				<span>12</span>
+			</button>
+			<button class="ico-btn">
+				<i class="fa-fw fa-solid fa-bell"></i>
+			
+				<span>99+</span>
+			</button>
+			<button class="header-user-btn">
+				<img src="img/user.jpg" alt="Фото пользователя">
+			</button>
 		</div>
 	</header>
 
@@ -103,12 +120,59 @@
 			<p class="settings-label">Редактировать профиль</p>
 
 			<ul class="settings-ul">
-				<li class="settings-li"><button class="btn setting-btn">Фото</button></li>
+				<!-- <li class="settings-li"><button class="btn setting-btn">Фото</button></li>
 				<li class="settings-li"><button class="btn setting-btn">Имя Фамилия</button></li>
 				<li class="settings-li"><button class="btn setting-btn">Коротко о себе</button></li>
 				<li class="settings-li"><button class="btn setting-btn">Контакти</button></li>
 				<li class="settings-li"><button class="btn setting-btn">Социальные сети</button></li>
-				<li class="settings-li"><button class="btn setting-btn">Пароль</button></li>
+				<li class="settings-li"><button class="btn setting-btn">Пароль</button></li> -->
+				<li class="settings-li">
+					<button class="menu-item">
+						<!-- <i class="fa-fw fa-solid fa-image-portrait"></i> -->
+						<!-- <i class="fa-fw fa-solid fa-user"></i> -->
+						<i class="fa-fw fa-solid fa-camera"></i>
+
+						<span>Фото</span>
+					</button>
+				</li>
+				<li class="settings-li">
+					<button class="menu-item">
+						<!-- <i class="fa-fw fa-solid fa-signature"></i> -->
+						<!-- <i class="fa-fw fa-solid fa-user"></i> -->
+						<i class="fa-fw fa-solid fa-file-contract"></i>
+
+						<span>Имя</span>
+					</button>
+				</li>
+				<li class="settings-li">
+					<button class="menu-item">
+						<i class="fa-fw fa-solid fa-circle-info"></i>
+
+						<span>Коротко о себе</span>
+					</button>
+				</li>
+				<li class="settings-li">
+					<button class="menu-item">
+						<i class="fa-fw fa-solid fa-address-card"></i>
+
+						<span>Контакти</span>
+					</button>
+				</li>
+				<li class="settings-li">
+					<button class="menu-item">
+						<!-- <i class="fa-fw fa-solid fa-hashtag"></i> -->
+						<i class="fa-fw fa-solid fa-user-group"></i>
+
+						<span>Социальные сети</span>
+					</button>
+				</li>
+				<li class="settings-li">
+					<button class="menu-item">
+						<i class="fa-fw fa-solid fa-lock"></i>
+
+						<span>Пароль</span>
+					</button>
+				</li>
 			</ul>
 
 			<hr>
@@ -135,7 +199,15 @@
 			<hr>
 
 			<ul class="settings-ul">
-				<li class="settings-li"><button class="btn  setting-accent-btn">Удалить аккаунт</button></li>
+				<!-- <li class="settings-li"><button class="btn  setting-accent-btn">Удалить аккаунт</button></li> -->
+				<li class="settings-li">
+					<button class="menu-item accent-menu-item">
+						<!-- <i class="fa-fw fa-solid fa-xmark"></i> -->
+						<i class="fa-fw fa-solid fa-circle-xmark"></i>
+
+						<span>Удалить аккаунт</span>
+					</button>
+				</li>
 			</ul>
 		</div>
 	</main>
