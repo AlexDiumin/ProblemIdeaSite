@@ -70,6 +70,7 @@
   font: 1rem/1.25rem "Montserrat-SemiBold";
   cursor: pointer;
   transition: 0.1s;
+  text-decoration: none;
 }
 .ico-btn i {
   font-size: 1.25rem;
@@ -760,6 +761,7 @@ header .burger-btn-wrapper .menu-wrapper {
   border-top: 8px solid #112233;
   border-bottom: calc(44px + 1.25rem) solid #112233;
   background-color: #112233;
+  transition: 0.1s;
   overflow: auto;
 }
 header .burger-btn-wrapper .menu-wrapper .menu-items-wrapper {
@@ -877,6 +879,7 @@ header .user-btns-wrapper .ico-btn span {
   background-color: #FC575E;
 }
 header .user-btns-wrapper .header-user-btn {
+  position: relative;
   width: calc(20px + 1.25rem);
   height: calc(20px + 1.25rem);
   padding: 0;
@@ -885,47 +888,59 @@ header .user-btns-wrapper .header-user-btn {
   background-color: transparent;
   cursor: pointer;
 }
-header .user-btns-wrapper .header-user-btn:hover img {
-  border-color: #fcfcfd;
+header .user-btns-wrapper .header-user-btn:hover:after {
+  border-color: rgba(252, 252, 253, 0.3);
+}
+header .user-btns-wrapper .header-user-btn:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(20px + 1.25rem);
+  height: calc(20px + 1.25rem);
+  border: 2px solid rgba(252, 252, 253, 0.2);
+  border-radius: 50%;
+  content: "";
+  transition: 0.1s;
 }
 header .user-btns-wrapper .header-user-btn img {
   width: calc(20px + 1.25rem);
   height: calc(20px + 1.25rem);
-  border: 2px solid rgba(252, 252, 253, 0.85);
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
 }
 
 footer {
-  position: relative;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 footer .documents-btns-wrapper {
   display: flex;
-  margin-right: -16px;
+  column-gap: 8px;
 }
-footer .documents-btns-wrapper .document-btn-wrapper {
-  width: 150px;
-  height: calc(20px + 1.25rem);
-  margin-right: 16px;
-  background-color: aqua;
+footer .documents-btns-wrapper .btn {
+  color: #44BBFF;
+  background-color: transparent;
 }
-footer .copyright-wrapper {
-  width: 100px;
-  height: calc(20px + 1.25rem);
-  background-color: aqua;
+footer .documents-btns-wrapper .btn:hover {
+  background-color: #1e3c59;
+}
+footer .copyright {
+  margin: 0 24px;
+  font: 1rem/1.25rem "Montserrat-Regular";
+  color: #a4aac2;
 }
 footer .social-media-btns-wrapper {
   display: flex;
-  margin-right: -24px;
+  column-gap: 8px;
 }
-footer .social-media-btns-wrapper .social-media-btn-wrapper {
-  width: calc(20px + 1.25rem);
-  height: calc(20px + 1.25rem);
-  margin-right: 24px;
-  background-color: aqua;
+footer .social-media-btns-wrapper .ico-btn {
+  color: #fcfcfd;
+  background-color: transparent;
+}
+footer .social-media-btns-wrapper .ico-btn:hover {
+  background-color: #1e3c59;
 }
 
 main {

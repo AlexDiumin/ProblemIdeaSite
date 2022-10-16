@@ -110,6 +110,7 @@ $base-font-size: 14px;
 	font: 1rem/1.25rem 'Montserrat-SemiBold';
 	cursor: pointer;
 	transition: $base-transition;
+	text-decoration: none;
 
 	i {
 		font-size: 1.25rem;
@@ -1018,7 +1019,7 @@ header {
 			border-bottom: calc(22*$new-base-size + 1.25rem) solid $dark-color;
 
 			background-color: $dark-color;
-			// transition: $transition-val;
+			transition: $base-transition;
 			overflow: auto;
 
 			.menu-items-wrapper {
@@ -1246,6 +1247,8 @@ header {
 		}
 
 		.header-user-btn {
+			position: relative;
+
 			width: calc(10*$new-base-size + 1.25rem);
 			height: calc(10*$new-base-size + 1.25rem);
 			padding: 0;
@@ -1255,16 +1258,27 @@ header {
 			background-color: transparent;
 			cursor: pointer;
 
-			&:hover {
-				img {
-					border-color: $light-font-color;
-				}
+			&:hover:after {
+				border-color: rgba($light-font-color, .3);
+			}
+
+			&:after {
+				position: absolute;
+				left: 0;
+				top: 0;
+
+				width: calc(10*$new-base-size + 1.25rem);
+				height: calc(10*$new-base-size + 1.25rem);
+				border: $base-border-width solid rgba($light-font-color, .2);
+				border-radius: 50%;
+
+				content: '';
+				transition: $base-transition;
 			}
 
 			img {
 				width: calc(10*$new-base-size + 1.25rem);
 				height: calc(10*$new-base-size + 1.25rem);
-				border: $base-border-width solid rgba($light-font-color, 85%);
 				border-radius: 50%;
 
 				object-fit: cover;
@@ -1276,46 +1290,42 @@ header {
 
 
 footer {
-	position: relative;
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
-
-	.documents-btns-wrapper,
-	.copyright-wrapper,
-	.social-media-btns-wrapper {
-
-	}
 
 	.documents-btns-wrapper {
 		display: flex;
-		margin-right: (-8*$new-base-size);
+		column-gap: (4*$new-base-size);
 
-		.document-btn-wrapper {
-			width: 150px;
-			height: calc(10*$new-base-size + 1.25rem);
-			margin-right: (8*$new-base-size);
-		
-			background-color: aqua;
+		.btn {
+			color: $accent-color-b;
+			background-color: transparent;
+
+			&:hover {
+				background-color: lighten($dark-color, 10%);
+			}
 		}
 	}
 
-	.copyright-wrapper {
-		width: 100px;
-		height: calc(10*$new-base-size + 1.25rem);
+	.copyright {
+		margin: 0 (12*$new-base-size);
 
-		background-color: aqua;
+		font: 1rem/1.25rem 'Montserrat-Regular';
+		color: darken($light-color, 25%);
 	}
 
 	.social-media-btns-wrapper {
 		display: flex;
-		margin-right: (-12*$new-base-size);
+		column-gap: (4*$new-base-size);
 
-		.social-media-btn-wrapper {
-			width: calc(10*$new-base-size + 1.25rem);
-			height: calc(10*$new-base-size + 1.25rem);
-			margin-right: (12*$new-base-size);
+		.ico-btn {
+			color: $light-font-color;
+			background-color: transparent;
 
-			background-color: aqua;
+			&:hover {
+				background-color: lighten($dark-color, 10%);
+			}
 		}
 	}
 }
