@@ -8,7 +8,9 @@
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="https://kit.fontawesome.com/3aac8b0827.js" crossorigin="anonymous"></script>
 </head>
-<body>	
+<body>
+	<div class="dark-background display-none"></div>
+
 	<header>
 		<div class="burger-btn-wrapper">
 			<button class="ico-btn burger-btn"  title="Меню">
@@ -16,16 +18,47 @@
 			</button>
 
 			<nav class="menu-wrapper">
-				<div class="menu-items-wrapper"></div>
+				<ul class="menu-items-wrapper">
+					<li class="menu-item"><a href="#">
+						<i class="fa-solid fa-house"></i>
+
+						<span>Главная</span>
+					</a></li>
+					<li class="menu-item menu-item-selected"><a href="#">
+						<img src="img/user.jpg" alt="Фото пользователя">
+
+						<span>Мой профиль</span>
+					</a></li>
+					<li class="menu-item"><a href="#">
+						<i class="fa-solid fa-circle-info"></i>
+
+						<span>О проекте</span>
+					</a></li>
+					<li class="menu-item"><a href="#">
+						<i class="fa-solid fa-circle-question"></i>
+
+						<span>Поддержка</span>
+					</a></li>
+				</ul>
 
 				<div class="menu-selects-wrapper">
-					<div class="custom-select-wrapper">
-						<div class="custom-select-options-wrapper display-none"></div>
-					</div>
+					<form method="get">
+						<label for="language">Язык</label>
+						<select id="language">
+							<option value="РУС" selected>РУС</option>
+							<option value="УКР">УКР</option>
+							<option value="ENG">ENG</option>
+						</select>
+					</form>
 
-					<div class="custom-select-wrapper">
-						<div class="custom-select-options-wrapper display-none"></div>
-					</div>
+					<form method="get">
+						<label for="currency">Валюта</label>
+						<select id="currency">
+							<option value="UAH" selected>UAH</option>
+							<option value="RUB">RUB</option>
+							<option value="USD">USD</option>
+						</select>
+					</form>					
 				</div>
 			</nav>
 		</div>
@@ -41,7 +74,12 @@
 					<i class="fa-solid fa-magnifying-glass"></i>
 				</button>
 			</form>
-			<div class="search-autocomplete-wrapper display-none"></div>
+
+			<ul class="search-autocomplete-wrapper">
+				<li class="search-autocomplete-item">морской узел</li>
+				<li class="search-autocomplete-item">морской флот</li>
+				<li class="search-autocomplete-item">морской бой</li>
+			</ul>
 		</div>
 
 		<div class="public-btns-wrapper">
