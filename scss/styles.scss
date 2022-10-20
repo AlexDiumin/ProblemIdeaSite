@@ -943,6 +943,14 @@ $base-font-size: 14px;
 	}
 }
 
+
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
 h1 {
 	font: 1.3rem/1.5rem 'Montserrat-Bold';
 	color: $dark-font-color;
@@ -1173,6 +1181,19 @@ header {
 		position: relative;
 		flex: 1 1 200px;
 
+		&:after {
+			position: absolute;
+			left: 0;
+			top: (-4*$new-base-size);
+			z-index: -1;
+
+			width: 100%;
+			height: (4*$new-base-size);
+
+			content: '';
+			background-color: $dark-color;
+		}
+
 		.search-form {
 			display: flex;
 			column-gap: $new-base-size;
@@ -1183,6 +1204,46 @@ header {
 
 			.input {
 				flex: 1 1 100%;
+			
+				&:focus + .search-autocomplete-wrapper {
+					transform: translateY(0);
+				}
+			}
+
+			.search-autocomplete-wrapper {
+				position: absolute;
+				top: 0;
+				z-index: -2;
+				transform: translateY(-100%);
+
+				width: 100%;
+				max-height: calc(100vh - 26*$new-base-size - 1.25rem);
+				padding: calc(15*$new-base-size + 1.25rem) 0 (5*$new-base-size);
+				border-radius: $base-border-radius;
+
+				background-color: $dark-color;
+				transition: $base-transition;
+				overflow: auto;
+
+				li {
+					padding: (2*$new-base-size) (5*$new-base-size);
+
+					font: 1rem/1.25rem 'Montserrat-SemiBold';
+					color: $light-font-color;
+					background-color: transparent;
+					transition: $base-transition;
+					cursor: pointer;
+
+					&[class*='hover'] {
+						background-color: lighten($dark-color, 10%);
+					}
+
+					span {
+						font: 1rem/1.25rem 'Montserrat-Regular';
+						color: rgba($light-font-color, .75);
+						pointer-events: none;
+					}
+				}
 			}
 
 			.ico-btn {
@@ -1193,32 +1254,6 @@ header {
 
 				&:hover {
 					background-color: darken($light-color, 15%);
-				}
-			}
-		}
-
-		.search-autocomplete-wrapper {
-			position: absolute;
-			top: 0;
-			z-index: -1;
-
-			width: 100%;
-			padding: calc(15*$new-base-size + 1.25rem) 0 (5*$new-base-size);
-			border-radius: $base-border-radius;
-
-			background-color: $dark-color;
-
-			li {
-				padding: 0 (5*$new-base-size);
-
-				font: 1rem/2rem 'Montserrat-Regular';
-				color: $light-font-color;
-				background-color: transparent;
-				transition: $base-transition;
-				cursor: pointer;
-
-				&:hover {
-					background-color: lighten($dark-color, 10%);
 				}
 			}
 		}

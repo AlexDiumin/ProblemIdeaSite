@@ -700,6 +700,12 @@
   background-color: #339966;
 }
 
+input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 h1 {
   font: 1.3rem/1.5rem "Montserrat-Bold";
   color: #000101;
@@ -876,6 +882,16 @@ header .search-wrapper {
   position: relative;
   flex: 1 1 200px;
 }
+header .search-wrapper:after {
+  position: absolute;
+  left: 0;
+  top: -8px;
+  z-index: -1;
+  width: 100%;
+  height: 8px;
+  content: "";
+  background-color: #112233;
+}
 header .search-wrapper .search-form {
   display: flex;
   column-gap: 2px;
@@ -885,6 +901,38 @@ header .search-wrapper .search-form {
 header .search-wrapper .search-form .input {
   flex: 1 1 100%;
 }
+header .search-wrapper .search-form .input:focus + .search-autocomplete-wrapper {
+  transform: translateY(0);
+}
+header .search-wrapper .search-form .search-autocomplete-wrapper {
+  position: absolute;
+  top: 0;
+  z-index: -2;
+  transform: translateY(-100%);
+  width: 100%;
+  max-height: calc(100vh - 52px - 1.25rem);
+  padding: calc(30px + 1.25rem) 0 10px;
+  border-radius: 2px;
+  background-color: #112233;
+  transition: 0.1s;
+  overflow: auto;
+}
+header .search-wrapper .search-form .search-autocomplete-wrapper li {
+  padding: 4px 10px;
+  font: 1rem/1.25rem "Montserrat-SemiBold";
+  color: #fcfcfd;
+  background-color: transparent;
+  transition: 0.1s;
+  cursor: pointer;
+}
+header .search-wrapper .search-form .search-autocomplete-wrapper li[class*=hover] {
+  background-color: #1e3c59;
+}
+header .search-wrapper .search-form .search-autocomplete-wrapper li span {
+  font: 1rem/1.25rem "Montserrat-Regular";
+  color: rgba(252, 252, 253, 0.75);
+  pointer-events: none;
+}
 header .search-wrapper .search-form .ico-btn {
   flex: 0 0 auto;
   color: #525a7b;
@@ -892,26 +940,6 @@ header .search-wrapper .search-form .ico-btn {
 }
 header .search-wrapper .search-form .ico-btn:hover {
   background-color: #c2c6d6;
-}
-header .search-wrapper .search-autocomplete-wrapper {
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  width: 100%;
-  padding: calc(30px + 1.25rem) 0 10px;
-  border-radius: 2px;
-  background-color: #112233;
-}
-header .search-wrapper .search-autocomplete-wrapper li {
-  padding: 0 10px;
-  font: 1rem/2rem "Montserrat-Regular";
-  color: #fcfcfd;
-  background-color: transparent;
-  transition: 0.1s;
-  cursor: pointer;
-}
-header .search-wrapper .search-autocomplete-wrapper li:hover {
-  background-color: #1e3c59;
 }
 header .public-btns-wrapper {
   display: flex;
