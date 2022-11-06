@@ -1,4 +1,8 @@
 @font-face {
+  font-family: "Montserrat-Italic";
+  src: url("../fonts/Montserrat/Montserrat-Italic.ttf") format("truetype");
+}
+@font-face {
   font-family: "Montserrat-Regular";
   src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
 }
@@ -763,6 +767,9 @@ header .burger-btn-wrapper .burger-btn {
 header .burger-btn-wrapper .burger-btn:hover {
   background-color: #1e3c59;
 }
+header .burger-btn-wrapper .burger-btn[class*=burger-btn-active] {
+  background-color: #1e3c59;
+}
 header .burger-btn-wrapper .menu-wrapper {
   position: fixed;
   top: calc(36px + 1.25rem);
@@ -998,18 +1005,107 @@ header .user-btns-wrapper .ico-btn span {
   color: #000101;
   background-color: #FC575E;
 }
-header .user-btns-wrapper .header-user-btn {
-  position: relative;
+header .user-btns-wrapper .ico-btn[class*=notifications-btn-active] {
+  background-color: #1e3c59;
+}
+header .user-btns-wrapper .notifications-wrapper {
+  position: fixed;
+  top: calc(36px + 1.25rem);
+  right: 0;
+  transform: translateX(100%);
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  max-width: 30vw;
+  height: calc(100vh - 36px - 1.25rem);
+  padding: 12px;
+  background-color: #112233;
+  transition: 0.1s;
+  overflow: auto;
+}
+header .user-btns-wrapper .notifications-wrapper[class*=notifications-active] {
+  transform: translateX(0);
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item {
+  display: flex;
+  column-gap: 8px;
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-img-link {
   width: calc(20px + 1.25rem);
   height: calc(20px + 1.25rem);
-  padding: 0;
-  border: 0;
   border-radius: 50%;
-  margin: 0;
   outline: 2px solid rgba(252, 252, 253, 0.2);
   outline-offset: -2px;
+  transition: 0.1s;
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-img-link:hover {
+  outline: 2px solid rgba(252, 252, 253, 0.3);
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-img-link img {
+  width: calc(20px + 1.25rem);
+  height: calc(20px + 1.25rem);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  flex: 1 1 0;
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: 1rem/1.25rem "Montserrat-Regular";
+  color: #fcfcfd;
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-author {
+  font-family: "Montserrat-SemiBold";
+  color: #fcfcfd;
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-idea {
+  font-family: "Montserrat-SemiBold";
+  color: #fc787e;
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-comment {
+  font-family: "Montserrat-Italic";
+  color: rgba(252, 252, 253, 0.6);
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-not-text-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-not-text-wrapper .notification-btns-wrapper {
+  display: flex;
+  column-gap: 2px;
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-not-text-wrapper .notification-btns-wrapper .btn {
+  color: rgba(252, 252, 253, 0.75);
   background-color: transparent;
-  cursor: pointer;
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-not-text-wrapper .notification-btns-wrapper .btn:hover {
+  background-color: #1e3c59;
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-not-text-wrapper .notification-pubdate {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: 0.85rem/1rem "Montserrat-Regular";
+  color: rgba(252, 252, 253, 0.5);
+}
+header .user-btns-wrapper .header-user-btn {
+  width: calc(20px + 1.25rem);
+  height: calc(20px + 1.25rem);
+  border-radius: 50%;
+  outline: 2px solid rgba(252, 252, 253, 0.2);
+  outline-offset: -2px;
   transition: 0.1s;
 }
 header .user-btns-wrapper .header-user-btn:hover {

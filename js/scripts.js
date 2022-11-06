@@ -1,15 +1,32 @@
 /* Клик по документу */
 document.addEventListener('click', (e) => {
 	// Открытие/закрытие меню
+	let burgerBtn = document.getElementsByClassName('burger-btn')[0];
 	let menuWrapper = document.getElementsByClassName('menu-wrapper')[0];
-	if (document.getElementsByClassName('burger-btn')[0].contains(e.target)) {
+	if (burgerBtn.contains(e.target)) {
+		burgerBtn.classList.toggle('burger-btn-active');
 		menuWrapper.classList.toggle('menu-active');
 		document.getElementsByClassName('dark-background')[0].classList.toggle('display-none');
 	}
 	else if (!menuWrapper.contains(e.target) && menuWrapper.classList.contains('menu-active')) {
+		burgerBtn.classList.remove('burger-btn-active');
 		menuWrapper.classList.remove('menu-active');
 		document.getElementsByClassName('dark-background')[0].classList.add('display-none');
 	}
+
+	// Открытие/закрытие оповещений
+	let notificationsBtn = document.getElementsByClassName('notifications-btn')[0];
+	let notificationsWrapper = document.getElementsByClassName('notifications-wrapper')[0];
+	if (notificationsBtn.contains(e.target)) {
+		notificationsBtn.classList.toggle('notifications-btn-active');
+		notificationsWrapper.classList.toggle('notifications-active');
+		document.getElementsByClassName('dark-background')[0].classList.toggle('display-none');
+	}
+	else if (!notificationsWrapper.contains(e.target) && notificationsWrapper.classList.contains('notifications-active')) {
+		notificationsBtn.classList.remove('notifications-btn-active');
+		notificationsWrapper.classList.remove('notifications-active');
+		document.getElementsByClassName('dark-background')[0].classList.add('display-none');
+	}	
 });
 
 
@@ -98,6 +115,7 @@ document.getElementsByClassName('search-input')[0].addEventListener('keyup', (e)
 document.getElementsByClassName('search-autocomplete-wrapper')[0].addEventListener('mousedown', (e) => {
 	if (e.target.classList.contains('search-autocomplete-item')) {
 		document.getElementsByClassName('search-input')[0].value = e.target.textContent;
+		document.getElementsByClassName('search-form')[0].submit();
 	}
 });
 

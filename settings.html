@@ -93,58 +93,41 @@
 			<button class="btn signup-btn">Зарегистрироваться</button>
 		</div> -->
 		<div class="user-btns-wrapper">
-			<!-- <div class="user-btn-wrapper"></div>
-			<div class="user-btn-wrapper">
-				<div class="notifications-wrapper display-none">
-					<div class="notification-wrapper">
-						<div class="notification-img-wrapper"></div>
-
-						<div class="notification-not-img-wrapper">
-							<div class="notification-text-wrapper"></div>
-
-							<div class="notification-not-text-wrapper">
-								<div class="notification-btns-wrapper">
-									<div class="notification-btn-wrapper"></div>
-									<div class="notification-btn-wrapper"></div>
-								</div>
-
-								<div class="notification-pubdate-wrapper"></div>
-							</div>
-						</div>						
-					</div>
-
-					<div class="notification-wrapper">
-						<div class="notification-img-wrapper"></div>
-
-						<div class="notification-not-img-wrapper">
-							<div class="notification-text-wrapper"></div>
-
-							<div class="notification-not-text-wrapper">
-								<div class="notification-btns-wrapper">
-									<div class="notification-btn-wrapper"></div>
-									<div class="notification-btn-wrapper"></div>
-								</div>
-
-								<div class="notification-pubdate-wrapper"></div>
-							</div>
-						</div>						
-					</div>
-				</div>
-			</div>
-			<div class="user-btn-wrapper"></div> -->
-			<button class="ico-btn">
+			<a href="#" class="ico-btn">
 				<i class="fa-fw fa-solid fa-message"></i>
 
 				<span>12</span>
-			</button>
-			<button class="ico-btn">
+			</a>
+
+			<button class="ico-btn notifications-btn">
 				<i class="fa-fw fa-solid fa-bell"></i>
 			
 				<span>99+</span>
 			</button>
-			<button class="header-user-btn">
+			<div class="notifications-wrapper">
+				<div class="notification-item">
+					<a href="#" class="notification-img-link">
+						<img src="img/user.jpg" alt="Фото пользователя">
+					</a>
+
+					<div class="notification-not-img-wrapper">
+						<p class="notification-text"><span class="n-author">Артем Руфанов</span> оставил комментарий к вашей идее <span class="n-idea">Название идеи</span>: <span class="n-comment">Как по мне далеко не факт, что данное приспособление будет полезным</span></p>
+
+						<div class="notification-not-text-wrapper">
+							<div class="notification-btns-wrapper">
+								<button class="btn">Ответить</button>
+								<a href="#" class="btn">Перейти</a>
+							</div>
+
+							<p class="notification-pubdate">33 минуты назад</p>
+						</div>
+					</div>						
+				</div>
+			</div>
+
+			<a href="#" class="header-user-btn">
 				<img src="img/user.jpg" alt="Фото пользователя">
-			</button>
+			</a>
 		</div>
 	</header>
 
@@ -237,11 +220,16 @@
 			<hr>
 
 			<ul class="settings-ul">
-				<!-- <li class="settings-li"><button class="btn  setting-accent-btn">Удалить аккаунт</button></li> -->
+				<li class="settings-li">
+					<button class="menu-item">
+						<i class="fa-fw fa-solid fa-arrow-right-from-bracket"></i>
+
+						<span>Выйти</span>
+					</button>
+				</li>
 				<li class="settings-li">
 					<button class="menu-item accent-menu-item">
-						<!-- <i class="fa-fw fa-solid fa-xmark"></i> -->
-						<i class="fa-fw fa-solid fa-circle-xmark"></i>
+						<i class="fa-fw fa-solid fa-xmark"></i>
 
 						<span>Удалить аккаунт</span>
 					</button>
