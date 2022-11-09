@@ -1414,11 +1414,11 @@ header {
 			transform: translateX(100%);
 			display: flex;
 			flex-direction: column;
-			row-gap: (6*$new-base-size);
+			row-gap: (8*$new-base-size);
 
 			max-width: 30vw;		
 			height: calc(100vh - 18*$new-base-size - 1.25rem);
-			padding: (6*$new-base-size);
+			padding: (8*$new-base-size);
 
 			background-color: $dark-color;
 			transition: $base-transition;
@@ -1458,7 +1458,7 @@ header {
 				.notification-not-img-wrapper {
 					display: flex;
 					flex-direction: column;
-					row-gap: (2*$new-base-size);
+					row-gap: (4*$new-base-size);
 					flex: 1 1 0;
 
 					.notification-text {
@@ -1471,6 +1471,16 @@ header {
 							color: $light-font-color;
 						}
 
+						.n-donate {
+							font-family: 'Montserrat-SemiBold';
+							color: mix($accent-color-g, $light-font-color, 80%);
+						}
+
+						.n-problem {
+							font-family: 'Montserrat-SemiBold';
+							color: mix($accent-color-b, $light-font-color, 80%);
+						}
+
 						.n-idea {
 							font-family: 'Montserrat-SemiBold';
 							color: mix($accent-color-r, $light-font-color, 80%);
@@ -1480,24 +1490,25 @@ header {
 							font-family: 'Montserrat-Italic';
 							color: rgba($light-font-color, .6);
 						}
+
+						i {
+							font-size: 1.25rem;
+							color: $light-font-color;
+						}
 					}
 
 					.notification-not-text-wrapper {
 						display: flex;
 						justify-content: space-between;
-						align-items: center;
+						align-items: top;
+						column-gap: (4*$new-base-size);
 
-						.notification-btns-wrapper {
-							display: flex;
-							column-gap: $new-base-size;
+						.ico-btn {
+							color: rgba($light-font-color, .75);
+							background-color: transparent;
 
-							.btn {
-								color: rgba($light-font-color, .75);
-								background-color: transparent;
-
-								&:hover {
-									background-color: lighten($dark-color, 10%);
-								}
+							&:hover {
+								background-color: lighten($dark-color, 10%);
 							}
 						}
 

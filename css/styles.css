@@ -1015,10 +1015,10 @@ header .user-btns-wrapper .notifications-wrapper {
   transform: translateX(100%);
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 16px;
   max-width: 30vw;
   height: calc(100vh - 36px - 1.25rem);
-  padding: 12px;
+  padding: 16px;
   background-color: #112233;
   transition: 0.1s;
   overflow: auto;
@@ -1051,7 +1051,7 @@ header .user-btns-wrapper .notifications-wrapper .notification-item .notificatio
 header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 4px;
+  row-gap: 8px;
   flex: 1 1 0;
 }
 header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text {
@@ -1067,6 +1067,14 @@ header .user-btns-wrapper .notifications-wrapper .notification-item .notificatio
   font-family: "Montserrat-SemiBold";
   color: #fcfcfd;
 }
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-donate {
+  font-family: "Montserrat-SemiBold";
+  color: #84d6ad;
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-problem {
+  font-family: "Montserrat-SemiBold";
+  color: #69c8ff;
+}
 header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-idea {
   font-family: "Montserrat-SemiBold";
   color: #fc787e;
@@ -1075,20 +1083,21 @@ header .user-btns-wrapper .notifications-wrapper .notification-item .notificatio
   font-family: "Montserrat-Italic";
   color: rgba(252, 252, 253, 0.6);
 }
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text i {
+  font-size: 1.25rem;
+  color: #fcfcfd;
+}
 header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-not-text-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
+  column-gap: 8px;
 }
-header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-not-text-wrapper .notification-btns-wrapper {
-  display: flex;
-  column-gap: 2px;
-}
-header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-not-text-wrapper .notification-btns-wrapper .btn {
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-not-text-wrapper .ico-btn {
   color: rgba(252, 252, 253, 0.75);
   background-color: transparent;
 }
-header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-not-text-wrapper .notification-btns-wrapper .btn:hover {
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-not-text-wrapper .ico-btn:hover {
   background-color: #1e3c59;
 }
 header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-not-text-wrapper .notification-pubdate {

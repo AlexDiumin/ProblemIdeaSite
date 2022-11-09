@@ -96,14 +96,6 @@ document.getElementsByClassName('search-input')[0].addEventListener('keyup', (e)
 					}
 				}
 				autocompleteHover.classList.add('hover');
-
-				// let autocompleteHover = document.getElementsByClassName('search-autocomplete-item hover')[0];
-				// if (autocompleteHover) {
-				// 	let hoverIdx = 
-				// }
-				// else
-				// 	autocompleteHover = (e.key === 'ArrowUp' ? autocompleteItems[autocompleteItems.length-1] : autocompleteItems[0]);
-				// autocompleteHover.classList.add('hover');
 			}
 			break;
 		default:
@@ -122,6 +114,8 @@ document.getElementsByClassName('search-autocomplete-wrapper')[0].addEventListen
 /* hover. Наведение на блок автозаполнения */
 document.getElementsByClassName('search-autocomplete-wrapper')[0].addEventListener('mouseover', (e) => {
 	if (e.target.classList.contains('search-autocomplete-item')) {
+		for (let item of document.getElementsByClassName('search-autocomplete-item'))
+			item.classList.remove('hover');
 		e.target.classList.add('hover');
 	}
 });
