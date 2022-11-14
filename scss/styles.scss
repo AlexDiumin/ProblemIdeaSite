@@ -1464,25 +1464,33 @@ header {
 					.notification-text {
 						@include ellipsis(4);  // троеточие
 						font: 1rem/1.25rem 'Montserrat-Regular';
-						color: $light-font-color;
+						color: $light-font-color;						
+
+						.n-text {
+							font-family: 'Montserrat-SemiBold';
+						}
+
+						.n-link {
+							text-decoration: none;
+
+							&:hover {
+								text-decoration: underline;
+							}
+						}
 
 						.n-author {
-							font-family: 'Montserrat-SemiBold';
 							color: $light-font-color;
 						}
 
 						.n-donate {
-							font-family: 'Montserrat-SemiBold';
 							color: mix($accent-color-g, $light-font-color, 80%);
 						}
 
 						.n-problem {
-							font-family: 'Montserrat-SemiBold';
 							color: mix($accent-color-b, $light-font-color, 80%);
 						}
 
 						.n-idea {
-							font-family: 'Montserrat-SemiBold';
 							color: mix($accent-color-r, $light-font-color, 80%);
 						}
 

@@ -9,87 +9,152 @@
 	<script src="https://kit.fontawesome.com/3aac8b0827.js" crossorigin="anonymous"></script>
 </head>
 <body>	
+	<div class="dark-background display-none"></div>
+	
 	<header>
 		<div class="burger-btn-wrapper">
-			<!-- <button class="burger-btn" title="Меню"></button> -->
+			<button class="ico-btn burger-btn"  title="Меню">
+				<i class="fa-fw fa-solid fa-bars"></i>
+			</button>
+
 			<nav class="menu-wrapper">
-				<div class="menu-items-wrapper"></div>
+				<ul class="menu-items-wrapper">
+					<li class="menu-item"><a href="main.html">
+						<i class="fa-solid fa-house"></i>
+
+						<span>Главная</span>
+					</a></li>
+					<li class="menu-item menu-item-selected"><a href="user.html">
+						<img src="img/user.jpg" alt="Фото пользователя">
+
+						<span>Мой профиль</span>
+					</a></li>
+					<li class="menu-item"><a href="about.html">
+						<i class="fa-solid fa-circle-info"></i>
+
+						<span>О проекте</span>
+					</a></li>
+					<li class="menu-item"><a href="support.html">
+						<i class="fa-solid fa-circle-question"></i>
+
+						<span>Поддержка</span>
+					</a></li>
+				</ul>
 
 				<div class="menu-selects-wrapper">
-					<div class="custom-select-wrapper">
-						<div class="custom-select-options-wrapper display-none"></div>
-					</div>
+					<form method="get">
+						<label for="language">Язык</label>
+						<select id="language">
+							<option value="РУС" selected>РУС</option>
+							<option value="УКР">УКР</option>
+							<option value="ENG">ENG</option>
+						</select>
+					</form>
 
-					<div class="custom-select-wrapper">
-						<div class="custom-select-options-wrapper display-none"></div>
-					</div>
+					<form method="get">
+						<label for="currency">Валюта</label>
+						<select id="currency">
+							<option value="UAH" selected>UAH</option>
+							<option value="RUB">RUB</option>
+							<option value="USD">USD</option>
+						</select>
+					</form>					
 				</div>
 			</nav>
 		</div>
 
-		<div class="logo-wrapper">
-			<!-- <a href="main.html" class="logo-link">
-				<img class="logo-img" src="img/Ogo.svg" alt="Логотип Ogo" title="Главная страница">
-			</a> -->
-		</div>
+		<a href="main.html" class="logo-link" title="Главная страница">
+			<img class="logo-img" src="img/logo.svg" alt="Логотип Ogo">
+		</a>
 
 		<div class="search-wrapper">
-			<!-- <form method="get">
-				<input class="search-field" type="search" name="search" required>
-				<button class="search-btn" type="submit" placeholder="Введите запрос" title="Поиск"></button>
-			</form> -->
-			<div class="search-autocomplete-wrapper display-none"></div>
+			<form method="get" class="search-form" autocomplete="off">
+				<input class="input search-input" type="search" name="search" placeholder="Введите запрос">
+
+				<ul class="search-autocomplete-wrapper">
+					<!-- <li class="search-autocomplete-item">морской узел</li>
+					<li class="search-autocomplete-item">морской флот</li>
+					<li class="search-autocomplete-item">морской бой</li> -->
+				</ul>
+
+				<button class="ico-btn" type="submit" title="Поиск">
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</button>
+			</form>
 		</div>
 
 		<div class="public-btns-wrapper">
-			<div class="public-btn-wrapper"></div>
-			<div class="public-btn-wrapper"></div>
+			<a href="pubpublication.html" class="btn pub-idea-btn">Опубликовать идею</a>
+			<a href="pubpublication.html" class="btn pub-problem-btn">Опубликовать проблему</a>
 		</div>
 
-<!-- 		<div class="sign-btns-wrapper">
-			<div class="sign-btn-wrapper"></div>
-			<div class="sign-btn-wrapper"></div>
+		<!-- <div class="sign-btns-wrapper">
+			<a href="signin.html" class="btn signin-btn">Войти</a>
+			<a href="signup.html" class="btn signup-btn">Зарегистрироваться</a>
 		</div> -->
 		<div class="user-btns-wrapper">
-			<div class="user-btn-wrapper"></div>
-			<div class="user-btn-wrapper">
-				<div class="notifications-wrapper display-none">
-					<div class="notification-wrapper">
-						<div class="notification-img-wrapper"></div>
+			<a href="chat.html" class="ico-btn">
+				<i class="fa-fw fa-solid fa-message"></i>
 
-						<div class="notification-not-img-wrapper">
-							<div class="notification-text-wrapper"></div>
+				<span>12</span>
+			</a>
 
-							<div class="notification-not-text-wrapper">
-								<div class="notification-btns-wrapper">
-									<div class="notification-btn-wrapper"></div>
-									<div class="notification-btn-wrapper"></div>
-								</div>
+			<button class="ico-btn notifications-btn">
+				<i class="fa-fw fa-solid fa-bell"></i>
+			
+				<span>99+</span>
+			</button>
+			<div class="notifications-wrapper">
+				<div class="notification-item">
+					<a href="user.html" class="notification-img-link">
+						<img src="img/user.jpg" alt="Фото пользователя">
+					</a>
 
-								<div class="notification-pubdate-wrapper"></div>
-							</div>
-						</div>						
-					</div>
+					<div class="notification-not-img-wrapper">
+						<p class="notification-text"><a href="user.html" class="n-text n-link n-author">Артем Руфанов</a> оставил комментарий к вашей идее <a href="publication.html" class="n-text n-link n-idea">Название идеи</a>: <span class="n-comment">Как по мне далеко не факт, что данное приспособление будет полезным</span></p>
 
-					<div class="notification-wrapper">
-						<div class="notification-img-wrapper"></div>
+						<div class="notification-not-text-wrapper">
+							<p class="notification-pubdate">33 минуты назад</p>
 
-						<div class="notification-not-img-wrapper">
-							<div class="notification-text-wrapper"></div>
+							<a href="#" class="ico-btn">Перейти<i class="fa-solid fa-angle-right"></i></a>
+						</div>
+					</div>						
+				</div>
+				<div class="notification-item">
+					<a href="user.html" class="notification-img-link">
+						<img src="img/user.jpg" alt="Фото пользователя">
+					</a>
 
-							<div class="notification-not-text-wrapper">
-								<div class="notification-btns-wrapper">
-									<div class="notification-btn-wrapper"></div>
-									<div class="notification-btn-wrapper"></div>
-								</div>
+					<div class="notification-not-img-wrapper">
+						<p class="notification-text"><a href="user.html" class="n-text n-link n-author">Артем Руфанов</a> поставил <i class="fa-fw fa-solid fa-thumbs-up"></i> вашей проблеме <a href="publication.html" class="n-text n-link n-problem">Название проблемы</a>.</p>
 
-								<div class="notification-pubdate-wrapper"></div>
-							</div>
-						</div>						
-					</div>
+						<div class="notification-not-text-wrapper">
+							<p class="notification-pubdate">33 минуты назад</p>
+
+							<a href="#" class="ico-btn">Перейти<i class="fa-solid fa-angle-right"></i></a>
+						</div>
+					</div>						
+				</div>
+				<div class="notification-item">
+					<a href="user.html" class="notification-img-link">
+						<img src="img/user.jpg" alt="Фото пользователя">
+					</a>
+
+					<div class="notification-not-img-wrapper">
+						<p class="notification-text"><a href="user.html" class="n-text n-link n-author">Артем Руфанов</a> пожертвовал <span class="n-text n-donate">30 долларов</span> вашей идее <a href="publication.html" class="n-text n-link n-idea">Название идеи</a>.</p>
+
+						<div class="notification-not-text-wrapper">
+							<p class="notification-pubdate">33 минуты назад</p>
+
+							<a href="#" class="ico-btn">Перейти<i class="fa-solid fa-angle-right"></i></a>
+						</div>
+					</div>						
 				</div>
 			</div>
-			<div class="user-btn-wrapper"></div>
+
+			<a href="user.html" class="header-user-btn">
+				<img src="img/user.jpg" alt="Фото пользователя">
+			</a>
 		</div>
 	</header>
 
@@ -219,16 +284,16 @@
 
 	<footer>
 		<div class="documents-btns-wrapper">
-			<div class="document-btn-wrapper"></div>
-			<div class="document-btn-wrapper"></div>
+			<a href="#" class="btn">Политика конфиденциальности</a>
+			<a href="#" class="btn">Правила сервиса</a>
 		</div>
 
-		<div class="copyright-wrapper"></div>
+		<span class="copyright">© 2022 Алексей Дюмин</span>
 
 		<div class="social-media-btns-wrapper">
-			<div class="social-media-btn-wrapper"></div>
-			<div class="social-media-btn-wrapper"></div>
-			<div class="social-media-btn-wrapper"></div>
+			<a href="#" class="ico-btn"><i class="fa-fw fa-brands fa-facebook-f"></i></a>
+			<a href="#" class="ico-btn"><i class="fa-fw fa-brands fa-twitter"></i></a>
+			<a href="#" class="ico-btn"><i class="fa-fw fa-brands fa-youtube"></i></a>
 		</div>
 	</footer>
 

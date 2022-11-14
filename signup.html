@@ -10,7 +10,7 @@
 </head>
 <body>	
 	<div class="dark-background display-none"></div>
-
+	
 	<header>
 		<div class="burger-btn-wrapper">
 			<button class="ico-btn burger-btn"  title="Меню">
@@ -19,22 +19,22 @@
 
 			<nav class="menu-wrapper">
 				<ul class="menu-items-wrapper">
-					<li class="menu-item"><a href="#">
+					<li class="menu-item"><a href="main.html">
 						<i class="fa-solid fa-house"></i>
 
 						<span>Главная</span>
 					</a></li>
-					<li class="menu-item menu-item-selected"><a href="#">
+					<li class="menu-item menu-item-selected"><a href="user.html">
 						<img src="img/user.jpg" alt="Фото пользователя">
 
 						<span>Мой профиль</span>
 					</a></li>
-					<li class="menu-item"><a href="#">
+					<li class="menu-item"><a href="about.html">
 						<i class="fa-solid fa-circle-info"></i>
 
 						<span>О проекте</span>
 					</a></li>
-					<li class="menu-item"><a href="#">
+					<li class="menu-item"><a href="support.html">
 						<i class="fa-solid fa-circle-question"></i>
 
 						<span>Поддержка</span>
@@ -68,78 +68,94 @@
 		</a>
 
 		<div class="search-wrapper">
-			<form method="get" class="search-form">
-				<input class="input" type="search" placeholder="Введите запрос">
+			<form method="get" class="search-form" autocomplete="off">
+				<input class="input search-input" type="search" name="search" placeholder="Введите запрос">
+
+				<ul class="search-autocomplete-wrapper">
+					<!-- <li class="search-autocomplete-item">морской узел</li>
+					<li class="search-autocomplete-item">морской флот</li>
+					<li class="search-autocomplete-item">морской бой</li> -->
+				</ul>
+
 				<button class="ico-btn" type="submit" title="Поиск">
 					<i class="fa-solid fa-magnifying-glass"></i>
 				</button>
 			</form>
-			<div class="search-autocomplete-wrapper display-none"></div>
 		</div>
 
 		<div class="public-btns-wrapper">
-			<button class="btn pub-idea-btn">Опубликовать идею</button>
-			<button class="btn pub-problem-btn">Опубликовать проблему</button>
+			<a href="pubpublication.html" class="btn pub-idea-btn">Опубликовать идею</a>
+			<a href="pubpublication.html" class="btn pub-problem-btn">Опубликовать проблему</a>
 		</div>
 
-		<!-- <div class="sign-btns-wrapper">
-			<button class="btn signin-btn">Войти</button>
-			<button class="btn signup-btn">Зарегистрироваться</button>
-		</div> -->
-		<div class="user-btns-wrapper">
-			<!-- <div class="user-btn-wrapper"></div>
-			<div class="user-btn-wrapper">
-				<div class="notifications-wrapper display-none">
-					<div class="notification-wrapper">
-						<div class="notification-img-wrapper"></div>
-
-						<div class="notification-not-img-wrapper">
-							<div class="notification-text-wrapper"></div>
-
-							<div class="notification-not-text-wrapper">
-								<div class="notification-btns-wrapper">
-									<div class="notification-btn-wrapper"></div>
-									<div class="notification-btn-wrapper"></div>
-								</div>
-
-								<div class="notification-pubdate-wrapper"></div>
-							</div>
-						</div>						
-					</div>
-
-					<div class="notification-wrapper">
-						<div class="notification-img-wrapper"></div>
-
-						<div class="notification-not-img-wrapper">
-							<div class="notification-text-wrapper"></div>
-
-							<div class="notification-not-text-wrapper">
-								<div class="notification-btns-wrapper">
-									<div class="notification-btn-wrapper"></div>
-									<div class="notification-btn-wrapper"></div>
-								</div>
-
-								<div class="notification-pubdate-wrapper"></div>
-							</div>
-						</div>						
-					</div>
-				</div>
-			</div>
-			<div class="user-btn-wrapper"></div> -->
-			<button class="ico-btn">
+		<div class="sign-btns-wrapper">
+			<a href="signin.html" class="btn signin-btn">Войти</a>
+			<a href="signup.html" class="btn signup-btn">Зарегистрироваться</a>
+		</div>
+		<!-- <div class="user-btns-wrapper">
+			<a href="chat.html" class="ico-btn">
 				<i class="fa-fw fa-solid fa-message"></i>
 
 				<span>12</span>
-			</button>
-			<button class="ico-btn">
+			</a>
+
+			<button class="ico-btn notifications-btn">
 				<i class="fa-fw fa-solid fa-bell"></i>
 			
 				<span>99+</span>
 			</button>
-			<button class="header-user-btn">
+			<div class="notifications-wrapper">
+				<div class="notification-item">
+					<a href="user.html" class="notification-img-link">
+						<img src="img/user.jpg" alt="Фото пользователя">
+					</a>
+
+					<div class="notification-not-img-wrapper">
+						<p class="notification-text"><a href="user.html" class="n-text n-link n-author">Артем Руфанов</a> оставил комментарий к вашей идее <a href="publication.html" class="n-text n-link n-idea">Название идеи</a>: <span class="n-comment">Как по мне далеко не факт, что данное приспособление будет полезным</span></p>
+
+						<div class="notification-not-text-wrapper">
+							<p class="notification-pubdate">33 минуты назад</p>
+
+							<a href="#" class="ico-btn">Перейти<i class="fa-solid fa-angle-right"></i></a>
+						</div>
+					</div>						
+				</div>
+				<div class="notification-item">
+					<a href="user.html" class="notification-img-link">
+						<img src="img/user.jpg" alt="Фото пользователя">
+					</a>
+
+					<div class="notification-not-img-wrapper">
+						<p class="notification-text"><a href="user.html" class="n-text n-link n-author">Артем Руфанов</a> поставил <i class="fa-fw fa-solid fa-thumbs-up"></i> вашей проблеме <a href="publication.html" class="n-text n-link n-problem">Название проблемы</a>.</p>
+
+						<div class="notification-not-text-wrapper">
+							<p class="notification-pubdate">33 минуты назад</p>
+
+							<a href="#" class="ico-btn">Перейти<i class="fa-solid fa-angle-right"></i></a>
+						</div>
+					</div>						
+				</div>
+				<div class="notification-item">
+					<a href="user.html" class="notification-img-link">
+						<img src="img/user.jpg" alt="Фото пользователя">
+					</a>
+
+					<div class="notification-not-img-wrapper">
+						<p class="notification-text"><a href="user.html" class="n-text n-link n-author">Артем Руфанов</a> пожертвовал <span class="n-text n-donate">30 долларов</span> вашей идее <a href="publication.html" class="n-text n-link n-idea">Название идеи</a>.</p>
+
+						<div class="notification-not-text-wrapper">
+							<p class="notification-pubdate">33 минуты назад</p>
+
+							<a href="#" class="ico-btn">Перейти<i class="fa-solid fa-angle-right"></i></a>
+						</div>
+					</div>						
+				</div>
+			</div>
+
+			<a href="user.html" class="header-user-btn">
 				<img src="img/user.jpg" alt="Фото пользователя">
-			</button>
-		</div>
+			</a>
+		</div> -->
 	</header>
 
 

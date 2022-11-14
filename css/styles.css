@@ -1063,20 +1063,25 @@ header .user-btns-wrapper .notifications-wrapper .notification-item .notificatio
   font: 1rem/1.25rem "Montserrat-Regular";
   color: #fcfcfd;
 }
-header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-author {
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-text {
   font-family: "Montserrat-SemiBold";
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-link {
+  text-decoration: none;
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-link:hover {
+  text-decoration: underline;
+}
+header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-author {
   color: #fcfcfd;
 }
 header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-donate {
-  font-family: "Montserrat-SemiBold";
   color: #84d6ad;
 }
 header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-problem {
-  font-family: "Montserrat-SemiBold";
   color: #69c8ff;
 }
 header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-idea {
-  font-family: "Montserrat-SemiBold";
   color: #fc787e;
 }
 header .user-btns-wrapper .notifications-wrapper .notification-item .notification-not-img-wrapper .notification-text .n-comment {
