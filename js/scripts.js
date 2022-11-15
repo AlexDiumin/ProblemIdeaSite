@@ -125,3 +125,22 @@ document.getElementsByClassName('search-autocomplete-wrapper')[0].addEventListen
 		e.target.classList.remove('hover');
 	}
 });
+
+
+
+/*******************
+ * 					 *
+ * 	chat.html	 *
+ *                 *  
+ * *****************/
+
+/* Клик по кнопке поиска сообщений в чате */
+document.getElementById('chat-wrapper-2-search-btn').addEventListener('click', (e) => {
+	document.getElementsByClassName('chat-global-search-field')[0].focus();
+});
+
+/*******************
+ * 					 *
+ * 	/chat.html	 *
+ *                 *  
+ * *****************/

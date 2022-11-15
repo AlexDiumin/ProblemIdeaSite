@@ -2411,6 +2411,7 @@ main {
 		.chat-wrapper-2-header {
 			display: flex;
 			justify-content: space-between;
+			column-gap: (4*$new-base-size);
 
 			.chat-wrapper-2-header-name-wrapper {
 				display: flex;
@@ -2436,11 +2437,48 @@ main {
 				}
 			}
 
-			.chat-wrapper-2-header-btns-wrapper {
+			.chat-wrapper-2-header-actions-wrapper {
 				display: flex;
 				column-gap: (4*$new-base-size);
 
-				.chat-wrapper-2-header-btn {
+				// .chat-wrapper-2-form {
+				// 	display: flex;
+				// 	column-gap: $new-base-size;
+				// 	flex: 1 1 100%;
+
+				// 	border-radius: $base-border-radius;
+
+				// 	background-color: transparent;
+				// 	transition: $base-transition;
+
+				// 	input {
+				// 		flex: 1 1 100%;
+
+				// 		transition: $base-transition;
+				// 		opacity: 0;
+				// 		visibility: hidden;
+				// 	}
+
+				// 	&[class*='chat-wrapper-2-form-active'] {
+				// 		background-color: darken($light-color, 5%);
+					
+				// 		input {
+				// 			opacity: 1;
+				// 			visibility: visible;
+				// 		}
+
+				// 		button {
+				// 			color: darken($light-color, 55%);
+				// 			background-color: darken($light-color, 10%);
+
+				// 			&:hover {
+				// 				background-color: darken($light-color, 15%);
+				// 			}
+				// 		}
+				// 	}					
+				// }
+
+				button {
 					color: $light-color;
 					background-color: transparent;
 

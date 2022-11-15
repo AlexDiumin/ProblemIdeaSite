@@ -1747,6 +1747,7 @@ main {
 .chat-main .chat-wrapper-2 .chat-wrapper-2-header {
   display: flex;
   justify-content: space-between;
+  column-gap: 8px;
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-header .chat-wrapper-2-header-name-wrapper {
   display: flex;
@@ -1767,15 +1768,15 @@ main {
   border-radius: 50%;
   background-color: #66CC99;
 }
-.chat-main .chat-wrapper-2 .chat-wrapper-2-header .chat-wrapper-2-header-btns-wrapper {
+.chat-main .chat-wrapper-2 .chat-wrapper-2-header .chat-wrapper-2-header-actions-wrapper {
   display: flex;
   column-gap: 8px;
 }
-.chat-main .chat-wrapper-2 .chat-wrapper-2-header .chat-wrapper-2-header-btns-wrapper .chat-wrapper-2-header-btn {
+.chat-main .chat-wrapper-2 .chat-wrapper-2-header .chat-wrapper-2-header-actions-wrapper button {
   color: #F0F1F5;
   background-color: transparent;
 }
-.chat-main .chat-wrapper-2 .chat-wrapper-2-header .chat-wrapper-2-header-btns-wrapper .chat-wrapper-2-header-btn:hover {
+.chat-main .chat-wrapper-2 .chat-wrapper-2-header .chat-wrapper-2-header-actions-wrapper button:hover {
   background-color: rgba(240, 241, 245, 0.05);
 }
 .chat-main .chat-wrapper-2 .chat-wrapper-2-main {
